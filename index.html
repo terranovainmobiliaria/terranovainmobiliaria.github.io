@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Terranova Inmobiliaria | Andahuaylas</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#222;
+    background:#fff;
+}
+
+/* MENU */
+
+nav{
+    position:absolute;
+    top:0;
+    width:100%;
+    z-index:10;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 7%;
+    color:white;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo span{
+    font-weight:300;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+/* PORTADA */
+
+.hero{
+    height:100vh;
+    min-height:650px;
+    background:
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=85");
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+    color:white;
+}
+
+.hero-content{
+    max-width:750px;
+}
+
+.hero-small{
+    font-size:15px;
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:65px;
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.6;
+    max-width:600px;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 28px;
+    background:#fff;
+    color:#222;
+    text-decoration:none;
+    margin-right:10px;
+    font-weight:bold;
+}
+
+.btn-outline{
+    background:transparent;
+    color:white;
+    border:1px solid white;
+}
+
+/* PRESENTACION */
+
+.intro{
+    padding:100px 8%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.subtitle{
+    font-size:13px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.intro h2,
+.section-title{
+    font-size:45px;
+    margin-bottom:25px;
+}
+
+.intro p{
+    line-height:1.8;
+    color:#666;
+    font-size:17px;
+}
+
+.intro img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+}
+
+/* DATOS */
+
+.stats{
+    background:#111;
+    color:white;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    padding:55px 8%;
+    text-align:center;
+}
+
+.stat{
+    border-right:1px solid #444;
+}
+
+.stat:last-child{
+    border:none;
+}
+
+.stat h3{
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.stat p{
+    color:#aaa;
+}
+
+/* PROYECTOS */
+
+.projects{
+    padding:100px 8%;
+}
+
+.projects-header{
+    max-width:650px;
+    margin-bottom:50px;
+}
+
+.project{
+    position:relative;
+    height:600px;
+    overflow:hidden;
+}
+
+.project img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.project:hover img{
+    transform:scale(1.04);
+}
+
+.project-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent,rgba(0,0,0,.8));
+    display:flex;
+    align-items:flex-end;
+    padding:50px;
+    color:white;
+}
+
+.project-overlay h3{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.project-overlay p{
+    margin-bottom:20px;
+}
+
+/* RECORRIDO */
+
+.visual{
+    background:#f4f2ed;
+    padding:100px 8%;
+}
+
+.visual-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:15px;
+}
+
+.visual-grid img{
+    width:100%;
+    height:550px;
+    object-fit:cover;
+}
+
+.visual-small{
+    display:grid;
+    gap:15px;
+}
+
+.visual-small img{
+    height:267px;
+}
+
+/* UBICACION */
+
+.location{
+    padding:100px 8%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.location p{
+    color:#666;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.map-placeholder{
+    height:450px;
+    background:#e8e8e8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+/* CONTACTO */
+
+.contact{
+    padding:110px 8%;
+    background:#111;
+    color:white;
+    text-align:center;
+}
+
+.contact h2{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.contact p{
+    color:#bbb;
+    margin-bottom:35px;
+    font-size:18px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:28px;
+    z-index:20;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+/* FOOTER */
+
+footer{
+    background:#080808;
+    color:#888;
+    padding:35px 8%;
+    text-align:center;
+}
+
+/* CELULAR */
+
+@media(max-width:800px){
+
+    nav{
+        padding:20px;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .hero{
+        padding:0 25px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .intro{
+        grid-template-columns:1fr;
+        padding:70px 25px;
+    }
+
+    .intro h2,
+    .section-title{
+        font-size:36px;
+    }
+
+    .intro img{
+        height:350px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+        gap:35px;
+    }
+
+    .stat{
+        border:none;
+    }
+
+    .projects{
+        padding:70px 25px;
+    }
+
+    .project{
+        height:500px;
+    }
+
+    .project-overlay{
+        padding:30px;
+    }
+
+    .project-overlay h3{
+        font-size:32px;
+    }
+
+    .visual{
+        padding:70px 25px;
+    }
+
+    .visual-grid{
+        grid-template-columns:1fr;
+    }
+
+    .visual-grid img{
+        height:350px;
+    }
+
+    .visual-small{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .visual-small img{
+        height:180px;
+    }
+
+    .location{
+        grid-template-columns:1fr;
+        padding:70px 25px;
+    }
+
+    .contact{
+        padding:80px 25px;
+    }
+
+    .contact h2{
+        font-size:37px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        TERRANOVA <span>INMOBILIARIA</span>
+    </div>
+
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#recorrido">Recorrido</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
+
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            ANDAHUAYLAS · APURÍMAC
+        </div>
+
+        <h1>
+            Terrenos para construir tu futuro.
+        </h1>
+
+        <p>
+            Descubre nuestros proyectos inmobiliarios y encuentra
+            el espacio ideal para construir, invertir y crecer.
+        </p>
+
+        <a href="#proyectos" class="btn">
+            VER PROYECTOS
+        </a>
+
+        <a href="#contacto" class="btn btn-outline">
+            CONTÁCTANOS
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="intro">
+
+    <div>
+
+        <div class="subtitle">
+            TERRANOVA INMOBILIARIA
+        </div>
+
+        <h2>
+            Una nueva forma de invertir en nuestra tierra.
+        </h2>
+
+        <p>
+            Somos una inmobiliaria de Andahuaylas enfocada en acercar
+            oportunidades de vivienda e inversión a las familias de
+            nuestra región.
+            <br><br>
+            Presentamos nuestros proyectos de manera clara, cercana
+            y transparente para ayudarte a encontrar el terreno
+            adecuado para tu futuro.
+        </p>
+
+    </div>
+
+    <img
+    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85"
+    alt="Terrenos">
+
+</section>
+
+
+<section class="stats">
+
+    <div class="stat">
+        <h3>100%</h3>
+        <p>Atención personalizada</p>
+    </div>
+
+    <div class="stat">
+        <h3>📍</h3>
+        <p>Andahuaylas</p>
+    </div>
+
+    <div class="stat">
+        <h3>🏡</h3>
+        <p>Terrenos</p>
+    </div>
+
+    <div class="stat">
+        <h3>✓</h3>
+        <p>Información clara</p>
+    </div>
+
+</section>
+
+
+<section class="projects" id="proyectos">
+
+    <div class="projects-header">
+
+        <div class="subtitle">
+            NUESTROS PROYECTOS
+        </div>
+
+        <h2 class="section-title">
+            Encuentra el lugar que estabas buscando.
+        </h2>
+
+    </div>
+
+
+    <div class="project">
+
+        <img
+        src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=85"
+        alt="Proyecto inmobiliario">
+
+        <div class="project-overlay">
+
+            <div>
+
+                <p>ANDAHUAYLAS · APURÍMAC</p>
+
+                <h3>
+                    Nuestro primer proyecto
+                </h3>
+
+                <p>
+                    Terrenos pensados para vivienda e inversión.
+                </p>
+
+                <a href="#recorrido" class="btn">
+                    CONOCER PROYECTO
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="visual" id="recorrido">
+
+    <div class="subtitle">
+        CONOCE EL PROYECTO
+    </div>
+
+    <h2 class="section-title">
+        Recorrido visual
+    </h2>
+
+
+    <div class="visual-grid">
+
+        <img
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1500&q=85"
+        alt="Vista del proyecto">
+
+        <div class="visual-small">
+
+            <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=85"
+            alt="Terreno">
+
+            <img
+            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=85"
+            alt="Paisaje">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="location" id="ubicacion">
+
+    <div>
+
+        <div class="subtitle">
+            UBICACIÓN
+        </div>
+
+        <h2 class="section-title">
+            Cerca de lo que necesitas.
+        </h2>
+
+        <p>
+            Nuestros proyectos se encuentran en Andahuaylas,
+            en zonas con potencial de crecimiento y acceso
+            a servicios importantes.
+            <br><br>
+            Próximamente podrás explorar aquí la ubicación exacta
+            del proyecto y sus principales puntos de referencia.
+        </p>
+
+    </div>
+
+
+    <div class="map-placeholder">
+
+        <div>
+            <h2>📍</h2>
+            <h3>Andahuaylas, Apurímac</h3>
+            <br>
+            <p>Aquí colocaremos el mapa real del proyecto.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="contact" id="contacto">
+
+    <div class="subtitle">
+        HABLEMOS
+    </div>
+
+    <h2>
+        ¿Buscas tu próximo terreno?
+    </h2>
+
+    <p>
+        Escríbenos y conoce nuestros proyectos disponibles.
+    </p>
+
+    <a href="#" class="btn">
+        CONTACTAR POR WHATSAPP
+    </a>
+
+</section>
+
+
+<footer>
+    © 2026 Terranova Inmobiliaria · Andahuaylas, Apurímac
+</footer>
+
+
+<a class="whatsapp" href="#" aria-label="WhatsApp">
+    ☎
+</a>
+
+
+</body>
+</html>
