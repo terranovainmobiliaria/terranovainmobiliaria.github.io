@@ -4,682 +4,1171 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Terranova Inmobiliaria | Andahuaylas</title>
+<title>Terranova Inmobiliaria | Andahuaylas, Apurímac</title>
+<meta name="description" content="Terranova Inmobiliaria. Terrenos y proyectos inmobiliarios en Andahuaylas, San Jerónimo y Talavera, Apurímac.">
+
+<link rel="icon" href="logo-terranova.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root{
+  --verde:#11aaa3;
+  --verde2:#078d89;
+  --oscuro:#003943;
+  --oscuro2:#00272e;
+  --claro:#f4f9f8;
+  --gris:#657476;
+  --borde:#dce8e7;
+  --blanco:#fff;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    color:#222;
-    background:#fff;
+  font-family:"DM Sans",sans-serif;
+  color:#263638;
+  background:#fff;
+  overflow-x:hidden;
 }
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,90%);margin:auto}
 
-/* MENU */
-
+header{
+  position:fixed;
+  top:0;left:0;width:100%;
+  z-index:1000;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
 nav{
-    position:absolute;
-    top:0;
-    width:100%;
-    z-index:10;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 7%;
-    color:white;
+  min-height:76px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand img{
+  width:57px;height:57px;
+  object-fit:contain;
+}
+.brand-text{
+  font-family:"Montserrat",sans-serif;
+  font-weight:800;
+  color:var(--oscuro);
+  letter-spacing:2px;
+  font-size:17px;
+}
+.brand-text small{
+  display:block;
+  color:var(--verde);
+  font-size:8px;
+  letter-spacing:4px;
+  text-align:center;
+}
+.links{
+  display:flex;
+  align-items:center;
+  gap:25px;
+  font-size:14px;
+  font-weight:600;
+}
+.links a{transition:.25s}
+.links a:hover{color:var(--verde)}
+.contact-nav{
+  background:var(--oscuro);
+  color:white!important;
+  padding:11px 18px;
+  border-radius:30px;
+}
+.menu{
+  display:none;
+  background:none;border:0;
+  font-size:27px;
+  color:var(--oscuro);
+  cursor:pointer;
 }
 
-.logo{
-    font-size:24px;
-    font-weight:bold;
-}
-
-.logo span{
-    font-weight:300;
-}
-
-nav ul{
-    display:flex;
-    gap:30px;
-    list-style:none;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    font-size:14px;
-}
-
-/* PORTADA */
-
+/* HERO */
 .hero{
-    height:100vh;
-    min-height:650px;
-    background:
-    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.55)),
-    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=85");
-    background-size:cover;
-    background-position:center;
-
-    display:flex;
-    align-items:center;
-    padding:0 8%;
-    color:white;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding-top:76px;
+  position:relative;
+  color:#fff;
+  background:
+    linear-gradient(90deg,rgba(0,39,46,.93),rgba(0,39,46,.64),rgba(0,39,46,.15)),
+    url("portada-terranova.png") center/cover no-repeat;
 }
-
 .hero-content{
-    max-width:750px;
+  max-width:720px;
+  padding:90px 0;
 }
-
-.hero-small{
-    font-size:15px;
-    letter-spacing:3px;
-    margin-bottom:20px;
+.badge{
+  display:inline-block;
+  border:1px solid rgba(255,255,255,.3);
+  background:rgba(255,255,255,.1);
+  padding:9px 15px;
+  border-radius:30px;
+  font-size:13px;
+  margin-bottom:24px;
 }
-
 .hero h1{
-    font-size:65px;
-    line-height:1.05;
-    margin-bottom:20px;
+  font-family:"Montserrat",sans-serif;
+  font-size:clamp(43px,6vw,80px);
+  line-height:1;
+  letter-spacing:-3px;
+  margin-bottom:25px;
 }
-
+.hero h1 span{color:#40d3cc}
 .hero p{
-    font-size:20px;
-    line-height:1.6;
-    max-width:600px;
-    margin-bottom:35px;
+  max-width:620px;
+  font-size:18px;
+  line-height:1.7;
+  color:rgba(255,255,255,.87);
+  margin-bottom:32px;
 }
-
+.actions{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+}
 .btn{
-    display:inline-block;
-    padding:15px 28px;
-    background:#fff;
-    color:#222;
-    text-decoration:none;
-    margin-right:10px;
-    font-weight:bold;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:15px 23px;
+  border-radius:7px;
+  font-weight:700;
+  transition:.25s;
+  border:1px solid transparent;
+}
+.btn-main{background:var(--verde);color:#fff}
+.btn-main:hover{background:var(--verde2);transform:translateY(-2px)}
+.btn-white{
+  color:#fff;
+  border-color:rgba(255,255,255,.6);
+  background:rgba(255,255,255,.08);
+}
+.btn-white:hover{background:#fff;color:var(--oscuro)}
+
+section{padding:100px 0}
+.label{
+  color:var(--verde2);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+h2{
+  color:var(--oscuro);
+  font-family:"Montserrat",sans-serif;
+  font-size:clamp(31px,4vw,49px);
+  line-height:1.12;
+  letter-spacing:-1.5px;
+}
+.text{
+  color:var(--gris);
+  font-size:17px;
+  line-height:1.75;
+  margin-top:18px;
 }
 
-.btn-outline{
-    background:transparent;
-    color:white;
-    border:1px solid white;
+/* EMPRESA */
+.company-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
 }
-
-/* PRESENTACION */
-
-.intro{
-    padding:100px 8%;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
+.company-image{
+  position:relative;
 }
-
-.subtitle{
-    font-size:13px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    margin-bottom:15px;
+.company-image img{
+  width:100%;
+  border-radius:17px;
+  box-shadow:0 20px 55px rgba(0,50,60,.13);
 }
-
-.intro h2,
-.section-title{
-    font-size:45px;
-    margin-bottom:25px;
+.company-note{
+  position:absolute;
+  bottom:-24px;
+  right:-20px;
+  max-width:250px;
+  padding:22px;
+  border-radius:12px;
+  background:var(--oscuro);
+  color:#fff;
 }
-
-.intro p{
-    line-height:1.8;
-    color:#666;
-    font-size:17px;
-}
-
-.intro img{
-    width:100%;
-    height:500px;
-    object-fit:cover;
-}
-
-/* DATOS */
-
-.stats{
-    background:#111;
-    color:white;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    padding:55px 8%;
-    text-align:center;
-}
-
-.stat{
-    border-right:1px solid #444;
-}
-
-.stat:last-child{
-    border:none;
-}
-
-.stat h3{
-    font-size:32px;
-    margin-bottom:8px;
-}
-
-.stat p{
-    color:#aaa;
+.company-note strong{
+  display:block;
+  color:#42d4cc;
+  font-size:20px;
+  margin-bottom:5px;
 }
 
 /* PROYECTOS */
-
-.projects{
-    padding:100px 8%;
+.projects{background:var(--claro)}
+.section-head{
+  max-width:760px;
+  margin-bottom:45px;
+}
+.project-card{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 18px 55px rgba(0,45,52,.10);
+}
+.project-card img{
+  width:100%;
+  height:530px;
+  object-fit:cover;
+}
+.project-info{
+  padding:55px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.project-location{
+  color:var(--verde2);
+  font-weight:700;
+  margin-bottom:10px;
+}
+.project-info h3{
+  font-family:"Montserrat",sans-serif;
+  color:var(--oscuro);
+  font-size:38px;
+  margin-bottom:15px;
+}
+.project-info p{
+  color:var(--gris);
+  line-height:1.7;
+}
+.project-data{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:28px 0;
+}
+.data{
+  border:1px solid var(--borde);
+  padding:16px;
+  border-radius:9px;
+}
+.data strong{
+  display:block;
+  color:var(--oscuro);
+  font-size:20px;
+}
+.data span{
+  color:var(--gris);
+  font-size:12px;
 }
 
-.projects-header{
-    max-width:650px;
-    margin-bottom:50px;
+/* SALINAS */
+.salinas-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:65px;
+  align-items:center;
+}
+.benefits{
+  display:grid;
+  gap:12px;
+  margin:28px 0;
+}
+.benefit{
+  display:flex;
+  gap:13px;
+  padding:15px;
+  border:1px solid var(--borde);
+  border-radius:9px;
+}
+.check{
+  min-width:28px;
+  height:28px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#dff7f5;
+  color:var(--verde2);
+  font-weight:bold;
+}
+.benefit strong{color:var(--oscuro)}
+.benefit small{
+  display:block;
+  color:var(--gris);
+  margin-top:2px;
+}
+.plan img{
+  border-radius:15px;
+  box-shadow:0 20px 55px rgba(0,50,60,.12);
 }
 
-.project{
-    position:relative;
-    height:600px;
-    overflow:hidden;
+/* VIDEO */
+.video-section{
+  background:var(--oscuro2);
+  color:white;
+}
+.video-section h2{color:white}
+.video-section .text{
+  color:rgba(255,255,255,.67);
+  max-width:720px;
+}
+.video{
+  margin-top:42px;
+  background:#000;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,.3);
+}
+.video video{
+  width:100%;
+  max-height:680px;
+  display:block;
 }
 
-.project img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.6s;
+/* GALERIA */
+.gallery{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:210px;
+  gap:12px;
 }
-
-.project:hover img{
-    transform:scale(1.04);
+.gallery img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:11px;
+  cursor:pointer;
+  transition:.25s;
 }
-
-.project-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(transparent,rgba(0,0,0,.8));
-    display:flex;
-    align-items:flex-end;
-    padding:50px;
-    color:white;
-}
-
-.project-overlay h3{
-    font-size:42px;
-    margin-bottom:10px;
-}
-
-.project-overlay p{
-    margin-bottom:20px;
-}
-
-/* RECORRIDO */
-
-.visual{
-    background:#f4f2ed;
-    padding:100px 8%;
-}
-
-.visual-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:15px;
-}
-
-.visual-grid img{
-    width:100%;
-    height:550px;
-    object-fit:cover;
-}
-
-.visual-small{
-    display:grid;
-    gap:15px;
-}
-
-.visual-small img{
-    height:267px;
-}
+.gallery img:hover{filter:brightness(.85)}
+.gallery img:nth-child(1){grid-column:span 7;grid-row:span 2}
+.gallery img:nth-child(2){grid-column:span 5}
+.gallery img:nth-child(3){grid-column:span 5}
+.gallery img:nth-child(4),
+.gallery img:nth-child(5),
+.gallery img:nth-child(6){grid-column:span 4}
+.gallery img:nth-child(7){grid-column:span 12;height:330px}
 
 /* UBICACION */
-
-.location{
-    padding:100px 8%;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
+.location{background:var(--claro)}
+.location-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:65px;
+  align-items:center;
+}
+.points{
+  display:grid;
+  gap:11px;
+  margin:25px 0;
+}
+.points div{
+  border-bottom:1px solid var(--borde);
+  padding:0 0 11px;
+}
+.map-card{
+  min-height:440px;
+  background:var(--oscuro);
+  color:white;
+  border-radius:18px;
+  padding:50px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.map-icon{
+  font-size:60px;
+  margin-bottom:20px;
+}
+.map-card h3{
+  font-family:"Montserrat",sans-serif;
+  font-size:32px;
+  margin-bottom:15px;
+}
+.map-card p{
+  color:rgba(255,255,255,.68);
+  line-height:1.7;
+  margin-bottom:25px;
 }
 
-.location p{
-    color:#666;
-    line-height:1.8;
-    font-size:17px;
+/* OFICINA */
+.office-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:60px;
+  align-items:center;
 }
-
-.map-placeholder{
-    height:450px;
-    background:#e8e8e8;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:40px;
+.office-visual{
+  min-height:430px;
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 70% 20%,rgba(21,190,180,.22),transparent 30%),
+    linear-gradient(135deg,#002c34,#004e58);
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:45px;
+}
+.office-visual img{
+  width:150px;
+  height:150px;
+  object-fit:contain;
+  border-radius:50%;
+  margin-bottom:22px;
+}
+.office-visual h3{
+  font-family:"Montserrat",sans-serif;
+  font-size:28px;
+}
+.office-details{
+  margin:27px 0;
+  display:grid;
+  gap:12px;
+}
+.office-details div{
+  padding:16px;
+  background:var(--claro);
+  border-radius:8px;
 }
 
 /* CONTACTO */
-
 .contact{
-    padding:110px 8%;
-    background:#111;
-    color:white;
-    text-align:center;
+  background:linear-gradient(120deg,var(--oscuro2),#00535c);
+  color:white;
 }
-
-.contact h2{
-    font-size:48px;
-    margin-bottom:20px;
+.contact h2{color:white}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:70px;
+  align-items:center;
 }
-
-.contact p{
-    color:#bbb;
-    margin-bottom:35px;
-    font-size:18px;
+.contact .text{color:rgba(255,255,255,.7)}
+.contact-options{display:grid;gap:12px}
+.contact-option{
+  background:white;
+  color:var(--oscuro);
+  padding:17px 20px;
+  border-radius:9px;
+  font-weight:700;
+  transition:.25s;
 }
-
-/* WHATSAPP */
-
-.whatsapp{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-    width:60px;
-    height:60px;
-    background:#25D366;
-    color:white;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-decoration:none;
-    font-size:28px;
-    z-index:20;
-    box-shadow:0 5px 20px rgba(0,0,0,.3);
+.contact-option:hover{transform:translateX(5px)}
+.contact-option span{
+  display:block;
+  color:var(--gris);
+  font-weight:400;
+  font-size:13px;
 }
 
 /* FOOTER */
-
 footer{
-    background:#080808;
-    color:#888;
-    padding:35px 8%;
-    text-align:center;
+  background:#001b20;
+  color:white;
+  padding:55px 0 25px;
+}
+.footer{
+  display:grid;
+  grid-template-columns:1.3fr .7fr .7fr;
+  gap:50px;
+  padding-bottom:40px;
+}
+.footer img{
+  width:90px;
+  border-radius:50%;
+  margin-bottom:15px;
+}
+.footer p{
+  color:rgba(255,255,255,.55);
+  line-height:1.7;
+  max-width:400px;
+}
+.footer h4{color:#42d4cc;margin-bottom:15px}
+.footer-links{display:grid;gap:9px;color:rgba(255,255,255,.7)}
+.copy{
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-top:23px;
+  display:flex;
+  justify-content:space-between;
+  color:rgba(255,255,255,.4);
+  font-size:13px;
 }
 
-/* CELULAR */
-
-@media(max-width:800px){
-
-    nav{
-        padding:20px;
-    }
-
-    nav ul{
-        display:none;
-    }
-
-    .hero{
-        padding:0 25px;
-    }
-
-    .hero h1{
-        font-size:45px;
-    }
-
-    .hero p{
-        font-size:17px;
-    }
-
-    .intro{
-        grid-template-columns:1fr;
-        padding:70px 25px;
-    }
-
-    .intro h2,
-    .section-title{
-        font-size:36px;
-    }
-
-    .intro img{
-        height:350px;
-    }
-
-    .stats{
-        grid-template-columns:1fr 1fr;
-        gap:35px;
-    }
-
-    .stat{
-        border:none;
-    }
-
-    .projects{
-        padding:70px 25px;
-    }
-
-    .project{
-        height:500px;
-    }
-
-    .project-overlay{
-        padding:30px;
-    }
-
-    .project-overlay h3{
-        font-size:32px;
-    }
-
-    .visual{
-        padding:70px 25px;
-    }
-
-    .visual-grid{
-        grid-template-columns:1fr;
-    }
-
-    .visual-grid img{
-        height:350px;
-    }
-
-    .visual-small{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .visual-small img{
-        height:180px;
-    }
-
-    .location{
-        grid-template-columns:1fr;
-        padding:70px 25px;
-    }
-
-    .contact{
-        padding:80px 25px;
-    }
-
-    .contact h2{
-        font-size:37px;
-    }
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:900;
+  width:61px;height:61px;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-size:26px;
+  font-weight:bold;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
 }
 
+/* LIGHTBOX */
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(0,0,0,.92);
+  justify-content:center;
+  align-items:center;
+  padding:25px;
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:95vw;
+  max-height:90vh;
+}
+.close{
+  position:absolute;
+  right:28px;
+  top:18px;
+  color:white;
+  font-size:42px;
+  cursor:pointer;
+}
+
+@media(max-width:900px){
+  .links{
+    display:none;
+    position:absolute;
+    top:76px;left:0;width:100%;
+    background:#fff;
+    padding:25px 5%;
+    flex-direction:column;
+    align-items:flex-start;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+  }
+  .links.open{display:flex}
+  .menu{display:block}
+  .company-grid,.project-card,.salinas-grid,
+  .location-grid,.office-grid,.contact-grid{
+    grid-template-columns:1fr;
+  }
+  .project-card img{height:430px}
+  .company-note{right:15px}
+  .footer{grid-template-columns:1fr}
+  .gallery img:nth-child(n){grid-column:span 6;grid-row:span 1}
+  .gallery img:first-child{grid-column:span 12;grid-row:span 2}
+}
+
+@media(max-width:600px){
+  section{padding:75px 0}
+  .brand-text{font-size:13px}
+  .brand img{width:48px;height:48px}
+  .hero{
+    min-height:92vh;
+    background:
+      linear-gradient(rgba(0,39,46,.78),rgba(0,39,46,.76)),
+      url("portada-terranova.png") center/cover;
+  }
+  .hero p{font-size:16px}
+  .actions .btn{width:100%}
+  .company-note{
+    position:relative;
+    right:auto;bottom:auto;
+    margin:-20px 15px 0;
+  }
+  .project-info{padding:30px 24px}
+  .project-card img{height:320px}
+  .project-data{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr;grid-auto-rows:240px}
+  .gallery img:nth-child(n){grid-column:1;grid-row:auto;height:100%}
+  .map-card{padding:35px 25px}
+  .copy{flex-direction:column;gap:8px}
+}
 </style>
 </head>
 
 <body>
 
+<header>
+<div class="container">
 <nav>
-    <div class="logo">
-        TERRANOVA <span>INMOBILIARIA</span>
-    </div>
 
-    <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#recorrido">Recorrido</a></li>
-        <li><a href="#ubicacion">Ubicación</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-    </ul>
+<a href="#inicio" class="brand">
+<img src="logo-terranova.png" alt="Terranova Inmobiliaria">
+<div class="brand-text">
+TERRANOVA
+<small>INMOBILIARIA</small>
+</div>
+</a>
+
+<div class="links" id="links">
+<a href="#inicio">Inicio</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#oficina">Oficina</a>
+<a href="#contacto" class="contact-nav">Contacto</a>
+</div>
+
+<button class="menu" onclick="menu()">☰</button>
+
 </nav>
+</div>
+</header>
 
+
+<!-- INICIO -->
 
 <section class="hero" id="inicio">
+<div class="container">
+<div class="hero-content">
 
-    <div class="hero-content">
+<div class="badge">Terranova Inmobiliaria · Apurímac</div>
 
-        <div class="hero-small">
-            ANDAHUAYLAS · APURÍMAC
-        </div>
+<h1>
+Espacios para<br>
+construir tu <span>futuro.</span>
+</h1>
 
-        <h1>
-            Terrenos para construir tu futuro.
-        </h1>
+<p>
+Encuentra terrenos y proyectos inmobiliarios para construir,
+invertir y hacer realidad tus próximos planes.
+</p>
 
-        <p>
-            Descubre nuestros proyectos inmobiliarios y encuentra
-            el espacio ideal para construir, invertir y crecer.
-        </p>
+<div class="actions">
+<a href="#proyectos" class="btn btn-main">Conoce nuestros proyectos</a>
+<a href="#contacto" class="btn btn-white">Contáctanos</a>
+</div>
 
-        <a href="#proyectos" class="btn">
-            VER PROYECTOS
-        </a>
-
-        <a href="#contacto" class="btn btn-outline">
-            CONTÁCTANOS
-        </a>
-
-    </div>
-
+</div>
+</div>
 </section>
 
 
-<section class="intro">
+<!-- NOSOTROS -->
 
-    <div>
+<section id="nosotros">
+<div class="container">
 
-        <div class="subtitle">
-            TERRANOVA INMOBILIARIA
-        </div>
+<div class="company-grid">
 
-        <h2>
-            Una nueva forma de invertir en nuestra tierra.
-        </h2>
+<div class="company-image">
+<img src="portada-terranova.png" alt="Terranova Inmobiliaria">
 
-        <p>
-            Somos una inmobiliaria de Andahuaylas enfocada en acercar
-            oportunidades de vivienda e inversión a las familias de
-            nuestra región.
-            <br><br>
-            Presentamos nuestros proyectos de manera clara, cercana
-            y transparente para ayudarte a encontrar el terreno
-            adecuado para tu futuro.
-        </p>
+<div class="company-note">
+<strong>Terranova</strong>
+Tu próximo espacio para construir o invertir.
+</div>
+</div>
 
-    </div>
+<div>
 
-    <img
-    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85"
-    alt="Terrenos">
+<div class="label">Sobre nosotros</div>
 
+<h2>Aquí comienzan nuevas historias.</h2>
+
+<p class="text">
+En Terranova Inmobiliaria conectamos personas con espacios
+donde puedan construir un hogar, desarrollar sus proyectos
+o realizar una inversión pensando en el futuro.
+</p>
+
+<p class="text">
+Presentamos oportunidades inmobiliarias en Andahuaylas,
+San Jerónimo y Talavera, Apurímac.
+</p>
+
+</div>
+</div>
+
+</div>
 </section>
 
 
-<section class="stats">
-
-    <div class="stat">
-        <h3>100%</h3>
-        <p>Atención personalizada</p>
-    </div>
-
-    <div class="stat">
-        <h3>📍</h3>
-        <p>Andahuaylas</p>
-    </div>
-
-    <div class="stat">
-        <h3>🏡</h3>
-        <p>Terrenos</p>
-    </div>
-
-    <div class="stat">
-        <h3>✓</h3>
-        <p>Información clara</p>
-    </div>
-
-</section>
-
+<!-- PROYECTOS -->
 
 <section class="projects" id="proyectos">
+<div class="container">
 
-    <div class="projects-header">
+<div class="section-head">
+<div class="label">Terranova Inmobiliaria</div>
+<h2>Nuestros proyectos</h2>
 
-        <div class="subtitle">
-            NUESTROS PROYECTOS
-        </div>
-
-        <h2 class="section-title">
-            Encuentra el lugar que estabas buscando.
-        </h2>
-
-    </div>
+<p class="text">
+Conoce los proyectos inmobiliarios que forman parte de Terranova.
+Esta sección irá creciendo conforme incorporemos nuevas oportunidades.
+</p>
+</div>
 
 
-    <div class="project">
+<!-- TARJETA SALINAS -->
 
-        <img
-        src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=85"
-        alt="Proyecto inmobiliario">
+<div class="project-card">
 
-        <div class="project-overlay">
+<img src="terreno-01.jpg" alt="Proyecto Salinas">
 
-            <div>
+<div class="project-info">
 
-                <p>ANDAHUAYLAS · APURÍMAC</p>
+<div class="project-location">Andahuaylas · Apurímac</div>
 
-                <h3>
-                    Nuestro primer proyecto
-                </h3>
+<h3>Proyecto Salinas</h3>
 
-                <p>
-                    Terrenos pensados para vivienda e inversión.
-                </p>
+<p>
+Terrenos en una zona tranquila de Andahuaylas,
+con acceso a servicios básicos y cercanía a diferentes
+puntos importantes de la ciudad.
+</p>
 
-                <a href="#recorrido" class="btn">
-                    CONOCER PROYECTO
-                </a>
+<div class="project-data">
 
-            </div>
+<div class="data">
+<strong>94.12 m²</strong>
+<span>Área por lote</span>
+</div>
 
-        </div>
+<div class="data">
+<strong>10 lotes</strong>
+<span>Distribución del proyecto</span>
+</div>
 
-    </div>
+<div class="data">
+<strong>Servicios</strong>
+<span>Agua, desagüe y electricidad</span>
+</div>
 
+<div class="data">
+<strong>Andahuaylas</strong>
+<span>Apurímac</span>
+</div>
+
+</div>
+
+<a href="#salinas" class="btn btn-main">
+Conocer Proyecto Salinas
+</a>
+
+</div>
+</div>
+
+</div>
 </section>
 
 
-<section class="visual" id="recorrido">
+<!-- DETALLE SALINAS -->
 
-    <div class="subtitle">
-        CONOCE EL PROYECTO
-    </div>
+<section id="salinas">
+<div class="container">
 
-    <h2 class="section-title">
-        Recorrido visual
-    </h2>
+<div class="salinas-grid">
 
+<div>
 
-    <div class="visual-grid">
+<div class="label">Proyecto Salinas</div>
 
-        <img
-        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1500&q=85"
-        alt="Vista del proyecto">
+<h2>Tu terreno. Tu futuro.</h2>
 
-        <div class="visual-small">
+<p class="text">
+Proyecto Salinas cuenta con 10 lotes de 94.12 m²,
+pensados para quienes buscan un espacio propio en Andahuaylas.
+</p>
 
-            <img
-            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=85"
-            alt="Terreno">
+<div class="benefits">
 
-            <img
-            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=85"
-            alt="Paisaje">
+<div class="benefit">
+<div class="check">✓</div>
+<div>
+<strong>Agua potable</strong>
+<small>Servicio básico disponible en el sector.</small>
+</div>
+</div>
 
-        </div>
+<div class="benefit">
+<div class="check">✓</div>
+<div>
+<strong>Desagüe</strong>
+<small>Servicio de saneamiento.</small>
+</div>
+</div>
 
-    </div>
+<div class="benefit">
+<div class="check">✓</div>
+<div>
+<strong>Energía eléctrica</strong>
+<small>Servicio eléctrico disponible.</small>
+</div>
+</div>
 
+<div class="benefit">
+<div class="check">✓</div>
+<div>
+<strong>Buena ubicación</strong>
+<small>Cercano a instituciones y vías importantes.</small>
+</div>
+</div>
+
+</div>
+
+<a href="plano-salinas.pdf" target="_blank" class="btn btn-main">
+Ver plano completo
+</a>
+
+</div>
+
+<div class="plan">
+<img src="lotes-promocional.png" alt="Lotes Proyecto Salinas">
+</div>
+
+</div>
+</div>
 </section>
 
 
-<section class="location" id="ubicacion">
+<!-- RECORRIDO -->
 
-    <div>
+<section class="video-section">
+<div class="container">
 
-        <div class="subtitle">
-            UBICACIÓN
-        </div>
+<div class="label" style="color:#40d3cc">Recorrido visual</div>
 
-        <h2 class="section-title">
-            Cerca de lo que necesitas.
-        </h2>
+<h2>Conoce el terreno</h2>
 
-        <p>
-            Nuestros proyectos se encuentran en Andahuaylas,
-            en zonas con potencial de crecimiento y acceso
-            a servicios importantes.
-            <br><br>
-            Próximamente podrás explorar aquí la ubicación exacta
-            del proyecto y sus principales puntos de referencia.
-        </p>
+<p class="text">
+Mira el entorno y conoce Proyecto Salinas mediante imágenes
+reales del lugar.
+</p>
 
-    </div>
+<div class="video">
+<video controls preload="metadata" poster="terreno-03.jpg">
+<source src="recorrido-salinas.mp4" type="video/mp4">
+Tu navegador no puede reproducir el video.
+</video>
+</div>
 
-
-    <div class="map-placeholder">
-
-        <div>
-            <h2>📍</h2>
-            <h3>Andahuaylas, Apurímac</h3>
-            <br>
-            <p>Aquí colocaremos el mapa real del proyecto.</p>
-        </div>
-
-    </div>
-
+</div>
 </section>
 
+
+<!-- GALERIA -->
+
+<section>
+<div class="container">
+
+<div class="label">Proyecto Salinas</div>
+<h2>Galería del terreno</h2>
+
+<p class="text">
+Explora diferentes vistas del proyecto y su entorno.
+</p>
+
+<div class="gallery">
+
+<img src="terreno-01.jpg" alt="Proyecto Salinas" onclick="openPhoto(this.src)">
+<img src="terreno-02.jpg" alt="Proyecto Salinas" onclick="openPhoto(this.src)">
+<img src="terreno-03.jpg" alt="Proyecto Salinas" onclick="openPhoto(this.src)">
+<img src="terreno-04.jpg" alt="Proyecto Salinas" onclick="openPhoto(this.src)">
+<img src="terreno-05.jpg" alt="Proyecto Salinas" onclick="openPhoto(this.src)">
+<img src="terreno-06.jpg" alt="Proyecto Salinas" onclick="openPhoto(this.src)">
+<img src="terreno-07.jpg" alt="Proyecto Salinas" onclick="openPhoto(this.src)">
+
+</div>
+
+</div>
+</section>
+
+
+<!-- UBICACION SALINAS -->
+
+<section class="location">
+<div class="container">
+
+<div class="location-grid">
+
+<div>
+
+<div class="label">Ubicación · Proyecto Salinas</div>
+
+<h2>Cerca de lo que necesitas.</h2>
+
+<p class="text">
+El proyecto se encuentra en Andahuaylas y cuenta con acceso
+a diferentes servicios, instituciones y vías de la ciudad.
+</p>
+
+<div class="points">
+<div>📍 Centro de Salud Villa Salinas</div>
+<div>📍 EsSalud</div>
+<div>📍 UGEL Andahuaylas</div>
+<div>📍 Colegio Villarreal</div>
+<div>📍 Jr. Ayacucho</div>
+<div>📍 Av. Industrial</div>
+</div>
+
+</div>
+
+<div class="map-card">
+
+<div class="map-icon">⌖</div>
+
+<h3>Proyecto Salinas</h3>
+
+<p>
+Consulta la ubicación y obtén indicaciones para llegar
+directamente desde Google Maps.
+</p>
+
+<a
+href="https://maps.app.goo.gl/vKVXX82fTikzjsPC7"
+target="_blank"
+rel="noopener"
+class="btn btn-main">
+Ver ubicación en Google Maps
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- OFICINA -->
+
+<section id="oficina">
+<div class="container">
+
+<div class="office-grid">
+
+<div class="office-visual">
+
+<img src="logo-terranova.png" alt="Terranova">
+
+<h3>Oficina Andahuaylas</h3>
+
+<p style="margin-top:8px;color:rgba(255,255,255,.7)">
+Terranova Inmobiliaria
+</p>
+
+</div>
+
+<div>
+
+<div class="label">Visítanos</div>
+
+<h2>Nuestra oficina</h2>
+
+<p class="text">
+También puedes visitarnos personalmente para conocer
+nuestros proyectos y recibir información.
+</p>
+
+<div class="office-details">
+
+<div>
+<strong>📍 Centro Comercial Mall Trelles</strong>
+</div>
+
+<div>
+<strong>Jr. Juan Antonio Trelles 269</strong><br>
+Primer piso · Andahuaylas, Apurímac
+</div>
+
+</div>
+
+<a
+href="https://maps.app.goo.gl/uDidrtBjvQDTBPEQA"
+target="_blank"
+rel="noopener"
+class="btn btn-main">
+Cómo llegar
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- CONTACTO -->
 
 <section class="contact" id="contacto">
+<div class="container">
 
-    <div class="subtitle">
-        HABLEMOS
-    </div>
+<div class="contact-grid">
 
-    <h2>
-        ¿Buscas tu próximo terreno?
-    </h2>
+<div>
 
-    <p>
-        Escríbenos y conoce nuestros proyectos disponibles.
-    </p>
+<div class="label" style="color:#42d4cc">Contáctanos</div>
 
-    <a href="#" class="btn">
-        CONTACTAR POR WHATSAPP
-    </a>
+<h2>Hablemos de tu próximo terreno.</h2>
 
+<p class="text">
+Comunícate con Terranova Inmobiliaria para solicitar
+información sobre Proyecto Salinas y nuestros próximos proyectos.
+</p>
+
+</div>
+
+<div class="contact-options">
+
+<a
+class="contact-option"
+href="https://wa.me/51941201577?text=Hola%20Terranova%20Inmobiliaria%2C%20quisiera%20recibir%20informaci%C3%B3n."
+target="_blank">
+💬 WhatsApp
+<span>+51 941 201 577</span>
+</a>
+
+<a
+class="contact-option"
+href="https://wa.me/51922836427?text=Hola%20Terranova%20Inmobiliaria%2C%20quisiera%20recibir%20informaci%C3%B3n."
+target="_blank">
+💬 WhatsApp
+<span>+51 922 836 427</span>
+</a>
+
+</div>
+
+</div>
+</div>
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
-    © 2026 Terranova Inmobiliaria · Andahuaylas, Apurímac
+<div class="container">
+
+<div class="footer">
+
+<div>
+
+<img src="logo-terranova.png" alt="Terranova Inmobiliaria">
+
+<p>
+Terranova Inmobiliaria.<br>
+Tu próximo espacio para construir o invertir.
+</p>
+
+</div>
+
+<div>
+
+<h4>Terranova</h4>
+
+<div class="footer-links">
+<a href="#nosotros">Nosotros</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#oficina">Nuestra oficina</a>
+<a href="#contacto">Contacto</a>
+</div>
+
+</div>
+
+<div>
+
+<h4>Redes sociales</h4>
+
+<div class="footer-links">
+
+<a
+href="https://www.facebook.com/profile.php?id=61591862877643"
+target="_blank">
+Facebook
+</a>
+
+<a
+href="https://www.tiktok.com/@terranovainmobiliaria01"
+target="_blank">
+TikTok
+</a>
+
+<a href="#contacto">WhatsApp</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="copy">
+
+<span>© 2026 Terranova Inmobiliaria</span>
+<span>Andahuaylas · Apurímac · Perú</span>
+
+</div>
+
+</div>
 </footer>
 
 
-<a class="whatsapp" href="#" aria-label="WhatsApp">
-    ☎
+<!-- WHATSAPP FLOTANTE -->
+
+<a
+class="whatsapp"
+href="https://wa.me/51941201577?text=Hola%20Terranova%20Inmobiliaria%2C%20quisiera%20recibir%20informaci%C3%B3n."
+target="_blank"
+aria-label="WhatsApp">
+✆
 </a>
 
+
+<!-- VISOR DE FOTOS -->
+
+<div class="lightbox" id="lightbox" onclick="closePhoto()">
+<span class="close">×</span>
+<img id="bigPhoto" alt="Proyecto Salinas">
+</div>
+
+
+<script>
+
+function menu(){
+  document.getElementById("links").classList.toggle("open");
+}
+
+document.querySelectorAll("#links a").forEach(function(link){
+  link.addEventListener("click",function(){
+    document.getElementById("links").classList.remove("open");
+  });
+});
+
+function openPhoto(src){
+  document.getElementById("bigPhoto").src=src;
+  document.getElementById("lightbox").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+
+function closePhoto(){
+  document.getElementById("lightbox").classList.remove("open");
+  document.body.style.overflow="";
+}
+
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape") closePhoto();
+});
+
+</script>
 
 </body>
 </html>
