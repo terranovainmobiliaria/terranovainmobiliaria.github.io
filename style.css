@@ -1868,3 +1868,15 @@ img{
     transform: none !important;
     filter: none !important;
 }
+/* ICONO TIKTOK */
+.social-circle.tiktok svg {
+    width: 21px;
+    height: 21px;
+    display: block;
+    color: #ffffff;
+    transition: transform .3s ease;
+}
+
+.social-circle.tiktok:hover svg {
+    transform: scale(1.12);
+}
