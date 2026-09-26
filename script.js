@@ -54,14 +54,22 @@ document.addEventListener("DOMContentLoaded", function () {
 // MENÚ WHATSAPP SUPERIOR
 // ==========================================
 
-function toggleWhatsapp() {
+function toggleWhatsapp(event) {
+
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
   const menu = document.getElementById("whatsappMenu");
 
-  if (menu) {
-    menu.classList.toggle("open");
+  if (!menu) {
+    console.log("No se encontró whatsappMenu");
+    return;
   }
-}
 
+  menu.classList.toggle("open");
+}
 
 // ==========================================
 // MENÚ WHATSAPP INFERIOR
