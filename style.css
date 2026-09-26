@@ -1812,3 +1812,22 @@ img{
     scroll-behavior:auto !important;
   }
 }
+/* ==========================================
+   CORRECCIÓN TEMPORAL - CONTENIDO DEL HERO
+   ========================================== */
+
+.hero-content,
+.hero-copy,
+.hero-text,
+.hero-projects,
+.project-cards,
+.hero-actions,
+.hero-location,
+.hero-badge,
+.hero .reveal,
+.hero [class*="reveal"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    filter: none !important;
+}
