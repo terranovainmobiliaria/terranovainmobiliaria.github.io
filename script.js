@@ -50,3 +50,60 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+// ==========================================
+// MENÚ WHATSAPP SUPERIOR
+// ==========================================
+
+function toggleWhatsapp() {
+  const menu = document.getElementById("whatsappMenu");
+
+  if (menu) {
+    menu.classList.toggle("open");
+  }
+}
+
+
+// ==========================================
+// MENÚ WHATSAPP INFERIOR
+// ==========================================
+
+function toggleBottomWhatsapp() {
+  const menu = document.getElementById("bottomWhatsappMenu");
+
+  if (menu) {
+    menu.classList.toggle("open");
+  }
+}
+
+
+// ==========================================
+// CERRAR MENÚS AL HACER CLIC FUERA
+// ==========================================
+
+document.addEventListener("click", function (event) {
+
+  const topMenu = document.getElementById("whatsappMenu");
+  const bottomMenu = document.getElementById("bottomWhatsappMenu");
+
+  const topButton = document.querySelector(".contact-top");
+  const bottomButton = document.querySelector(".contact-wa");
+
+  if (
+    topMenu &&
+    topButton &&
+    !topMenu.contains(event.target) &&
+    !topButton.contains(event.target)
+  ) {
+    topMenu.classList.remove("open");
+  }
+
+  if (
+    bottomMenu &&
+    bottomButton &&
+    !bottomMenu.contains(event.target) &&
+    !bottomButton.contains(event.target)
+  ) {
+    bottomMenu.classList.remove("open");
+  }
+
+});
