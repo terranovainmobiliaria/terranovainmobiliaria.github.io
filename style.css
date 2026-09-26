@@ -196,10 +196,24 @@ img{
 }
 
 .brand-logo{
-  width:280px;
-  max-height:95px;
+  width:300px;
+  max-height:105px;
   object-fit:contain;
-  filter:drop-shadow(0 8px 15px rgba(0,0,0,.18));
+
+  filter:
+    brightness(1.35)
+    drop-shadow(0 2px 2px rgba(255,255,255,.45))
+    drop-shadow(0 8px 18px rgba(0,0,0,.35));
+
+  transition:transform .3s ease, filter .3s ease;
+}
+
+.brand-logo:hover{
+  transform:scale(1.03);
+  filter:
+    brightness(1.5)
+    drop-shadow(0 2px 3px rgba(255,255,255,.5))
+    drop-shadow(0 10px 22px rgba(0,0,0,.4));
 }
 
 .nav-links{
