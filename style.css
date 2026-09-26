@@ -1837,3 +1837,34 @@ img{
     visibility: visible !important;
     transform: none !important;
 }
+/* =========================================
+   DIAGNÓSTICO / CORRECCIÓN SECCIÓN NOSOTROS
+   ========================================= */
+
+#nosotros {
+    display: block !important;
+    position: relative !important;
+    min-height: auto !important;
+    height: auto !important;
+}
+
+#nosotros .section-container,
+#nosotros .about-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: center !important;
+    gap: 100px !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#nosotros .about-copy,
+#nosotros .about-visual,
+#nosotros .reveal {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    filter: none !important;
+}
