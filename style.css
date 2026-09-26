@@ -1831,3 +1831,9 @@ img{
     transform: none !important;
     filter: none !important;
 }
+/* SOLUCIÓN VISIBILIDAD GENERAL */
+.reveal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
