@@ -1,0 +1,18 @@
+TERRANOVA INMOBILIARIA - WEB FINAL
+
+Archivos principales:
+- index.html = página principal
+- salinas.html = Proyecto Salinas
+- chincheros.html = Proyecto Chincheros
+- style.css = diseño
+- script.js = animaciones y galería
+- assets/ = imágenes, video y plano
+
+PARA GITHUB:
+1. Entra al repositorio terranovainmobiliaria.github.io.
+2. Sube TODO el contenido de esta carpeta manteniendo las carpetas.
+3. Reemplaza index.html si GitHub lo pregunta.
+4. Haz Commit directamente a main.
+5. Espera 1-3 minutos y abre https://terranovainmobiliaria.github.io/
+
+IMPORTANTE: no subas la carpeta terranova-final como una sola carpeta. Debes dejar index.html en la raíz del repositorio.

@@ -1,0 +1,2 @@
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+const lb=document.querySelector('.lightbox');document.querySelectorAll('[data-lightbox]').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('show')});if(lb){lb.onclick=e=>{if(e.target===lb||e.target.classList.contains('close'))lb.classList.remove('show')}}
