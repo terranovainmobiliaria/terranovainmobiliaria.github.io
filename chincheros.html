@@ -1,2 +1,1753 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Proyecto Chincheros | Terranova</title><link rel="icon" href="assets/logo-terranova.png"><link rel="stylesheet" href="style.css"></head><body><header class="subhero" style="--bg:url('assets/chincheros/terreno-01.jpg')"><nav class="nav wrap"><a href="index.html"><img src="assets/logo-terranova.png"></a><div class="links"><a href="index.html">Inicio</a><a href="#galeria">Galería</a><a class="pill primary" href="https://wa.me/51941201577">Consultar</a></div></nav><div class="head wrap"><a class="back" href="index.html">← Volver a proyectos</a><h1>Proyecto Chincheros</h1><p class="lead" style="color:#e4f1ef">Futura residencial · naturaleza, amplitud y una nueva forma de proyectar tu espacio.</p></div></header><main><div class="wrap stats"><div class="stat"><small>Lotes desde</small><strong>400 m²</strong></div><div class="stat"><small>Concepto</small><strong>Residencial</strong></div><div class="stat"><small>Servicios</small><strong>Básicos</strong></div><div class="stat"><small>Ubicación</small><strong>Chincheros</strong></div></div><section class="section"><div class="wrap maprow reveal"><div><span class="tag">Futura residencial</span><h2 class="title">Un proyecto pensado para crecer.</h2><p class="lead">Terrenos amplios desde 400 m² en un entorno natural. El proyecto contempla una zona independiente destinada al futuro centro recreacional.</p><a class="btn dark" href="https://www.google.com/maps/@-13.5111819,-73.8091986,860m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver ubicación en Google Maps</a></div><img style="border-radius:24px" src="assets/chincheros/propuesta-residencial.png"></div></section><section class="section soft" id="galeria"><div class="wrap"><span class="tag">Terreno</span><h2 class="title">Conoce el entorno real.</h2><div class="gallery">
-<img data-lightbox src="assets/chincheros/terreno-01.jpg"><img data-lightbox src="assets/chincheros/terreno-02.jpg"><img data-lightbox src="assets/chincheros/terreno-03.jpg"><img data-lightbox src="assets/chincheros/terreno-04.jpg"><img data-lightbox src="assets/chincheros/terreno-05.jpg"><img data-lightbox src="assets/chincheros/terreno-06.jpg"><img data-lightbox src="assets/chincheros/terreno-07.jpg"><img data-lightbox src="assets/chincheros/terreno-08.jpg"><img data-lightbox src="assets/chincheros/terreno-09.jpg"></div></div></section><section class="section"><div class="wrap"><span class="tag">Proyección</span><h2 class="title">Futuro centro recreacional.</h2><p class="lead">Una propuesta visual del espacio recreacional proyectado para el terreno independiente de menor tamaño.</p><div class="render-note">Imágenes referenciales de proyección. El diseño final puede variar.</div><div class="gallery"><img data-lightbox src="assets/chincheros/recreacion-01.png"><img data-lightbox src="assets/chincheros/recreacion-02.png"><img data-lightbox src="assets/chincheros/propuesta-residencial.png"></div><div class="social"><a class="btn primary" href="https://wa.me/51941201577?text=Hola%20Terranova,%20quiero%20información%20sobre%20Proyecto%20Chincheros">Solicitar información</a></div></div></section></main><div class="lightbox"><span class="close">×</span><img></div><footer class="footer"><div class="wrap">Terranova Inmobiliaria · Proyecto Chincheros</div></footer><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Condominio Terranova | Chincheros</title>
+  <meta name="description" content="Condominio Terranova. Lotes campestres en Chincheros, Apurímac.">
+
+  <link rel="icon" type="image/png" href="assets/logo-terranova.png">
+
+  <style>
+
+    /* =========================================
+       BASE
+    ========================================= */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#fbf7ee;
+      color:#24342d;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    .container{
+      width:min(1180px, calc(100% - 40px));
+      margin:auto;
+    }
+
+
+    /* =========================================
+       COLORES
+
+       Terracota = identidad campestre
+       Verde = naturaleza
+       Turquesa = Terranova Inmobiliaria
+    ========================================= */
+
+    :root{
+      --terracota:#a94f2d;
+      --terracota-dark:#70351f;
+
+      --olive:#465237;
+      --olive-dark:#27372d;
+
+      --cream:#f2e6d0;
+      --cream-light:#fbf7ee;
+
+      --aqua:#16cfc6;
+      --terranova-dark:#063d45;
+
+      --white:#ffffff;
+    }
+
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero{
+      min-height:100vh;
+      position:relative;
+
+      display:flex;
+      flex-direction:column;
+
+      color:white;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(24,42,34,.95) 0%,
+          rgba(35,55,42,.83) 42%,
+          rgba(66,53,36,.30) 100%
+        ),
+        url("assets/chincheros/condominio-terranova.jpeg");
+
+      background-size:cover;
+      background-position:center 40%;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,.08),
+          rgba(0,0,0,.03) 55%,
+          rgba(21,39,32,.55)
+        );
+
+      pointer-events:none;
+    }
+
+
+    /* líneas decorativas */
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:700px;
+      height:700px;
+
+      left:-350px;
+      top:160px;
+
+      border:1px solid rgba(22,207,198,.15);
+      border-radius:50%;
+
+      box-shadow:
+        0 0 0 90px rgba(22,207,198,.035),
+        0 0 0 180px rgba(22,207,198,.025);
+
+      pointer-events:none;
+    }
+
+
+    /* =========================================
+       NAV
+    ========================================= */
+
+    .nav{
+      position:relative;
+      z-index:10;
+
+      height:125px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+
+    .logo-box{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      padding:8px 15px;
+
+      background:rgba(255,255,255,.93);
+      border:1px solid rgba(255,255,255,.75);
+      border-radius:17px;
+
+      box-shadow:0 10px 35px rgba(0,0,0,.18);
+      backdrop-filter:blur(10px);
+    }
+
+
+    .logo-box img{
+      width:205px;
+      height:68px;
+      object-fit:contain;
+    }
+
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:32px;
+
+      font-size:14px;
+      font-weight:700;
+    }
+
+
+    .nav-links a{
+      color:white;
+      transition:.25s;
+    }
+
+
+    .nav-links a:hover{
+      color:var(--aqua);
+    }
+
+
+    .nav-links .contact{
+      padding:14px 22px;
+
+      border:1px solid var(--aqua);
+      border-radius:50px;
+
+      background:rgba(6,61,69,.25);
+    }
+
+
+    /* =========================================
+       HERO CONTENT
+    ========================================= */
+
+    .hero-content{
+      position:relative;
+      z-index:5;
+
+      flex:1;
+
+      display:flex;
+      align-items:center;
+
+      padding:65px 0 140px;
+    }
+
+
+    .hero-copy{
+      max-width:760px;
+    }
+
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      color:#e8eee8;
+
+      font-size:14px;
+      font-weight:700;
+
+      margin-bottom:28px;
+    }
+
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      padding:10px 17px;
+
+      border:1px solid rgba(22,207,198,.9);
+      border-radius:50px;
+
+      color:#eafffd;
+
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:1.7px;
+
+      margin-bottom:25px;
+
+      background:rgba(6,61,69,.35);
+      backdrop-filter:blur(7px);
+    }
+
+
+    .badge::before{
+      content:"";
+      width:7px;
+      height:7px;
+
+      border-radius:50%;
+      background:var(--aqua);
+
+      box-shadow:0 0 15px var(--aqua);
+    }
+
+
+    .hero h1{
+      font-family:Georgia, "Times New Roman", serif;
+
+      font-size:clamp(60px,7vw,105px);
+      line-height:.89;
+
+      letter-spacing:-4px;
+
+      margin-bottom:28px;
+    }
+
+
+    .hero h1 span{
+      color:#e2a47c;
+    }
+
+
+    .hero-subtitle{
+      max-width:620px;
+
+      color:#e7eee8;
+
+      font-size:19px;
+      line-height:1.7;
+    }
+
+
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+
+      margin-top:36px;
+    }
+
+
+    .btn{
+      min-height:56px;
+
+      padding:0 27px;
+
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+
+      border-radius:10px;
+
+      font-size:14px;
+      font-weight:900;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+    }
+
+
+    .btn-primary{
+      background:var(--terracota);
+      color:white;
+
+      box-shadow:0 12px 30px rgba(169,79,45,.25);
+    }
+
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+      background:#bd5a34;
+      box-shadow:0 18px 35px rgba(169,79,45,.32);
+    }
+
+
+    .btn-outline{
+      color:white;
+
+      border:1px solid rgba(255,255,255,.55);
+
+      background:rgba(255,255,255,.05);
+      backdrop-filter:blur(8px);
+    }
+
+
+    .btn-outline:hover{
+      background:white;
+      color:var(--olive-dark);
+    }
+
+
+    /* =========================================
+       INFO BAR
+    ========================================= */
+
+    .info-bar{
+      position:relative;
+      z-index:10;
+
+      margin-top:-62px;
+
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+
+      overflow:hidden;
+
+      background:var(--olive-dark);
+
+      border:
+        1px solid rgba(22,207,198,.25);
+
+      border-radius:22px;
+
+      box-shadow:
+        0 22px 60px rgba(38,55,45,.22);
+    }
+
+
+    .info{
+      position:relative;
+      padding:30px 27px;
+      color:white;
+    }
+
+
+    .info:not(:last-child)::after{
+      content:"";
+
+      position:absolute;
+      right:0;
+      top:25%;
+
+      width:1px;
+      height:50%;
+
+      background:rgba(255,255,255,.16);
+    }
+
+
+    .info small{
+      display:block;
+
+      margin-bottom:8px;
+
+      color:#c8d4c9;
+
+      font-size:11px;
+      font-weight:800;
+
+      letter-spacing:1.4px;
+      text-transform:uppercase;
+    }
+
+
+    .info strong{
+      font-size:20px;
+    }
+
+
+    .info strong.aqua{
+      color:var(--aqua);
+    }
+
+
+    /* =========================================
+       GENERAL SECTIONS
+    ========================================= */
+
+    section{
+      padding:120px 0;
+    }
+
+
+    .eyebrow{
+      display:flex;
+      align-items:center;
+      gap:12px;
+
+      color:var(--terracota);
+
+      font-size:12px;
+      font-weight:900;
+
+      letter-spacing:2px;
+
+      margin-bottom:20px;
+    }
+
+
+    .eyebrow::before{
+      content:"";
+
+      width:40px;
+      height:2px;
+
+      background:var(--aqua);
+    }
+
+
+    .section-title{
+      max-width:850px;
+
+      font-family:Georgia, "Times New Roman", serif;
+
+      color:var(--olive-dark);
+
+      font-size:clamp(42px,5vw,70px);
+      line-height:1;
+
+      letter-spacing:-2.5px;
+
+      margin-bottom:25px;
+    }
+
+
+    .section-title span{
+      color:var(--terracota);
+    }
+
+
+    .description{
+      max-width:720px;
+
+      color:#69766d;
+
+      font-size:17px;
+      line-height:1.8;
+    }
+
+
+    /* =========================================
+       CONCEPTO
+    ========================================= */
+
+    .concept{
+      background:var(--cream-light);
+    }
+
+
+    .concept-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:80px;
+
+      align-items:center;
+    }
+
+
+    .concept-image{
+      position:relative;
+    }
+
+
+    .concept-image img{
+      width:100%;
+
+      border-radius:28px;
+
+      box-shadow:
+        0 30px 70px rgba(60,49,33,.20);
+    }
+
+
+    .reference{
+      position:absolute;
+
+      right:18px;
+      bottom:18px;
+
+      padding:10px 14px;
+
+      background:rgba(38,55,45,.90);
+      color:white;
+
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:50px;
+
+      font-size:11px;
+      font-weight:800;
+
+      letter-spacing:1px;
+
+      backdrop-filter:blur(8px);
+    }
+
+
+    /* =========================================
+       BENEFICIOS
+    ========================================= */
+
+    .benefits{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:14px;
+
+      margin-top:45px;
+    }
+
+
+    .benefit{
+      min-height:175px;
+
+      padding:27px 20px;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+
+      background:white;
+
+      border:1px solid #e8decb;
+      border-radius:18px;
+
+      box-shadow:
+        0 8px 25px rgba(60,50,35,.045);
+
+      transition:.3s;
+    }
+
+
+    .benefit:hover{
+      transform:translateY(-6px);
+
+      border-color:
+        rgba(169,79,45,.45);
+
+      box-shadow:
+        0 20px 40px rgba(60,50,35,.09);
+    }
+
+
+    .benefit-icon{
+      width:47px;
+      height:47px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:50%;
+
+      background:#eef3e9;
+      color:var(--olive);
+
+      font-size:22px;
+    }
+
+
+    .benefit strong{
+      color:var(--olive-dark);
+
+      font-family:Georgia, serif;
+
+      font-size:18px;
+      line-height:1.2;
+    }
+
+
+    /* =========================================
+       INVERSIÓN
+    ========================================= */
+
+    .investment{
+      background:var(--terracota);
+      color:white;
+
+      position:relative;
+      overflow:hidden;
+    }
+
+
+    .investment::after{
+      content:"";
+
+      position:absolute;
+
+      width:500px;
+      height:500px;
+
+      right:-220px;
+      top:-250px;
+
+      border:
+        1px solid rgba(255,255,255,.18);
+
+      border-radius:50%;
+
+      box-shadow:
+        0 0 0 80px rgba(255,255,255,.025),
+        0 0 0 160px rgba(255,255,255,.02);
+    }
+
+
+    .investment-grid{
+      position:relative;
+      z-index:2;
+
+      display:grid;
+      grid-template-columns:1fr .7fr;
+      gap:70px;
+
+      align-items:center;
+    }
+
+
+    .investment h2{
+      color:white;
+    }
+
+
+    .investment h2 span{
+      color:#ffe0bd;
+    }
+
+
+    .investment .description{
+      color:#f7ded1;
+    }
+
+
+    .investment-card{
+      padding:40px;
+
+      background:rgba(74,40,26,.26);
+
+      border:
+        1px solid rgba(255,255,255,.23);
+
+      border-radius:24px;
+
+      backdrop-filter:blur(10px);
+    }
+
+
+    .investment-card small{
+      display:block;
+
+      color:#ffd9bf;
+
+      font-size:11px;
+      font-weight:900;
+
+      letter-spacing:1.6px;
+
+      margin-bottom:12px;
+    }
+
+
+    .investment-card strong{
+      display:block;
+
+      font-family:Georgia, serif;
+
+      font-size:35px;
+      line-height:1.15;
+
+      margin-bottom:25px;
+    }
+
+
+    /* =========================================
+       ENTORNO REAL
+    ========================================= */
+
+    .real{
+      background:#f4ecdc;
+    }
+
+
+    .gallery-header{
+      max-width:760px;
+      margin-bottom:50px;
+    }
+
+
+    .gallery{
+      display:grid;
+
+      grid-template-columns:
+        repeat(12,1fr);
+
+      grid-auto-rows:215px;
+
+      gap:15px;
+    }
+
+
+    .gallery img{
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+
+      border-radius:18px;
+
+      transition:.35s;
+
+      box-shadow:
+        0 8px 25px rgba(49,57,42,.08);
+    }
+
+
+    .gallery img:hover{
+      transform:scale(1.015);
+      filter:brightness(.90);
+    }
+
+
+    .gallery img:nth-child(1){
+      grid-column:span 7;
+      grid-row:span 2;
+    }
+
+
+    .gallery img:nth-child(2){
+      grid-column:span 5;
+    }
+
+
+    .gallery img:nth-child(3){
+      grid-column:span 5;
+    }
+
+
+    .gallery img:nth-child(n+4){
+      grid-column:span 4;
+    }
+
+
+    /* =========================================
+       UBICACIÓN
+    ========================================= */
+
+    .location{
+      background:var(--olive-dark);
+      color:white;
+    }
+
+
+    .location-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+
+      align-items:center;
+    }
+
+
+    .location .section-title{
+      color:white;
+    }
+
+
+    .location .section-title span{
+      color:var(--aqua);
+    }
+
+
+    .location .description{
+      color:#bdcabe;
+    }
+
+
+    .location-card{
+      padding:45px;
+
+      border-radius:25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #334737,
+          #203128
+        );
+
+      border:
+        1px solid rgba(22,207,198,.22);
+
+      box-shadow:
+        0 25px 60px rgba(0,0,0,.17);
+    }
+
+
+    .location-card small{
+      display:block;
+
+      color:var(--aqua);
+
+      font-size:11px;
+      font-weight:900;
+
+      letter-spacing:1.7px;
+
+      margin-bottom:12px;
+    }
+
+
+    .location-card strong{
+      display:block;
+
+      font-family:Georgia, serif;
+
+      font-size:35px;
+
+      margin-bottom:28px;
+    }
+
+
+    /* =========================================
+       CTA
+    ========================================= */
+
+    .cta{
+      padding:100px 0;
+
+      background:
+        linear-gradient(
+          110deg,
+          #f2e5ce,
+          #fbf7ee
+        );
+    }
+
+
+    .cta-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      gap:60px;
+    }
+
+
+    .cta h2{
+      max-width:720px;
+
+      color:var(--olive-dark);
+
+      font-family:Georgia, serif;
+
+      font-size:clamp(45px,5vw,70px);
+      line-height:.98;
+
+      letter-spacing:-2px;
+    }
+
+
+    .cta h2 span{
+      color:var(--terracota);
+    }
+
+
+    .cta p{
+      margin-top:20px;
+
+      color:#6d756c;
+
+      font-size:17px;
+    }
+
+
+    .cta .btn{
+      color:white;
+      background:var(--terranova-dark);
+
+      white-space:nowrap;
+    }
+
+
+    .cta .btn:hover{
+      transform:translateY(-3px);
+      background:#07545e;
+
+      box-shadow:
+        0 15px 35px rgba(6,61,69,.18);
+    }
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer{
+      padding:45px 0;
+
+      background:#192920;
+      color:#aab9ae;
+    }
+
+
+    .footer-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      gap:30px;
+
+      font-size:14px;
+    }
+
+
+    .footer-brand{
+      color:white;
+      font-weight:800;
+    }
+
+
+    .footer-brand span{
+      color:var(--aqua);
+    }
+
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media(max-width:950px){
+
+      .nav-links a:not(.contact){
+        display:none;
+      }
+
+      .info-bar{
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .info:nth-child(2)::after{
+        display:none;
+      }
+
+      .concept-grid,
+      .investment-grid,
+      .location-grid{
+        grid-template-columns:1fr;
+      }
+
+      .benefits{
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .gallery{
+        grid-template-columns:
+          1fr 1fr;
+
+        grid-auto-rows:220px;
+      }
+
+      .gallery img,
+      .gallery img:nth-child(1),
+      .gallery img:nth-child(2),
+      .gallery img:nth-child(3),
+      .gallery img:nth-child(n+4){
+        grid-column:auto;
+        grid-row:auto;
+      }
+
+      .cta-inner{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+    }
+
+
+    @media(max-width:600px){
+
+      .container{
+        width:min(
+          calc(100% - 28px),
+          1180px
+        );
+      }
+
+      .hero{
+        min-height:850px;
+        background-position:center;
+      }
+
+      .nav{
+        height:100px;
+      }
+
+      .logo-box{
+        padding:6px 10px;
+      }
+
+      .logo-box img{
+        width:135px;
+        height:52px;
+      }
+
+      .hero h1{
+        letter-spacing:-2.5px;
+      }
+
+      .hero-subtitle{
+        font-size:16px;
+      }
+
+      .info-bar{
+        margin-top:-45px;
+      }
+
+      .info{
+        padding:22px 17px;
+      }
+
+      .info strong{
+        font-size:16px;
+      }
+
+      section{
+        padding:80px 0;
+      }
+
+      .concept-grid{
+        gap:45px;
+      }
+
+      .benefits{
+        grid-template-columns:1fr;
+      }
+
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .location-card,
+      .investment-card{
+        padding:30px;
+      }
+
+      .footer-inner{
+        flex-direction:column;
+        text-align:center;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<header class="hero">
+
+  <nav class="nav container">
+
+    <a href="index.html"
+       class="logo-box">
+
+      <img
+        src="assets/logo-terranova.png"
+        alt="Terranova Inmobiliaria">
+
+    </a>
+
+
+    <div class="nav-links">
+
+      <a href="index.html">
+        Inicio
+      </a>
+
+      <a href="#concepto">
+        Concepto
+      </a>
+
+      <a href="#entorno">
+        Entorno
+      </a>
+
+      <a href="#ubicacion">
+        Ubicación
+      </a>
+
+      <a
+        href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20Condominio%20Terranova."
+        target="_blank"
+        class="contact">
+
+        Consultar
+
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <div class="hero-content container">
+
+    <div class="hero-copy">
+
+      <a
+        href="index.html#proyectos"
+        class="back">
+
+        ← Volver a proyectos
+
+      </a>
+
+      <br>
+
+
+      <div class="badge">
+        FUTURO CONDOMINIO · CHINCHEROS
+      </div>
+
+
+      <h1>
+        Condominio<br>
+        <span>Terranova.</span>
+      </h1>
+
+
+      <p class="hero-subtitle">
+        Lotes campestres para construir
+        la casa de tus sueños, rodeado
+        de naturaleza y pensado para
+        disfrutar de un estilo de vida
+        tranquilo.
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <a
+          href="#concepto"
+          class="btn btn-primary">
+
+          Conocer el proyecto →
+
+        </a>
+
+
+        <a
+          href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20Condominio%20Terranova."
+          target="_blank"
+          class="btn btn-outline">
+
+          Agenda tu visita
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================================
+     INFORMACIÓN
+========================================= -->
+
+<div class="container info-bar">
+
+  <div class="info">
+
+    <small>Proyecto</small>
+
+    <strong>
+      Lotes campestres
+    </strong>
+
+  </div>
+
+
+  <div class="info">
+
+    <small>Lotes desde</small>
+
+    <strong class="aqua">
+      400 m²
+    </strong>
+
+  </div>
+
+
+  <div class="info">
+
+    <small>Concepto</small>
+
+    <strong>
+      Vida campestre
+    </strong>
+
+  </div>
+
+
+  <div class="info">
+
+    <small>Ubicación</small>
+
+    <strong>
+      Chincheros
+    </strong>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================
+     CONCEPTO
+========================================= -->
+
+<section
+  class="concept"
+  id="concepto">
+
+  <div class="container concept-grid">
+
+
+    <div>
+
+      <div class="eyebrow">
+        CONDOMINIO TERRANOVA
+      </div>
+
+
+      <h2 class="section-title">
+
+        Naturaleza,
+        privacidad y
+        <span>
+          estilo de vida campestre.
+        </span>
+
+      </h2>
+
+
+      <p class="description">
+
+        Una propuesta pensada para quienes
+        buscan amplitud, tranquilidad y
+        contacto con la naturaleza.
+
+        Condominio Terranova proyecta un
+        espacio campestre donde puedas
+        construir tu casa, disfrutar de
+        tu entorno y crear un lugar propio
+        para el descanso.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="concept-image">
+
+      <img
+        src="assets/chincheros/condominio-terranova.jpeg"
+        alt="Propuesta referencial Condominio Terranova">
+
+      <div class="reference">
+        IMAGEN REFERENCIAL
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="container">
+
+    <div class="benefits">
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          ⌂
+        </div>
+
+        <strong>
+          Ingreso principal
+        </strong>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          ↗
+        </div>
+
+        <strong>
+          Vías internas
+        </strong>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          ♧
+        </div>
+
+        <strong>
+          Áreas verdes
+        </strong>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          △
+        </div>
+
+        <strong>
+          Entorno natural
+        </strong>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          ⌂
+        </div>
+
+        <strong>
+          Ideal para casa de campo
+        </strong>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     INVERSIÓN
+========================================= -->
+
+<section class="investment">
+
+  <div class="container investment-grid">
+
+
+    <div>
+
+      <div
+        class="eyebrow"
+        style="color:#ffe0bd">
+
+        INVERSIÓN Y DESCANSO
+
+      </div>
+
+
+      <h2 class="section-title">
+
+        Un lugar para
+        construir tus
+        <span>
+          próximos planes.
+        </span>
+
+      </h2>
+
+
+      <p class="description">
+
+        Un concepto pensado para combinar
+        naturaleza, privacidad y amplitud
+        en un entorno campestre.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="investment-card">
+
+      <small>
+        CONDOMINIO TERRANOVA
+      </small>
+
+
+      <strong>
+        Proyecto ideal
+        para inversión
+        y descanso.
+      </strong>
+
+
+      <a
+        href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20Condominio%20Terranova."
+        target="_blank"
+        class="btn btn-outline">
+
+        Solicitar información →
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ENTORNO REAL
+========================================= -->
+
+<section
+  class="real"
+  id="entorno">
+
+  <div class="container">
+
+
+    <div class="gallery-header">
+
+      <div class="eyebrow">
+        ENTORNO REAL
+      </div>
+
+
+      <h2 class="section-title">
+
+        Conoce dónde
+        nace
+        <span>
+          Condominio Terranova.
+        </span>
+
+      </h2>
+
+
+      <p class="description">
+
+        Estas fotografías muestran
+        el entorno real del terreno
+        en Chincheros.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="gallery">
+
+      <img
+        src="assets/chincheros/terreno-01.jpg"
+        alt="Terreno Condominio Terranova">
+
+      <img
+        src="assets/chincheros/terreno-02.jpg"
+        alt="Terreno Condominio Terranova">
+
+      <img
+        src="assets/chincheros/terreno-03.jpg"
+        alt="Terreno Condominio Terranova">
+
+      <img
+        src="assets/chincheros/terreno-04.jpg"
+        alt="Terreno Condominio Terranova">
+
+      <img
+        src="assets/chincheros/terreno-05.jpg"
+        alt="Terreno Condominio Terranova">
+
+      <img
+        src="assets/chincheros/terreno-06.jpg"
+        alt="Terreno Condominio Terranova">
+
+      <img
+        src="assets/chincheros/terreno-07.jpg"
+        alt="Terreno Condominio Terranova">
+
+      <img
+        src="assets/chincheros/terreno-08.jpg"
+        alt="Terreno Condominio Terranova">
+
+      <img
+        src="assets/chincheros/terreno-09.jpg"
+        alt="Terreno Condominio Terranova">
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     UBICACIÓN
+========================================= -->
+
+<section
+  class="location"
+  id="ubicacion">
+
+  <div class="container location-grid">
+
+
+    <div>
+
+      <div
+        class="eyebrow"
+        style="color:#dca17b">
+
+        UBICACIÓN
+      </div>
+
+
+      <h2 class="section-title">
+
+        Chincheros,
+        <span>
+          Apurímac.
+        </span>
+
+      </h2>
+
+
+      <p class="description">
+
+        Conoce la ubicación del proyecto
+        y descubre el entorno donde se
+        proyecta Condominio Terranova.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="location-card">
+
+      <small>
+        CONDOMINIO TERRANOVA
+      </small>
+
+
+      <strong>
+        Visita el proyecto.
+      </strong>
+
+
+      <a
+        href="https://www.google.com/maps/@-13.5111819,-73.8091986,860m/data=!3m1!1e3?entry=ttu"
+        target="_blank"
+        class="btn btn-primary">
+
+        Ver ubicación en Google Maps →
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+
+<section class="cta">
+
+  <div class="container cta-inner">
+
+
+    <div>
+
+      <h2>
+
+        Naturaleza para
+        vivir.
+
+        <span>
+          Espacio para crecer.
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        Agenda tu visita y solicita
+        más información sobre
+        Condominio Terranova.
+
+      </p>
+
+    </div>
+
+
+
+    <a
+      href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20Condominio%20Terranova."
+      target="_blank"
+      class="btn">
+
+      Consultar por WhatsApp →
+
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+
+      TERRANOVA
+      <span>INMOBILIARIA</span>
+
+    </div>
+
+
+    <div>
+      Condominio Terranova · Chincheros, Apurímac
+    </div>
+
+
+    <a href="index.html">
+      Volver al inicio ↑
+    </a>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
