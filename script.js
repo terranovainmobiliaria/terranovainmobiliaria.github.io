@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // ==========================================
 
 function toggleWhatsapp(event) {
-
   if (event) {
     event.preventDefault();
     event.stopPropagation();
@@ -63,14 +62,16 @@ function toggleWhatsapp(event) {
 
   const menu = document.getElementById("whatsappMenu");
 
-  if (!menu) {
-    console.log("No se encontró whatsappMenu");
-    return;
+  if (!menu) return;
+
+  const abierto = menu.classList.contains("open");
+
+  if (abierto) {
+    menu.classList.remove("open");
+  } else {
+    menu.classList.add("open");
   }
-
-  menu.classList.toggle("open");
 }
-
 // ==========================================
 // MENÚ WHATSAPP INFERIOR
 // ==========================================
