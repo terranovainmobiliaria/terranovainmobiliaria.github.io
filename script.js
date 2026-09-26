@@ -1,27 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Mostrar elementos animados
+  // ==========================================
+  // ANIMACIONES AL HACER SCROLL
+  // ==========================================
+
   const elements = document.querySelectorAll(".reveal");
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
+  // Si el navegador soporta IntersectionObserver
+  if ("IntersectionObserver" in window) {
 
-  elements.forEach((element) => {
-    observer.observe(element);
-  });
+    const observer = new IntersectionObserver((entries) => {
 
-  // Mostrar inmediatamente lo que está en la portada
-  setTimeout(() => {
-    document.querySelectorAll(".hero .reveal").forEach((element) => {
-      element.classList.add("active");
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+
+          // Una vez mostrado, dejamos de observarlo
+          observer.unobserve(entry.target);
+        }
+
+      });
+
+    }, {
+      threshold: 0.1,
+      rootMargin: "0px 0px -40px 0px"
     });
-  }, 150);
+
+    elements.forEach((element) => {
+      observer.observe(element);
+    });
+
+  } else {
+
+    // Respaldo para navegadores antiguos
+    elements.forEach((element) => {
+      element.classList.add("visible");
+    });
+
+  }
+
+
+  // ==========================================
+  // MOSTRAR PORTADA INMEDIATAMENTE
+  // ==========================================
+
+  document.querySelectorAll(".hero .reveal").forEach((element) => {
+    element.classList.add("visible");
+  });
 
 });
