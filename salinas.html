@@ -1,2 +1,1162 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Proyecto Salinas | Terranova</title><link rel="icon" href="assets/logo-terranova.png"><link rel="stylesheet" href="style.css"></head><body><header class="subhero" style="--bg:url('assets/salinas/terreno-01.jpg')"><nav class="nav wrap"><a href="index.html"><img src="assets/logo-terranova.png"></a><div class="links"><a href="index.html">Inicio</a><a href="#galeria">Galería</a><a class="pill primary" href="https://wa.me/51941201577">Consultar</a></div></nav><div class="head wrap"><a class="back" href="index.html">← Volver a proyectos</a><h1>Proyecto Salinas</h1><p class="lead" style="color:#e4f1ef">Tu terreno para construir tu futuro en Andahuaylas.</p></div></header><main><div class="wrap stats"><div class="stat"><small>Área</small><strong>94.12 m²</strong></div><div class="stat"><small>Lotes</small><strong>10</strong></div><div class="stat"><small>Servicios</small><strong>Completos</strong></div><div class="stat"><small>Ubicación</small><strong>Andahuaylas</strong></div></div><section class="section"><div class="wrap maprow reveal"><div><span class="tag">Proyecto Salinas</span><h2 class="title">Cerca de lo que necesitas.</h2><p class="lead">Ubicado en una zona tranquila y con proyección de crecimiento, cerca del Centro de Salud Villa Salinas, EsSalud, UGEL Andahuaylas, Colegio Villarreal, Jr. Ayacucho y Av. Industrial.</p><div class="grid3" style="grid-template-columns:repeat(3,1fr)"><div class="feature"><b>Agua potable</b></div><div class="feature"><b>Desagüe</b></div><div class="feature"><b>Energía eléctrica</b></div></div></div><img style="border-radius:24px" src="assets/salinas/lotes-promocional.png"></div></section><section class="section soft" id="galeria"><div class="wrap"><span class="tag">Galería</span><h2 class="title">Conoce el terreno.</h2><div class="gallery"> 
-<img data-lightbox src="assets/salinas/terreno-01.jpg"><img data-lightbox src="assets/salinas/terreno-02.jpg"><img data-lightbox src="assets/salinas/terreno-03.jpg"><img data-lightbox src="assets/salinas/terreno-04.jpg"><img data-lightbox src="assets/salinas/terreno-05.jpg"><img data-lightbox src="assets/salinas/terreno-06.jpg"><img data-lightbox src="assets/salinas/terreno-07.jpg"><img data-lightbox src="assets/salinas/terreno-08.jpg" alt="Lote 9"><img data-lightbox src="assets/salinas/lotes-promocional.png"></div></div></section><section class="section"><div class="wrap"><span class="tag">Recorrido visual</span><h2 class="title">Míralo más de cerca.</h2><div class="media"><video controls playsinline preload="metadata" src="assets/salinas/recorrido-salinas.mp4"></video></div><div class="social"><a class="btn dark" href="assets/salinas/plano-salinas.pdf" target="_blank">Ver plano PDF</a><a class="btn primary" href="https://wa.me/51941201577?text=Hola%20Terranova,%20quiero%20información%20sobre%20Proyecto%20Salinas" target="_blank">Consultar por WhatsApp</a></div></div></section></main><div class="lightbox"><span class="close">×</span><img></div><footer class="footer"><div class="wrap">Terranova Inmobiliaria · Proyecto Salinas</div></footer><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Proyecto Salinas | Terranova Inmobiliaria</title>
+
+  <link rel="icon" type="image/png" href="assets/logo-terranova.png">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#f7faf9;
+      color:#062f38;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      display:block;
+      width:100%;
+    }
+
+    .container{
+      width:min(1180px, calc(100% - 40px));
+      margin:auto;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      color:white;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(1,35,44,.94) 0%,
+          rgba(1,45,53,.80) 42%,
+          rgba(1,36,44,.30) 100%
+        ),
+        url("assets/salinas/terreno-01.jpg");
+
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(23,210,202,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23,210,202,.06) 1px, transparent 1px);
+      background-size:55px 55px;
+      pointer-events:none;
+    }
+
+
+    /* =========================
+       NAVEGACIÓN
+    ========================= */
+
+    .nav{
+      position:relative;
+      z-index:10;
+      height:125px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo-box{
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(255,255,255,.6);
+      padding:8px 15px;
+      border-radius:16px;
+
+      box-shadow:0 10px 30px rgba(0,0,0,.15);
+      backdrop-filter:blur(10px);
+    }
+
+    .logo-box img{
+      width:210px;
+      height:70px;
+      object-fit:contain;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:32px;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .nav-links a{
+      color:white;
+      transition:.25s;
+    }
+
+    .nav-links a:hover{
+      color:#20d8d0;
+    }
+
+    .nav-links .contact{
+      padding:14px 22px;
+      border:1px solid #20d8d0;
+      border-radius:50px;
+    }
+
+
+    /* =========================
+       CONTENIDO HERO
+    ========================= */
+
+    .hero-content{
+      position:relative;
+      z-index:3;
+
+      flex:1;
+      display:flex;
+      align-items:center;
+
+      padding:70px 0 140px;
+    }
+
+    .hero-copy{
+      max-width:720px;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      margin-bottom:28px;
+
+      font-weight:700;
+      font-size:14px;
+      color:#c9e7e4;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      border:1px solid #22d8d0;
+      border-radius:50px;
+
+      padding:10px 17px;
+      margin-bottom:24px;
+
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:1.7px;
+    }
+
+    .badge::before{
+      content:"";
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#20d8d0;
+    }
+
+    h1{
+      font-size:clamp(55px,7vw,105px);
+      line-height:.92;
+      letter-spacing:-5px;
+      margin-bottom:28px;
+    }
+
+    h1 span{
+      color:#20d8d0;
+    }
+
+    .hero-text{
+      max-width:630px;
+      font-size:19px;
+      line-height:1.7;
+      color:#d8e9e7;
+    }
+
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:35px;
+    }
+
+    .btn{
+      min-height:56px;
+      padding:0 27px;
+
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+
+      border-radius:10px;
+      font-weight:800;
+
+      transition:.25s;
+    }
+
+    .btn-primary{
+      background:#20d8d0;
+      color:#032d35;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+      box-shadow:0 12px 30px rgba(32,216,208,.25);
+    }
+
+    .btn-outline{
+      border:1px solid rgba(255,255,255,.45);
+      color:white;
+    }
+
+    .btn-outline:hover{
+      background:white;
+      color:#06343c;
+    }
+
+
+    /* =========================
+       ESTADÍSTICAS
+    ========================= */
+
+    .stats{
+      position:relative;
+      z-index:10;
+
+      margin-top:-65px;
+
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+
+      background:#063c42;
+      border:1px solid rgba(30,211,202,.35);
+      border-radius:22px;
+
+      overflow:hidden;
+
+      box-shadow:0 20px 50px rgba(0,35,42,.18);
+    }
+
+    .stat{
+      padding:30px 28px;
+      color:white;
+      position:relative;
+    }
+
+    .stat:not(:last-child)::after{
+      content:"";
+      position:absolute;
+      right:0;
+      top:25%;
+      height:50%;
+      width:1px;
+      background:rgba(255,255,255,.18);
+    }
+
+    .stat small{
+      display:block;
+      color:#8eb9b6;
+      font-size:12px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:1.3px;
+      margin-bottom:8px;
+    }
+
+    .stat strong{
+      font-size:22px;
+    }
+
+
+    /* =========================
+       SECCIONES
+    ========================= */
+
+    section{
+      padding:120px 0;
+    }
+
+    .eyebrow{
+      display:flex;
+      align-items:center;
+      gap:12px;
+
+      color:#0abcb5;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:2px;
+
+      margin-bottom:20px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:40px;
+      height:2px;
+      background:#16cfc7;
+    }
+
+    .section-title{
+      font-size:clamp(38px,5vw,67px);
+      line-height:1;
+      letter-spacing:-2.5px;
+      margin-bottom:25px;
+    }
+
+    .section-title span{
+      color:#10bbb5;
+    }
+
+    .description{
+      font-size:17px;
+      line-height:1.8;
+      color:#5c7376;
+    }
+
+
+    /* =========================
+       UBICACIÓN
+    ========================= */
+
+    .location-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+      align-items:center;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:35px;
+    }
+
+    .service{
+      background:white;
+      border:1px solid #dce9e7;
+      padding:22px 18px;
+      border-radius:14px;
+
+      font-weight:800;
+
+      box-shadow:0 8px 25px rgba(0,45,50,.05);
+    }
+
+    .service::before{
+      content:"✓";
+      display:block;
+      color:#10bfb8;
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .promo-image{
+      position:relative;
+    }
+
+    .promo-image img{
+      border-radius:25px;
+      box-shadow:0 30px 70px rgba(0,45,50,.18);
+    }
+
+
+    /* =========================
+       LOTES
+    ========================= */
+
+    .lots{
+      background:#eaf4f2;
+    }
+
+    .lots-header{
+      max-width:750px;
+      margin-bottom:55px;
+    }
+
+    .lots-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:14px;
+    }
+
+    .lot{
+      background:white;
+      border-radius:16px;
+      padding:25px 20px;
+
+      border:1px solid #d8e7e5;
+
+      transition:.25s;
+    }
+
+    .lot:hover{
+      transform:translateY(-5px);
+      border-color:#13c9c1;
+      box-shadow:0 15px 35px rgba(0,50,55,.09);
+    }
+
+    .lot span{
+      color:#0cbdb6;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:1px;
+    }
+
+    .lot h3{
+      font-size:20px;
+      margin:8px 0 12px;
+    }
+
+    .lot p{
+      color:#718487;
+      font-size:14px;
+      line-height:1.6;
+    }
+
+
+    /* =========================
+       GALERÍA
+    ========================= */
+
+    .gallery-header{
+      max-width:750px;
+      margin-bottom:50px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      grid-auto-rows:220px;
+      gap:15px;
+    }
+
+    .gallery img{
+      height:100%;
+      object-fit:cover;
+      border-radius:18px;
+      cursor:pointer;
+
+      transition:.35s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.015);
+      filter:brightness(.88);
+    }
+
+    .gallery img:nth-child(1){
+      grid-column:span 7;
+      grid-row:span 2;
+    }
+
+    .gallery img:nth-child(2){
+      grid-column:span 5;
+    }
+
+    .gallery img:nth-child(3){
+      grid-column:span 5;
+    }
+
+    .gallery img:nth-child(n+4){
+      grid-column:span 4;
+    }
+
+
+    /* =========================
+       VIDEO
+    ========================= */
+
+    .visual{
+      background:#052f37;
+      color:white;
+    }
+
+    .visual .description{
+      color:#a9c7c5;
+    }
+
+    .video-box{
+      margin-top:45px;
+      border-radius:25px;
+      overflow:hidden;
+
+      border:1px solid rgba(26,216,207,.25);
+
+      box-shadow:0 25px 70px rgba(0,0,0,.25);
+    }
+
+    .video-box video{
+      width:100%;
+      display:block;
+      background:#000;
+      max-height:680px;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta{
+      background:
+        linear-gradient(120deg,#0bc5bd,#19ded4);
+
+      padding:90px 0;
+    }
+
+    .cta-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:50px;
+    }
+
+    .cta h2{
+      font-size:clamp(40px,5vw,65px);
+      letter-spacing:-2px;
+      line-height:1;
+      max-width:700px;
+    }
+
+    .cta p{
+      margin-top:18px;
+      font-size:17px;
+      color:#07535a;
+    }
+
+    .cta .btn{
+      background:#05363e;
+      color:white;
+      white-space:nowrap;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer{
+      background:#032b32;
+      color:#a7c6c3;
+      padding:45px 0;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:25px;
+    }
+
+    .footer-inner img{
+      width:170px;
+      filter:brightness(0) invert(1);
+      opacity:.9;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:900px){
+
+      .nav-links a:not(.contact){
+        display:none;
+      }
+
+      .logo-box img{
+        width:160px;
+      }
+
+      .stats{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .stat:nth-child(2)::after{
+        display:none;
+      }
+
+      .location-grid{
+        grid-template-columns:1fr;
+        gap:50px;
+      }
+
+      .lots-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .gallery{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:220px;
+      }
+
+      .gallery img,
+      .gallery img:nth-child(1),
+      .gallery img:nth-child(2),
+      .gallery img:nth-child(3),
+      .gallery img:nth-child(n+4){
+        grid-column:auto;
+        grid-row:auto;
+      }
+
+      .cta-inner{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .container{
+        width:min(100% - 28px,1180px);
+      }
+
+      .hero{
+        min-height:850px;
+      }
+
+      .nav{
+        height:100px;
+      }
+
+      .logo-box{
+        padding:6px 10px;
+      }
+
+      .logo-box img{
+        width:135px;
+        height:55px;
+      }
+
+      h1{
+        letter-spacing:-3px;
+      }
+
+      .hero-text{
+        font-size:16px;
+      }
+
+      .stats{
+        grid-template-columns:1fr 1fr;
+        margin-top:-45px;
+      }
+
+      .stat{
+        padding:22px 18px;
+      }
+
+      .stat strong{
+        font-size:17px;
+      }
+
+      section{
+        padding:80px 0;
+      }
+
+      .services{
+        grid-template-columns:1fr;
+      }
+
+      .lots-grid{
+        grid-template-columns:1fr;
+      }
+
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .footer-inner{
+        flex-direction:column;
+        text-align:center;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =====================================
+       HERO
+  ====================================== -->
+
+  <header class="hero">
+
+    <nav class="nav container">
+
+      <a href="index.html" class="logo-box">
+        <img src="assets/logo-terranova.png"
+             alt="Terranova Inmobiliaria">
+      </a>
+
+      <div class="nav-links">
+
+        <a href="index.html">Inicio</a>
+
+        <a href="#ubicacion">
+          Ubicación
+        </a>
+
+        <a href="#galeria">
+          Galería
+        </a>
+
+        <a
+          href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas."
+          target="_blank"
+          class="contact">
+          Consultar
+        </a>
+
+      </div>
+
+    </nav>
+
+
+    <div class="hero-content container">
+
+      <div class="hero-copy">
+
+        <a href="index.html#proyectos" class="back">
+          ← Volver a proyectos
+        </a>
+
+        <br>
+
+        <div class="badge">
+          ANDAHUAYLAS · APURÍMAC
+        </div>
+
+        <h1>
+          Proyecto<br>
+          <span>Salinas.</span>
+        </h1>
+
+        <p class="hero-text">
+          Un espacio propio para construir tu hogar,
+          crear recuerdos y darle seguridad a tu familia.
+          Terrenos en una zona tranquila y con excelente
+          proyección de inversión.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#galeria" class="btn btn-primary">
+            Ver el proyecto →
+          </a>
+
+          <a
+            href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas."
+            target="_blank"
+            class="btn btn-outline">
+            Consultar disponibilidad
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================
+       DATOS PRINCIPALES
+  ====================================== -->
+
+  <div class="container stats">
+
+    <div class="stat">
+      <small>Área por lote</small>
+      <strong>94.12 m²</strong>
+    </div>
+
+    <div class="stat">
+      <small>Disponibilidad</small>
+      <strong>10 lotes</strong>
+    </div>
+
+    <div class="stat">
+      <small>Servicios</small>
+      <strong>Completos</strong>
+    </div>
+
+    <div class="stat">
+      <small>Ubicación</small>
+      <strong>Andahuaylas</strong>
+    </div>
+
+  </div>
+
+
+  <!-- =====================================
+       UBICACIÓN
+  ====================================== -->
+
+  <section id="ubicacion">
+
+    <div class="container location-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          PROYECTO SALINAS
+        </div>
+
+        <h2 class="section-title">
+          Cerca de lo que
+          <span>necesitas.</span>
+        </h2>
+
+        <p class="description">
+          Ubicado en una zona tranquila y con proyección
+          de crecimiento. A pocos metros del Centro de Salud
+          Villa Salinas, a tres cuadras de EsSalud,
+          a una cuadra de la UGEL Andahuaylas y muy cerca
+          del Colegio Villarreal, Jr. Ayacucho y
+          Av. Industrial.
+        </p>
+
+        <div class="services">
+
+          <div class="service">
+            Agua potable
+          </div>
+
+          <div class="service">
+            Desagüe
+          </div>
+
+          <div class="service">
+            Energía eléctrica
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="promo-image">
+
+        <img
+          src="assets/salinas/lotes-promocional.png"
+          alt="Lotes Proyecto Salinas">
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       LOTES
+  ====================================== -->
+
+  <section class="lots">
+
+    <div class="container">
+
+      <div class="lots-header">
+
+        <div class="eyebrow">
+          LOTES DISPONIBLES
+        </div>
+
+        <h2 class="section-title">
+          Un espacio para
+          <span>tu futuro.</span>
+        </h2>
+
+        <p class="description">
+          Diez lotes de 94.12 m² con diferentes perímetros,
+          en un entorno natural, tranquilo y con
+          excelente ubicación.
+        </p>
+
+      </div>
+
+
+      <div class="lots-grid">
+
+        <div class="lot">
+          <span>LOTE 01</span>
+          <h3>94.12 m²</h3>
+          <p>Perímetro: 42.42 m</p>
+        </div>
+
+        <div class="lot">
+          <span>LOTE 02</span>
+          <h3>94.12 m²</h3>
+          <p>Perímetro: 41.47 m</p>
+        </div>
+
+        <div class="lot">
+          <span>LOTE 03</span>
+          <h3>94.12 m²</h3>
+          <p>Perímetro: 42.97 m</p>
+        </div>
+
+        <div class="lot">
+          <span>LOTE 04</span>
+          <h3>94.12 m²</h3>
+          <p>Perímetro: 41.95 m</p>
+        </div>
+
+        <div class="lot">
+          <span>LOTE 05</span>
+          <h3>94.12 m²</h3>
+          <p>Perímetro: 40.71 m</p>
+        </div>
+
+        <div class="lot">
+          <span>LOTE 06</span>
+          <h3>94.12 m²</h3>
+          <p>Perímetro: 40.03 m</p>
+        </div>
+
+        <div class="lot">
+          <span>LOTE 07</span>
+          <h3>94.12 m²</h3>
+          <p>Perímetro: 40.28 m</p>
+        </div>
+
+        <div class="lot">
+          <span>LOTE 08</span>
+          <h3>94.12 m²</h3>
+          <p>Perímetro: 39.93 m</p>
+        </div>
+
+        <div class="lot">
+          <span>LOTE 09</span>
+          <h3>94.12 m²</h3>
+          <p>Perímetro: 40.13 m</p>
+        </div>
+
+        <div class="lot">
+          <span>LOTE 10</span>
+          <h3>94.12 m²</h3>
+          <p>Perímetro: 40.06 m</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       GALERÍA
+  ====================================== -->
+
+  <section id="galeria">
+
+    <div class="container">
+
+      <div class="gallery-header">
+
+        <div class="eyebrow">
+          GALERÍA
+        </div>
+
+        <h2 class="section-title">
+          Conoce el
+          <span>terreno.</span>
+        </h2>
+
+        <p class="description">
+          Explora diferentes vistas del Proyecto Salinas
+          y conoce el entorno donde puedes construir
+          tu próximo espacio.
+        </p>
+
+      </div>
+
+
+      <div class="gallery">
+
+        <img
+          src="assets/salinas/terreno-01.jpg"
+          alt="Proyecto Salinas">
+
+        <img
+          src="assets/salinas/terreno-02.jpg"
+          alt="Proyecto Salinas">
+
+        <img
+          src="assets/salinas/terreno-03.jpg"
+          alt="Proyecto Salinas">
+
+        <img
+          src="assets/salinas/terreno-04.jpg"
+          alt="Proyecto Salinas">
+
+        <img
+          src="assets/salinas/terreno-05.jpg"
+          alt="Proyecto Salinas">
+
+        <img
+          src="assets/salinas/terreno-06.jpg"
+          alt="Proyecto Salinas">
+
+        <img
+          src="assets/salinas/terreno-07.jpg"
+          alt="Proyecto Salinas">
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       RECORRIDO
+  ====================================== -->
+
+  <section class="visual">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        RECORRIDO VISUAL
+      </div>
+
+      <h2 class="section-title">
+        Míralo más
+        <span>de cerca.</span>
+      </h2>
+
+      <p class="description">
+        Conoce el Proyecto Salinas a través de nuestro
+        recorrido y descubre el entorno del proyecto.
+      </p>
+
+      <div class="video-box">
+
+        <video
+          controls
+          playsinline
+          preload="metadata">
+
+          <source
+            src="assets/salinas/recorrido-salinas.mp4"
+            type="video/mp4">
+
+        </video>
+
+      </div>
+
+      <div class="hero-buttons">
+
+        <a
+          href="assets/salinas/plano-salinas.pdf"
+          target="_blank"
+          class="btn btn-outline">
+          Ver plano del proyecto
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       CONTACTO
+  ====================================== -->
+
+  <section class="cta">
+
+    <div class="container cta-inner">
+
+      <div>
+
+        <h2>
+          Tu terreno.<br>
+          Tu futuro.
+        </h2>
+
+        <p>
+          Consulta disponibilidad y recibe más información
+          sobre Proyecto Salinas.
+        </p>
+
+      </div>
+
+      <a
+        href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas."
+        target="_blank"
+        class="btn">
+        Consultar por WhatsApp →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       FOOTER
+  ====================================== -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        © Terranova Inmobiliaria · Proyecto Salinas
+      </div>
+
+      <a href="index.html">
+        Volver a Terranova Inmobiliaria ↑
+      </a>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
