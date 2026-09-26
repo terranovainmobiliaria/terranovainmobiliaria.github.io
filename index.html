@@ -1,7 +1,542 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Terranova Inmobiliaria | Apurímac</title><meta name="description" content="Terranova Inmobiliaria. Proyectos inmobiliarios en Apurímac."><link rel="icon" href="assets/logo-terranova.png"><link rel="stylesheet" href="style.css"></head><body>
-<header class="hero"><nav class="nav wrap"><a href="index.html"><img src="assets/logo-terranova.png" alt="Terranova"></a><div class="links"><a href="#nosotros">Nosotros</a><a href="#proyectos">Proyectos</a><a href="#oficina">Oficina</a><a class="pill primary" href="https://wa.me/51941201577">Contacto</a></div></nav><div class="hero-content wrap"><div class="eyebrow">Terranova Inmobiliaria · Apurímac</div><h1>Espacios para construir tu <span style="color:#35d5c7">futuro.</span></h1><p>Terrenos y proyectos inmobiliarios pensados para construir, invertir y hacer realidad tus próximos planes.</p><div class="social"><a class="btn wa" href="https://wa.me/51941201577" target="_blank">WhatsApp</a><a class="btn" href="https://www.facebook.com/profile.php?id=61591862877643" target="_blank">Facebook</a><a class="btn" href="https://www.tiktok.com/@terranovainmobiliaria01" target="_blank">TikTok</a></div></div></header>
-<section class="section" id="nosotros"><div class="wrap reveal"><span class="tag">Terranova</span><h2 class="title">Más que terrenos, nuevos comienzos.</h2><p class="lead">Desarrollamos proyectos inmobiliarios en Apurímac con alternativas para vivienda e inversión. Nuestra web crecerá junto con nuestros proyectos, sin limitarse a una sola ciudad.</p><div class="grid3"><div class="feature"><span class="ico">⌂</span><b>Construye tu hogar</b><span>Encuentra el espacio para tu próximo proyecto.</span></div><div class="feature"><span class="ico">↗</span><b>Invierte en tu futuro</b><span>Proyectos con visión de crecimiento.</span></div><div class="feature"><span class="ico">◇</span><b>Conoce cada proyecto</b><span>Fotos, planos, ubicación y características en páginas independientes.</span></div></div></div></section>
-<section class="section soft" id="proyectos"><div class="wrap"><span class="tag">Nuestros proyectos</span><h2 class="title">Elige dónde comienza tu próxima historia.</h2><div class="projects"><a class="project reveal" href="salinas.html"><img src="assets/salinas/terreno-01.jpg"><div class="project-copy"><span class="chip">Andahuaylas</span><h3>Proyecto Salinas</h3><p>Lotes de 94.12 m² · Servicios completos</p><b>Explorar proyecto →</b></div></a><a class="project reveal" href="chincheros.html"><img src="assets/chincheros/terreno-01.jpg"><div class="project-copy"><span class="chip">Chincheros</span><span class="chip">Futura residencial</span><h3>Proyecto Chincheros</h3><p>Lotes desde 400 m² · Servicios básicos</p><b>Explorar proyecto →</b></div></a></div></div></section>
-<section class="section" id="oficina"><div class="wrap maprow reveal"><div><span class="tag">Nuestra oficina</span><h2 class="title">Conversemos sobre tu próximo terreno.</h2><p class="lead">Visítanos en el Centro Comercial Mall Trelles, Jr. Juan Antonio Trelles 269, primer piso, Andahuaylas.</p><div class="social"><a class="btn dark" href="https://maps.app.goo.gl/uDidrtBjvQDTBPEQA" target="_blank">Ver ubicación</a><a class="btn primary" href="https://wa.me/51922836427" target="_blank">+51 922 836 427</a></div></div><div class="mapcard"><b>Terranova Inmobiliaria</b><p>Atención y asesoría para conocer nuestros proyectos.</p><p>📞 +51 941 201 577<br>📞 +51 922 836 427</p></div></div></section>
-<section class="section"><div class="wrap cta reveal"><div><span class="tag" style="color:#65ddd4">¿Hablamos?</span><h2 class="title" style="margin-bottom:0">Tu próximo espacio puede empezar aquí.</h2></div><a class="btn primary" href="https://wa.me/51941201577">Escríbenos por WhatsApp</a></div></section>
-<footer class="footer"><div class="wrap footer-grid"><div><img src="assets/logo-terranova.png"><p>Terranova Inmobiliaria · Apurímac</p></div><div><b>Proyectos</b><p><a href="salinas.html">Proyecto Salinas</a><br><a href="chincheros.html">Proyecto Chincheros</a></p></div><div><b>Contacto</b><p>+51 941 201 577<br>+51 922 836 427</p></div></div></footer><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Terranova Inmobiliaria | Apurímac</title>
+
+  <meta name="description"
+        content="Terranova Inmobiliaria. Terrenos y proyectos inmobiliarios en Apurímac.">
+
+  <link rel="icon" type="image/png" href="assets/logo-terranova.png">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ======================================================
+     PORTADA PRINCIPAL
+====================================================== -->
+
+<header class="hero" id="inicio">
+
+  <!-- Fondo y elementos decorativos -->
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="topography"></div>
+
+  <div class="decor decor-1"></div>
+  <div class="decor decor-2"></div>
+  <div class="decor decor-3"></div>
+
+  <!-- NAV -->
+  <nav class="navbar">
+
+    <a href="index.html" class="brand">
+      <img src="assets/logo-terranova.png"
+           alt="Terranova Inmobiliaria"
+           class="brand-logo">
+    </a>
+
+    <div class="nav-links">
+      <a href="#inicio" class="active">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+
+    <div class="nav-social">
+
+      <a
+        href="https://www.facebook.com/profile.php?id=61591862877643"
+        target="_blank"
+        class="social-circle facebook"
+        aria-label="Facebook">
+        <span>f</span>
+      </a>
+
+      <a
+        href="https://www.tiktok.com/@terranovainmobiliaria01"
+        target="_blank"
+        class="social-circle tiktok"
+        aria-label="TikTok">
+        <span>♪</span>
+      </a>
+
+      <button class="contact-top" type="button" onclick="toggleWhatsapp()">
+        <span class="wa-icon">◉</span>
+        Contáctanos
+        <span class="chevron">⌄</span>
+      </button>
+
+      <div class="whatsapp-menu" id="whatsappMenu">
+        <p>¿Con quién deseas comunicarte?</p>
+
+        <a href="https://wa.me/51922836427" target="_blank">
+          <strong>WhatsApp 1</strong>
+          <span>+51 922 836 427</span>
+        </a>
+
+        <a href="https://wa.me/51941201577" target="_blank">
+          <strong>WhatsApp 2</strong>
+          <span>+51 941 201 577</span>
+        </a>
+      </div>
+
+    </div>
+
+    <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </nav>
+
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="hero-container">
+
+    <!-- IZQUIERDA -->
+    <div class="hero-copy reveal">
+
+      <div class="location-pill">
+        <span class="location-pin">●</span>
+        APURÍMAC, PERÚ
+      </div>
+
+      <h1>
+        Espacios para<br>
+        construir tu<br>
+        <span>futuro.</span>
+      </h1>
+
+      <div class="title-stroke"></div>
+
+      <p class="hero-description">
+        Encuentra terrenos y proyectos inmobiliarios
+        para construir, invertir y hacer realidad
+        tus próximos planes.
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="#proyectos" class="btn btn-primary">
+          <span class="grid-icon">⊞</span>
+          Ver proyectos
+          <span class="arrow">→</span>
+        </a>
+
+        <button type="button" class="btn btn-glass" onclick="toggleWhatsapp()">
+          <span>◌</span>
+          Contáctanos
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- CENTRO DECORATIVO -->
+    <div class="hero-center reveal">
+
+      <div class="region-script">
+        <span>Apurímac</span>
+        <small>TIERRA DE GRANDES<br>OPORTUNIDADES</small>
+      </div>
+
+      <div class="map-marker">
+        <div class="marker-dot"></div>
+      </div>
+
+      <div class="route-line"></div>
+
+    </div>
+
+
+    <!-- PROYECTOS -->
+    <div class="project-stack" id="proyectos">
+
+      <!-- SALINAS -->
+      <a href="salinas.html" class="project-card project-card-1 reveal">
+
+        <img
+          src="assets/salinas/terreno-01.jpg"
+          alt="Proyecto Salinas">
+
+        <div class="project-shade"></div>
+
+        <div class="project-badge">
+          TERRENOS
+        </div>
+
+        <div class="project-info">
+          <h3>Proyecto Salinas</h3>
+          <p>Andahuaylas, Apurímac</p>
+        </div>
+
+        <div class="project-arrow">
+          →
+        </div>
+
+      </a>
+
+
+      <!-- CHINCHEROS -->
+      <a href="chincheros.html" class="project-card project-card-2 reveal">
+
+        <img
+          src="assets/chincheros/propuesta-residencial.png"
+          alt="Proyecto Chincheros">
+
+        <div class="project-shade"></div>
+
+        <div class="project-badge">
+          FUTURA RESIDENCIAL
+        </div>
+
+        <div class="project-info">
+          <h3>Proyecto Chincheros</h3>
+          <p>Chincheros, Apurímac</p>
+        </div>
+
+        <div class="project-arrow">
+          →
+        </div>
+
+      </a>
+
+      <div class="future-projects">
+        <span>↪</span>
+        Más proyectos<br>
+        muy pronto...
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- BENEFICIOS INFERIORES -->
+  <div class="hero-benefits reveal">
+
+    <div class="benefit">
+      <div class="benefit-icon">⌂</div>
+      <span>Terrenos<br>residenciales</span>
+    </div>
+
+    <div class="benefit-divider"></div>
+
+    <div class="benefit">
+      <div class="benefit-icon">↗</div>
+      <span>Oportunidades<br>de inversión</span>
+    </div>
+
+    <div class="benefit-divider"></div>
+
+    <div class="benefit">
+      <div class="benefit-icon">◎</div>
+      <span>Asesoría<br>personalizada</span>
+    </div>
+
+    <div class="benefit-divider"></div>
+
+    <div class="benefit">
+      <div class="benefit-icon">◒</div>
+      <span>Entornos<br>naturales</span>
+    </div>
+
+  </div>
+
+
+  <a href="#nosotros" class="scroll-down">
+    ↓
+  </a>
+
+  <div class="hero-wave"></div>
+
+</header>
+
+
+<!-- ======================================================
+     NOSOTROS
+====================================================== -->
+
+<section class="about-section" id="nosotros">
+
+  <div class="about-decoration about-decoration-1"></div>
+  <div class="about-decoration about-decoration-2"></div>
+
+  <div class="section-container about-grid">
+
+    <div class="about-copy reveal">
+
+      <span class="section-label">
+        TERRANOVA INMOBILIARIA
+      </span>
+
+      <h2>
+        Más que terrenos,<br>
+        <span>nuevos comienzos.</span>
+      </h2>
+
+      <p>
+        Impulsamos el desarrollo de nuevas comunidades a través
+        de proyectos inmobiliarios pensados para quienes buscan
+        construir, invertir y proyectar su futuro en Apurímac.
+      </p>
+
+      <a href="#proyectos-section" class="text-link">
+        Conoce nuestros proyectos
+        <span>→</span>
+      </a>
+
+    </div>
+
+
+    <div class="about-visual reveal">
+
+      <div class="photo-frame">
+        <img src="assets/apurimac.jpg"
+             alt="Paisaje de Apurímac">
+      </div>
+
+      <div class="floating-card">
+        <strong>Apurímac</strong>
+        <span>Una región llena de oportunidades</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     PROYECTOS
+====================================================== -->
+
+<section class="projects-section" id="proyectos-section">
+
+  <div class="section-container">
+
+    <div class="section-heading reveal">
+
+      <span class="section-label">
+        NUESTROS PROYECTOS
+      </span>
+
+      <h2>
+        Elige dónde comienza<br>
+        <span>tu próxima historia.</span>
+      </h2>
+
+      <p>
+        Conoce nuestros proyectos actuales y descubre
+        el espacio ideal para construir tus próximos planes.
+      </p>
+
+    </div>
+
+
+    <div class="projects-large-grid">
+
+      <!-- SALINAS -->
+      <a href="salinas.html" class="large-project reveal">
+
+        <div class="large-project-image">
+
+          <img
+            src="assets/salinas/terreno-01.jpg"
+            alt="Proyecto Salinas">
+
+          <div class="large-project-overlay"></div>
+
+          <span class="large-project-number">
+            01
+          </span>
+
+          <div class="large-project-content">
+
+            <span>ANDAHUAYLAS · APURÍMAC</span>
+
+            <h3>Proyecto Salinas</h3>
+
+            <p>
+              Lotes de 94.12 m² en una zona tranquila,
+              con excelente ubicación y servicios.
+            </p>
+
+            <div class="discover">
+              Descubrir proyecto →
+            </div>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- CHINCHEROS -->
+      <a href="chincheros.html" class="large-project reveal">
+
+        <div class="large-project-image">
+
+          <img
+            src="assets/chincheros/propuesta-residencial.png"
+            alt="Proyecto Chincheros">
+
+          <div class="large-project-overlay"></div>
+
+          <span class="large-project-number">
+            02
+          </span>
+
+          <div class="large-project-content">
+
+            <span>CHINCHEROS · APURÍMAC</span>
+
+            <h3>Proyecto Chincheros</h3>
+
+            <p>
+              Lotes desde 400 m² proyectados como
+              una futura residencial.
+            </p>
+
+            <div class="discover">
+              Descubrir proyecto →
+            </div>
+
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     CONTACTO
+====================================================== -->
+
+<section class="contact-section" id="contacto">
+
+  <div class="contact-glow"></div>
+
+  <div class="section-container contact-grid">
+
+    <div class="contact-copy reveal">
+
+      <span class="section-label light">
+        HABLEMOS
+      </span>
+
+      <h2>
+        Tu próximo espacio<br>
+        puede empezar <span>aquí.</span>
+      </h2>
+
+      <p>
+        Escríbenos para conocer disponibilidad,
+        ubicación y detalles de nuestros proyectos.
+      </p>
+
+    </div>
+
+
+    <div class="contact-actions reveal">
+
+      <button type="button" class="contact-wa" onclick="toggleBottomWhatsapp()">
+        <span>WhatsApp</span>
+        <strong>Elige un número</strong>
+        <b>→</b>
+      </button>
+
+      <div class="bottom-wa-menu" id="bottomWhatsappMenu">
+
+        <a href="https://wa.me/51922836427" target="_blank">
+          +51 922 836 427
+        </a>
+
+        <a href="https://wa.me/51941201577" target="_blank">
+          +51 941 201 577
+        </a>
+
+      </div>
+
+      <div class="social-buttons">
+
+        <a
+          href="https://www.facebook.com/profile.php?id=61591862877643"
+          target="_blank">
+          Facebook
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@terranovainmobiliaria01"
+          target="_blank">
+          TikTok
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer class="footer">
+
+  <div class="section-container footer-grid">
+
+    <div class="footer-brand">
+
+      <img src="assets/logo-terranova.png"
+           alt="Terranova Inmobiliaria">
+
+      <p>
+        Terranova Inmobiliaria · Apurímac
+      </p>
+
+    </div>
+
+    <div class="footer-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      © 2026 Terranova Inmobiliaria
+    </p>
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
