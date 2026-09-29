@@ -2400,3 +2400,42 @@ body{
     z-index:4;
   }
 }
+/* =====================================================
+   TERRANOVA — MONTAÑAS DECORATIVAS
+   ===================================================== */
+
+/* Evita cualquier desbordamiento lateral */
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* Montaña en la sección "Más que terrenos" */
+.about-section {
+    background-image: url("assets/montanas-decoracion.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 520px auto;
+}
+
+/* Montaña en la sección de proyectos */
+.projects-section {
+    background-image: url("assets/montanas-decoracion.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 480px auto;
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+
+    .about-section {
+        background-size: 270px auto;
+        background-position: left bottom;
+    }
+
+    .projects-section {
+        background-size: 250px auto;
+        background-position: right bottom;
+    }
+}
