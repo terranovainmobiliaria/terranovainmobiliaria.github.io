@@ -2705,189 +2705,245 @@ img{
         top:54px;
     }
 }
-/* ==================================================
-   WHATSAPP - ABRIR JUSTO DEBAJO DEL BOTÓN
-   ================================================== */
+/* =========================================================
+   TERRANOVA - CORRECCIÓN FINAL HEADER + WHATSAPP + MÓVIL
+   ========================================================= */
+
+/* ---------- WHATSAPP DEL HERO ---------- */
 
 .hero-contact-wrapper {
     position: relative !important;
     display: inline-block;
+    z-index: 100;
 }
 
 .hero-whatsapp-menu {
     position: absolute !important;
-
-    /* Justo debajo del botón */
     top: calc(100% + 12px) !important;
     left: 50% !important;
     right: auto !important;
-    bottom: auto !important;
-
-    transform: translateX(-50%) !important;
-
-    width: 340px;
-    max-width: calc(100vw - 32px);
-
-    z-index: 99999 !important;
-}
-
-/* Cuando está cerrado */
-.hero-whatsapp-menu:not(.open) {
-    display: none !important;
-}
-
-/* Cuando pulsas Contáctanos */
-.hero-whatsapp-menu.open {
-    display: block !important;
-}
-
-
-/* ==========================
-   CELULAR
-   ========================== */
-
-@media (max-width: 768px) {
-
-    .hero-contact-wrapper {
-        position: relative !important;
-        width: 100% !important;
-    }
-
-    .hero-contact-wrapper > .btn {
-        width: 100% !important;
-    }
-
-    .hero-whatsapp-menu {
-        top: calc(100% + 10px) !important;
-        left: 50% !important;
-        right: auto !important;
-        bottom: auto !important;
-
-        transform: translateX(-50%) !important;
-
-        width: calc(100vw - 48px) !important;
-        max-width: 420px !important;
-    }
-}
-/* =========================================
-   FIX MENÚ WHATSAPP SOBRE LAS SECCIONES
-   ========================================= */
-
-.hero {
-    overflow: visible !important;
-}
-
-.hero-content,
-.hero-copy,
-.hero-actions,
-.hero-contact-wrapper {
-    overflow: visible !important;
-}
-
-.hero-contact-wrapper {
-    position: relative !important;
-    z-index: 999999 !important;
-}
-
-.hero-whatsapp-menu {
-    z-index: 999999 !important;
-}
-
-.hero-whatsapp-menu.open {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-/* La siguiente sección debe quedar por debajo */
-#nosotros,
-.about-section,
-.projects-section {
-    position: relative;
-    z-index: 1;
-}
-/* ==================================================
-   CORRECCIÓN FINAL - HERO + WHATSAPP
-   ================================================== */
-
-/* El hero vuelve a recortar su fondo correctamente */
-.hero {
-    overflow: hidden !important;
-}
-
-/* El menú de WhatsApp se mantiene junto al botón */
-.hero-contact-wrapper {
-    position: relative !important;
-    z-index: 9999 !important;
-}
-
-.hero-whatsapp-menu {
-    position: absolute !important;
-    top: calc(100% + 10px) !important;
-    left: 50% !important;
-    right: auto !important;
-    bottom: auto !important;
 
     transform: translateX(-50%) !important;
 
     width: 320px !important;
     max-width: calc(100vw - 30px) !important;
 
-    z-index: 99999 !important;
+    z-index: 9999 !important;
 }
 
-/* Cuando se abre */
+.hero-whatsapp-menu:not(.open) {
+    display: none !important;
+}
+
 .hero-whatsapp-menu.open {
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
-}
-
-/* Le damos espacio al hero cuando el menú está abierto,
-   para que no se corte la segunda opción */
-.hero:has(.hero-whatsapp-menu.open) {
-    padding-bottom: 170px !important;
+    pointer-events: auto !important;
 }
 
 
-/* CELULAR */
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
 @media (max-width: 768px) {
 
-    .hero-contact-wrapper {
+    html,
+    body {
         width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
     }
 
-    .hero-whatsapp-menu {
-        top: calc(100% + 12px) !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
 
-        width: calc(100vw - 48px) !important;
-        max-width: 420px !important;
+    /* -----------------------------------------
+       CABECERA
+       ----------------------------------------- */
+
+    .navbar {
+        width: calc(100% - 32px) !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+        padding: 14px 0 !important;
+
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        gap: 12px !important;
     }
 
-    .hero:has(.hero-whatsapp-menu.open) {
-        padding-bottom: 300px !important;
+
+    /* Logo */
+
+    .brand {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        margin: 0 0 8px !important;
     }
-}
-/* ==================================================
-   FIX WHATSAPP SOLO CELULAR
-   ================================================== */
 
-@media (max-width: 768px) {
+    .brand-logo {
+        width: min(290px, 82vw) !important;
+        height: auto !important;
+        max-width: 100% !important;
+    }
 
-    /* El contenedor ocupa exactamente el ancho del botón */
-    .hero-contact-wrapper {
+
+    /* Quitamos las 3 rayas */
+
+    .mobile-menu,
+    #mobileMenu {
+        display: none !important;
+    }
+
+
+    /* Ocultamos navegación normal */
+
+    .nav-links {
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------
+       REDES + CONTACTO SUPERIOR
+       ----------------------------------------- */
+
+    .nav-social {
+        width: 100% !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 8px !important;
+
         position: relative !important;
+        flex-wrap: nowrap !important;
+    }
+
+
+    /* Facebook y TikTok */
+
+    .nav-social .social-with-name {
+        width: auto !important;
+        min-width: 0 !important;
+        height: 42px !important;
+
+        padding: 0 13px !important;
+
+        border-radius: 50px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 6px !important;
+        flex: 0 1 auto !important;
+    }
+
+    /* VOLVEMOS A MOSTRAR LOS NOMBRES */
+
+    .nav-social .social-name {
+        display: block !important;
+        font-size: 12px !important;
+        white-space: nowrap !important;
+    }
+
+    .nav-social .facebook .social-icon {
+        font-size: 18px !important;
+    }
+
+    .nav-social .tiktok svg {
+        width: 17px !important;
+        height: 17px !important;
+    }
+
+
+    /* Contáctanos superior */
+
+    .whatsapp-wrapper {
+        position: relative !important;
+        flex: 0 1 auto !important;
+    }
+
+    .contact-top {
+        height: 42px !important;
+        min-height: 42px !important;
+
+        padding: 0 13px !important;
+
+        font-size: 12px !important;
+
+        white-space: nowrap !important;
+    }
+
+    .contact-top .wa-icon {
+        display: none !important;
+    }
+
+
+    /* Menú del contacto SUPERIOR */
+
+    .whatsapp-wrapper .whatsapp-menu {
+        position: absolute !important;
+
+        top: calc(100% + 10px) !important;
+        right: 0 !important;
+        left: auto !important;
+
+        width: min(300px, calc(100vw - 32px)) !important;
+
+        z-index: 99999 !important;
+    }
+
+
+    /* -----------------------------------------
+       BOTONES PRINCIPALES
+       ----------------------------------------- */
+
+    .hero-actions {
+        width: 100% !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        gap: 14px !important;
+    }
+
+    .hero-actions > a,
+    .hero-actions > .hero-contact-wrapper {
         width: 100% !important;
         max-width: 100% !important;
     }
 
-    /* Menú centrado debajo de Contáctanos */
+    .hero-actions .btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* -----------------------------------------
+       WHATSAPP DEL BOTÓN GRANDE
+       ----------------------------------------- */
+
+    .hero-contact-wrapper {
+        position: relative !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        display: block !important;
+    }
+
     .hero-whatsapp-menu {
         position: absolute !important;
 
-        top: calc(100% + 14px) !important;
+        top: calc(100% + 12px) !important;
+
         left: 0 !important;
         right: 0 !important;
 
@@ -2896,25 +2952,58 @@ img{
         width: 100% !important;
         max-width: 100% !important;
 
-        box-sizing: border-box !important;
         margin: 0 !important;
+        box-sizing: border-box !important;
 
         z-index: 99999 !important;
     }
 
-    /* Evitar que el contenido interno ensanche el menú */
     .hero-whatsapp-menu * {
         box-sizing: border-box !important;
-        max-width: 100% !important;
     }
 
     .hero-whatsapp-menu a {
         width: 100% !important;
-        white-space: normal !important;
+        max-width: 100% !important;
     }
 
-    /* Espacio para mostrar las dos opciones completas */
+
+    /* Cuando se abre dejamos espacio real debajo */
+
     .hero:has(.hero-whatsapp-menu.open) {
         padding-bottom: 330px !important;
+    }
+}
+
+
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .navbar {
+        width: calc(100% - 24px) !important;
+    }
+
+    .brand-logo {
+        width: min(270px, 84vw) !important;
+    }
+
+    .nav-social {
+        gap: 6px !important;
+    }
+
+    .nav-social .social-with-name {
+        padding: 0 10px !important;
+    }
+
+    .nav-social .social-name {
+        font-size: 11px !important;
+    }
+
+    .contact-top {
+        padding: 0 10px !important;
+        font-size: 11px !important;
     }
 }
