@@ -590,6 +590,43 @@
     }
 
 
+
+    /* =========================
+       MEJORAS SALINAS
+    ========================= */
+    .location-intro{margin-bottom:25px}
+    .strategic-title{display:flex;align-items:center;gap:10px;margin:28px 0 15px;font-size:13px;font-weight:900;letter-spacing:1.4px;color:#063c42;text-transform:uppercase}
+    .strategic-title::before{content:"";width:28px;height:3px;border-radius:10px;background:#16cfc7}
+    .strategic-places{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
+    .strategic-place{min-height:82px;padding:15px 16px;display:flex;align-items:center;gap:13px;background:#fff;border:1px solid #d7e7e5;border-radius:14px;box-shadow:0 8px 25px rgba(0,45,50,.055)}
+    .strategic-place.featured{border-color:rgba(16,191,184,.42);background:linear-gradient(135deg,rgba(20,205,197,.10),#fff 65%)}
+    .place-icon{flex:0 0 42px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#e5f8f6;color:#078f8a;font-size:19px}
+    .strategic-place strong{display:block;color:#06343c;font-size:14px;margin-bottom:3px}
+    .strategic-place span{display:block;color:#687e80;font-size:12px;line-height:1.35}
+    .strategic-place.featured span{color:#0aaea8;font-weight:800}
+    .services{margin-top:22px}
+    .salinas-map-section{padding:0 0 120px}
+    .salinas-map-card{position:relative;overflow:hidden;min-height:470px;border-radius:26px;background:#063c42;border:1px solid #d5e7e4;box-shadow:0 25px 65px rgba(0,45,50,.14)}
+    .salinas-map-card iframe{display:block;width:100%;height:470px;border:0}
+    .map-information{position:absolute;left:25px;bottom:25px;width:min(360px,calc(100% - 50px));padding:22px;color:#fff;background:rgba(3,48,56,.94);border:1px solid rgba(32,216,208,.35);border-radius:18px;box-shadow:0 18px 45px rgba(0,0,0,.22);backdrop-filter:blur(12px)}
+    .map-information small{display:block;margin-bottom:7px;color:#25d8d0;font-size:11px;font-weight:900;letter-spacing:1.5px}
+    .map-information h3{margin-bottom:7px;font-size:23px}
+    .map-information p{color:#bdd4d2;font-size:13px;line-height:1.5}
+    .map-button{display:inline-flex;align-items:center;gap:9px;margin-top:16px;padding:12px 17px;border-radius:9px;background:#20d8d0;color:#05363e;font-size:13px;font-weight:900}
+    .wa-selector{position:relative;display:inline-block}
+    .wa-trigger{cursor:pointer;font-family:inherit;font-size:inherit}
+    button.contact{color:#fff;background:transparent;font-weight:700;font-size:14px;padding:14px 22px;border:1px solid #20d8d0;border-radius:50px;cursor:pointer}
+    .wa-menu{position:absolute;top:calc(100% + 12px);right:0;width:285px;padding:10px;background:#063c42;border:1px solid rgba(32,216,208,.35);border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.25);opacity:0;visibility:hidden;transform:translateY(-6px);transition:.2s;z-index:100}
+    .wa-selector.open .wa-menu{opacity:1;visibility:visible;transform:none}
+    .wa-option{display:block;padding:14px 15px;border-radius:11px;color:white!important}
+    .wa-option+.wa-option{margin-top:5px}.wa-option:hover{background:rgba(255,255,255,.08)}
+    .wa-option strong{display:block;font-size:13px;margin-bottom:4px}.wa-option span{color:#a9cfcc;font-size:13px}
+    .wa-option.main-number{background:rgba(32,216,208,.12);border:1px solid rgba(32,216,208,.25)}
+    .wa-option.main-number strong{color:#29ddd5}
+    #ubicacion,#galeria{position:relative;overflow:hidden}
+    #ubicacion::after,#galeria::after{content:"";position:absolute;z-index:-1;pointer-events:none;width:500px;height:220px;background:url("assets/montanas-decoracion.png") center bottom/contain no-repeat;opacity:.18}
+    #ubicacion::after{right:-100px;bottom:0}#galeria::after{left:-100px;bottom:0;transform:scaleX(-1)}
+
     /* =========================
        RESPONSIVE
     ========================= */
@@ -709,6 +746,18 @@
       }
     }
 
+
+    @media(max-width:600px){
+      .strategic-places{grid-template-columns:1fr}
+      .strategic-place{min-height:76px}
+      .salinas-map-section{padding:0 0 80px}
+      .salinas-map-card{min-height:550px;border-radius:20px}
+      .salinas-map-card iframe{height:550px}
+      .map-information{left:14px;bottom:14px;width:calc(100% - 28px);padding:18px}
+      .wa-menu{position:fixed;left:14px;right:14px;top:auto;bottom:18px;width:auto}
+      #ubicacion::after,#galeria::after{width:330px;opacity:.13}
+    }
+
   </style>
 </head>
 
@@ -739,13 +788,7 @@
         <a href="#galeria">
           Galería
         </a>
-
-        <a
-          href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas."
-          target="_blank"
-          class="contact">
-          Consultar
-        </a>
+        <div class="wa-selector"><button type="button" class="contact wa-trigger" onclick="toggleSalinasWhatsapp(this)">Consultar⌄</button><div class="wa-menu"><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas." target="_blank"><strong>WhatsApp principal</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
 
       </div>
 
@@ -783,13 +826,7 @@
           <a href="#galeria" class="btn btn-primary">
             Ver el proyecto →
           </a>
-
-          <a
-            href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas."
-            target="_blank"
-            class="btn btn-outline">
-            Consultar disponibilidad
-          </a>
+          <div class="wa-selector"><button type="button" class="btn btn-outline wa-trigger" onclick="toggleSalinasWhatsapp(this)" style="background:transparent;cursor:pointer;font-family:inherit;font-size:inherit;">Consultar disponibilidad⌄</button><div class="wa-menu"><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas." target="_blank"><strong>WhatsApp principal</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
 
         </div>
 
@@ -848,14 +885,21 @@
           <span>necesitas.</span>
         </h2>
 
-        <p class="description">
-          Ubicado en una zona tranquila y con proyección
-          de crecimiento. A pocos metros del Centro de Salud
-          Villa Salinas, a tres cuadras de EsSalud,
-          a una cuadra de la UGEL Andahuaylas y muy cerca
-          del Colegio Villarreal, Jr. Ayacucho y
-          Av. Industrial.
+        <p class="description location-intro">
+          Proyecto Salinas se encuentra en una zona tranquila,
+          con proyección de crecimiento y conectada con puntos
+          importantes de Andahuaylas.
         </p>
+
+        <div class="strategic-title">Ubicaciones estratégicas</div>
+        <div class="strategic-places">
+          <div class="strategic-place featured"><div class="place-icon">✚</div><div><strong>Centro de Salud Villa Salinas</strong><span>A pocos metros</span></div></div>
+          <div class="strategic-place featured"><div class="place-icon">✚</div><div><strong>EsSalud</strong><span>A 3 cuadras</span></div></div>
+          <div class="strategic-place featured"><div class="place-icon">⌂</div><div><strong>UGEL Andahuaylas</strong><span>A 1 cuadra</span></div></div>
+          <div class="strategic-place"><div class="place-icon">◆</div><div><strong>Colegio Villarreal</strong><span>Muy cerca del proyecto</span></div></div>
+          <div class="strategic-place"><div class="place-icon">⌖</div><div><strong>Jr. Ayacucho</strong><span>Acceso cercano</span></div></div>
+          <div class="strategic-place"><div class="place-icon">↗</div><div><strong>Av. Industrial</strong><span>Conexión cercana</span></div></div>
+        </div>
 
         <div class="services">
 
@@ -888,6 +932,22 @@
 
   </section>
 
+
+  <section class="salinas-map-section">
+    <div class="container">
+      <div class="eyebrow">UBICACIÓN DEL PROYECTO</div>
+      <h2 class="section-title">Encuéntranos en <span>Andahuaylas.</span></h2>
+      <p class="description" style="max-width:700px;margin-bottom:35px;">Consulta la ubicación de Proyecto Salinas y planifica tu visita directamente desde Google Maps.</p>
+      <div class="salinas-map-card">
+        <iframe src="https://www.google.com/maps?q=Villa%20Salinas%2C%20Andahuaylas%2C%20Apur%C3%ADmac&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Proyecto Salinas"></iframe>
+        <div class="map-information">
+          <small>PROYECTO SALINAS</small><h3>Andahuaylas · Apurímac</h3>
+          <p>Visualiza la zona y abre Google Maps para consultar la ruta hasta el proyecto.</p>
+          <a href="https://maps.app.goo.gl/wWjEKTWkRnEYSYcE9" target="_blank" rel="noopener" class="map-button">Ver ubicación en Google Maps →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- =====================================
        LOTES
@@ -1125,13 +1185,7 @@
         </p>
 
       </div>
-
-      <a
-        href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas."
-        target="_blank"
-        class="btn">
-        Consultar por WhatsApp →
-      </a>
+      <div class="wa-selector"><button type="button" class="btn wa-trigger" onclick="toggleSalinasWhatsapp(this)" style="border:0;background:#05363e;color:white;cursor:pointer;font-family:inherit;font-size:inherit;">Consultar por WhatsApp⌄</button><div class="wa-menu"><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas." target="_blank"><strong>WhatsApp principal</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
 
     </div>
 
@@ -1157,6 +1211,18 @@
     </div>
 
   </footer>
+
+
+<script>
+function toggleSalinasWhatsapp(button){
+  const selector=button.closest('.wa-selector');
+  document.querySelectorAll('.wa-selector.open').forEach(item=>{if(item!==selector)item.classList.remove('open')});
+  selector.classList.toggle('open');
+}
+document.addEventListener('click',function(event){
+  if(!event.target.closest('.wa-selector')) document.querySelectorAll('.wa-selector.open').forEach(item=>item.classList.remove('open'));
+});
+</script>
 
 </body>
 </html>
