@@ -2705,3 +2705,67 @@ img{
         top:54px;
     }
 }
+/* ==================================================
+   WHATSAPP - ABRIR JUSTO DEBAJO DEL BOTÓN
+   ================================================== */
+
+.hero-contact-wrapper {
+    position: relative !important;
+    display: inline-block;
+}
+
+.hero-whatsapp-menu {
+    position: absolute !important;
+
+    /* Justo debajo del botón */
+    top: calc(100% + 12px) !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 340px;
+    max-width: calc(100vw - 32px);
+
+    z-index: 99999 !important;
+}
+
+/* Cuando está cerrado */
+.hero-whatsapp-menu:not(.open) {
+    display: none !important;
+}
+
+/* Cuando pulsas Contáctanos */
+.hero-whatsapp-menu.open {
+    display: block !important;
+}
+
+
+/* ==========================
+   CELULAR
+   ========================== */
+
+@media (max-width: 768px) {
+
+    .hero-contact-wrapper {
+        position: relative !important;
+        width: 100% !important;
+    }
+
+    .hero-contact-wrapper > .btn {
+        width: 100% !important;
+    }
+
+    .hero-whatsapp-menu {
+        top: calc(100% + 10px) !important;
+        left: 50% !important;
+        right: auto !important;
+        bottom: auto !important;
+
+        transform: translateX(-50%) !important;
+
+        width: calc(100vw - 48px) !important;
+        max-width: 420px !important;
+    }
+}
