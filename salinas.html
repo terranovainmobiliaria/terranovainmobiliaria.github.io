@@ -618,6 +618,49 @@
     button.contact{color:#fff;background:transparent;font-weight:700;font-size:14px;padding:14px 22px;border:1px solid #20d8d0;border-radius:50px;cursor:pointer}
     .wa-menu{position:absolute;top:calc(100% + 12px);right:0;width:285px;padding:10px;background:#063c42;border:1px solid rgba(32,216,208,.35);border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.25);opacity:0;visibility:hidden;transform:translateY(-6px);transition:.2s;z-index:100}
     .wa-selector.open .wa-menu{opacity:1;visibility:visible;transform:none}
+
+    .hero,.nav,.hero-content,.hero-copy,.hero-buttons{overflow:visible}
+    .wa-selector{position:relative;z-index:80}
+    .wa-selector.open{z-index:9999}
+    .wa-menu{z-index:10000}
+
+    .availability-selector .wa-menu{
+      top:auto;
+      bottom:calc(100% + 12px);
+      left:0;
+      right:auto;
+    }
+
+    .availability-selector .wa-menu::after{
+      content:"";
+      position:absolute;
+      left:28px;
+      bottom:-7px;
+      width:12px;
+      height:12px;
+      background:#063c42;
+      border-right:1px solid rgba(32,216,208,.35);
+      border-bottom:1px solid rgba(32,216,208,.35);
+      transform:rotate(45deg);
+    }
+
+    .gallery-heading-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:35px;
+      margin-bottom:50px;
+    }
+    .gallery-heading-row .gallery-header{margin-bottom:0;flex:1}
+    .plan-button{
+      flex:0 0 auto;min-height:54px;padding:0 22px;
+      display:inline-flex;align-items:center;justify-content:center;
+      border-radius:10px;background:#063c42;color:white;
+      font-weight:800;border:1px solid #063c42;transition:.25s;
+      box-shadow:0 10px 25px rgba(0,45,50,.10);
+    }
+    .plan-button:hover{transform:translateY(-2px);background:#0a5158;border-color:#0a5158}
+
     .wa-option{display:block;padding:14px 15px;border-radius:11px;color:white!important}
     .wa-option+.wa-option{margin-top:5px}.wa-option:hover{background:rgba(255,255,255,.08)}
     .wa-option strong{display:block;font-size:13px;margin-bottom:4px}.wa-option span{color:#a9cfcc;font-size:13px}
@@ -756,6 +799,14 @@
       .map-information{left:14px;bottom:14px;width:calc(100% - 28px);padding:18px}
       .wa-menu{position:fixed;left:14px;right:14px;top:auto;bottom:18px;width:auto}
       #ubicacion::after,#galeria::after{width:330px;opacity:.13}
+
+      .gallery-heading-row{flex-direction:column;align-items:flex-start;gap:22px;margin-bottom:38px}
+      .plan-button{width:100%}
+      .availability-selector .wa-menu{
+        position:fixed;left:14px;right:14px;top:auto;bottom:18px;width:auto;
+      }
+      .availability-selector .wa-menu::after{display:none}
+
     }
 
   </style>
@@ -788,7 +839,7 @@
         <a href="#galeria">
           Galería
         </a>
-        <div class="wa-selector"><button type="button" class="contact wa-trigger" onclick="toggleSalinasWhatsapp(this)">Consultar⌄</button><div class="wa-menu"><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas." target="_blank"><strong>WhatsApp principal</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
+        <div class="wa-selector"><button type="button" class="contact wa-trigger" onclick="toggleSalinasWhatsapp(this)">Consultar⌄</button><div class="wa-menu"><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
 
       </div>
 
@@ -826,7 +877,7 @@
           <a href="#galeria" class="btn btn-primary">
             Ver el proyecto →
           </a>
-          <div class="wa-selector"><button type="button" class="btn btn-outline wa-trigger" onclick="toggleSalinasWhatsapp(this)" style="background:transparent;cursor:pointer;font-family:inherit;font-size:inherit;">Consultar disponibilidad⌄</button><div class="wa-menu"><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas." target="_blank"><strong>WhatsApp principal</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
+          <div class="wa-selector availability-selector"><button type="button" class="btn btn-outline wa-trigger" onclick="toggleSalinasWhatsapp(this)" style="background:transparent;cursor:pointer;font-family:inherit;font-size:inherit;">Consultar disponibilidad⌄</button><div class="wa-menu"><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
 
         </div>
 
@@ -1054,22 +1105,33 @@
 
     <div class="container">
 
-      <div class="gallery-header">
+      <div class="gallery-heading-row">
 
-        <div class="eyebrow">
-          GALERÍA
+        <div class="gallery-header">
+
+          <div class="eyebrow">
+            GALERÍA
+          </div>
+
+          <h2 class="section-title">
+            Conoce el
+            <span>terreno.</span>
+          </h2>
+
+          <p class="description">
+            Explora diferentes vistas del Proyecto Salinas
+            y conoce el entorno donde puedes construir
+            tu próximo espacio.
+          </p>
+
         </div>
 
-        <h2 class="section-title">
-          Conoce el
-          <span>terreno.</span>
-        </h2>
-
-        <p class="description">
-          Explora diferentes vistas del Proyecto Salinas
-          y conoce el entorno donde puedes construir
-          tu próximo espacio.
-        </p>
+        <a href="assets/salinas/plano-salinas.pdf"
+           target="_blank"
+           rel="noopener"
+           class="plan-button">
+          Ver plano del proyecto →
+        </a>
 
       </div>
 
@@ -1148,16 +1210,6 @@
 
       </div>
 
-      <div class="hero-buttons">
-
-        <a
-          href="assets/salinas/plano-salinas.pdf"
-          target="_blank"
-          class="btn btn-outline">
-          Ver plano del proyecto
-        </a>
-
-      </div>
 
     </div>
 
@@ -1185,7 +1237,7 @@
         </p>
 
       </div>
-      <div class="wa-selector"><button type="button" class="btn wa-trigger" onclick="toggleSalinasWhatsapp(this)" style="border:0;background:#05363e;color:white;cursor:pointer;font-family:inherit;font-size:inherit;">Consultar por WhatsApp⌄</button><div class="wa-menu"><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas." target="_blank"><strong>WhatsApp principal</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20informaci%C3%B3n%20sobre%20el%20Proyecto%20Salinas." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
+      <div class="wa-selector"><button type="button" class="btn wa-trigger" onclick="toggleSalinasWhatsapp(this)" style="border:0;background:#05363e;color:white;cursor:pointer;font-family:inherit;font-size:inherit;">Consultar por WhatsApp⌄</button><div class="wa-menu"><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
 
     </div>
 
