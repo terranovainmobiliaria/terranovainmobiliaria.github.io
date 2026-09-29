@@ -2867,3 +2867,38 @@ body{
         transform: rotate(2deg);
     }
 }
+/* =====================================================
+   FIX TARJETA APURÍMAC
+   Mantenerla SIEMPRE delante de la fotografía
+   ===================================================== */
+
+.about-visual {
+    position: relative;
+    overflow: visible !important;
+}
+
+.photo-frame {
+    position: relative;
+    z-index: 1;
+    overflow: visible !important;
+}
+
+.floating-card {
+    position: absolute !important;
+    z-index: 20 !important;
+
+    left: -55px;
+    bottom: 30px;
+
+    overflow: visible !important;
+}
+
+/* CELULAR: conservar tarjeta dentro de un espacio seguro */
+@media (max-width: 768px) {
+
+    .floating-card {
+        z-index: 20 !important;
+        left: 18px;
+        bottom: 18px;
+    }
+}
