@@ -3375,47 +3375,4 @@ video {
     .hero-container {
         padding-top: 55px !important;
     }
-/* =========================================================
-   FIX SOLO PC — MENÚ WHATSAPP DEL HERO
-   NO AFECTA CELULAR
-   ========================================================= */
 
-@media (min-width: 769px) {
-
-    .hero-contact-wrapper {
-        position: relative !important;
-        display: inline-block !important;
-        z-index: 1000 !important;
-    }
-
-    .hero-whatsapp-menu {
-        position: absolute !important;
-
-        /* Justo debajo del botón */
-        top: calc(100% + 10px) !important;
-
-        /* Centrado respecto al botón Contáctanos */
-        left: 50% !important;
-        right: auto !important;
-        transform: translateX(-50%) !important;
-
-        width: 300px !important;
-        max-width: 300px !important;
-
-        /* Siempre encima de la siguiente sección */
-        z-index: 9999 !important;
-    }
-
-    .hero,
-    .hero-content,
-    .hero-copy,
-    .hero-actions {
-        overflow: visible !important;
-    }
-
-    .hero-whatsapp-menu.open {
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-}
