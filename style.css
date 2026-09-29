@@ -2870,3 +2870,51 @@ img{
         padding-bottom: 300px !important;
     }
 }
+/* ==================================================
+   FIX WHATSAPP SOLO CELULAR
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    /* El contenedor ocupa exactamente el ancho del botón */
+    .hero-contact-wrapper {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Menú centrado debajo de Contáctanos */
+    .hero-whatsapp-menu {
+        position: absolute !important;
+
+        top: calc(100% + 14px) !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        transform: none !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+        margin: 0 !important;
+
+        z-index: 99999 !important;
+    }
+
+    /* Evitar que el contenido interno ensanche el menú */
+    .hero-whatsapp-menu * {
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+    }
+
+    .hero-whatsapp-menu a {
+        width: 100% !important;
+        white-space: normal !important;
+    }
+
+    /* Espacio para mostrar las dos opciones completas */
+    .hero:has(.hero-whatsapp-menu.open) {
+        padding-bottom: 330px !important;
+    }
+}
