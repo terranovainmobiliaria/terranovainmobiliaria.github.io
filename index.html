@@ -127,8 +127,6 @@
 
 </div>
 
-    </div>
-
     <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú">
       <span></span>
       <span></span>
@@ -175,13 +173,13 @@
 
     <button type="button"
             class="btn btn-glass"
-            onclick="toggleBottomWhatsapp(event)">
+            onclick="toggleHeroWhatsapp(event)">
         <span>◉</span>
         Contáctanos
         <span>⌄</span>
     </button>
 
-    <div class="whatsapp-menu hero-whatsapp-menu" id="bottomWhatsappMenu">
+    <div class="whatsapp-menu hero-whatsapp-menu" id="heroWhatsappMenu">
 
         <p class="wa-menu-title">
             ¿Con quién deseas comunicarte?
@@ -231,7 +229,7 @@
 
 
     <!-- PROYECTOS -->
-    <div class="project-stack" id="proyectos">
+    <div class="project-stack">
 
       <!-- SALINAS -->
       <a href="salinas.html" class="project-card project-card-1 reveal">
@@ -474,7 +472,7 @@
 
             <span>CHINCHEROS · APURÍMAC</span>
 
-            <h3>Proyecto Chincheros</h3>
+            <h3>Condominio Terranova</h3>
 
             <p>
               Lotes desde 400 m² proyectados como
@@ -529,13 +527,13 @@
 
     <div class="contact-actions reveal">
 
-      <button type="button" class="contact-wa" onclick="toggleBottomWhatsapp()">
+      <button type="button" class="contact-wa" onclick="toggleContactWhatsapp(event)">
         <span>WhatsApp</span>
         <strong>Elige un número</strong>
         <b>→</b>
       </button>
 
-        <div class="bottom-wa-menu" id="bottomWhatsappMenu">
+        <div class="bottom-wa-menu" id="contactWhatsappMenu">
 
   <a href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Terranova%20Inmobiliaria.%20Quisiera%20recibir%20informaci%C3%B3n%20sobre%20sus%20proyectos%20disponibles."
      target="_blank">
@@ -610,6 +608,60 @@
 
 
 <script src="script.js"></script>
+
+<script>
+(function () {
+  function closeContactMenus(except) {
+    ["whatsappMenu", "heroWhatsappMenu", "contactWhatsappMenu"].forEach(function (id) {
+      var menu = document.getElementById(id);
+      if (menu && menu !== except) menu.classList.remove("open");
+    });
+  }
+
+  window.toggleWhatsapp = function (event) {
+    if (event) { event.preventDefault(); event.stopPropagation(); }
+    var menu = document.getElementById("whatsappMenu");
+    if (!menu) return;
+    var willOpen = !menu.classList.contains("open");
+    closeContactMenus(menu);
+    menu.classList.toggle("open", willOpen);
+  };
+
+  window.toggleHeroWhatsapp = function (event) {
+    if (event) { event.preventDefault(); event.stopPropagation(); }
+    var menu = document.getElementById("heroWhatsappMenu");
+    if (!menu) return;
+    var willOpen = !menu.classList.contains("open");
+    closeContactMenus(menu);
+    menu.classList.toggle("open", willOpen);
+  };
+
+  window.toggleContactWhatsapp = function (event) {
+    if (event) { event.preventDefault(); event.stopPropagation(); }
+    var menu = document.getElementById("contactWhatsappMenu");
+    if (!menu) return;
+    var willOpen = !menu.classList.contains("open");
+    closeContactMenus(menu);
+    menu.classList.toggle("open", willOpen);
+  };
+
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".whatsapp-wrapper, .hero-contact-wrapper, .contact-actions")) {
+      closeContactMenus(null);
+    }
+  });
+
+  document.querySelectorAll('a[href="#proyectos"]').forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      var target = document.getElementById("proyectos");
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+})();
+</script>
+
 
 </body>
 </html>
