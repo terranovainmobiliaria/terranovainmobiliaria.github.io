@@ -1827,1561 +1827,528 @@ img{
     scroll-behavior:auto !important;
   }
 }
-/* ==========================================
-   CORRECCIÓN TEMPORAL - CONTENIDO DEL HERO
-   ========================================== */
 
-.hero-content,
-.hero-copy,
-.hero-text,
-.hero-projects,
-.project-cards,
-.hero-actions,
-.hero-location,
-.hero-badge,
-.hero .reveal,
-.hero [class*="reveal"] {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    filter: none !important;
-}
-/* SOLUCIÓN VISIBILIDAD GENERAL */
-.reveal {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-}
-/* =========================================
-   DIAGNÓSTICO / CORRECCIÓN SECCIÓN NOSOTROS
-   ========================================= */
+/* =========================================================
+   TERRANOVA — AJUSTES LIMPIOS 2026
+   Sin parches duplicados
+========================================================= */
 
-#nosotros {
-    display: block !important;
-    position: relative !important;
-    min-height: auto !important;
-    height: auto !important;
+/* La web nunca debe generar scroll horizontal */
+html,
+body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
 }
 
-#nosotros .section-container,
-#nosotros .about-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    align-items: center !important;
-    gap: 100px !important;
-
-    opacity: 1 !important;
-    visibility: visible !important;
+/* Las animaciones nunca deben dejar contenido invisible si JS falla */
+.reveal{
+  opacity:1;
+  visibility:visible;
+  transform:none;
 }
 
-#nosotros .about-copy,
-#nosotros .about-visual,
-#nosotros .reveal {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    filter: none !important;
-}
-/* ICONO TIKTOK */
-.social-circle.tiktok svg {
-    width: 21px;
-    height: 21px;
-    display: block;
-    color: #ffffff;
-    transition: transform .3s ease;
+/* TikTok SVG */
+.social-circle.tiktok svg,
+.nav-social .tiktok svg{
+  width:19px;
+  height:19px;
+  display:block;
+  color:#fff;
+  flex:none;
 }
 
-.social-circle.tiktok:hover svg {
-    transform: scale(1.12);
-}
-/* ==========================================================
-   TERRANOVA 2026 — MEJORA VISUAL PÁGINA PRINCIPAL
-   ========================================================== */
-
-/* ---------- NOSOTROS ---------- */
-
-#nosotros {
-    position: relative !important;
-    overflow: hidden !important;
-    padding: 120px 0 !important;
-
-    background:
-        radial-gradient(circle at 8% 25%,
-            rgba(17, 199, 190, .13) 0,
-            rgba(17, 199, 190, 0) 25%),
-        radial-gradient(circle at 92% 75%,
-            rgba(3, 74, 84, .09) 0,
-            rgba(3, 74, 84, 0) 28%),
-        linear-gradient(
-            135deg,
-            #ffffff 0%,
-            #f4fbfa 48%,
-            #eef8f6 100%
-        ) !important;
-}
-
-/* Mancha decorativa superior */
-#nosotros::before {
-    content: "";
-    position: absolute;
-    width: 430px;
-    height: 430px;
-    border: 1px solid rgba(18, 195, 187, .16);
-    border-radius: 50%;
-    left: -230px;
-    top: 30px;
-    box-shadow:
-        0 0 0 55px rgba(18, 195, 187, .025),
-        0 0 0 110px rgba(18, 195, 187, .018);
-    pointer-events: none;
-}
-
-/* Detalle derecho */
-#nosotros::after {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border: 1px solid rgba(0, 76, 86, .10);
-    border-radius: 50%;
-    right: -170px;
-    bottom: -80px;
-    pointer-events: none;
-}
-
-#nosotros .section-container {
-    position: relative;
-    z-index: 2;
-}
-
-#nosotros .about-copy {
-    position: relative;
-}
-
-#nosotros .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-}
-
-#nosotros .section-label::before {
-    content: "";
-    width: 38px;
-    height: 2px;
-    background: #10c7bf;
-    display: inline-block;
-}
-
-#nosotros .about-copy h2 {
-    color: #073b45;
-    text-shadow: 0 4px 30px rgba(3, 62, 72, .05);
-}
-
-#nosotros .about-copy h2 span {
-    color: #0fc3bb;
-}
-
-#nosotros .about-copy p {
-    color: #526a70;
-    line-height: 1.8;
-}
-
-/* Foto Apurímac */
-#nosotros .about-visual {
-    position: relative;
-    padding: 18px;
-}
-
-#nosotros .photo-frame {
-    position: relative;
-    overflow: hidden;
-    border-radius: 32px !important;
-    box-shadow:
-        0 30px 70px rgba(0, 58, 67, .17),
-        0 8px 22px rgba(0, 58, 67, .10);
-}
-
-#nosotros .photo-frame::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
-    pointer-events: none;
-}
-
-#nosotros .photo-frame img {
-    width: 100% !important;
-    height: 100% !important;
-    min-height: 420px;
-    display: block;
-    object-fit: cover;
-}
-
-/* Tarjeta Apurímac */
-#nosotros .floating-card {
-    background:
-        linear-gradient(135deg, #073e47, #0a555b) !important;
-    border: 1px solid rgba(255,255,255,.16);
-    box-shadow: 0 20px 45px rgba(1, 51, 60, .24);
-    border-radius: 22px !important;
-}
-
-#nosotros .floating-card strong {
-    color: #1dd4cb !important;
-}
-
-
-/* ==========================================================
-   SECCIÓN PROYECTOS
-   ========================================================== */
-
-#proyectos-section {
-    position: relative;
-    overflow: hidden;
-    padding: 120px 0 135px !important;
-
-    background:
-        radial-gradient(circle at 85% 10%,
-            rgba(18, 199, 190, .12),
-            transparent 28%),
-        radial-gradient(circle at 10% 90%,
-            rgba(2, 72, 81, .09),
-            transparent 30%),
-        linear-gradient(
-            180deg,
-            #edf8f6 0%,
-            #f8fbf9 48%,
-            #edf6f3 100%
-        ) !important;
-}
-
-/* Círculo decorativo */
-#proyectos-section::before {
-    content: "";
-    position: absolute;
-    width: 480px;
-    height: 480px;
-    border-radius: 50%;
-    border: 1px solid rgba(15, 194, 186, .12);
-    right: -260px;
-    top: 90px;
-    box-shadow:
-        0 0 0 65px rgba(15, 194, 186, .025),
-        0 0 0 130px rgba(15, 194, 186, .015);
-    pointer-events: none;
-}
-
-/* Pequeño detalle geométrico */
-#proyectos-section::after {
-    content: "";
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    left: 4%;
-    top: 42%;
-    border-left: 2px solid rgba(15, 194, 186, .12);
-    border-bottom: 2px solid rgba(15, 194, 186, .12);
-    transform: rotate(45deg);
-    pointer-events: none;
-}
-
-#proyectos-section .section-container {
-    position: relative;
-    z-index: 2;
-}
-
-#proyectos-section .section-heading {
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-#proyectos-section .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-}
-
-#proyectos-section .section-label::before,
-#proyectos-section .section-label::after {
-    content: "";
-    width: 32px;
-    height: 2px;
-    background: #13c7bf;
-}
-
-#proyectos-section .section-heading h2 {
-    color: #073c45;
-}
-
-#proyectos-section .section-heading h2 span {
-    color: #11bfb7;
-}
-
-
-/* ---------- TARJETAS GRANDES ---------- */
-
-#proyectos-section .projects-large-grid {
-    gap: 30px !important;
-    margin-top: 60px;
-}
-
-#proyectos-section .large-project {
-    border-radius: 30px !important;
-    overflow: hidden;
-    box-shadow:
-        0 25px 55px rgba(0, 56, 65, .14),
-        0 5px 15px rgba(0, 56, 65, .08);
-    border: 1px solid rgba(4, 83, 91, .10);
-    background: white;
-}
-
-#proyectos-section .large-project-image {
-    border-radius: 30px !important;
-    overflow: hidden;
-}
-
-/* Número 01 / 02 */
-#proyectos-section .large-project-number {
-    background: rgba(3, 57, 66, .72);
-    border: 1px solid rgba(255,255,255,.25);
-    backdrop-filter: blur(8px);
-    border-radius: 14px;
-    padding: 8px 12px;
-}
-
-/* Primera tarjeta: Salinas */
-#proyectos-section .large-project:first-child {
-    box-shadow:
-        0 25px 55px rgba(0, 105, 108, .17),
-        0 5px 15px rgba(0, 56, 65, .08);
-}
-
-/* Segunda tarjeta: Condominio */
-#proyectos-section .large-project:nth-child(2) {
-    border: 1px solid rgba(156, 91, 48, .20);
-    box-shadow:
-        0 25px 55px rgba(93, 70, 40, .16),
-        0 5px 15px rgba(0, 56, 65, .07);
-}
-
-
-/* ==========================================================
-   CONTACTO — TRANSICIÓN MÁS ELEGANTE
-   ========================================================== */
-
-#contacto {
-    position: relative;
-    overflow: hidden;
-
-    background:
-        radial-gradient(circle at 80% 20%,
-            rgba(18, 211, 201, .16),
-            transparent 30%),
-        radial-gradient(circle at 10% 90%,
-            rgba(18, 211, 201, .08),
-            transparent 30%),
-        linear-gradient(
-            135deg,
-            #023c46 0%,
-            #064d55 55%,
-            #033840 100%
-        ) !important;
-}
-
-#contacto::before {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border: 1px solid rgba(30, 220, 210, .09);
-    border-radius: 50%;
-    right: -250px;
-    top: -240px;
-    box-shadow:
-        0 0 0 65px rgba(30,220,210,.025),
-        0 0 0 130px rgba(30,220,210,.015);
-    pointer-events: none;
-}
-
-
-/* ==========================================================
-   RESPONSIVE — CELULAR
-   ========================================================== */
-
-@media (max-width: 768px) {
-
-    /* Evita desplazamiento lateral */
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden !important;
-    }
-
-    /* NOSOTROS */
-    #nosotros {
-        padding: 75px 0 85px !important;
-    }
-
-    #nosotros .section-container,
-    #nosotros .about-grid {
-        width: calc(100% - 36px) !important;
-        max-width: none !important;
-        margin: 0 auto !important;
-
-        display: flex !important;
-        flex-direction: column !important;
-        grid-template-columns: none !important;
-
-        gap: 45px !important;
-    }
-
-    #nosotros .about-copy {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    #nosotros .about-copy h2 {
-        font-size: clamp(38px, 11vw, 56px) !important;
-        line-height: .98 !important;
-        letter-spacing: -2px !important;
-    }
-
-    #nosotros .about-copy p {
-        font-size: 16px !important;
-        line-height: 1.75 !important;
-    }
-
-    /* ESTA PARTE ARREGLA LA FOTO CORTADA */
-    #nosotros .about-visual {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        overflow: visible !important;
-    }
-
-    #nosotros .photo-frame {
-        width: 100% !important;
-        height: auto !important;
-        min-height: 0 !important;
-        aspect-ratio: 4 / 3 !important;
-        border-radius: 24px !important;
-        overflow: hidden !important;
-    }
-
-    #nosotros .photo-frame img {
-        display: block !important;
-        width: 100% !important;
-        height: 100% !important;
-        min-height: 0 !important;
-        max-width: 100% !important;
-
-        object-fit: cover !important;
-        object-position: center center !important;
-    }
-
-    #nosotros .floating-card {
-        position: relative !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        top: auto !important;
-
-        width: calc(100% - 28px) !important;
-        max-width: none !important;
-
-        margin: -30px auto 0 !important;
-        padding: 20px 22px !important;
-
-        z-index: 5;
-    }
-
-
-    /* PROYECTOS */
-    #proyectos-section {
-        padding: 85px 0 95px !important;
-    }
-
-    #proyectos-section .section-container {
-        width: calc(100% - 36px) !important;
-        margin: 0 auto !important;
-    }
-
-    #proyectos-section .section-heading {
-        width: 100% !important;
-    }
-
-    #proyectos-section .section-heading h2 {
-        font-size: clamp(37px, 10vw, 54px) !important;
-        line-height: 1 !important;
-        letter-spacing: -2px !important;
-    }
-
-    #proyectos-section .projects-large-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        grid-template-columns: none !important;
-        width: 100% !important;
-        gap: 24px !important;
-        margin-top: 45px !important;
-    }
-
-    #proyectos-section .large-project {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-    }
-
-    #proyectos-section .large-project-image {
-        width: 100% !important;
-        height: 470px !important;
-        min-height: 470px !important;
-    }
-
-    #proyectos-section .large-project-image img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        object-position: center !important;
-    }
-
-    #proyectos-section .large-project-content {
-        left: 22px !important;
-        right: 22px !important;
-        bottom: 25px !important;
-        width: auto !important;
-        max-width: none !important;
-    }
-
-    #proyectos-section .large-project-content h3 {
-        font-size: 31px !important;
-        line-height: 1.05 !important;
-    }
-
-    #proyectos-section .large-project-content p {
-        font-size: 14px !important;
-        line-height: 1.55 !important;
-    }
-
-
-    /* CONTACTO */
-    #contacto .section-container,
-    #contacto .contact-grid {
-        width: calc(100% - 36px) !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-
-    #contacto .contact-grid {
-        grid-template-columns: 1fr !important;
-        gap: 45px !important;
-    }
-
-    #contacto .contact-copy h2 {
-        font-size: clamp(38px, 10vw, 54px) !important;
-        line-height: 1 !important;
-    }
-
-    #contacto .contact-actions {
-        width: 100% !important;
-    }
-
-    #contacto .contact-wa {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    #contacto .social-buttons {
-        width: 100% !important;
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 10px !important;
-    }
-
-}
-
-
-/* ==========================================================
-   CELULARES PEQUEÑOS
-   ========================================================== */
-
-@media (max-width: 480px) {
-
-    #nosotros .about-copy h2 {
-        font-size: 40px !important;
-    }
-
-    #nosotros .photo-frame {
-        aspect-ratio: 1 / 1 !important;
-    }
-
-    #proyectos-section .section-heading h2 {
-        font-size: 39px !important;
-    }
-
-    #proyectos-section .large-project-image {
-        height: 430px !important;
-        min-height: 430px !important;
-    }
-
-    #proyectos-section .large-project-content h3 {
-        font-size: 28px !important;
-    }
-
-    #contacto .social-buttons {
-        grid-template-columns: 1fr !important;
-    }
-
-}
-/* =====================================================
-   HEADER - REDES SOCIALES + WHATSAPP
-   ===================================================== */
+/* =========================================================
+   HEADER — PC
+========================================================= */
 
 .nav-social{
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap:10px;
-    position:relative;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px;
 }
 
-/* Facebook y TikTok con nombre */
 .nav-social .social-with-name{
-    width:auto !important;
-    height:46px !important;
-    padding:0 16px !important;
-
-    display:flex !important;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-
-    border:1px solid rgba(255,255,255,.45);
-    border-radius:50px;
-
-    color:#fff;
-    text-decoration:none;
-
-    background:rgba(0,45,54,.18);
-    backdrop-filter:blur(8px);
-
-    transition:.25s ease;
+  width:auto;
+  height:46px;
+  padding:0 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:50px;
+  color:#fff;
+  background:rgba(0,45,54,.18);
+  backdrop-filter:blur(8px);
+  transition:.25s ease;
 }
 
 .nav-social .social-with-name:hover{
-    background:rgba(21,211,203,.16);
-    border-color:#20d7d0;
-    transform:translateY(-2px);
+  background:rgba(21,211,203,.16);
+  border-color:var(--turquoise);
+  transform:translateY(-2px);
 }
 
-/* Facebook */
 .nav-social .facebook .social-icon{
-    font-size:21px;
-    line-height:1;
-    font-weight:800;
-    font-family:Arial, sans-serif;
+  font:800 21px/1 Arial,sans-serif;
 }
 
 .nav-social .social-name{
-    display:block;
-    font-size:14px;
-    font-weight:700;
-    white-space:nowrap;
+  display:block;
+  font-size:14px;
+  font-weight:700;
+  white-space:nowrap;
 }
 
-/* TikTok */
-.nav-social .tiktok svg{
-    width:19px !important;
-    height:19px !important;
-    display:block;
-    flex:none;
+.whatsapp-wrapper,
+.hero-contact-wrapper{
+  position:relative;
 }
 
-
-/* =====================================================
-   BOTÓN CONTÁCTANOS
-   ===================================================== */
-
-.whatsapp-wrapper{
-    position:relative;
+.whatsapp-wrapper .whatsapp-menu{
+  right:0;
+  left:auto;
+  top:58px;
+  width:310px;
+  z-index:9999;
 }
 
-.contact-top{
-    min-height:46px;
-    padding:0 18px;
+.hero-contact-wrapper{
+  display:inline-block;
+  z-index:30;
+}
 
+.hero-whatsapp-menu{
+  position:absolute;
+  top:calc(100% + 12px);
+  left:50%;
+  right:auto;
+  width:320px;
+  max-width:calc(100vw - 30px);
+  margin:0;
+  padding:18px;
+  border:1px solid rgba(32,225,212,.38);
+  border-radius:20px;
+  color:#fff;
+  background:rgba(0,35,44,.97);
+  box-shadow:0 25px 55px rgba(0,0,0,.35);
+  backdrop-filter:blur(20px);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transform:translateX(-50%) translateY(-8px);
+  transition:.25s ease;
+  z-index:1000;
+}
+
+.hero-whatsapp-menu.open{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateX(-50%) translateY(0);
+}
+
+.hero-whatsapp-menu p{
+  margin-bottom:10px;
+  color:rgba(255,255,255,.68);
+  font-size:13px;
+}
+
+.hero-whatsapp-menu a{
+  display:flex;
+  flex-direction:column;
+  padding:12px 14px;
+  margin-top:8px;
+  border-radius:12px;
+  background:rgba(255,255,255,.07);
+  transition:.25s ease;
+}
+
+.hero-whatsapp-menu a:hover{
+  background:var(--turquoise);
+  color:#002d36;
+}
+
+/* En PC no existe el botón de tres rayas */
+@media (min-width:769px){
+  .mobile-menu,
+  #mobileMenu{
+    display:none !important;
+  }
+}
+
+/* =========================================================
+   CELULAR — conserva el diseño que ya funcionaba
+========================================================= */
+
+@media (max-width:768px){
+
+  .hero{
+    min-height:auto;
+    overflow:hidden;
+  }
+
+  /* Header en dos filas: logo / redes + contacto */
+  .navbar{
+    width:calc(100% - 28px);
+    height:auto;
+    margin:0 auto;
+    padding:14px 0 5px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .brand{
+    width:min(310px,88vw);
+    margin:0 auto;
+    padding:10px 15px;
     display:flex;
+    justify-content:center;
+  }
+
+  .brand-logo{
+    width:100%;
+    max-width:270px;
+    height:auto;
+    max-height:none;
+  }
+
+  .nav-links,
+  .mobile-menu,
+  #mobileMenu{
+    display:none !important;
+  }
+
+  .nav-social{
+    width:100%;
+    display:flex !important;
     align-items:center;
     justify-content:center;
-    gap:10px;
+    gap:8px;
+    flex-wrap:nowrap;
+  }
 
-    border:1px solid #20d7d0;
-    border-radius:50px;
-
-    background:rgba(0,54,63,.55);
-    backdrop-filter:blur(10px);
-
-    color:#fff;
-    font:inherit;
-    font-size:14px;
-    font-weight:700;
-
-    cursor:pointer;
-    transition:.25s ease;
-}
-
-.contact-top:hover{
-    background:#20d7d0;
-    color:#003e47;
-    transform:translateY(-2px);
-}
-
-.contact-top .wa-icon{
-    color:#20d7d0;
-    font-size:17px;
-}
-
-.contact-top:hover .wa-icon{
-    color:#003e47;
-}
-
-.contact-top .chevron{
-    font-size:15px;
-    transition:transform .25s ease;
-}
-
-
-/* =====================================================
-   MENÚ DESPLEGABLE WHATSAPP
-   ===================================================== */
-
-.whatsapp-menu{
-    position:absolute;
-    top:58px;
-    right:0;
-
-    width:310px;
-    padding:12px;
-
-    background:rgba(4,49,56,.97);
-    border:1px solid rgba(32,215,208,.35);
-    border-radius:20px;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.30);
-    backdrop-filter:blur(16px);
-
-    opacity:0;
-    visibility:hidden;
-    transform:translateY(-8px);
-
-    pointer-events:none;
-
-    transition:
-        opacity .2s ease,
-        transform .2s ease,
-        visibility .2s ease;
-
-    z-index:9999;
-}
-
-/* ESTA CLASE LA ACTIVA script.js */
-.whatsapp-menu.open{
-    opacity:1 !important;
-    visibility:visible !important;
-    transform:translateY(0) !important;
-    pointer-events:auto !important;
-}
-
-.wa-menu-title{
-    margin:3px 8px 10px;
-    color:rgba(255,255,255,.70);
-    font-size:12px;
-    font-weight:600;
-}
-
-.whatsapp-menu a{
-    display:flex;
+  .nav-social .social-with-name,
+  .nav-social .social-circle{
+    width:44px !important;
+    min-width:44px !important;
+    height:44px !important;
+    padding:0 !important;
+    border-radius:50% !important;
+    display:flex !important;
     align-items:center;
-    justify-content:space-between;
+    justify-content:center;
+    flex:0 0 44px !important;
+  }
 
-    padding:13px 14px;
-    margin-top:7px;
+  .nav-social .social-name{
+    display:none !important;
+  }
 
-    color:#fff;
-    text-decoration:none;
+  .nav-social .facebook .social-icon{
+    font-size:19px;
+  }
 
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:13px;
+  .nav-social .tiktok svg{
+    width:18px;
+    height:18px;
+  }
 
-    transition:.2s ease;
-}
+  .whatsapp-wrapper{
+    position:relative;
+    flex:1 1 auto;
+    max-width:190px;
+  }
 
-.whatsapp-menu a:hover{
-    background:#20d7d0;
-    color:#003e47;
-    border-color:#20d7d0;
-}
+  .contact-top{
+    width:100%;
+    min-width:0;
+    height:44px;
+    min-height:44px;
+    padding:0 13px;
+    font-size:12px;
+    white-space:nowrap;
+  }
 
-.whatsapp-menu a span{
+  .contact-top .wa-icon{
+    display:inline;
+    font-size:15px;
+  }
+
+  .whatsapp-wrapper .whatsapp-menu{
+    position:absolute;
+    top:calc(100% + 10px);
+    right:0;
+    left:auto;
+    width:min(300px,calc(100vw - 28px));
+    z-index:9999;
+  }
+
+  /* Hero */
+  .hero-container{
+    width:calc(100% - 36px);
+    margin:0 auto;
+    display:block;
+    padding-top:45px;
+    padding-bottom:90px;
+  }
+
+  .hero-copy{
+    width:100%;
+    max-width:100%;
+  }
+
+  .location-pill{
+    max-width:100%;
+    margin-bottom:28px;
+    padding:9px 15px;
+    font-size:11px;
+  }
+
+  .hero h1{
+    max-width:100%;
+    font-size:clamp(46px,13vw,65px);
+    line-height:.98;
+    letter-spacing:-3px;
+  }
+
+  .title-stroke{
+    width:210px;
+    margin:18px 0 28px;
+  }
+
+  .hero-description{
+    max-width:100%;
+    margin-bottom:30px;
+    font-size:17px;
+    line-height:1.65;
+  }
+
+  .hero-actions{
+    width:100%;
     display:flex;
     flex-direction:column;
-    gap:3px;
+    gap:14px;
+    overflow:visible;
+  }
+
+  .hero-actions > a,
+  .hero-actions > .hero-contact-wrapper{
+    width:100%;
+    max-width:100%;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+    min-height:64px;
+    padding:0 20px;
+    font-size:17px;
+  }
+
+  .hero-contact-wrapper{
+    width:100%;
+    display:block;
+  }
+
+  .hero-whatsapp-menu{
+    position:relative;
+    top:auto;
+    left:auto;
+    right:auto;
+    width:100%;
+    max-width:100%;
+    margin:10px 0 0;
+    display:none;
+    transform:none;
+  }
+
+  .hero-whatsapp-menu.open{
+    display:block;
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:none;
+  }
+
+  .hero-center{
+    display:none;
+  }
+
+  .project-stack{
+    width:100%;
+    margin-top:55px;
+    transform:none;
+    gap:16px;
+  }
+
+  .project-card,
+  .project-card:nth-child(2){
+    width:100%;
+    height:205px;
+    margin-left:0;
+    transform:none;
+    border-radius:23px;
+  }
+
+  .project-card:hover{
+    transform:none;
+  }
+
+  .future-projects{
+    display:none;
+  }
+
+  .hero-benefits{
+    position:relative;
+    left:auto;
+    right:auto;
+    bottom:auto;
+    width:calc(100% - 36px);
+    margin:0 auto 60px;
+    padding:20px;
+    transform:none;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+
+  .benefit{
+    min-width:0;
+    padding:10px 4px;
+    border:0;
+  }
+
+  .benefit-divider,
+  .scroll-down,
+  .hero-wave{
+    display:none;
+  }
+
+  /* Secciones inferiores */
+  #nosotros .section-container,
+  #nosotros .about-grid{
+    width:calc(100% - 36px);
+    max-width:none;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:45px;
+  }
+
+  #nosotros .about-visual{
+    width:100%;
+    padding:0;
+    margin:0;
+  }
+
+  #nosotros .photo-frame{
+    width:100%;
+    height:auto;
+    aspect-ratio:4/3;
+    border-radius:24px;
+    overflow:hidden;
+  }
+
+  #nosotros .photo-frame img{
+    width:100%;
+    height:100%;
+    min-height:0;
+    object-fit:cover;
+  }
+
+  #nosotros .floating-card{
+    position:relative;
+    left:auto;
+    right:auto;
+    bottom:auto;
+    width:calc(100% - 28px);
+    margin:-30px auto 0;
+  }
+
+  .projects-large-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 }
 
-.whatsapp-menu a strong{
-    font-size:13px;
-}
+@media (max-width:430px){
 
-.whatsapp-menu a small{
-    font-size:12px;
-    opacity:.78;
-}
+  .navbar{
+    width:calc(100% - 22px);
+  }
 
-.whatsapp-menu a b{
+  .brand{
+    width:min(300px,90vw);
+  }
+
+  .brand-logo{
+    max-width:255px;
+  }
+
+  .nav-social{
+    gap:7px;
+  }
+
+  .nav-social .social-with-name,
+  .nav-social .social-circle{
+    width:42px !important;
+    min-width:42px !important;
+    height:42px !important;
+    flex-basis:42px !important;
+  }
+
+  .whatsapp-wrapper{
+    max-width:175px;
+  }
+
+  .contact-top{
+    height:42px;
+    min-height:42px;
+    font-size:11px;
+    padding:0 10px;
+  }
+
+  .hero-container{
+    width:calc(100% - 30px);
+    padding-top:38px;
+  }
+
+  .hero h1{
+    font-size:clamp(43px,13vw,56px);
+  }
+
+  .hero-description{
+    font-size:16px;
+  }
+
+  .hero-actions .btn{
+    min-height:60px;
+    font-size:16px;
+  }
+
+  .project-card,
+  .project-card:nth-child(2){
+    height:190px;
+  }
+
+  .project-info h3{
     font-size:20px;
-    font-weight:400;
+  }
+
+  .hero-benefits{
+    width:calc(100% - 30px);
+    grid-template-columns:1fr;
+  }
 }
-
-
-/* =====================================================
-   CELULAR
-   ===================================================== */
-
-@media (max-width:900px){
-
-    .nav-social{
-        gap:7px;
-    }
-
-    /* En pantallas medianas quitamos el texto para ganar espacio */
-    .nav-social .social-name{
-        display:none;
-    }
-
-    .nav-social .social-with-name{
-        width:42px !important;
-        height:42px !important;
-        padding:0 !important;
-        border-radius:50% !important;
-    }
-
-    .contact-top{
-        min-height:42px;
-        padding:0 13px;
-        font-size:12px;
-    }
-
-    .whatsapp-menu{
-        width:280px;
-        max-width:calc(100vw - 30px);
-    }
-}
-
-
-@media (max-width:600px){
-
-    .nav-social{
-        position:relative;
-    }
-
-    .contact-top{
-        padding:0 12px;
-    }
-
-    .contact-top .wa-icon{
-        display:none;
-    }
-
-    .whatsapp-menu{
-        position:absolute;
-        right:0;
-        top:54px;
-    }
-}
-/* =========================================================
-   TERRANOVA — FIX DEFINITIVO HEADER + HERO + WHATSAPP
-   ========================================================= */
-
-
-/* =========================================================
-   1. WHATSAPP DEL BOTÓN PRINCIPAL DEL HERO
-   ========================================================= */
-
-.hero-contact-wrapper {
-    position: relative !important;
-    display: inline-block !important;
-    z-index: 1000 !important;
-}
-
-.hero-whatsapp-menu {
-    position: absolute !important;
-
-    top: calc(100% + 12px) !important;
-    left: 50% !important;
-    right: auto !important;
-    bottom: auto !important;
-
-    width: 320px !important;
-    max-width: calc(100vw - 30px) !important;
-
-    margin: 0 !important;
-
-    transform: translateX(-50%) translateY(-8px) !important;
-
-    z-index: 99999 !important;
-
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-}
-
-.hero-whatsapp-menu.open {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-
-    transform: translateX(-50%) translateY(0) !important;
-}
-
-
-/* =========================================================
-   2. PC — NO MODIFICAR DISEÑO ORIGINAL
-   ========================================================= */
-
-@media (min-width: 769px) {
-
-    .mobile-menu,
-    #mobileMenu {
-        display: none !important;
-    }
-
-    .hero {
-        overflow: hidden !important;
-    }
-
-    .hero-contact-wrapper {
-        overflow: visible !important;
-    }
-
-}
-
-
-/* =========================================================
-   3. CELULAR
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    html,
-    body {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-    }
-
-
-    /* -----------------------------------------------------
-       HEADER
-       ----------------------------------------------------- */
-
-    .navbar {
-        width: calc(100% - 28px) !important;
-        height: auto !important;
-
-        margin: 0 auto !important;
-        padding: 14px 0 5px !important;
-
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-
-        gap: 12px !important;
-
-        position: relative !important;
-    }
-
-
-    /* LOGO */
-
-    .brand {
-        width: min(310px, 88vw) !important;
-
-        margin: 0 auto !important;
-
-        padding: 10px 15px !important;
-
-        display: flex !important;
-        justify-content: center !important;
-    }
-
-    .brand-logo {
-        width: 100% !important;
-        max-width: 270px !important;
-        height: auto !important;
-        max-height: none !important;
-    }
-
-
-    /* ELIMINAMOS LAS 3 RAYAS */
-
-    .mobile-menu,
-    #mobileMenu {
-        display: none !important;
-    }
-
-
-    /* MENÚ NORMAL OCULTO EN CELULAR */
-
-    .nav-links {
-        display: none !important;
-    }
-
-
-    /* -----------------------------------------------------
-       FACEBOOK + TIKTOK + CONTACTO SUPERIOR
-       ----------------------------------------------------- */
-
-    .nav-social {
-        width: 100% !important;
-
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-
-        gap: 8px !important;
-
-        flex-wrap: nowrap !important;
-
-        position: relative !important;
-    }
-
-
-    /* Facebook / TikTok */
-
-    .nav-social .social-with-name,
-    .nav-social .social-circle {
-        width: 44px !important;
-        min-width: 44px !important;
-        height: 44px !important;
-
-        padding: 0 !important;
-
-        border-radius: 50% !important;
-
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-
-        flex: 0 0 44px !important;
-    }
-
-
-    /* En celular mostramos solamente los iconos */
-
-    .nav-social .social-name {
-        display: none !important;
-    }
-
-    .nav-social .facebook .social-icon {
-        font-size: 19px !important;
-    }
-
-    .nav-social .tiktok svg {
-        width: 18px !important;
-        height: 18px !important;
-    }
-
-
-    /* CONTACTO SUPERIOR */
-
-    .whatsapp-wrapper {
-        position: relative !important;
-
-        flex: 1 1 auto !important;
-
-        max-width: 190px !important;
-    }
-
-    .contact-top {
-        width: 100% !important;
-        min-width: 0 !important;
-
-        height: 44px !important;
-        min-height: 44px !important;
-
-        padding: 0 13px !important;
-
-        font-size: 12px !important;
-
-        white-space: nowrap !important;
-    }
-
-    .contact-top .wa-icon {
-        display: inline !important;
-        font-size: 15px !important;
-    }
-
-
-    /* MENÚ WHATSAPP SUPERIOR */
-
-    .whatsapp-wrapper .whatsapp-menu {
-        position: absolute !important;
-
-        top: calc(100% + 10px) !important;
-
-        right: 0 !important;
-        left: auto !important;
-
-        width: min(300px, calc(100vw - 28px)) !important;
-
-        transform: translateY(-8px) !important;
-
-        z-index: 999999 !important;
-    }
-
-    .whatsapp-wrapper .whatsapp-menu.open {
-        transform: translateY(0) !important;
-    }
-
-
-    /* -----------------------------------------------------
-       HERO
-       ----------------------------------------------------- */
-
-    .hero {
-        min-height: auto !important;
-        overflow: hidden !important;
-    }
-
-    .hero-container {
-        width: calc(100% - 36px) !important;
-
-        margin: 0 auto !important;
-
-        display: block !important;
-
-        padding-top: 45px !important;
-        padding-bottom: 90px !important;
-    }
-
-    .hero-copy {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-
-    /* UBICACIÓN */
-
-    .location-pill {
-        max-width: 100% !important;
-
-        font-size: 11px !important;
-
-        padding: 9px 15px !important;
-
-        margin-bottom: 28px !important;
-    }
-
-
-    /* TÍTULO */
-
-    .hero h1 {
-        font-size: clamp(46px, 13vw, 65px) !important;
-
-        line-height: .98 !important;
-
-        letter-spacing: -3px !important;
-
-        max-width: 100% !important;
-    }
-
-    .title-stroke {
-        width: 210px !important;
-
-        margin: 18px 0 28px !important;
-    }
-
-    .hero-description {
-        max-width: 100% !important;
-
-        font-size: 17px !important;
-        line-height: 1.65 !important;
-
-        margin-bottom: 30px !important;
-    }
-
-
-    /* -----------------------------------------------------
-       BOTONES GRANDES
-       ----------------------------------------------------- */
-
-    .hero-actions {
-        width: 100% !important;
-
-        display: flex !important;
-        flex-direction: column !important;
-
-        gap: 14px !important;
-
-        overflow: visible !important;
-    }
-
-    .hero-actions > a,
-    .hero-actions > .hero-contact-wrapper {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    .hero-actions .btn {
-        width: 100% !important;
-
-        min-height: 64px !important;
-
-        padding: 0 20px !important;
-
-        box-sizing: border-box !important;
-
-        font-size: 17px !important;
-    }
-
-
-    /* -----------------------------------------------------
-       WHATSAPP DEL BOTÓN GRANDE
-       ----------------------------------------------------- */
-
-    .hero-contact-wrapper {
-        width: 100% !important;
-
-        display: block !important;
-
-        position: relative !important;
-
-        z-index: 500 !important;
-    }
-
-    .hero-whatsapp-menu {
-        position: relative !important;
-
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-
-        width: 100% !important;
-        max-width: 100% !important;
-
-        margin: 10px 0 0 !important;
-
-        transform: none !important;
-
-        display: none !important;
-
-        box-sizing: border-box !important;
-    }
-
-    .hero-whatsapp-menu.open {
-        display: block !important;
-
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-
-        transform: none !important;
-    }
-
-    .hero-whatsapp-menu a {
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-
-    /* -----------------------------------------------------
-       CENTRO DECORATIVO
-       ----------------------------------------------------- */
-
-    .hero-center {
-        display: none !important;
-    }
-
-
-    /* -----------------------------------------------------
-       TARJETAS DE PROYECTOS DEL HERO
-       ----------------------------------------------------- */
-
-    .project-stack {
-        width: 100% !important;
-
-        margin-top: 55px !important;
-
-        transform: none !important;
-
-        gap: 16px !important;
-    }
-
-    .project-card {
-        width: 100% !important;
-
-        height: 205px !important;
-
-        margin-left: 0 !important;
-
-        transform: none !important;
-
-        border-radius: 23px !important;
-    }
-
-    .project-card:nth-child(2) {
-        margin-left: 0 !important;
-    }
-
-    .project-card:hover {
-        transform: none !important;
-    }
-
-    .future-projects {
-        display: none !important;
-    }
-
-
-    /* -----------------------------------------------------
-       BENEFICIOS
-       ----------------------------------------------------- */
-
-    .hero-benefits {
-        position: relative !important;
-
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-
-        transform: none !important;
-
-        width: calc(100% - 36px) !important;
-
-        margin: 0 auto 60px !important;
-
-        padding: 20px !important;
-
-        display: grid !important;
-
-        grid-template-columns: 1fr 1fr !important;
-
-        gap: 18px !important;
-    }
-
-    .benefit {
-        min-width: 0 !important;
-
-        padding: 10px 4px !important;
-
-        border: 0 !important;
-    }
-
-    .benefit-divider {
-        display: none !important;
-    }
-
-    .scroll-down {
-        display: none !important;
-    }
-
-    .hero-wave {
-        display: none !important;
-    }
-
-}
-
-
-/* =========================================================
-   4. CELULARES PEQUEÑOS
-   ========================================================= */
-
-@media (max-width: 430px) {
-
-    .navbar {
-        width: calc(100% - 22px) !important;
-    }
-
-    .brand {
-        width: min(300px, 90vw) !important;
-    }
-
-    .brand-logo {
-        max-width: 255px !important;
-    }
-
-    .nav-social {
-        gap: 7px !important;
-    }
-
-    .nav-social .social-with-name,
-    .nav-social .social-circle {
-        width: 42px !important;
-        min-width: 42px !important;
-        height: 42px !important;
-
-        flex-basis: 42px !important;
-    }
-
-    .whatsapp-wrapper {
-        max-width: 175px !important;
-    }
-
-    .contact-top {
-        height: 42px !important;
-        min-height: 42px !important;
-
-        font-size: 11px !important;
-
-        padding: 0 10px !important;
-    }
-
-    .hero-container {
-        width: calc(100% - 30px) !important;
-
-        padding-top: 38px !important;
-    }
-
-    .hero h1 {
-        font-size: clamp(43px, 13vw, 56px) !important;
-    }
-
-    .hero-description {
-        font-size: 16px !important;
-    }
-
-    .hero-actions .btn {
-        min-height: 60px !important;
-        font-size: 16px !important;
-    }
-
-    .project-card {
-        height: 190px !important;
-    }
-
-    .project-info h3 {
-        font-size: 20px !important;
-    }
-
-    .hero-benefits {
-        grid-template-columns: 1fr !important;
-
-        width: calc(100% - 30px) !important;
-    }
-
-}
-
-
-/* =========================================================
-   5. PROTECCIÓN FINAL CONTRA DESBORDAMIENTO
-   ========================================================= */
-
-img,
-video {
-    max-width: 100%;
-}
-
-.hero-contact-wrapper,
-.hero-actions,
-.navbar,
-.nav-social,
-.project-stack {
-    box-sizing: border-box;
-}
-/* =========================================================
-   PC — WHATSAPP HERO SIN ROMPER EL ANCHO DE LA PÁGINA
-   ========================================================= */
-
-@media (min-width: 769px) {
-
-    /* Recupera el hero original */
-    .hero {
-        overflow: hidden !important;
-        width: 100% !important;
-        max-width: none !important;
-    }
-
-    /* El contenedor del botón */
-    .hero-contact-wrapper {
-        position: relative !important;
-        overflow: visible !important;
-        z-index: 1000 !important;
-    }
-
-    /* Menú justo debajo del botón */
-    .hero-whatsapp-menu {
-        position: absolute !important;
-
-        top: calc(100% + 12px) !important;
-        left: 50% !important;
-        right: auto !important;
-
-        transform: translateX(-50%) translateY(-8px) !important;
-
-        width: 300px !important;
-        max-width: 300px !important;
-
-        z-index: 1001 !important;
-    }
-
-    .hero-whatsapp-menu.open {
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-
-        transform: translateX(-50%) translateY(0) !important;
-    }
-}
-
-/* ---------- CELULAR: limpiar el header ---------- */
-
-@media (max-width: 768px) {
-
-    /* Elimina cualquier resto del menú de navegación */
-    .nav-links {
-        display: none !important;
-        visibility: hidden !important;
-    }
-
-    /* Redes siempre por encima de elementos ocultos */
-    .nav-social {
-        position: relative !important;
-        z-index: 100 !important;
-        background: transparent !important;
-    }
-
-    /* Facebook y TikTok */
-    .nav-social .social-with-name {
-        position: relative !important;
-        z-index: 101 !important;
-    }
-
-    /* Evita elementos/textos atravesando las redes */
-    .navbar > .nav-links {
-        position: absolute !important;
-        display: none !important;
-        width: 0 !important;
-        height: 0 !important;
-        overflow: hidden !important;
-    }
-
-    /* Orden limpio */
-    .brand {
-        grid-row: 1 !important;
-    }
-
-    .nav-social {
-        grid-row: 2 !important;
-    }
-
-    /* Dejamos un poco de aire antes del contenido */
-    .hero-container {
-        padding-top: 55px !important;
-    }
