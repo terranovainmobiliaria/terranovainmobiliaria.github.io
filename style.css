@@ -2769,3 +2769,40 @@ img{
         max-width: 420px !important;
     }
 }
+/* =========================================
+   FIX MENÚ WHATSAPP SOBRE LAS SECCIONES
+   ========================================= */
+
+.hero {
+    overflow: visible !important;
+}
+
+.hero-content,
+.hero-copy,
+.hero-actions,
+.hero-contact-wrapper {
+    overflow: visible !important;
+}
+
+.hero-contact-wrapper {
+    position: relative !important;
+    z-index: 999999 !important;
+}
+
+.hero-whatsapp-menu {
+    z-index: 999999 !important;
+}
+
+.hero-whatsapp-menu.open {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* La siguiente sección debe quedar por debajo */
+#nosotros,
+.about-section,
+.projects-section {
+    position: relative;
+    z-index: 1;
+}
