@@ -2352,3 +2352,51 @@ body{
     grid-template-columns:1fr;
   }
 }
+/* =========================================================
+   FIX FINAL — WHATSAPP HERO SOLO PC
+   NO MODIFICA CELULAR
+========================================================= */
+
+@media (min-width:769px){
+
+  /* El contenido del hero debe quedar por encima de la franja inferior */
+  .hero-container{
+    z-index:20;
+  }
+
+  /* Botón + desplegable */
+  .hero-contact-wrapper{
+    position:relative;
+    z-index:9999 !important;
+  }
+
+  /* Menú completo con los 2 números */
+  .hero-contact-wrapper .hero-whatsapp-menu{
+    position:absolute;
+    top:calc(100% + 12px);
+    left:0;
+    right:auto;
+
+    width:320px;
+    max-width:none;
+
+    z-index:10000 !important;
+  }
+
+  .hero-contact-wrapper .hero-whatsapp-menu.open{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateY(0);
+  }
+
+  /* La barra de beneficios no debe tapar el desplegable */
+  .hero-benefits{
+    z-index:10;
+  }
+
+  /* La ola blanca tampoco */
+  .hero-wave{
+    z-index:4;
+  }
+}
