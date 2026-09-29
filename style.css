@@ -2806,3 +2806,67 @@ img{
     position: relative;
     z-index: 1;
 }
+/* ==================================================
+   CORRECCIÓN FINAL - HERO + WHATSAPP
+   ================================================== */
+
+/* El hero vuelve a recortar su fondo correctamente */
+.hero {
+    overflow: hidden !important;
+}
+
+/* El menú de WhatsApp se mantiene junto al botón */
+.hero-contact-wrapper {
+    position: relative !important;
+    z-index: 9999 !important;
+}
+
+.hero-whatsapp-menu {
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 320px !important;
+    max-width: calc(100vw - 30px) !important;
+
+    z-index: 99999 !important;
+}
+
+/* Cuando se abre */
+.hero-whatsapp-menu.open {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Le damos espacio al hero cuando el menú está abierto,
+   para que no se corte la segunda opción */
+.hero:has(.hero-whatsapp-menu.open) {
+    padding-bottom: 170px !important;
+}
+
+
+/* CELULAR */
+@media (max-width: 768px) {
+
+    .hero-contact-wrapper {
+        width: 100% !important;
+    }
+
+    .hero-whatsapp-menu {
+        top: calc(100% + 12px) !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+
+        width: calc(100vw - 48px) !important;
+        max-width: 420px !important;
+    }
+
+    .hero:has(.hero-whatsapp-menu.open) {
+        padding-bottom: 300px !important;
+    }
+}
