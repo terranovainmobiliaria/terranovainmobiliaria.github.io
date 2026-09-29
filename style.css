@@ -3295,29 +3295,39 @@ video {
     box-sizing: border-box;
 }
 /* =========================================================
-   FIX FINAL 2 — PC WHATSAPP + HEADER MÓVIL
+   PC — WHATSAPP HERO SIN ROMPER EL ANCHO DE LA PÁGINA
    ========================================================= */
-
-
-/* ---------- PC: permitir que WhatsApp salga completo ---------- */
 
 @media (min-width: 769px) {
 
+    /* Recupera el hero original */
     .hero {
-        overflow: visible !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        max-width: none !important;
     }
 
-    .hero-contact-wrapper,
-    .hero-actions {
-        overflow: visible !important;
-    }
-
+    /* El contenedor del botón */
     .hero-contact-wrapper {
-        z-index: 999999 !important;
+        position: relative !important;
+        overflow: visible !important;
+        z-index: 1000 !important;
     }
 
+    /* Menú justo debajo del botón */
     .hero-whatsapp-menu {
-        z-index: 999999 !important;
+        position: absolute !important;
+
+        top: calc(100% + 12px) !important;
+        left: 50% !important;
+        right: auto !important;
+
+        transform: translateX(-50%) translateY(-8px) !important;
+
+        width: 300px !important;
+        max-width: 300px !important;
+
+        z-index: 1001 !important;
     }
 
     .hero-whatsapp-menu.open {
@@ -3325,10 +3335,10 @@ video {
         opacity: 1 !important;
         visibility: visible !important;
         pointer-events: auto !important;
+
+        transform: translateX(-50%) translateY(0) !important;
     }
-
 }
-
 
 /* ---------- CELULAR: limpiar el header ---------- */
 
@@ -3375,4 +3385,3 @@ video {
     .hero-container {
         padding-top: 55px !important;
     }
-
