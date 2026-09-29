@@ -2706,45 +2706,75 @@ img{
     }
 }
 /* =========================================================
-   TERRANOVA - CORRECCIÓN FINAL HEADER + WHATSAPP + MÓVIL
+   TERRANOVA — FIX DEFINITIVO HEADER + HERO + WHATSAPP
    ========================================================= */
 
-/* ---------- WHATSAPP DEL HERO ---------- */
+
+/* =========================================================
+   1. WHATSAPP DEL BOTÓN PRINCIPAL DEL HERO
+   ========================================================= */
 
 .hero-contact-wrapper {
     position: relative !important;
-    display: inline-block;
-    z-index: 100;
+    display: inline-block !important;
+    z-index: 1000 !important;
 }
 
 .hero-whatsapp-menu {
     position: absolute !important;
+
     top: calc(100% + 12px) !important;
     left: 50% !important;
     right: auto !important;
-
-    transform: translateX(-50%) !important;
+    bottom: auto !important;
 
     width: 320px !important;
     max-width: calc(100vw - 30px) !important;
 
-    z-index: 9999 !important;
-}
+    margin: 0 !important;
 
-.hero-whatsapp-menu:not(.open) {
-    display: none !important;
+    transform: translateX(-50%) translateY(-8px) !important;
+
+    z-index: 99999 !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
 
 .hero-whatsapp-menu.open {
-    display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
+
+    transform: translateX(-50%) translateY(0) !important;
 }
 
 
 /* =========================================================
-   CELULAR
+   2. PC — NO MODIFICAR DISEÑO ORIGINAL
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    .mobile-menu,
+    #mobileMenu {
+        display: none !important;
+    }
+
+    .hero {
+        overflow: hidden !important;
+    }
+
+    .hero-contact-wrapper {
+        overflow: visible !important;
+    }
+
+}
+
+
+/* =========================================================
+   3. CELULAR
    ========================================================= */
 
 @media (max-width: 768px) {
@@ -2757,42 +2787,48 @@ img{
     }
 
 
-    /* -----------------------------------------
-       CABECERA
-       ----------------------------------------- */
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
 
     .navbar {
-        width: calc(100% - 32px) !important;
-        max-width: none !important;
-        margin: 0 auto !important;
-        padding: 14px 0 !important;
+        width: calc(100% - 28px) !important;
+        height: auto !important;
 
-        display: flex !important;
-        flex-wrap: wrap !important;
-        align-items: center !important;
-        justify-content: space-between !important;
+        margin: 0 auto !important;
+        padding: 14px 0 5px !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr !important;
 
         gap: 12px !important;
+
+        position: relative !important;
     }
 
 
-    /* Logo */
+    /* LOGO */
 
     .brand {
-        width: 100% !important;
+        width: min(310px, 88vw) !important;
+
+        margin: 0 auto !important;
+
+        padding: 10px 15px !important;
+
         display: flex !important;
         justify-content: center !important;
-        margin: 0 0 8px !important;
     }
 
     .brand-logo {
-        width: min(290px, 82vw) !important;
+        width: 100% !important;
+        max-width: 270px !important;
         height: auto !important;
-        max-width: 100% !important;
+        max-height: none !important;
     }
 
 
-    /* Quitamos las 3 rayas */
+    /* ELIMINAMOS LAS 3 RAYAS */
 
     .mobile-menu,
     #mobileMenu {
@@ -2800,16 +2836,16 @@ img{
     }
 
 
-    /* Ocultamos navegación normal */
+    /* MENÚ NORMAL OCULTO EN CELULAR */
 
     .nav-links {
         display: none !important;
     }
 
 
-    /* -----------------------------------------
-       REDES + CONTACTO SUPERIOR
-       ----------------------------------------- */
+    /* -----------------------------------------------------
+       FACEBOOK + TIKTOK + CONTACTO SUPERIOR
+       ----------------------------------------------------- */
 
     .nav-social {
         width: 100% !important;
@@ -2820,58 +2856,64 @@ img{
 
         gap: 8px !important;
 
-        position: relative !important;
         flex-wrap: nowrap !important;
+
+        position: relative !important;
     }
 
 
-    /* Facebook y TikTok */
+    /* Facebook / TikTok */
 
-    .nav-social .social-with-name {
-        width: auto !important;
-        min-width: 0 !important;
-        height: 42px !important;
+    .nav-social .social-with-name,
+    .nav-social .social-circle {
+        width: 44px !important;
+        min-width: 44px !important;
+        height: 44px !important;
 
-        padding: 0 13px !important;
+        padding: 0 !important;
 
-        border-radius: 50px !important;
+        border-radius: 50% !important;
 
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
 
-        gap: 6px !important;
-        flex: 0 1 auto !important;
+        flex: 0 0 44px !important;
     }
 
-    /* VOLVEMOS A MOSTRAR LOS NOMBRES */
+
+    /* En celular mostramos solamente los iconos */
 
     .nav-social .social-name {
-        display: block !important;
-        font-size: 12px !important;
-        white-space: nowrap !important;
+        display: none !important;
     }
 
     .nav-social .facebook .social-icon {
-        font-size: 18px !important;
+        font-size: 19px !important;
     }
 
     .nav-social .tiktok svg {
-        width: 17px !important;
-        height: 17px !important;
+        width: 18px !important;
+        height: 18px !important;
     }
 
 
-    /* Contáctanos superior */
+    /* CONTACTO SUPERIOR */
 
     .whatsapp-wrapper {
         position: relative !important;
-        flex: 0 1 auto !important;
+
+        flex: 1 1 auto !important;
+
+        max-width: 190px !important;
     }
 
     .contact-top {
-        height: 42px !important;
-        min-height: 42px !important;
+        width: 100% !important;
+        min-width: 0 !important;
+
+        height: 44px !important;
+        min-height: 44px !important;
 
         padding: 0 13px !important;
 
@@ -2881,28 +2923,103 @@ img{
     }
 
     .contact-top .wa-icon {
-        display: none !important;
+        display: inline !important;
+        font-size: 15px !important;
     }
 
 
-    /* Menú del contacto SUPERIOR */
+    /* MENÚ WHATSAPP SUPERIOR */
 
     .whatsapp-wrapper .whatsapp-menu {
         position: absolute !important;
 
         top: calc(100% + 10px) !important;
+
         right: 0 !important;
         left: auto !important;
 
-        width: min(300px, calc(100vw - 32px)) !important;
+        width: min(300px, calc(100vw - 28px)) !important;
 
-        z-index: 99999 !important;
+        transform: translateY(-8px) !important;
+
+        z-index: 999999 !important;
+    }
+
+    .whatsapp-wrapper .whatsapp-menu.open {
+        transform: translateY(0) !important;
     }
 
 
-    /* -----------------------------------------
-       BOTONES PRINCIPALES
-       ----------------------------------------- */
+    /* -----------------------------------------------------
+       HERO
+       ----------------------------------------------------- */
+
+    .hero {
+        min-height: auto !important;
+        overflow: hidden !important;
+    }
+
+    .hero-container {
+        width: calc(100% - 36px) !important;
+
+        margin: 0 auto !important;
+
+        display: block !important;
+
+        padding-top: 45px !important;
+        padding-bottom: 90px !important;
+    }
+
+    .hero-copy {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+
+    /* UBICACIÓN */
+
+    .location-pill {
+        max-width: 100% !important;
+
+        font-size: 11px !important;
+
+        padding: 9px 15px !important;
+
+        margin-bottom: 28px !important;
+    }
+
+
+    /* TÍTULO */
+
+    .hero h1 {
+        font-size: clamp(46px, 13vw, 65px) !important;
+
+        line-height: .98 !important;
+
+        letter-spacing: -3px !important;
+
+        max-width: 100% !important;
+    }
+
+    .title-stroke {
+        width: 210px !important;
+
+        margin: 18px 0 28px !important;
+    }
+
+    .hero-description {
+        max-width: 100% !important;
+
+        font-size: 17px !important;
+        line-height: 1.65 !important;
+
+        margin-bottom: 30px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       BOTONES GRANDES
+       ----------------------------------------------------- */
 
     .hero-actions {
         width: 100% !important;
@@ -2911,6 +3028,8 @@ img{
         flex-direction: column !important;
 
         gap: 14px !important;
+
+        overflow: visible !important;
     }
 
     .hero-actions > a,
@@ -2921,89 +3040,257 @@ img{
 
     .hero-actions .btn {
         width: 100% !important;
-        max-width: 100% !important;
+
+        min-height: 64px !important;
+
+        padding: 0 20px !important;
+
         box-sizing: border-box !important;
+
+        font-size: 17px !important;
     }
 
 
-    /* -----------------------------------------
+    /* -----------------------------------------------------
        WHATSAPP DEL BOTÓN GRANDE
-       ----------------------------------------- */
+       ----------------------------------------------------- */
 
     .hero-contact-wrapper {
-        position: relative !important;
-
         width: 100% !important;
-        max-width: 100% !important;
 
         display: block !important;
+
+        position: relative !important;
+
+        z-index: 500 !important;
     }
 
     .hero-whatsapp-menu {
-        position: absolute !important;
+        position: relative !important;
 
-        top: calc(100% + 12px) !important;
-
-        left: 0 !important;
-        right: 0 !important;
-
-        transform: none !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
 
         width: 100% !important;
         max-width: 100% !important;
 
-        margin: 0 !important;
-        box-sizing: border-box !important;
+        margin: 10px 0 0 !important;
 
-        z-index: 99999 !important;
+        transform: none !important;
+
+        display: none !important;
+
+        box-sizing: border-box !important;
     }
 
-    .hero-whatsapp-menu * {
-        box-sizing: border-box !important;
+    .hero-whatsapp-menu.open {
+        display: block !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+
+        transform: none !important;
     }
 
     .hero-whatsapp-menu a {
         width: 100% !important;
-        max-width: 100% !important;
+        box-sizing: border-box !important;
     }
 
 
-    /* Cuando se abre dejamos espacio real debajo */
+    /* -----------------------------------------------------
+       CENTRO DECORATIVO
+       ----------------------------------------------------- */
 
-    .hero:has(.hero-whatsapp-menu.open) {
-        padding-bottom: 330px !important;
+    .hero-center {
+        display: none !important;
     }
+
+
+    /* -----------------------------------------------------
+       TARJETAS DE PROYECTOS DEL HERO
+       ----------------------------------------------------- */
+
+    .project-stack {
+        width: 100% !important;
+
+        margin-top: 55px !important;
+
+        transform: none !important;
+
+        gap: 16px !important;
+    }
+
+    .project-card {
+        width: 100% !important;
+
+        height: 205px !important;
+
+        margin-left: 0 !important;
+
+        transform: none !important;
+
+        border-radius: 23px !important;
+    }
+
+    .project-card:nth-child(2) {
+        margin-left: 0 !important;
+    }
+
+    .project-card:hover {
+        transform: none !important;
+    }
+
+    .future-projects {
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       BENEFICIOS
+       ----------------------------------------------------- */
+
+    .hero-benefits {
+        position: relative !important;
+
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+
+        transform: none !important;
+
+        width: calc(100% - 36px) !important;
+
+        margin: 0 auto 60px !important;
+
+        padding: 20px !important;
+
+        display: grid !important;
+
+        grid-template-columns: 1fr 1fr !important;
+
+        gap: 18px !important;
+    }
+
+    .benefit {
+        min-width: 0 !important;
+
+        padding: 10px 4px !important;
+
+        border: 0 !important;
+    }
+
+    .benefit-divider {
+        display: none !important;
+    }
+
+    .scroll-down {
+        display: none !important;
+    }
+
+    .hero-wave {
+        display: none !important;
+    }
+
 }
 
 
 /* =========================================================
-   CELULARES MUY PEQUEÑOS
+   4. CELULARES PEQUEÑOS
    ========================================================= */
 
 @media (max-width: 430px) {
 
     .navbar {
-        width: calc(100% - 24px) !important;
+        width: calc(100% - 22px) !important;
+    }
+
+    .brand {
+        width: min(300px, 90vw) !important;
     }
 
     .brand-logo {
-        width: min(270px, 84vw) !important;
+        max-width: 255px !important;
     }
 
     .nav-social {
-        gap: 6px !important;
+        gap: 7px !important;
     }
 
-    .nav-social .social-with-name {
-        padding: 0 10px !important;
+    .nav-social .social-with-name,
+    .nav-social .social-circle {
+        width: 42px !important;
+        min-width: 42px !important;
+        height: 42px !important;
+
+        flex-basis: 42px !important;
     }
 
-    .nav-social .social-name {
-        font-size: 11px !important;
+    .whatsapp-wrapper {
+        max-width: 175px !important;
     }
 
     .contact-top {
-        padding: 0 10px !important;
+        height: 42px !important;
+        min-height: 42px !important;
+
         font-size: 11px !important;
+
+        padding: 0 10px !important;
     }
+
+    .hero-container {
+        width: calc(100% - 30px) !important;
+
+        padding-top: 38px !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(43px, 13vw, 56px) !important;
+    }
+
+    .hero-description {
+        font-size: 16px !important;
+    }
+
+    .hero-actions .btn {
+        min-height: 60px !important;
+        font-size: 16px !important;
+    }
+
+    .project-card {
+        height: 190px !important;
+    }
+
+    .project-info h3 {
+        font-size: 20px !important;
+    }
+
+    .hero-benefits {
+        grid-template-columns: 1fr !important;
+
+        width: calc(100% - 30px) !important;
+    }
+
+}
+
+
+/* =========================================================
+   5. PROTECCIÓN FINAL CONTRA DESBORDAMIENTO
+   ========================================================= */
+
+img,
+video {
+    max-width: 100%;
+}
+
+.hero-contact-wrapper,
+.hero-actions,
+.navbar,
+.nav-social,
+.project-stack {
+    box-sizing: border-box;
 }
