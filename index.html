@@ -43,11 +43,42 @@
            class="brand-logo">
     </a>
 
-    <div class="nav-links">
-      <a href="#inicio" class="active">Inicio</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
+    <div class="nav-search">
+      <button class="search-mobile-toggle" type="button" aria-expanded="false" aria-controls="propertySearchForm">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="10.8" cy="10.8" r="6.8"></circle>
+          <path d="m16 16 5 5"></path>
+        </svg>
+        <span>Comprar o alquilar propiedades</span>
+        <span class="search-toggle-chevron" aria-hidden="true">⌄</span>
+      </button>
+
+      <form class="property-search" id="propertySearchForm" action="#proyectos" role="search" aria-label="Buscar propiedades">
+        <label class="visually-hidden" for="searchOperation">Operación</label>
+        <select id="searchOperation" name="operacion">
+          <option value="comprar">Comprar</option>
+          <option value="alquilar">Alquilar</option>
+        </select>
+
+        <label class="visually-hidden" for="searchType">Tipo de inmueble</label>
+        <select id="searchType" name="tipo">
+          <option value="todos">Todos</option>
+          <option value="terrenos">Terrenos y lotes</option>
+          <option value="casas">Casas</option>
+          <option value="departamentos">Departamentos</option>
+          <option value="locales">Locales comerciales</option>
+        </select>
+
+        <label class="visually-hidden" for="searchLocation">Ubicación o palabras clave</label>
+        <input id="searchLocation" name="ubicacion" type="search" placeholder="Ubicación o palabra clave" autocomplete="off">
+
+        <button class="property-search-submit" type="submit" aria-label="Buscar propiedades">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.8"></circle>
+            <path d="m16 16 5 5"></path>
+          </svg>
+        </button>
+      </form>
     </div>
 
   <div class="nav-social">
@@ -127,12 +158,6 @@
 
 </div>
 
-    <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
   </nav>
 
 
@@ -169,43 +194,6 @@
           <span class="arrow">→</span>
         </a>
 
-      <div class="hero-contact-wrapper">
-
-    <button type="button"
-            class="btn btn-glass"
-            onclick="toggleHeroWhatsapp(event)">
-        <span>◉</span>
-        Contáctanos
-        <span>⌄</span>
-    </button>
-
-    <div class="whatsapp-menu hero-whatsapp-menu" id="heroWhatsappMenu">
-
-        <p class="wa-menu-title">
-            ¿Con quién deseas comunicarte?
-        </p>
-
-        <a href="https://wa.me/51922836427?text=Hola%20Terranova%20Inmobiliaria,%20quisiera%20recibir%20información%20sobre%20sus%20proyectos."
-           target="_blank">
-            <span>
-                <strong>WhatsApp 1</strong>
-                <small>+51 922 836 427</small>
-            </span>
-            <b>›</b>
-        </a>
-
-        <a href="https://wa.me/51941201577?text=Hola%20Terranova%20Inmobiliaria,%20quisiera%20recibir%20información%20sobre%20sus%20proyectos."
-           target="_blank">
-            <span>
-                <strong>WhatsApp 2</strong>
-                <small>+51 941 201 577</small>
-            </span>
-            <b>›</b>
-        </a>
-
-    </div>
-
-</div>
       </div>
 
     </div>
@@ -230,6 +218,19 @@
 
     <!-- PROYECTOS -->
     <div class="project-stack">
+
+      <article class="project-card project-card-launch reveal" aria-label="Gran lanzamiento próximamente en Andahuaylas">
+        <div class="launch-landscape" role="img" aria-label="Paisaje referencial de Apurímac, no corresponde a una imagen del proyecto"></div>
+        <div class="project-launch-shade"></div>
+        <span class="project-launch-label">PRÓXIMO GRAN LANZAMIENTO</span>
+        <div class="project-launch-content">
+          <h3>Andahuaylas está por descubrir algo grande</h3>
+          <p class="project-launch-description">Una nueva etapa para Terranova está tomando forma en la ciudad</p>
+          <button class="project-launch-cta" id="openAndahuaylasModal" type="button" aria-haspopup="dialog">
+            Descubre lo que viene <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </article>
 
       <!-- SALINAS -->
       <a href="salinas.html" class="project-card project-card-1 reveal">
@@ -257,34 +258,30 @@
 
 
       <!-- CHINCHEROS -->
-      <a href="chincheros.html" class="project-card project-card-2 reveal">
+      <article class="project-card project-card-2 project-card-upcoming reveal" aria-label="Condominio Terranova, muy pronto">
 
         <img
          src="assets/chincheros/condominio-terranova.jpeg"
-      alt="Condominio Terranova">
+         alt=""
+         aria-hidden="true">
 
         <div class="project-shade"></div>
 
-        <div class="project-badge">
-          FUTURO CONDOMINIO
+        <div class="project-badge project-badge-upcoming">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="5" y="10" width="14" height="11" rx="2"></rect>
+            <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+          </svg>
+          MUY PRONTO
         </div>
 
         <div class="project-info">
           <h3>Condominio Terranova</h3>
           <p>Chincheros, Apurímac</p>
+          <p class="project-upcoming-description">Estamos preparando algo especial</p>
         </div>
 
-        <div class="project-arrow">
-          →
-        </div>
-
-      </a>
-
-      <div class="future-projects">
-        <span>↪</span>
-        Más proyectos<br>
-        muy pronto...
-      </div>
+      </article>
 
     </div>
 
@@ -323,13 +320,39 @@
   </div>
 
 
-  <a href="#nosotros" class="scroll-down">
-    ↓
-  </a>
-
-  <div class="hero-wave"></div>
-
 </header>
+
+<div class="launch-modal-backdrop" id="andahuaylasModal" hidden>
+  <section class="launch-modal" role="dialog" aria-modal="true" aria-labelledby="andahuaylasModalTitle" aria-describedby="andahuaylasModalDescription" tabindex="-1">
+    <button class="launch-modal-close" type="button" aria-label="Cerrar ventana">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m6 6 12 12M18 6 6 18"></path>
+      </svg>
+    </button>
+    <div class="launch-modal-art" role="img" aria-label="Paisaje referencial de Apurímac; no representa el proyecto">
+      <span>IMAGEN REFERENCIAL · APURÍMAC</span>
+    </div>
+    <div class="launch-modal-content">
+      <span class="launch-modal-badge">PRÓXIMAMENTE</span>
+      <p class="launch-modal-eyebrow">TERRANOVA · ANDAHUAYLAS</p>
+      <h2 id="andahuaylasModalTitle">ALGO GRANDE ESTÁ POR COMENZAR</h2>
+      <p id="andahuaylasModalDescription">Muy pronto, Terranova presentará un nuevo proyecto en la ciudad de Andahuaylas</p>
+      <button class="launch-modal-whatsapp-button" id="launchWhatsAppButton" type="button" aria-expanded="false" aria-controls="launchWhatsAppOptions">
+        Quiero saber más <span aria-hidden="true">↗</span>
+      </button>
+      <div class="launch-modal-whatsapp-options" id="launchWhatsAppOptions" role="group" aria-label="Elige un asesor de WhatsApp" hidden>
+        <a href="https://wa.me/51922836427" data-launch-whatsapp="51922836427" target="_blank" rel="noopener noreferrer">
+          <span><strong>WhatsApp 1</strong><small>+51 922 836 427</small></span>
+          <b aria-hidden="true">↗</b>
+        </a>
+        <a href="https://wa.me/51941201577" data-launch-whatsapp="51941201577" target="_blank" rel="noopener noreferrer">
+          <span><strong>WhatsApp 2</strong><small>+51 941 201 577</small></span>
+          <b aria-hidden="true">↗</b>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
 
 
 <!-- ======================================================
@@ -413,6 +436,51 @@
 
     </div>
 
+    <p class="search-results-message" id="searchResultsMessage" role="status" aria-live="polite" hidden></p>
+
+    <div class="search-empty-state" id="searchEmptyState" role="status" aria-live="polite" hidden>
+      <div class="empty-landscape" aria-hidden="true">
+        <svg viewBox="0 0 260 180" role="img">
+          <circle class="empty-sun" cx="198" cy="42" r="19"></circle>
+          <path class="empty-mountain-back" d="M18 126 74 67l42 48 35-38 75 61v25H18z"></path>
+          <path class="empty-mountain-front" d="M18 137 69 99l37 28 41-36 79 51v19H18z"></path>
+          <path class="empty-house" d="m87 119 31-25 31 25v36h-62z"></path>
+          <path class="empty-house-roof" d="m78 121 40-33 40 33"></path>
+          <path class="empty-house-door" d="M111 155v-22h15v22"></path>
+          <path class="empty-ground" d="M18 158c34-12 61 8 97-2s64-8 112 4"></path>
+          <path class="empty-leaf" d="M47 110c-3-12 3-20 15-23 1 12-4 20-15 23Zm1 12c-9-8-10-17-4-27 8 9 9 18 4 27Z"></path>
+          <path class="empty-leaf-stem" d="M47 124c1-9 4-16 9-23"></path>
+        </svg>
+      </div>
+      <div class="empty-copy">
+        <span class="empty-eyebrow">SEGUIMOS BUSCANDO CONTIGO</span>
+        <h3>¡Ups! Aún no encontramos tu espacio ideal <span aria-hidden="true">🌿</span></h3>
+        <p id="emptySearchMessage">
+          Parece que esta propiedad todavía está por llegar. ¡Pero tu próxima gran oportunidad puede estar más cerca de lo que imaginas!
+        </p>
+        <span class="empty-search-location" id="emptySearchLocation"></span>
+        <div class="empty-actions">
+          <button class="empty-reset-button" id="resetPropertySearch" type="button">Explorar otras opciones</button>
+          <div class="search-whatsapp-picker">
+            <button class="empty-whatsapp-button" id="emptyWhatsAppButton" type="button" aria-expanded="false" aria-controls="emptyWhatsAppMenu">
+              Cuéntanos qué buscas <span aria-hidden="true">⌄</span>
+            </button>
+            <div class="search-whatsapp-menu" id="emptyWhatsAppMenu" role="group" aria-label="Elige un asesor por WhatsApp" hidden>
+              <p>Elige con quién conversar</p>
+              <a href="https://wa.me/51922836427" data-search-whatsapp="51922836427" target="_blank" rel="noopener noreferrer">
+                <span><strong>WhatsApp 1</strong><small>+51 922 836 427</small></span>
+                <b aria-hidden="true">↗</b>
+              </a>
+              <a href="https://wa.me/51941201577" data-search-whatsapp="51941201577" target="_blank" rel="noopener noreferrer">
+                <span><strong>WhatsApp 2</strong><small>+51 941 201 577</small></span>
+                <b aria-hidden="true">↗</b>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <div class="projects-large-grid">
 
@@ -454,18 +522,23 @@
 
 
       <!-- CHINCHEROS -->
-      <a href="chincheros.html" class="large-project reveal">
+      <article class="large-project large-project-upcoming reveal" aria-label="Condominio Terranova, muy pronto">
 
         <div class="large-project-image">
 
           <img
             src="assets/chincheros/propuesta-residencial.png"
-            alt="Proyecto Chincheros">
+            alt=""
+            aria-hidden="true">
 
           <div class="large-project-overlay"></div>
 
-          <span class="large-project-number">
-            02
+          <span class="large-project-status">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="5" y="10" width="14" height="11" rx="2"></rect>
+              <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+            </svg>
+            MUY PRONTO
           </span>
 
           <div class="large-project-content">
@@ -474,20 +547,36 @@
 
             <h3>Condominio Terranova</h3>
 
-            <p>
-              Lotes desde 400 m² proyectados como
-              una futura residencial.
-            </p>
-
-            <div class="discover">
-              Descubrir proyecto →
-            </div>
+            <p>Estamos preparando algo especial</p>
 
           </div>
 
         </div>
 
-      </a>
+      </article>
+
+      <article class="large-project large-project-launch reveal" aria-label="Gran lanzamiento próximamente en Andahuaylas">
+        <div class="large-project-image">
+          <div class="launch-landscape" aria-hidden="true">
+            <svg viewBox="0 0 640 420" preserveAspectRatio="xMidYMax slice">
+              <path class="launch-mountain-back" d="m0 285 115-112 86 72 93-128 118 143 90-86 138 111v135H0z"></path>
+              <path class="launch-mountain-front" d="m0 328 131-93 85 58 118-103 105 91 92-56 109 87v108H0z"></path>
+              <path class="launch-architecture" d="M255 340V220l65-52 65 52v120m-98 0v-76h66v76m-13-121h13v-25h-13zm-43 129h144"></path>
+            </svg>
+          </div>
+          <div class="large-project-overlay"></div>
+          <span class="large-project-status launch-status">
+            GRAN LANZAMIENTO
+          </span>
+          <div class="large-project-content">
+            <span>CIUDAD DE ANDAHUAYLAS · APURÍMAC</span>
+            <h3>PRÓXIMAMENTE EN ANDAHUAYLAS</h3>
+            <p class="launch-headline">Algo grande está por comenzar</p>
+            <p>Un nuevo capítulo para Terranova está tomando forma en la ciudad de Andahuaylas</p>
+            <span class="launch-coming-soon">MUY PRONTO</span>
+          </div>
+        </div>
+      </article>
 
     </div>
 
