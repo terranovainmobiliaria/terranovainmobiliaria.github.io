@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("andahuaylasModal");
-  const openButton = document.getElementById("openAndahuaylasModal");
+  const openButtons = Array.from(document.querySelectorAll("[data-open-andahuaylas-modal]"));
   const closeButton = modal && modal.querySelector(".launch-modal-close");
   const whatsappButton = document.getElementById("launchWhatsAppButton");
   const whatsappOptions = document.getElementById("launchWhatsAppOptions");
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ? Array.from(whatsappOptions.querySelectorAll("[data-launch-whatsapp]"))
     : [];
 
-  if (!modal || !openButton || !closeButton || !whatsappButton || !whatsappOptions || whatsappLinks.length !== 2) {
+  if (!modal || openButtons.length === 0 || !closeButton || !whatsappButton || !whatsappOptions || whatsappLinks.length !== 2) {
     return;
   }
 
@@ -99,21 +99,23 @@ document.addEventListener("DOMContentLoaded", function () {
     previousFocus = null;
   };
 
-  openButton.addEventListener("click", function () {
-    previousFocus = document.activeElement;
-    previousBodyOverflow = document.body.style.overflow;
-    previousInertStates = Array.from(document.body.children)
-      .filter(function (element) {
-        return element !== modal;
-      })
-      .map(function (element) {
-        const state = { element: element, inert: element.inert };
-        element.inert = true;
-        return state;
-      });
-    document.body.style.overflow = "hidden";
-    modal.hidden = false;
-    closeButton.focus({ preventScroll: true });
+  openButtons.forEach(function (openButton) {
+    openButton.addEventListener("click", function () {
+      previousFocus = document.activeElement;
+      previousBodyOverflow = document.body.style.overflow;
+      previousInertStates = Array.from(document.body.children)
+        .filter(function (element) {
+          return element !== modal;
+        })
+        .map(function (element) {
+          const state = { element: element, inert: element.inert };
+          element.inert = true;
+          return state;
+        });
+      document.body.style.overflow = "hidden";
+      modal.hidden = false;
+      closeButton.focus({ preventScroll: true });
+    });
   });
 
   closeButton.addEventListener("click", closeModal);

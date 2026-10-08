@@ -226,7 +226,7 @@
         <div class="project-launch-content">
           <h3>Andahuaylas está por descubrir algo grande</h3>
           <p class="project-launch-description">Una nueva etapa para Terranova está tomando forma en la ciudad</p>
-          <button class="project-launch-cta" id="openAndahuaylasModal" type="button" aria-haspopup="dialog">
+          <button class="project-launch-cta" id="openAndahuaylasModal" data-open-andahuaylas-modal type="button" aria-haspopup="dialog">
             Descubre lo que viene <span aria-hidden="true">↗</span>
           </button>
         </div>
@@ -363,6 +363,23 @@
 
   <div class="about-decoration about-decoration-1"></div>
   <div class="about-decoration about-decoration-2"></div>
+  <div class="section-landscape-decoration" aria-hidden="true">
+    <svg class="landscape-ridge" viewBox="0 0 1440 240" preserveAspectRatio="none">
+      <path class="landscape-ridge-back" d="M0 172 112 114l70 45 92-88 88 78 112-106 104 103 101-70 84 54 102-91 101 76 86-49 108 59v115H0z"></path>
+      <path class="landscape-ridge-front" d="m0 197 108-48 91 38 108-64 105 61 91-36 100 50 113-61 107 47 104-43 104 41 103-39 106 42v55H0z"></path>
+      <g class="landscape-contours">
+        <path d="M-30 82c132-78 219 70 352 3s184-83 310-18 193 96 328 19 214-73 510 8"></path>
+        <path d="M-30 104c132-78 219 70 352 3s184-83 310-18 193 96 328 19 214-73 510 8"></path>
+        <path d="M-30 126c132-78 219 70 352 3s184-83 310-18 193 96 328 19 214-73 510 8"></path>
+      </g>
+    </svg>
+    <svg class="landscape-branch landscape-branch-left" viewBox="0 0 120 200">
+      <path class="branch-stem" d="M18 190c19-42 39-80 78-128M47 132c-18-5-28-16-31-34 20 1 32 12 31 34Zm18-31c-1-20 8-33 27-40 3 20-7 34-27 40Zm-31 18c-3-18 4-31 21-40 6 18-2 33-21 40Zm35-46C67 54 75 40 92 33c6 18-2 32-23 40Z"></path>
+    </svg>
+    <svg class="landscape-branch landscape-branch-right" viewBox="0 0 120 200">
+      <path class="branch-stem" d="M102 190c-19-42-39-80-78-128m49 70c18-5 28-16 31-34-20 1-32 12-31 34ZM55 101c1-20-8-33-27-40-3 20 7 34 27 40Zm31 18c3-18-4-31-21-40-6 18 2 33 21 40ZM51 73c2-19-6-33-23-40-6 18 2 32 23 40Z"></path>
+    </svg>
+  </div>
 
   <div class="section-container about-grid">
 
@@ -415,6 +432,23 @@
 ====================================================== -->
 
 <section class="projects-section" id="proyectos">
+  <div class="section-landscape-decoration" aria-hidden="true">
+    <svg class="landscape-ridge" viewBox="0 0 1440 240" preserveAspectRatio="none">
+      <path class="landscape-ridge-back" d="M0 172 112 114l70 45 92-88 88 78 112-106 104 103 101-70 84 54 102-91 101 76 86-49 108 59v115H0z"></path>
+      <path class="landscape-ridge-front" d="m0 197 108-48 91 38 108-64 105 61 91-36 100 50 113-61 107 47 104-43 104 41 103-39 106 42v55H0z"></path>
+      <g class="landscape-contours">
+        <path d="M-30 82c132-78 219 70 352 3s184-83 310-18 193 96 328 19 214-73 510 8"></path>
+        <path d="M-30 104c132-78 219 70 352 3s184-83 310-18 193 96 328 19 214-73 510 8"></path>
+        <path d="M-30 126c132-78 219 70 352 3s184-83 310-18 193 96 328 19 214-73 510 8"></path>
+      </g>
+    </svg>
+    <svg class="landscape-branch landscape-branch-left" viewBox="0 0 120 200">
+      <path class="branch-stem" d="M18 190c19-42 39-80 78-128M47 132c-18-5-28-16-31-34 20 1 32 12 31 34Zm18-31c-1-20 8-33 27-40 3 20-7 34-27 40Zm-31 18c-3-18 4-31 21-40 6 18-2 33-21 40Zm35-46C67 54 75 40 92 33c6 18-2 32-23 40Z"></path>
+    </svg>
+    <svg class="landscape-branch landscape-branch-right" viewBox="0 0 120 200">
+      <path class="branch-stem" d="M102 190c-19-42-39-80-78-128m49 70c18-5 28-16 31-34-20 1-32 12-31 34ZM55 101c1-20-8-33-27-40-3 20 7 34 27 40Zm31 18c3-18-4-31-21-40-6 18 2 33 21 40ZM51 73c2-19-6-33-23-40-6 18 2 32 23 40Z"></path>
+    </svg>
+  </div>
 
   <div class="section-container">
 
@@ -557,23 +591,15 @@
 
       <article class="large-project large-project-launch reveal" aria-label="Gran lanzamiento próximamente en Andahuaylas">
         <div class="large-project-image">
-          <div class="launch-landscape" aria-hidden="true">
-            <svg viewBox="0 0 640 420" preserveAspectRatio="xMidYMax slice">
-              <path class="launch-mountain-back" d="m0 285 115-112 86 72 93-128 118 143 90-86 138 111v135H0z"></path>
-              <path class="launch-mountain-front" d="m0 328 131-93 85 58 118-103 105 91 92-56 109 87v108H0z"></path>
-              <path class="launch-architecture" d="M255 340V220l65-52 65 52v120m-98 0v-76h66v76m-13-121h13v-25h-13zm-43 129h144"></path>
-            </svg>
-          </div>
-          <div class="large-project-overlay"></div>
-          <span class="large-project-status launch-status">
-            GRAN LANZAMIENTO
-          </span>
-          <div class="large-project-content">
-            <span>CIUDAD DE ANDAHUAYLAS · APURÍMAC</span>
-            <h3>PRÓXIMAMENTE EN ANDAHUAYLAS</h3>
-            <p class="launch-headline">Algo grande está por comenzar</p>
-            <p>Un nuevo capítulo para Terranova está tomando forma en la ciudad de Andahuaylas</p>
-            <span class="launch-coming-soon">MUY PRONTO</span>
+          <div class="launch-landscape" role="img" aria-label="Paisaje referencial de Apurímac, no corresponde a una imagen del proyecto"></div>
+          <div class="project-launch-shade"></div>
+          <span class="project-launch-label">PRÓXIMO GRAN LANZAMIENTO</span>
+          <div class="project-launch-content">
+            <h3>Andahuaylas está por descubrir algo grande</h3>
+            <p class="project-launch-description">Una nueva etapa para Terranova está tomando forma en la ciudad</p>
+            <button class="project-launch-cta" data-open-andahuaylas-modal type="button" aria-haspopup="dialog">
+              Descubre lo que viene <span aria-hidden="true">↗</span>
+            </button>
           </div>
         </div>
       </article>
