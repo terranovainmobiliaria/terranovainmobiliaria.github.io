@@ -393,6 +393,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectedType = propertyType.value;
     const keyword = locationInput.value.trim();
     const normalizedKeyword = normalize(keyword);
+    const keywordTokens = normalizedKeyword.split(/\s+/).filter(Boolean);
     const whatsappMessage = createWhatsAppMessage(selectedOperation, selectedType, keyword);
     updateAdvisorLinks(whatsappMessage);
     closeAdvisorMenu(false);
@@ -409,8 +410,13 @@ document.addEventListener("DOMContentLoaded", function () {
       const operations = (card.dataset.operation || "").split(/\s+/);
       const matchesOperation = operations.includes(selectedOperation);
       const matchesType = selectedType === "todos" || card.dataset.propertyType === selectedType;
-      const searchableText = normalize(card.textContent + " " + (card.getAttribute("href") || ""));
-      const matchesKeyword = !normalizedKeyword || searchableText.includes(normalizedKeyword);
+      const searchableText = normalize(
+        card.textContent + " " + (card.dataset.searchKeywords || "") + " " +
+        (card.getAttribute("href") || "")
+      );
+      const matchesKeyword = !keywordTokens.length || keywordTokens.some(function (token) {
+        return searchableText.includes(token);
+      });
 
       return matchesOperation && matchesType && matchesKeyword;
     });

@@ -2224,9 +2224,9 @@ img{
   background-image:
     linear-gradient(105deg,rgba(0,19,28,.76) 0%,rgba(0,28,36,.3) 58%,rgba(0,31,40,.04) 100%),
     linear-gradient(0deg,rgba(0,20,29,.72),transparent 68%),
-    url("assets/apurimac.jpg");
+    url("assets/megaproyecto-andahuaylas.png");
   background-size:cover;
-  background-position:center 52%;
+  background-position:center 78%;
   transform:scale(1.04);
   animation:launchLandscapeDrift 22s ease-in-out infinite alternate;
 }
@@ -4315,11 +4315,11 @@ body {
 
 .large-project-launch .launch-landscape{
   background-image:
-    linear-gradient(105deg,rgba(0,19,28,.76) 0%,rgba(0,28,36,.3) 58%,rgba(0,31,40,.04) 100%),
-    linear-gradient(0deg,rgba(0,20,29,.72),transparent 68%),
-    url("assets/apurimac.jpg");
+    linear-gradient(105deg,rgba(0,19,28,.78) 0%,rgba(0,28,36,.4) 58%,rgba(0,31,40,.2) 100%),
+    linear-gradient(0deg,rgba(0,20,29,.82),rgba(0,20,29,.08) 76%),
+    url("assets/megaproyecto-andahuaylas.png");
   background-size:cover;
-  background-position:center 52%;
+  background-position:center 78%;
   transform:scale(1.04);
   animation:launchLandscapeDrift 22s ease-in-out infinite alternate;
 }
