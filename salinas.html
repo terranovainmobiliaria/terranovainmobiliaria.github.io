@@ -8,6 +8,9 @@
   <title>Proyecto Salinas | Terranova Inmobiliaria</title>
 
   <link rel="icon" type="image/png" href="assets/logo-terranova.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     *{
@@ -21,7 +24,7 @@
     }
 
     body{
-      font-family:Arial, Helvetica, sans-serif;
+      font-family:"Manrope", Arial, sans-serif;
       background:#f7faf9;
       color:#062f38;
       overflow-x:hidden;
@@ -399,9 +402,8 @@
        LOTES
     ========================= */
 
-    .lots{
-      background:#eaf4f2;
-    }
+    .lots{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(145deg,#eaf4f2 0%,#f1f6f0 100%)}
+    .lots:before{background:radial-gradient(ellipse at 4% 92%,rgba(10,188,181,.07),transparent 31%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 620 320' fill='none'%3E%3Cpath d='M-30 255 75 164l65 50 95-118 88 104 70-65 110 93 74-67 78 65M-30 272 75 181l65 50 95-118 88 104 70-65 110 93 74-67 78 65M-30 289 75 198l65 50 95-118 88 104 70-65 110 93 74-67 78 65' stroke='%23063c42' stroke-opacity='.07' stroke-width='1.2'/%3E%3C/svg%3E");background-position:left bottom;background-repeat:no-repeat;background-size:min(620px,66vw) auto}
 
     .lots-header{
       max-width:750px;
@@ -605,7 +607,10 @@
     .strategic-place span{display:block;color:#687e80;font-size:12px;line-height:1.35}
     .strategic-place.featured span{color:#0aaea8;font-weight:800}
     .services{margin-top:22px}
-    .salinas-map-section{padding:0 0 120px}
+    .salinas-map-section{position:relative;isolation:isolate;overflow:hidden;padding:0 0 120px;background:linear-gradient(180deg,#f7faf9 0%,#f2f7f4 100%)}
+    .salinas-map-section:before,.lots:before,#ubicacion:before,#galeria:before{position:absolute;z-index:0;inset:0;content:"";pointer-events:none}
+    .salinas-map-section:before{background:radial-gradient(ellipse at 94% 16%,rgba(22,165,157,.065),transparent 30%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 360' fill='none'%3E%3Cpath d='M-35 104c64-43 105-44 157-5 36 27 61 28 93 1 45-38 90-39 133-2 40 34 78 33 119-3 30-26 61-28 108-3M-35 128c64-43 105-44 157-5 36 27 61 28 93 1 45-38 90-39 133-2 40 34 78 33 119-3 30-26 61-28 108-3M-35 152c64-43 105-44 157-5 36 27 61 28 93 1 45-38 90-39 133-2 40 34 78 33 119-3 30-26 61-28 108-3M-35 176c64-43 105-44 157-5 36 27 61 28 93 1 45-38 90-39 133-2 40 34 78 33 119-3 30-26 61-28 108-3' stroke='%23063c42' stroke-opacity='.07' stroke-width='1.1'/%3E%3C/svg%3E");background-position:right top;background-repeat:no-repeat;background-size:min(560px,60vw) auto}
+    .salinas-map-section>.container,.lots>.container,#ubicacion>.container,#galeria>.container{position:relative;z-index:1}
     .salinas-map-card{position:relative;overflow:hidden;min-height:470px;border-radius:26px;background:#063c42;border:1px solid #d5e7e4;box-shadow:0 25px 65px rgba(0,45,50,.14)}
     .salinas-map-card iframe{display:block;width:100%;height:470px;border:0}
     .map-information{position:absolute;left:25px;bottom:25px;width:min(360px,calc(100% - 50px));padding:22px;color:#fff;background:rgba(3,48,56,.94);border:1px solid rgba(32,216,208,.35);border-radius:18px;box-shadow:0 18px 45px rgba(0,0,0,.22);backdrop-filter:blur(12px)}
@@ -666,8 +671,10 @@
     .wa-option strong{display:block;font-size:13px;margin-bottom:4px}.wa-option span{color:#a9cfcc;font-size:13px}
     .wa-option.main-number{background:rgba(32,216,208,.12);border:1px solid rgba(32,216,208,.25)}
     .wa-option.main-number strong{color:#29ddd5}
-    #ubicacion,#galeria{position:relative;overflow:hidden}
-    #ubicacion::after,#galeria::after{content:"";position:absolute;z-index:-1;pointer-events:none;width:500px;height:220px;background:url("assets/montanas-decoracion.png") center bottom/contain no-repeat;opacity:.18}
+    #ubicacion,#galeria{position:relative;isolation:isolate;overflow:hidden}
+    #ubicacion:before{background:radial-gradient(ellipse at 88% 12%,rgba(22,165,157,.065),transparent 27%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 300' fill='none'%3E%3Cpath d='M-30 117C54 42 117 48 169 100s114 65 179 15 126-79 211-18M-30 143C51 71 115 75 166 124s114 64 181 19 128-77 213-18M-30 169C48 100 112 102 163 148s115 63 183 23 131-74 216-19M-30 195C45 129 109 129 160 172s116 62 185 28 134-72 219-20' stroke='%23063c42' stroke-opacity='.07' stroke-width='1.1'/%3E%3C/svg%3E");background-position:right top;background-repeat:no-repeat;background-size:min(520px,58vw) auto}
+    #galeria:before{background:radial-gradient(ellipse at 95% 8%,rgba(20,205,197,.07),transparent 26%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 580 330' fill='none'%3E%3Cpath d='M-30 115c62-51 121-51 177-3 39 34 75 37 111 5 45-40 91-42 139-5 44 34 83 34 124-3 34-31 67-34 108-9M-30 141c62-51 121-51 177-3 39 34 75 37 111 5 45-40 91-42 139-5 44 34 83 34 124-3 34-31 67-34 108-9M-30 167c62-51 121-51 177-3 39 34 75 37 111 5 45-40 91-42 139-5 44 34 83 34 124-3 34-31 67-34 108-9M-30 193c62-51 121-51 177-3 39 34 75 37 111 5 45-40 91-42 139-5 44 34 83 34 124-3 34-31 67-34 108-9' stroke='%23063c42' stroke-opacity='.075' stroke-width='1.15'/%3E%3C/svg%3E");background-position:right top;background-repeat:no-repeat;background-size:auto,min(580px,64vw) auto}
+    #ubicacion::after,#galeria::after{content:"";position:absolute;z-index:0;pointer-events:none;width:500px;height:220px;background:url("assets/montanas-decoracion.png") center bottom/contain no-repeat;opacity:.08}
     #ubicacion::after{right:-100px;bottom:0}#galeria::after{left:-100px;bottom:0;transform:scaleX(-1)}
 
     /* =========================
@@ -798,7 +805,8 @@
       .salinas-map-card iframe{height:550px}
       .map-information{left:14px;bottom:14px;width:calc(100% - 28px);padding:18px}
       .wa-menu{position:fixed;left:14px;right:14px;top:auto;bottom:18px;width:auto}
-      #ubicacion::after,#galeria::after{width:330px;opacity:.13}
+      #ubicacion::after,#galeria::after{width:330px;opacity:.07}
+      .salinas-map-section:before,.lots:before,#ubicacion:before{background-size:min(410px,86vw) auto}
 
       .gallery-heading-row{flex-direction:column;align-items:flex-start;gap:22px;margin-bottom:38px}
       .plan-button{width:100%}
@@ -809,6 +817,897 @@
 
     }
 
+    :root{--forest:#063c42;--deep:#032b32;--teal:#20cfc7;--copper:#b8734c;--paper:#f7faf9;--sand:#f3f0e6;--sage:#eaf4f2;--ink:#12363b;--muted:#647a7c}
+    html{scroll-padding-top:28px}
+    body{background:var(--paper);color:var(--ink);font-family:"Manrope",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .hero{isolation:isolate;min-height:max(760px,min(920px,100svh));overflow:hidden;background-image:linear-gradient(90deg,rgba(3,34,38,.88),rgba(3,48,54,.72) 36%,rgba(3,48,54,.25) 72%,rgba(3,38,44,.12)),linear-gradient(0deg,rgba(3,35,39,.55),transparent 48%),url("assets/salinas/terreno-01.jpg");background-size:cover;background-position:center,center,center 43%;animation:salinas-hero-drift 20s ease-in-out infinite alternate}
+    @keyframes salinas-hero-drift{from{background-position:center,center,center 43%}to{background-position:center,center,center 48%}}
+    .hero:after{z-index:0;background-image:linear-gradient(rgba(32,207,199,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(32,207,199,.035) 1px,transparent 1px);mask-image:linear-gradient(90deg,#000,transparent 90%)}
+    .nav{z-index:15;height:104px;gap:24px}
+    .logo-box{position:relative;z-index:2;display:inline-flex;flex:0 0 auto;align-items:center;padding:8px 14px;border:1px solid #ffffffd1;border-radius:15px;background:#fffffff5;box-shadow:0 10px 32px #0002;transition:transform .25s,box-shadow .25s}
+    .logo-box:hover{transform:translateY(-2px);box-shadow:0 15px 36px #0004}
+    .logo-box img{width:177px;height:55px;object-fit:contain}
+    .nav-links{position:relative;gap:4px;padding:7px;border:1px solid #ffffff45;border-radius:999px;background:linear-gradient(120deg,#062e2dba,#062e2d85);box-shadow:0 12px 35px #071a1633,inset 0 1px #ffffff18;font-family:"Manrope",sans-serif;font-size:13px;backdrop-filter:blur(18px) saturate(140%)}
+    .nav-links>a{position:relative;display:inline-flex;min-height:40px;align-items:center;justify-content:center;padding:0 12px;border:1px solid transparent;border-radius:999px;color:#ffffffdd;white-space:nowrap;transition:transform .22s,border-color .22s,background .22s,color .22s}
+    .nav-links>a:hover{transform:translateY(-1px);border-color:#ffffff36;background:#ffffff18;color:#fff}
+    .nav-links>a:first-child{border-color:#ffffff44;background:#ffffff17;color:#fff}
+    .nav-links>a:first-child:before{width:5px;height:5px;margin-right:7px;border-radius:50%;background:#e4bd96;box-shadow:0 0 10px #e4bd96;content:""}
+    .nav-links .wa-selector{margin-left:3px}
+    .nav-links .contact{display:inline-flex;min-height:42px;align-items:center;gap:8px;padding:0 15px;border:1px solid #86eee5;border-radius:999px;background:linear-gradient(120deg,#20cfc7,#13a9a4);box-shadow:0 8px 20px #071a164d,inset 0 1px #ffffff49;color:#06383c;font-size:12px;font-weight:800;transition:transform .22s,box-shadow .22s,background .22s}
+    .nav-links .contact:hover{transform:translateY(-2px);background:linear-gradient(120deg,#53ded5,#20bdb6);box-shadow:0 12px 25px #071a165c}
+    .hero-content{z-index:2;align-items:center;padding:24px 0 155px}
+    .hero-copy{max-width:760px}
+    .back{display:inline-flex;align-items:center;gap:10px;margin-bottom:29px;padding:10px 15px;border:1px solid #ffffff69;border-radius:999px;background:linear-gradient(110deg,#ffffff25,#ffffff0c);box-shadow:0 8px 22px #071a163d;color:#fff;font-size:12px;font-weight:800;backdrop-filter:blur(12px);transition:transform .25s,border-color .25s,background .25s,box-shadow .25s}
+    .back:hover{transform:translateX(-3px);border-color:#9af0e8;background:#ffffff30;box-shadow:0 12px 28px #071a1655}
+    .badge{gap:11px;margin:0 0 18px;padding:0;border:0;border-radius:0;color:#96eee7;font-family:"Manrope",sans-serif;font-size:12px;font-weight:800;letter-spacing:.15em}
+    .badge:before{width:28px;height:1px;border-radius:0;background:#96eee7}
+    h1{max-width:740px;margin:0;color:white;font-family:"Playfair Display",Georgia,serif;font-size:clamp(64px,8vw,108px);font-weight:600;letter-spacing:-.055em;line-height:.96}
+    h1 span{color:#72e0d8}
+    .hero-text{max-width:600px;margin-top:24px;color:#ffffffdf;font-size:clamp(16px,1.55vw,19px);line-height:1.75}
+    .hero-buttons{position:relative;z-index:20;gap:12px;margin-top:31px}
+    .btn{position:relative;min-height:56px;overflow:hidden;padding:0 22px;border:1px solid transparent;border-radius:12px;font-family:"Manrope",sans-serif;font-size:14px;font-weight:800;transition:transform .28s cubic-bezier(.2,.7,.2,1),background .25s,border-color .25s,box-shadow .28s;cursor:pointer}
+    .btn:before{position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,#ffffff45 48%,transparent 68%);content:"";transform:translateX(-125%);transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+    .btn:hover:before{transform:translateX(125%)}
+    .btn:hover{transform:translateY(-4px)}
+    .btn-primary{border-color:#a4f3ec;background:linear-gradient(115deg,#35d8cf,#18b7b1);box-shadow:0 13px 30px #06181255,inset 0 1px #ffffff50;color:#06363a}
+    .btn-primary:hover{background:linear-gradient(115deg,#62e3dc,#22c6be);box-shadow:0 19px 38px #0618126b,inset 0 0 0 1px #ffffff70}
+    .btn-outline{border-color:#ffffffbb;background:linear-gradient(120deg,#ffffff25,#ffffff0d);box-shadow:0 11px 26px #06181236,inset 0 1px #ffffff26;color:#fff;backdrop-filter:blur(13px)}
+    .btn-outline:hover{border-color:#9df0e8;background:#ffffff2c;color:#fff;box-shadow:0 17px 32px #06181255,inset 0 1px #ffffff4d}
+    .btn span{position:relative;z-index:1}
+    .hero-feature{position:absolute;right:0;bottom:40px;display:grid;width:min(385px,37%);grid-template-columns:1fr 1fr;gap:16px 22px;padding:24px 27px;border:1px solid #ffffff78;border-radius:20px;background:linear-gradient(135deg,#ffffff38,#063c42d9 78%);box-shadow:0 22px 58px #091a1455,inset 0 1px #ffffff48;backdrop-filter:blur(22px) saturate(150%)}
+    .hero-feature:after{position:absolute;top:0;left:24px;width:68px;height:2px;border-radius:2px;background:linear-gradient(90deg,#9bf0e8,transparent);content:""}
+    .hero-feature-label{grid-column:1/-1;color:#a3f1e9;font-size:10px;font-weight:800;letter-spacing:.14em}
+    .hero-feature-item{display:flex;flex-direction:column;gap:4px}
+    .hero-feature-item strong{color:#fff;font-size:18px}
+    .hero-feature-item span{color:#ffffffc7;font-size:12px}
+    .scroll-cue{position:absolute;bottom:45px;left:max(24px,calc((100% - 1180px)/2));z-index:3;display:flex;align-items:center;gap:12px;color:#ffffffbd;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;transition:color .2s}
+    .scroll-cue:before{width:38px;height:1px;background:#ffffff91;content:""}
+    .scroll-cue:hover{color:#fff}
+    .hero-copy [data-entrance]{opacity:0;animation:salinas-arrive .8s cubic-bezier(.2,.75,.25,1) forwards}
+    .hero-copy .back{animation-delay:.06s}
+    .hero-copy .badge{animation-delay:.2s}
+    .hero-copy h1{animation-delay:.34s}
+    .hero-copy .hero-text{animation-delay:.49s}
+    .hero-copy .hero-buttons{animation-delay:.64s}
+    .hero-feature{opacity:0;animation:salinas-arrive .9s .72s cubic-bezier(.2,.75,.25,1) forwards}
+    @keyframes salinas-arrive{from{opacity:0;transform:translate3d(0,24px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+    .stats{position:relative;z-index:10;margin-top:-39px;grid-template-columns:repeat(4,minmax(0,1fr));overflow:hidden;border:1px solid #6daea8;background:linear-gradient(130deg,#073e42,#063239);box-shadow:0 20px 50px #00232a30}
+    .stat{padding:24px 25px}
+    .stat small{color:#9bc8c4;font-size:10px;letter-spacing:.13em}
+    .stat strong{font-size:20px}
+    .quick-access{position:relative;z-index:4;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:22px}
+    .quick-link{position:relative;isolation:isolate;display:flex;min-height:100px;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;overflow:hidden;padding:13px 16px;border:1px solid #d9e7e3;border-radius:16px;background:linear-gradient(145deg,#f2f7f3,#e8f1ed);box-shadow:0 8px 22px #22372d0a;transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .3s,background .3s,box-shadow .4s}
+    .quick-link:nth-child(3n+2){background:linear-gradient(145deg,#f7f4ec,#efe9dc)}
+    .quick-link:before{position:absolute;top:0;left:12%;z-index:-1;width:76%;height:3px;border-radius:0 0 5px 5px;background:linear-gradient(90deg,transparent,#20cfc7 35%,#b8734c 70%,transparent);content:"";opacity:.55;transform:scaleX(.22);transition:transform .4s cubic-bezier(.16,1,.3,1),opacity .3s}
+    .quick-link:after{position:absolute;right:-31px;bottom:-42px;z-index:-1;width:104px;height:104px;border:1px solid #063c4219;border-radius:50%;box-shadow:0 0 0 10px #063c4208,0 0 0 21px #063c4206;content:"";opacity:.45;transition:transform .5s cubic-bezier(.16,1,.3,1),opacity .4s}
+    .quick-link:hover{z-index:1;transform:translateY(-6px) scale(1.015);border-color:#9abdb6;background:linear-gradient(145deg,#fbfaf4,#e3efea);box-shadow:0 19px 34px #22372d1f}
+    .quick-link:hover:before{opacity:1;transform:scaleX(1)}
+    .quick-link:hover:after{opacity:.9;transform:scale(1.2)}
+    .quick-icon{display:grid;width:30px;height:30px;place-items:center;border:1px solid #d2e5e0;border-radius:10px;background:#f9fcfa;color:#087a78;font-size:17px;font-weight:800;transition:transform .35s,background .25s,color .25s}
+    .quick-link:hover .quick-icon{transform:translateY(-2px) rotate(-6deg);background:#063c42;color:#fff}
+    .quick-link strong{color:#063c42;font-size:13px;font-weight:800}
+    .quick-link>span:not(.quick-icon):not(.quick-arrow){color:#647a7c;font-size:10px;line-height:1.4}
+    .quick-arrow{position:absolute;top:13px;right:13px;color:#9b7962;font-size:15px;transition:transform .25s,color .25s}
+    .quick-link:hover .quick-arrow{transform:translate(2px,-2px);color:#b8734c}
+    section{position:relative;padding:86px 0}
+    .eyebrow{gap:11px;margin-bottom:15px;color:#0b9f9a;font-size:11px;letter-spacing:.15em}
+    .eyebrow:before{width:28px;height:1px;background:currentColor}
+    .section-title{margin-bottom:19px;color:#063c42;font-family:"Playfair Display",Georgia,serif;font-size:clamp(36px,4.4vw,59px);font-weight:600;letter-spacing:-.045em;line-height:1.04}
+    .section-title span{color:#b8734c}
+    .description{color:#667a7b;font-size:15px;line-height:1.8}
+    #ubicacion{isolation:isolate;padding-top:78px;padding-bottom:80px;background:linear-gradient(180deg,#f8f7f0,#eef4ed)}
+    .location-grid{grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px)}
+    .location-intro{max-width:610px}
+    .strategic-title{margin:24px 0 13px;color:#063c42;font-size:11px;letter-spacing:.12em}
+    .strategic-title:before{height:2px;background:#b8734c}
+    .strategic-places{gap:9px;margin-bottom:20px}
+    .strategic-place{position:relative;min-height:75px;padding:12px;border:1px solid #d9e5df;border-radius:14px;background:linear-gradient(145deg,#fbfaf6,#f0f4ed);box-shadow:0 8px 25px #002d320a;transition:transform .28s,border-color .25s,box-shadow .28s}
+    .strategic-place{isolation:isolate;overflow:hidden}
+    .strategic-place:before{position:absolute;top:0;left:0;z-index:-1;width:100%;height:3px;background:linear-gradient(90deg,transparent,#20cfc7,#b8734c,transparent);content:"";opacity:.55;transform:scaleX(.18);transform-origin:left;transition:transform .4s cubic-bezier(.16,1,.3,1),opacity .3s}
+    .strategic-place:after{position:absolute;right:-25px;bottom:-35px;z-index:-1;width:82px;height:82px;border:1px solid #063c4216;border-radius:50%;box-shadow:0 0 0 9px #063c4207,0 0 0 18px #20cfc707;content:"";opacity:.4;transition:transform .45s cubic-bezier(.16,1,.3,1),opacity .35s}
+    .strategic-place:hover{transform:translateY(-5px);border-color:#8fbdb4;box-shadow:0 17px 32px #002d321b}
+    .strategic-place:hover:before{opacity:1;transform:scaleX(1)}
+    .strategic-place:hover:after{opacity:.9;transform:scale(1.2)}
+    .strategic-place.featured{border-color:#bcd8d2;background:linear-gradient(135deg,#e8f5f0,#fbfaf6 70%)}
+    .place-icon{position:relative;z-index:1;border:1px solid #cde8e2;border-radius:12px;background:#dff2ed;color:#087e79;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s,background .3s,color .3s,box-shadow .3s}
+    .strategic-place:hover .place-icon{transform:translateY(-2px) rotate(-7deg) scale(1.08);border-color:#087e79;background:#087e79;box-shadow:0 7px 16px #087e7933;color:#fff}
+    .strategic-place strong{color:#123b3e;font-size:13px}
+    .strategic-place span{color:#667a7b;font-size:11px}
+    .strategic-place.featured span{color:#087e79}
+    .services{gap:10px;margin-top:18px}
+    .service{min-height:108px;border:1px solid #d8e5df;border-radius:15px;background:linear-gradient(145deg,#f2f7f1,#e8f1eb);box-shadow:0 8px 25px #002d3209;transition:transform .3s,border-color .25s,box-shadow .3s}
+    .service:nth-child(2){background:linear-gradient(145deg,#f7f2e8,#eee7da)}
+    .service:hover{transform:translateY(-5px);border-color:#abc8c0;box-shadow:0 17px 30px #002d3217}
+    .service:before{color:#108c86}
+    .promo-image{position:relative;overflow:hidden;border:7px solid #ffffffb8;border-radius:27px;background:linear-gradient(145deg,#eaf4f0,#f7f5ee);box-shadow:0 25px 60px #002d321a}
+    .promo-image img{width:100%;height:auto;min-height:0;max-height:none;aspect-ratio:3/2;object-fit:contain;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+    .promo-image:hover img{transform:scale(1.012)}
+    .salinas-map-section{padding:72px 0 78px}
+    .map-description{max-width:700px;margin-bottom:25px}
+    .salinas-map-card{min-height:460px;border-radius:24px;box-shadow:0 23px 55px #002d3220}
+    .salinas-map-card iframe{height:460px}
+    .map-information{padding:22px;border:1px solid #71d8d0;background:linear-gradient(145deg,#063c42ed,#032b32f2);box-shadow:0 18px 45px #0003}
+    .map-information small{color:#7fe7de}
+    .map-button{border:1px solid #98eee6;background:#20cfc7;color:#06363a;transition:transform .25s,background .25s,box-shadow .25s}
+    .map-button:hover{transform:translateY(-2px);background:#68e2da;box-shadow:0 10px 24px #20cfc74d}
+    .lots{padding:76px 0 82px}
+    .lots-header{max-width:760px;margin-bottom:35px}
+    .lots-grid{gap:13px}
+    .lot{position:relative;overflow:hidden;padding:21px 19px;border:1px solid #d9e5df;border-radius:16px;background:linear-gradient(145deg,#fffefa,#f3f5ef);box-shadow:0 8px 22px #002d3208;transition:transform .32s cubic-bezier(.2,.7,.2,1),border-color .28s,box-shadow .32s}
+    .lot:before{position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,#20cfc7,#b8734c);content:"";transform:scaleX(0);transform-origin:left;transition:transform .35s}
+    .lot:hover{transform:translateY(-6px);border-color:#a7c9c0;box-shadow:0 18px 35px #002d3217}
+    .lot:hover:before{transform:scaleX(1)}
+    .lot span{color:#078b86;font-size:10px;letter-spacing:.12em}
+    .lot h3{color:#063c42;font-size:20px}
+    .lot p{color:#697c7c;font-size:12px}
+    #galeria{isolation:isolate;padding:76px 0 58px;background:linear-gradient(180deg,#f1f5ed,#f8f5ed 62%,#f8f5ed)}
+    .gallery-heading-row{align-items:flex-end;gap:30px;margin-bottom:28px}
+    .gallery-header{margin-bottom:0}
+    .gallery-header .section-title{margin-bottom:15px}
+    .gallery-header .description{max-width:630px}
+    .plan-button{min-height:52px;padding:0 20px;border:1px solid #0b5658;border-radius:12px;background:linear-gradient(120deg,#075058,#063c42);box-shadow:0 10px 25px #002d321a;transition:transform .25s,box-shadow .25s,background .25s}
+    .plan-button:hover{transform:translateY(-3px);border-color:#08716e;background:#08716e;box-shadow:0 16px 30px #002d3226}
+    .gallery{grid-auto-rows:180px;gap:13px}
+    .gallery-item{position:relative;display:block;min-width:0;overflow:hidden;padding:0;border:0;border-radius:18px;background:#dfe9e2;box-shadow:0 12px 28px #11292218;cursor:zoom-in;isolation:isolate;transition:transform .3s,box-shadow .3s}
+    .gallery-item:hover{transform:translateY(-4px);box-shadow:0 20px 35px #11292226}
+    .gallery-item:after{position:absolute;z-index:1;inset:38% 0 0;background:linear-gradient(transparent,#0f1f1880);content:"";pointer-events:none}
+    .gallery-item img{width:100%;height:100%;border-radius:0;object-fit:cover;transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .35s}
+    .gallery-item:hover img{transform:scale(1.04);filter:saturate(1.06)}
+    .gallery-item:first-child{grid-column:span 7;grid-row:span 2}
+    .gallery-item:nth-child(2),.gallery-item:nth-child(3){grid-column:span 5}
+    .gallery-item:nth-child(n+4){grid-column:span 4}
+    .gallery-caption{position:absolute;bottom:13px;left:15px;z-index:2;color:white;text-align:left;text-shadow:0 2px 15px #0008}
+    .gallery-caption strong{display:block;font-size:13px}
+    .gallery-caption small{display:block;margin-top:3px;color:#ffffffc9;font-size:10px}
+    .gallery-zoom{position:absolute;right:12px;bottom:12px;z-index:2;display:grid;width:31px;height:31px;place-items:center;border:1px solid #ffffff79;border-radius:50%;background:#14271f70;color:#fff;font-size:15px;transition:transform .2s,background .2s}
+    .gallery-item:hover .gallery-zoom{transform:scale(1.08);background:#14271fbc}
+    .gallery-note{margin:16px 0 0;color:#687b79;font-size:12px;line-height:1.7}
+    .visual{isolation:isolate;overflow:hidden;padding:70px 0;background:linear-gradient(135deg,#f6f4eb,#e9f2ed 72%,#e1efeb);color:#063c42}
+    .visual:before{position:absolute;inset:0;background:radial-gradient(ellipse at 90% 5%,#20cfc70c,transparent 34%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 300' fill='none'%3E%3Cpath d='M-30 224 80 128l62 45 94-103 88 97 68-62 109 88 76-66 81 59M-30 244 80 148l62 45 94-103 88 97 68-62 109 88 76-66 81 59' stroke='%23063c42' stroke-opacity='.055' stroke-width='1.2'/%3E%3C/svg%3E") right bottom/min(600px,60vw) auto no-repeat;content:"";pointer-events:none}
+    .visual>.container{position:relative;z-index:1;display:grid;grid-template-columns:.72fr 1.28fr;align-items:center;column-gap:clamp(30px,5vw,64px)}
+    .visual>.container>.eyebrow{grid-column:1;grid-row:1;margin-bottom:12px;color:#0b9f9a}
+    .visual>.container>.section-title{grid-column:1;grid-row:2;margin-bottom:13px;color:#063c42;font-size:clamp(32px,3.4vw,46px)}
+    .visual .section-title span{color:#b8734c}
+    .visual .description{grid-column:1;grid-row:3;max-width:390px;color:#667a7b}
+    .video-box{grid-column:2;grid-row:1 / span 3;width:min(270px,100%);aspect-ratio:9/16;margin:0 auto;border:1px solid #20cfc745;border-radius:20px;background:#021f24;box-shadow:0 20px 46px #063c4224}
+    .video-box video{width:100%;height:100%;display:block;object-fit:cover;transform:scale(1.025)}
+    .cta{position:relative;isolation:isolate;overflow:hidden;padding:78px 0;background:linear-gradient(120deg,#d4efea,#bfe5df 55%,#dcebd9);color:#063c42}
+    .cta:before{position:absolute;z-index:0;inset:0;background:radial-gradient(ellipse at 100% 0%,#b8734c17,transparent 31%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 280' fill='none'%3E%3Cpath d='M-30 205c66-53 130-53 190-4 41 34 79 36 116 3 48-42 98-43 146-4 45 36 87 36 131-3 36-32 69-34 111-7M-30 231c66-53 130-53 190-4 41 34 79 36 116 3 48-42 98-43 146-4 45 36 87 36 131-3 36-32 69-34 111-7' stroke='%23063c42' stroke-opacity='.07' stroke-width='1.2'/%3E%3C/svg%3E") right bottom/min(600px,60vw) auto no-repeat;content:"";pointer-events:none}
+    .cta-inner{position:relative;z-index:1;gap:32px}
+    .cta h2{max-width:690px;color:#063c42;font-family:"Playfair Display",Georgia,serif;font-size:clamp(38px,4.8vw,62px);font-weight:600;letter-spacing:-.045em;line-height:1.04}
+    .cta p{color:#365d5e;font-size:15px;line-height:1.7}
+    .cta .wa-selector .btn{border:1px solid #7de4dc;background:linear-gradient(120deg,#075058,#063c42);box-shadow:0 12px 26px #063c4233;color:#fff}
+    .cta .wa-selector .btn:hover{background:linear-gradient(120deg,#0b6868,#075058)}
+    footer{padding:32px 0;background:#032b32;color:#a7c6c3}
+    .footer-inner{font-size:12px}
+    .wa-selector{position:relative;z-index:80;display:inline-block}
+    .wa-selector.open{z-index:9999}
+    .wa-menu{position:absolute;top:calc(100% + 10px);right:0;z-index:10000;width:285px;padding:11px;border:1px solid #d6e3dc;border-radius:15px;background:linear-gradient(145deg,#fbfaf5f7,#e8f2edfa);box-shadow:0 18px 46px #0003;opacity:0;pointer-events:none;transform:translateY(-5px);transition:opacity .18s,transform .18s,visibility .18s;visibility:hidden;backdrop-filter:blur(18px)}
+    .wa-selector.open .wa-menu{opacity:1;pointer-events:auto;transform:none;visibility:visible}
+    .wa-menu-heading{margin:3px 8px 8px;color:#063c42;font-family:"Playfair Display",Georgia,serif;font-size:17px;font-weight:600}
+    .wa-option{display:block;padding:12px 13px;border:1px solid transparent;border-radius:10px;color:#12363b!important;transition:transform .2s,border-color .2s,background .2s,box-shadow .2s}
+    .wa-option+.wa-option{margin-top:4px}
+    .wa-option:hover{transform:translateX(3px);border-color:#c2d7d0;background:#f5f8f3;box-shadow:0 6px 15px #183b3210}
+    .wa-option.main-number{border-color:#c9e4dc;background:#e7f4ef}
+    .wa-option.main-number strong{color:#087e79}
+    .wa-option strong{display:block;margin-bottom:3px;font-size:13px}
+    .wa-option span{color:#647a7c;font-size:12px}
+    .availability-selector .wa-menu{top:auto;right:auto;bottom:calc(100% + 12px);left:0}
+    .motion-ready [data-reveal]{opacity:0;transform:translate3d(0,22px,0);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+    .motion-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0)}
+    .motion-ready [data-reveal-stagger]>*{transition-delay:calc(var(--reveal-index,0)*70ms)}
+    .motion-ready [data-reveal-stagger]>*:nth-child(1){--reveal-index:0}
+    .motion-ready [data-reveal-stagger]>*:nth-child(2){--reveal-index:1}
+    .motion-ready [data-reveal-stagger]>*:nth-child(3){--reveal-index:2}
+    .motion-ready [data-reveal-stagger]>*:nth-child(4){--reveal-index:3}
+    .motion-ready [data-reveal-stagger]>*:nth-child(5){--reveal-index:4}
+    .motion-ready [data-reveal-stagger]>*:nth-child(6){--reveal-index:5}
+    .motion-ready [data-reveal-stagger]>*:nth-child(7){--reveal-index:5}
+    .motion-ready [data-reveal-stagger]>.quick-link:hover{transform:translateY(-6px) scale(1.015)}
+    .motion-ready [data-reveal-stagger]>.lot:hover{transform:translateY(-6px)}
+    .motion-ready [data-reveal-stagger]>.strategic-place:hover{transform:translateY(-5px)}
+    .lightbox{width:min(1100px,calc(100% - 30px));max-width:none;max-height:90vh;margin:auto;padding:12px;border:1px solid #ffffff40;border-radius:20px;background:#032b32;box-shadow:0 30px 100px #0008;color:#fff}
+    .lightbox::backdrop{background:#061512d9;backdrop-filter:blur(6px)}
+    .lightbox img{width:100%;max-height:calc(90vh - 75px);border-radius:12px;object-fit:contain}
+    .lightbox-caption{padding:10px 6px 2px;color:#d4e6e2;font-size:13px}
+    .lightbox-close{position:absolute;top:18px;right:18px;display:grid;width:40px;height:40px;place-items:center;border:1px solid #ffffff80;border-radius:50%;background:#032b32c9;color:#fff;font-size:24px;cursor:pointer}
+    a:focus-visible,button:focus-visible{outline:3px solid #d7a176;outline-offset:4px}
+    @media(max-width:1000px){
+      .nav-links{gap:2px;font-size:11px}
+      .nav-links>a{padding-inline:9px}
+      .nav-links .wa-menu .wa-option{display:block}
+      .logo-box img{width:153px}
+      .quick-access{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .quick-link:nth-child(n+4){grid-column:auto}
+      .location-grid{gap:30px}
+      .strategic-places{grid-template-columns:1fr 1fr}
+      .lots-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .promo-image img{min-height:0;aspect-ratio:3/2;object-fit:contain}
+      .gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:200px}
+      .gallery-item:first-child{grid-column:span 2;grid-row:span 2}
+      .gallery-item:nth-child(2),.gallery-item:nth-child(3),.gallery-item:nth-child(n+4){grid-column:span 1}
+    }
+    @media(max-width:760px){
+      .container{width:min(100% - 34px,600px)}
+      .nav{height:90px;align-items:flex-start;padding-top:17px}
+      .logo-box{padding:5px 9px;border-radius:12px}
+      .logo-box img{width:131px;height:46px}
+      .nav-links{max-width:none;flex:0 0 auto;gap:0;overflow:visible;padding:0;border:0;border-radius:0;background:none;box-shadow:none;backdrop-filter:none}
+      .nav-links>a{display:none!important}
+      .nav-links .wa-selector{margin-left:0}
+      .nav-links .contact{min-height:42px;padding-inline:13px;white-space:nowrap}
+      .hero{min-height:max(825px,100svh);background-position:center,center,59% center}
+      .hero-content{align-items:flex-start;padding:75px 0 170px}
+      .hero-copy{width:100%}
+      h1{font-size:clamp(49px,12vw,74px)}
+      .hero-text{max-width:470px;font-size:16px}
+      .hero-feature{right:0;bottom:25px;width:min(390px,70%)}
+      .scroll-cue{display:none}
+      .stats{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:-1px;border-radius:17px}
+      .stat{padding:18px}
+      .stat:nth-child(2):after{display:none}
+      .stat:nth-child(n+3){border-top:1px solid #ffffff20}
+      .stat strong{font-size:17px}
+      .quick-access{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:14px}
+      .quick-link{min-height:92px;padding:11px}
+      section{padding:72px 0}
+      #ubicacion{padding-top:72px;padding-bottom:70px}
+      .location-grid{grid-template-columns:1fr;gap:29px}
+      .promo-image{order:-1}
+      .promo-image img{min-height:0;max-height:none;aspect-ratio:3/2;object-fit:contain}
+      .strategic-places{grid-template-columns:1fr 1fr}
+      .services{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .service{min-height:98px;padding:18px 13px;font-size:13px}
+      .salinas-map-section{padding:60px 0 70px}
+      .salinas-map-card,.salinas-map-card iframe{min-height:430px;height:430px}
+      .map-information{left:14px;bottom:14px;width:calc(100% - 28px);padding:17px}
+      .lots{padding:65px 0 70px}
+      .lots-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+      #galeria{padding:65px 0 48px}
+      .gallery{grid-auto-rows:148px;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+      .gallery-item:first-child{grid-column:span 2;grid-row:span 2}
+      .gallery-item:nth-child(2),.gallery-item:nth-child(3){grid-column:span 1}
+      .gallery-item:nth-child(n+4){grid-column:span 1}
+      .gallery-heading-row{flex-direction:column;align-items:flex-start;gap:18px;margin-bottom:23px}
+      .plan-button{width:auto}
+      .visual{padding:68px 0}
+      .visual>.container{display:block}
+      .visual>.container>.section-title{font-size:clamp(33px,8vw,43px)}
+      .video-box{width:min(270px,100%);margin:24px auto 0}
+      .cta{padding:65px 0}
+      .cta-inner{align-items:flex-start;flex-direction:column;gap:24px}
+      .footer-inner{flex-wrap:wrap}
+      .wa-menu{width:min(285px,calc(100vw - 40px))}
+      .nav .wa-menu{position:absolute;top:calc(100% + 10px);right:0;bottom:auto;left:auto;width:min(285px,calc(100vw - 40px))}
+      .cta .wa-menu{position:absolute;top:auto;right:0;bottom:calc(100% + 12px);left:auto;width:min(285px,calc(100vw - 40px))}
+      .availability-selector .wa-menu{position:absolute;right:auto;bottom:calc(100% + 12px);left:0;width:min(285px,calc(100vw - 40px))}
+    }
+    @media(max-width:480px){
+      .container{width:calc(100% - 28px)}
+      .hero{min-height:max(880px,100svh);background-position:center,center,62% center}
+      .nav{gap:11px}
+      .logo-box img{width:116px}
+      .nav-links .contact{min-height:40px;gap:6px;padding-inline:10px;font-size:11px}
+      .hero-content{padding-top:67px}
+      .back{margin-bottom:22px;padding:8px 12px;font-size:11px}
+      .badge{margin-bottom:15px;font-size:10px}
+      h1{font-size:clamp(48px,13vw,64px)}
+      .hero-text{margin-top:18px;font-size:15px;line-height:1.65}
+      .hero-buttons{gap:9px;margin-top:23px}
+      .hero-buttons .btn{min-height:50px;padding-inline:13px;font-size:11px}
+      .hero-feature{right:0;bottom:23px;width:100%;gap:13px 18px;padding:17px 18px}
+      .hero-feature-label{font-size:9px}
+      .hero-feature-item strong{font-size:15px}
+      .quick-link{min-height:82px;padding:9px}
+      .quick-icon{width:27px;height:27px}
+      .quick-link strong{font-size:11px}
+      .quick-link>span:not(.quick-icon):not(.quick-arrow){font-size:9px}
+      .section-title{font-size:clamp(33px,10vw,43px)}
+      .description{font-size:14px}
+      .strategic-places{gap:7px}
+      .strategic-place{min-height:70px;padding:9px;gap:8px}
+      .place-icon{flex-basis:34px;width:34px;height:34px}
+      .strategic-place strong{font-size:11px}
+      .strategic-place span{font-size:10px}
+      .services{grid-template-columns:1fr;gap:8px}
+      .service{min-height:0;padding:15px}
+      .service:before{display:inline-block;margin:0 8px 0 0}
+      .promo-image img{aspect-ratio:3/2;object-fit:contain}
+      .salinas-map-card,.salinas-map-card iframe{min-height:400px;height:400px}
+      .lots-grid{gap:8px}
+      .lot{padding:17px 13px}
+      .lot h3{font-size:17px}
+      .lot p{font-size:11px}
+      .gallery{grid-auto-rows:125px}
+      .gallery-item:first-child{grid-column:span 2;grid-row:span 2}
+      .gallery-caption{bottom:10px;left:11px}
+      .gallery-caption strong{font-size:11px}
+      .gallery-caption small{font-size:9px}
+      .gallery-zoom{right:9px;bottom:9px;width:28px;height:28px}
+      .plan-button{width:100%}
+      .cta h2{font-size:clamp(37px,11vw,48px)}
+      .cta .wa-selector,.cta .wa-selector .btn{width:100%}
+      .footer-inner{align-items:flex-start;flex-direction:column}
+      .lightbox-close{top:16px;right:16px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}
+      .hero{animation:none!important}
+      .hero-copy [data-entrance],.hero-feature{opacity:1;animation:none!important}
+      .motion-ready [data-reveal]{opacity:1;transform:none;transition:none}
+      .quick-link:hover,.quick-link:hover .quick-icon,.quick-link:hover:after,.quick-link:hover:before,.quick-link:hover .quick-arrow,.wa-option:hover,.btn:hover,.back:hover,.lot:hover,.strategic-place:hover,.service:hover,.gallery-item:hover{transform:none!important}
+    }
+
+    :root{
+      --salinas-navy:#073b55;
+      --salinas-blue:#087fa5;
+      --salinas-cyan:#25b9df;
+      --salinas-pale:#eaf8fc;
+      --salinas-line:#c6e8f1;
+    }
+    body{background:#f3fafc;color:var(--salinas-navy)}
+    .hero{background-image:linear-gradient(90deg,rgba(3,38,59,.92),rgba(4,55,78,.7) 45%,rgba(3,43,64,.24)),url("assets/salinas/terreno-01.jpg")}
+    .hero:after{background-image:linear-gradient(rgba(37,185,223,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(37,185,223,.06) 1px,transparent 1px)}
+    .nav-links a:hover,.back:hover{color:#83e5f7}
+    .badge{border-color:#58d4ed;color:#e7faff}
+    .badge:before{background:#5bd9f1}
+    h1 span{color:#62d9ed}
+    .btn-primary{background:linear-gradient(120deg,#79e4f4,#27bddf);color:#06394f}
+    .btn-outline{border-color:#9ddfed}
+    .btn-primary:hover{box-shadow:0 12px 30px #25b9df45}
+    .stats{border-color:#298eae;background:linear-gradient(130deg,#094866,#073b55)}
+    .stat small{color:#a9deeb}
+    .quick-access{margin-bottom:8px}
+    .quick-link,.quick-link:nth-child(3n+2){border-color:#d1eaf1;background:linear-gradient(145deg,#f8fdfe,#eaf7fb);box-shadow:0 8px 22px #073b550c}
+    .quick-link:before,.strategic-place:before{background:linear-gradient(90deg,transparent,var(--salinas-cyan),#75dcee,transparent)}
+    .quick-link:after{border-color:#087fa51a;box-shadow:0 0 0 10px #087fa50a,0 0 0 21px #25b9df08}
+    .quick-link:hover{border-color:#84cfdf;background:linear-gradient(145deg,#fff,#def4fa);box-shadow:0 19px 34px #073b551a}
+    .quick-icon{border-color:#c6e8f1;background:#f8fdff;color:var(--salinas-blue)}
+    .quick-link:hover .quick-icon{background:var(--salinas-navy)}
+    .quick-link strong,.section-title,.strategic-title,.strategic-place strong,.lot h3{color:var(--salinas-navy)}
+    .quick-link>span:not(.quick-icon):not(.quick-arrow),.description,.strategic-place span,.lot p{color:#5d7886}
+    .quick-arrow,.quick-link:hover .quick-arrow{color:var(--salinas-blue)}
+    section{padding:66px 0}
+    .eyebrow{color:var(--salinas-blue)}
+    .section-title span{color:var(--salinas-blue)}
+    #ubicacion{padding:60px 0;background:linear-gradient(145deg,#eef9fc,#e7f5f9 55%,#f4fbfd)}
+    .strategic-title:before{background:var(--salinas-cyan)}
+    .strategic-place,.strategic-place.featured{border-color:#d2eaf0;background:linear-gradient(145deg,#fbfeff,#eaf7fa 80%)}
+    .strategic-place:hover{border-color:#79c6d8;box-shadow:0 17px 32px #073b551b}
+    .strategic-place:after{border-color:#087fa51c;box-shadow:0 0 0 9px #087fa508,0 0 0 18px #25b9df0a}
+    .place-icon{border-color:#c4e6ef;background:#def3f9;color:var(--salinas-blue)}
+    .strategic-place:hover .place-icon{border-color:var(--salinas-blue);background:var(--salinas-blue);box-shadow:0 7px 16px #087fa533}
+    .strategic-place.featured span{color:var(--salinas-blue)}
+    .service,.service:nth-child(2){border-color:#d0e9f0;background:linear-gradient(145deg,#f9fdff,#e9f7fb)}
+    .service:before{color:var(--salinas-blue)}
+    .service:hover{border-color:#8bcfdf;box-shadow:0 17px 30px #073b5518}
+    .promo-image{border-color:#ffffffd9;background:linear-gradient(145deg,#e8f7fb,#f8fdff);box-shadow:0 25px 60px #073b551a}
+    .salinas-map-section{padding:60px 0 64px;background:linear-gradient(180deg,#f3fafc,#e9f6fa)}
+    .salinas-map-section:before{background:radial-gradient(ellipse at 94% 16%,#25b9df16,transparent 30%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 360' fill='none'%3E%3Cpath d='M-35 104c64-43 105-44 157-5 36 27 61 28 93 1 45-38 90-39 133-2 40 34 78 33 119-3 30-26 61-28 108-3M-35 128c64-43 105-44 157-5 36 27 61 28 93 1 45-38 90-39 133-2 40 34 78 33 119-3 30-26 61-28 108-3M-35 152c64-43 105-44 157-5 36 27 61 28 93 1 45-38 90-39 133-2 40 34 78 33 119-3 30-26 61-28 108-3' stroke='%23087fa5' stroke-opacity='.09' stroke-width='1.1'/%3E%3C/svg%3E");background-position:right top;background-repeat:no-repeat;background-size:min(560px,60vw) auto}
+    .salinas-map-card{border-color:#c5e6ef;background:var(--salinas-navy)}
+    .map-information{border-color:#60cbe4;background:linear-gradient(145deg,#073b55ed,#052d45f2)}
+    .map-information small{color:#78e0f2}
+    .map-button{border-color:#8ce4f3;background:var(--salinas-cyan);color:#073b55}
+    .map-button:hover{background:#78e4f3;box-shadow:0 10px 24px #25b9df4d}
+    .lots{padding:60px 0 64px;background:linear-gradient(140deg,#e9f7fb,#f3fafc 58%,#e8f5f9)}
+    .lot{border-color:#d0e8ef;background:linear-gradient(145deg,#fbfeff,#eaf6fa)}
+    .lot:before{background:linear-gradient(90deg,var(--salinas-cyan),#82dff0)}
+    .lot:hover{border-color:#84ccdc;box-shadow:0 18px 35px #073b5518}
+    .lot span{color:var(--salinas-blue)}
+    #galeria{padding:60px 0 48px;background:linear-gradient(180deg,#e8f5f9,#f2f9fb 68%,#eaf7fa)}
+    .gallery-item{background:#d9eff5;box-shadow:0 12px 28px #073b551c}
+    .gallery-item:hover{box-shadow:0 20px 35px #073b5528}
+    .plan-button{border-color:#0b6682;background:linear-gradient(120deg,#087fa5,#075675);box-shadow:0 10px 25px #073b551f}
+    .plan-button:hover{border-color:#087fa5;background:#087fa5;box-shadow:0 16px 30px #073b5529}
+    .visual{isolation:isolate;position:relative;overflow:hidden;padding:48px 0;background:linear-gradient(120deg,#e5f7fc 0%,#d5f0f8 55%,#c7eaf4 100%);color:var(--salinas-navy)}
+    .visual:before{position:absolute;inset:0;background:radial-gradient(ellipse at 90% 10%,#ffffffb8,transparent 35%),radial-gradient(ellipse at 6% 100%,#25b9df18,transparent 37%);content:"";pointer-events:none}
+    .visual>.container{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(210px,.65fr);align-items:center;column-gap:clamp(28px,6vw,88px);padding:28px clamp(24px,5vw,68px);border:1px solid #ffffffad;border-radius:28px;background:linear-gradient(120deg,#ffffffbd,#f5fcfd9c);box-shadow:0 24px 65px #07567514;backdrop-filter:blur(8px)}
+    .visual-copy{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-items:flex-start;gap:13px}
+    .visual-copy>.eyebrow,.visual-copy>.section-title,.visual-copy>.description{grid-column:auto;grid-row:auto;margin:0}
+    .visual-copy>.eyebrow{color:var(--salinas-blue)}
+    .visual-copy>.section-title{max-width:510px;color:var(--salinas-navy);font-size:clamp(34px,4vw,51px)}
+    .visual .section-title span{color:var(--salinas-blue)}
+    .visual .description{max-width:470px;color:#557382;font-size:15px}
+    .visual-facts{display:flex;flex-wrap:wrap;gap:9px;margin-top:3px}
+    .visual-fact{min-width:138px;padding:10px 13px;border:1px solid #c5e7ef;border-radius:13px;background:#f6fcfe}
+    .visual-fact strong{display:block;color:var(--salinas-navy);font-size:16px;line-height:1.2}
+    .visual-fact span{display:block;margin-top:3px;color:#64818d;font-size:10px}
+    .visual-details{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px;margin-top:3px}
+    .visual-location{display:inline-flex;align-items:center;gap:9px;color:#315d70;font-size:12px;font-weight:700}
+    .visual-location:before{display:grid;width:34px;height:34px;place-items:center;border:1px solid #b6e3ee;border-radius:50%;background:#e7f8fc;color:var(--salinas-blue);content:"⌖";font-size:18px}
+    .visual-map-link{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 15px;border:1px solid #addce8;border-radius:999px;background:#f7fdff;color:#087194;font-size:12px;font-weight:800;transition:transform .25s,background .25s,box-shadow .25s}
+    .visual-map-link:hover{transform:translateY(-2px);background:#fff;box-shadow:0 9px 20px #07567518}
+    .video-box{position:relative;grid-column:2;grid-row:1;width:min(244px,100%);aspect-ratio:9/16;margin:0 auto;border:5px solid #fff;border-radius:25px;background:#062e45;box-shadow:0 22px 48px #073b5530}
+    .video-box:before{position:absolute;top:12px;left:50%;z-index:2;padding:6px 10px;border:1px solid #ffffff66;border-radius:999px;background:#073b55b8;color:#fff;content:"RECORRIDO · SALINAS";font-size:8px;font-weight:800;letter-spacing:.12em;pointer-events:none;transform:translateX(-50%);white-space:nowrap}
+    .video-box video{width:100%;height:100%;display:block;border-radius:19px;background:#062e45;object-fit:cover;transform:scale(1.025)}
+    .cta{padding:64px 0;background:linear-gradient(120deg,#bdeaf5,#9cdeed 55%,#c9eef5);color:var(--salinas-navy)}
+    .cta h2{color:var(--salinas-navy)}
+    .cta p{color:#285e72}
+    .cta .btn{background:linear-gradient(120deg,#075675,#073b55);color:#fff}
+    .cta .wa-selector .btn{border-color:#7ed7e9;background:linear-gradient(120deg,#075675,#073b55);color:#fff}
+    footer{background:#052d45}
+    .wa-menu{border-color:#57c7df;background:#073b55}
+    .wa-option.main-number{background:#087fa5}
+    @media(max-width:760px){
+      section{padding:52px 0}
+      #ubicacion,.salinas-map-section,.lots,#galeria{padding-top:48px;padding-bottom:50px}
+      .visual{padding:34px 0}
+      .visual>.container{grid-template-columns:minmax(0,1fr);gap:0;padding:24px 20px;border-radius:22px}
+      .visual-copy,.video-box{grid-column:1;grid-row:auto}
+      .visual-copy>.section-title{font-size:clamp(33px,9vw,43px)}
+      .visual-details{margin-top:3px}
+      .video-box{width:min(224px,78%);margin:23px auto 0}
+      .visual .description{font-size:14px}
+      .stats{margin-top:-30px}
+      .quick-access{margin-top:17px}
+    }
+    body{background:radial-gradient(ellipse at 0% 19%,#25b9df10,transparent 34%),radial-gradient(ellipse at 100% 43%,#25b9df12,transparent 35%),radial-gradient(ellipse at 4% 76%,#78d9ed13,transparent 32%),#f1f9fc}
+    .quick-access{position:relative}
+    #ubicacion{background-image:radial-gradient(ellipse at 0% 48%,#25b9df1b,transparent 34%),radial-gradient(ellipse at 100% 62%,#78d9ed22,transparent 37%),linear-gradient(145deg,#edf9fc,#e5f4f9 55%,#f1fafd)}
+    .salinas-map-section{background-image:radial-gradient(ellipse at 100% 48%,#25b9df20,transparent 35%),radial-gradient(ellipse at 0% 95%,#78d9ed18,transparent 32%),linear-gradient(180deg,#f1f9fc,#e8f5fa)}
+    .lots{background-image:radial-gradient(ellipse at 0% 45%,#25b9df20,transparent 36%),radial-gradient(ellipse at 100% 80%,#78d9ed21,transparent 36%),linear-gradient(140deg,#eaf7fb,#f1f9fc 58%,#e8f5fa)}
+    #galeria{background-image:radial-gradient(ellipse at 100% 30%,#25b9df1d,transparent 36%),radial-gradient(ellipse at 0% 100%,#78d9ed20,transparent 34%),linear-gradient(180deg,#eaf6fa,#f0f8fb 68%,#e9f6fa)}
+    .visual{background-image:radial-gradient(ellipse at 0% 48%,#4ccbe529,transparent 37%),radial-gradient(ellipse at 100% 54%,#25b9df32,transparent 39%),linear-gradient(120deg,#e5f7fc,#d5f0f8 55%,#c7eaf4)}
+    .cta{background-image:radial-gradient(ellipse at 0% 50%,#fff8,transparent 36%),radial-gradient(ellipse at 100% 55%,#39bbd826,transparent 39%),linear-gradient(120deg,#bdeaf5,#9cdeed 55%,#c9eef5)}
+    .nav-links .contact,button.contact{border-color:#a2edf7;background:linear-gradient(135deg,#82e6f4,#37c2e1);box-shadow:0 9px 24px #032d453d;color:#073b55;font-weight:800;transition:transform .22s,box-shadow .22s,background .22s}
+    .nav-links .contact:hover,button.contact:hover{transform:translateY(-2px);background:linear-gradient(135deg,#b0f1f8,#57d0e9);box-shadow:0 13px 28px #032d4547;color:#052f47}
+    .nav-links .wa-selector.open .contact{background:#fff;color:#075675;box-shadow:0 0 0 4px #57d9ee38}
+    .availability-selector .btn-outline{border:1px solid #a7e6f1;background:linear-gradient(130deg,#f8feff,#dff6fb);box-shadow:0 12px 30px #032d4530;color:#073b55}
+    .availability-selector .btn-outline:hover,.availability-selector.open .btn-outline{background:#fff;box-shadow:0 0 0 4px #58d7eb42,0 15px 33px #032d4540;color:#075675}
+    .cta .wa-selector .btn{border:1px solid #a8edf5;background:linear-gradient(125deg,#075675,#073b55);box-shadow:0 12px 28px #073b5538;color:#fff}
+    .cta .wa-selector .btn:hover,.cta .wa-selector.open .btn{border-color:#b2eff6;background:linear-gradient(125deg,#087fa5,#075675);box-shadow:0 0 0 4px #fff7,0 16px 32px #073b5540;color:#fff}
+    .wa-menu{border-color:#88d9e9;background:linear-gradient(145deg,#fff,#edf9fc);box-shadow:0 22px 55px #032d4540}
+    .wa-menu-heading{color:#073b55}
+    .wa-option{border-color:#d3eaf0;background:#fff;color:#073b55!important}
+    .wa-option+.wa-option{margin-top:7px}
+    .wa-option:hover{border-color:#74cfe2;background:#eaf8fc;box-shadow:0 7px 18px #0756751c}
+    .wa-option.main-number{border-color:#087fa5;background:linear-gradient(120deg,#087fa5,#075675);box-shadow:0 7px 18px #07567525}
+    .wa-option.main-number:hover{border-color:#075675;background:linear-gradient(120deg,#096c8b,#064967)}
+    .wa-option.main-number strong,.wa-option.main-number span{color:#fff}
+    .wa-option:not(.main-number) strong{color:#073b55}
+    .wa-option:not(.main-number) span{color:#547487}
+    .availability-selector .wa-menu:after{background:#f7fdff;border-color:#88d9e9}
+    .availability-selector .wa-option.main-number~.wa-option{border-color:#cfe7ee;background:#fff}
+    .availability-selector .wa-option.main-number~.wa-option:hover{background:#eaf8fc}
+    .cta .wa-menu{border-color:#88d9e9;background:linear-gradient(145deg,#fff,#edf9fc)}
+    .cta .wa-option.main-number{background:linear-gradient(120deg,#087fa5,#075675)}
+    .cta{overflow:visible;z-index:2}
+    .cta .wa-selector.open{z-index:10001}
+    .cta .wa-menu{top:auto;right:0;bottom:calc(100% + 12px);left:auto;z-index:10002}
+    .cta .wa-option:not(.main-number){border-color:#8ccfe0;background:linear-gradient(130deg,#e0f5fa,#f3fbfd);box-shadow:0 5px 14px #07567513;color:#073b55!important}
+    .cta .wa-option:not(.main-number) strong{color:#073b55}
+    .cta .wa-option:not(.main-number) span{color:#315e73}
+    .cta .wa-option:not(.main-number):hover{border-color:#47aeca;background:linear-gradient(130deg,#d2f0f7,#e8f8fc)}
+    .quick-link,.quick-link:nth-child(3n+2){border-color:#acddea;background:linear-gradient(145deg,#effcff,#d9f4fb);box-shadow:0 10px 24px #087fa51a}
+    .quick-link:before{height:4px;background:linear-gradient(90deg,#25b9df,#087fa5,#67d9eb)}
+    .quick-link strong{color:#064665}
+    .quick-link:hover{border-color:#52bbd5;background:linear-gradient(145deg,#dff8fc,#c7eef7);box-shadow:0 19px 34px #087fa52a}
+    .quick-link:hover .quick-icon{background:linear-gradient(135deg,#087fa5,#075675);color:#fff}
+    .quick-link .quick-arrow{color:#087fa5}
+    .quick-link:hover .quick-arrow{color:#064665}
+    .scroll-cue{bottom:38px;gap:10px;padding:13px 19px;border:1px solid #a4e5f1;border-radius:999px;background:linear-gradient(120deg,#b9f0f8,#53cce4);box-shadow:0 12px 30px #032d4550;color:#073b55;font-size:11px;letter-spacing:.11em;transition:transform .25s,box-shadow .25s,background .25s}
+    .scroll-cue:before{width:24px;height:24px;border-radius:50%;background:#087fa5;content:"↓";color:#fff;font-size:14px;font-weight:800;line-height:24px;text-align:center}
+    .scroll-cue:hover{transform:translateY(-3px);background:linear-gradient(120deg,#d2f8fc,#7ddded);box-shadow:0 16px 36px #032d4560;color:#052f47}
+    #ubicacion .section-title{max-width:570px;text-wrap:balance}
+    #ubicacion .section-title span{color:#087fa5;text-decoration:underline;text-decoration-color:#68d3e8;text-decoration-thickness:4px;text-underline-offset:7px}
+    .lot-unavailable{border-color:#efb9bd;background:linear-gradient(145deg,#fffafa,#fff0f1);box-shadow:0 8px 22px #a91f2d12}
+    .lot-unavailable:before{background:linear-gradient(90deg,#ef5350,#b42332)}
+    .lot-unavailable>span:first-child{color:#9c2530}
+    .lot-unavailable .lot-status{position:absolute;top:15px;right:12px;padding:5px 7px;border:1px solid #f1b3b8;border-radius:999px;background:#ffe3e5;color:#9f1d2b;font-size:8px;font-weight:900;letter-spacing:.03em;line-height:1}
+    .lot-unavailable h3{color:#58353a}
+    .lot-unavailable p{color:#8b6266}
+    .lot-unavailable:hover{border-color:#e79299;box-shadow:0 12px 25px #a91f2d16}
+    .motion-ready [data-reveal-stagger]>.lot-unavailable:hover{transform:translateY(-2px)}
+    .visual>.container{border-color:#a8dce9;background:radial-gradient(ellipse at 8% 0%,#b9eaf5a8,transparent 45%),radial-gradient(ellipse at 100% 100%,#78d5e94d,transparent 42%),linear-gradient(130deg,#dff4f9ed,#ccebf4e8);box-shadow:0 24px 65px #07567521}
+    .visual>.container:before{position:absolute;z-index:0;inset:0;border-radius:inherit;background:radial-gradient(circle at 78% 20%,#ffffff8a 0 2px,transparent 3px),radial-gradient(ellipse at 100% 0%,#75cfe21c,transparent 48%);content:"";pointer-events:none}
+    .visual-copy{position:relative;z-index:1}
+    .visual-copy>.section-title span{background:linear-gradient(transparent 70%,#66d2e546 70%)}
+    .visual-fact{border-color:#a9dce9;background:linear-gradient(145deg,#effbfe,#d7f0f7);box-shadow:0 5px 15px #087fa510}
+    .visual-location:before{border-color:#96d9e9;background:linear-gradient(145deg,#d7f4fa,#bceaf4)}
+    .video-box{z-index:1;border-color:#eefbfe;box-shadow:0 24px 48px #073b5540,0 0 0 8px #ffffff48}
+    @media(max-width:760px){
+      body{background:radial-gradient(ellipse at 0% 20%,#25b9df10,transparent 42%),radial-gradient(ellipse at 100% 62%,#25b9df12,transparent 44%),#f1f9fc}
+      .availability-selector .wa-menu{left:0;right:auto}
+      .cta .wa-menu{right:0;left:auto}
+      .scroll-cue{bottom:22px;left:14px;padding:11px 15px;font-size:9px}
+      .lot-unavailable .lot-status{top:12px;right:8px;padding:4px 5px;font-size:7px}
+    }
+    .quick-link{min-height:108px;padding:15px;border:1px solid #57adc4;border-radius:18px;background:linear-gradient(145deg,#0b5570,#073b55 75%);box-shadow:0 12px 26px #073b5525;color:#fff;transition:transform .32s cubic-bezier(.2,.7,.2,1),border-color .25s,background .25s,box-shadow .32s}
+    .quick-link:nth-child(3n+2){border-color:#65c5d8;background:linear-gradient(145deg,#177d98,#0b5875 78%)}
+    .quick-link:nth-child(3n){border-color:#9bdce8;background:linear-gradient(145deg,#dff6fa,#bfeaf3 75%);box-shadow:0 12px 26px #087fa51b}
+    .quick-link:before{left:0;width:100%;height:3px;background:linear-gradient(90deg,#70e6f2,#20b6d8,#a5f0f5);opacity:.9;transform:scaleX(.25)}
+    .quick-link:after{border-color:#a2edf12b;box-shadow:0 0 0 10px #d5f8fc0b,0 0 0 21px #d5f8fc08;opacity:.7}
+    .quick-link:nth-child(3n):after{border-color:#087fa527;box-shadow:0 0 0 10px #087fa50a,0 0 0 21px #087fa507}
+    .quick-link:hover{transform:translateY(-5px);border-color:#85e6f1;background:linear-gradient(145deg,#0d6785,#08455f);box-shadow:0 18px 32px #073b5533}
+    .quick-link:nth-child(3n+2):hover{background:linear-gradient(145deg,#168ba7,#0c607f)}
+    .quick-link:nth-child(3n):hover{border-color:#68cadd;background:linear-gradient(145deg,#f0fcfe,#c5edf5);box-shadow:0 18px 32px #087fa529}
+    .quick-icon{width:40px;height:40px;border-color:#7cd5e5;border-radius:13px;background:linear-gradient(145deg,#d9f7fb,#9de4f0);box-shadow:0 5px 14px #042d4533;color:#075675;font-size:20px}
+    .quick-link:nth-child(3n) .quick-icon{border-color:#087fa54d;background:linear-gradient(145deg,#087fa5,#075675);color:#fff}
+    .quick-link:hover .quick-icon,.quick-link:nth-child(3n):hover .quick-icon{border-color:#a5edf5;background:linear-gradient(145deg,#a9eff6,#59cee2);color:#073b55}
+    .quick-link strong{color:#fff;font-size:14px}
+    .quick-link:nth-child(3n) strong{color:#073b55}
+    .quick-link>span:not(.quick-icon):not(.quick-arrow){color:#d4edf3;font-size:11px}
+    .quick-link:nth-child(3n)>span:not(.quick-icon):not(.quick-arrow){color:#315e73}
+    .quick-link .quick-arrow{color:#c2f4f7}
+    .quick-arrow{top:14px;right:14px;display:grid;width:25px;height:25px;place-items:center;border:1px solid #9ce8f0a6;border-radius:50%;background:#ffffff17;color:#c2f4f7;font-size:15px}
+    .quick-link:nth-child(3n) .quick-arrow{border-color:#087fa54a;background:#087fa511;color:#075675}
+    .quick-link:hover .quick-arrow,.quick-link:nth-child(3n):hover .quick-arrow{transform:translate(2px,-2px);border-color:#a5edf5;background:#c5f3f8;color:#073b55}
+    .strategic-place{min-height:80px;border-color:#b3dce7;background:linear-gradient(145deg,#e5f6fa,#d2edf4);box-shadow:0 8px 20px #073b5514}
+    .strategic-place:nth-child(3n+2){border-color:#1c7997;background:linear-gradient(145deg,#126b86,#084a66);box-shadow:0 10px 23px #073b5528}
+    .strategic-place:nth-child(3n){border-color:#88cadb;background:linear-gradient(145deg,#c8eaf2,#addde9);box-shadow:0 9px 21px #073b5519}
+    .strategic-place.featured,.strategic-place.featured:nth-child(3n+2){border-color:#21a3c2;background:linear-gradient(145deg,#0c607c,#073b55);box-shadow:0 11px 24px #073b5530}
+    .strategic-place:before{background:linear-gradient(90deg,#49d0e5,#9aedf4,#35b4d1);opacity:.95}
+    .strategic-place:after{border-color:#b9f2f524;box-shadow:0 0 0 9px #c5f5fa0a,0 0 0 18px #c5f5fa08}
+    .strategic-place:nth-child(3n+2):after{border-color:#c5f5fa32}
+    .strategic-place strong,.strategic-place:nth-child(3n+2) strong,.strategic-place.featured strong{color:#fff}
+    .strategic-place span,.strategic-place:nth-child(3n+2) span,.strategic-place.featured span{color:#c8edf3}
+    .strategic-place:nth-child(3n) strong{color:#073b55}
+    .strategic-place:nth-child(3n) span{color:#315f73}
+    .strategic-place .place-icon{flex-basis:44px;width:44px;height:44px;border-color:#72cede;background:linear-gradient(145deg,#bceef5,#65cfe1);box-shadow:0 6px 15px #032f4540;color:#075675;font-size:20px}
+    .strategic-place:nth-child(3n+2) .place-icon,.strategic-place.featured .place-icon{border-color:#84ddec;background:linear-gradient(145deg,#e1fbfd,#8de1ed);color:#064660}
+    .strategic-place:nth-child(3n) .place-icon{border-color:#0e83a0;background:linear-gradient(145deg,#087fa5,#075675);color:#fff}
+    .strategic-place:hover{transform:translateY(-3px);border-color:#65d0e2;box-shadow:0 15px 28px #073b5530}
+    .strategic-place:hover .place-icon{border-color:#d1f8fc;background:linear-gradient(145deg,#e7fbfd,#8de1ed);color:#064660}
+    .strategic-places .strategic-place:nth-child(odd){border-color:#a8dbe7;background:linear-gradient(145deg,#e6f7fb,#cdebf3);box-shadow:0 8px 20px #073b5515}
+    .strategic-places .strategic-place:nth-child(even){border-color:#1c7997;background:linear-gradient(145deg,#126b86,#084a66);box-shadow:0 10px 23px #073b5528}
+    .strategic-places .strategic-place:nth-child(odd) strong{color:#073b55}
+    .strategic-places .strategic-place:nth-child(odd) span{color:#315f73}
+    .strategic-places .strategic-place:nth-child(even) strong{color:#fff}
+    .strategic-places .strategic-place:nth-child(even) span{color:#c8edf3}
+    .strategic-places .strategic-place:nth-child(odd) .place-icon{border-color:#0e83a0;background:linear-gradient(145deg,#087fa5,#075675);color:#fff}
+    .strategic-places .strategic-place:nth-child(even) .place-icon{border-color:#84ddec;background:linear-gradient(145deg,#e1fbfd,#8de1ed);color:#064660}
+    .strategic-places .strategic-place:hover{border-color:#65d0e2;box-shadow:0 15px 28px #073b5530}
+    .service,.service:nth-child(2){min-height:116px;border:1px solid #388ea6;border-radius:17px;background:linear-gradient(145deg,#0d607b,#073b55);box-shadow:0 11px 24px #073b5526;color:#fff;transition:transform .28s,border-color .25s,background .25s,box-shadow .28s}
+    .service:nth-child(2){border-color:#45a5ba;background:linear-gradient(145deg,#147d96,#0b5572)}
+    .service:nth-child(3){border-color:#a0e2ec;background:linear-gradient(145deg,#d8f3f8,#b4e4ed);color:#073b55}
+    .service:before{display:grid;width:40px;height:40px;place-items:center;margin:0 0 13px;border:1px solid #8de3ee;border-radius:13px;background:linear-gradient(145deg,#d6f8fb,#81ddec);box-shadow:0 6px 15px #032f4538;color:#075675;font-size:21px;font-weight:800}
+    .service:nth-child(1):before{content:"◉"}
+    .service:nth-child(2):before{content:"⌁"}
+    .service:nth-child(3):before{border-color:#1687a3;background:linear-gradient(145deg,#087fa5,#075675);color:#fff;content:"ϟ"}
+    .service:hover,.service:nth-child(2):hover,.service:nth-child(3):hover{transform:translateY(-4px);border-color:#82deea;background:linear-gradient(145deg,#11738e,#08445f);box-shadow:0 16px 30px #073b5533;color:#fff}
+    .service:hover:before,.service:nth-child(3):hover:before{border-color:#d9f9fc;background:linear-gradient(145deg,#e4fbfd,#87e0ec);color:#064660}
+    @media(max-width:760px){
+      .quick-link{min-height:92px;padding:10px}
+      .quick-icon{width:36px;height:36px}
+      .quick-link strong{font-size:12px}
+      .quick-link>span:not(.quick-icon):not(.quick-arrow){font-size:10px}
+      .strategic-place{min-height:76px;padding:10px;gap:10px}
+      .strategic-place .place-icon{flex-basis:38px;width:38px;height:38px}
+      .service,.service:nth-child(2),.service:nth-child(3){min-height:98px;padding:15px 11px}
+      .service:before{margin-bottom:10px}
+      .quick-link{min-width:0}
+      .quick-link strong,.quick-link>span:not(.quick-icon):not(.quick-arrow){max-width:100%;overflow-wrap:anywhere}
+      .quick-link strong{font-size:11px;line-height:1.2}
+      .quick-link>span:not(.quick-icon):not(.quick-arrow){font-size:9px}
+      .strategic-place>div:last-child{min-width:0}
+      .strategic-place strong,.strategic-place span{overflow-wrap:anywhere}
+      .strategic-place strong{font-size:10px;line-height:1.2}
+      .strategic-place span{font-size:9px}
+    }
+    .quick-link,
+    .quick-link:nth-child(3n+2),
+    .quick-link:nth-child(3n){
+      border-color:#d8ded6;
+      background:linear-gradient(145deg,#f8faf5,#edf3e9);
+      box-shadow:0 9px 22px #243b2d12;
+    }
+    .quick-link:nth-child(5n+2){border-color:#ddd8e7;background:linear-gradient(145deg,#f8f5fc,#eee9f7)}
+    .quick-link:nth-child(5n+3){border-color:#e5dbca;background:linear-gradient(145deg,#fcf8ef,#f3eadb)}
+    .quick-link:nth-child(5n+4){border-color:#ead8d7;background:linear-gradient(145deg,#fcf5f3,#f5e9e6)}
+    .quick-link:nth-child(5n){border-color:#d1e2e4;background:linear-gradient(145deg,#f1f8f7,#e3efed)}
+    .quick-link:before{background:linear-gradient(90deg,#91c9aa,#b8a7d7,#e3bd79,#d8a3a0,#87bcc5);opacity:.8}
+    .quick-link:after{border-color:#546c5424;box-shadow:0 0 0 10px #546c5409,0 0 0 21px #546c5406}
+    .quick-link strong,.quick-link:nth-child(3n) strong{color:#263d36}
+    .quick-link>span:not(.quick-icon):not(.quick-arrow),
+    .quick-link:nth-child(3n)>span:not(.quick-icon):not(.quick-arrow){color:#687970}
+    .quick-link:hover,
+    .quick-link:nth-child(3n+2):hover,
+    .quick-link:nth-child(3n):hover{border-color:#aabaae;background:linear-gradient(145deg,#fff,#e9f0e8);box-shadow:0 16px 29px #243b2d1c}
+    .quick-link:nth-child(5n+2):hover{background:linear-gradient(145deg,#fff,#ece5f5)}
+    .quick-link:nth-child(5n+3):hover{background:linear-gradient(145deg,#fff,#f1e6d2)}
+    .quick-link:nth-child(5n+4):hover{background:linear-gradient(145deg,#fff,#f3e3df)}
+    .quick-link:nth-child(5n):hover{background:linear-gradient(145deg,#fff,#dfefed)}
+    .quick-icon,
+    .quick-link:nth-child(3n) .quick-icon,
+    .quick-link:hover .quick-icon,
+    .quick-link:nth-child(3n):hover .quick-icon{
+      border-color:#c9d9cb;
+      background:linear-gradient(145deg,#e5f1e5,#cfdfd0);
+      box-shadow:0 4px 11px #304a3514;
+      color:#446b50;
+    }
+    .quick-link:nth-child(5n+2) .quick-icon{border-color:#d8cce9;background:linear-gradient(145deg,#eee8f7,#dbd0ec);color:#725e91}
+    .quick-link:nth-child(5n+3) .quick-icon{border-color:#e7d5b6;background:linear-gradient(145deg,#f7efdc,#ead7b7);color:#8a7144}
+    .quick-link:nth-child(5n+4) .quick-icon{border-color:#e8cfca;background:linear-gradient(145deg,#f7e8e4,#ebd1cb);color:#93675f}
+    .quick-link:nth-child(5n) .quick-icon{border-color:#c8dcdd;background:linear-gradient(145deg,#e2efed,#c9e0df);color:#4d7779}
+    .quick-link:hover .quick-icon,
+    .quick-link:nth-child(3n):hover .quick-icon{transform:translateY(-2px) rotate(-4deg);border-color:#b6cdb9;background:linear-gradient(145deg,#d8e9d9,#bdd3c0);color:#355d43}
+    .quick-link:nth-child(5n+2):hover .quick-icon{border-color:#c8b8df;background:linear-gradient(145deg,#e5dcf3,#d1c2e8);color:#604a82}
+    .quick-link:nth-child(5n+3):hover .quick-icon{border-color:#dbc69f;background:linear-gradient(145deg,#f0e3c7,#e2cba4);color:#765b32}
+    .quick-link:nth-child(5n+4):hover .quick-icon{border-color:#dcb9b1;background:linear-gradient(145deg,#f0dcd6,#e2c0b8);color:#7c5049}
+    .quick-link:nth-child(5n):hover .quick-icon{border-color:#b3d0d0;background:linear-gradient(145deg,#d5e8e6,#b9d5d4);color:#3e686a}
+    .quick-link .quick-arrow{border-color:#a9b9ad;background:#ffffff85;color:#4f725a}
+    .quick-link:nth-child(5n+2) .quick-arrow{border-color:#c2b5d5;color:#705c8e}
+    .quick-link:nth-child(5n+3) .quick-arrow{border-color:#d6c39f;color:#846d43}
+    .quick-link:nth-child(5n+4) .quick-arrow{border-color:#d7b9b3;color:#8b625c}
+    .quick-link:nth-child(5n) .quick-arrow{border-color:#afc9ca;color:#4e7476}
+    .quick-link:hover .quick-arrow,
+    .quick-link:nth-child(3n):hover .quick-arrow{border-color:#a9c3ad;background:#e1eee2;color:#42674b}
+    .quick-link:nth-child(5n+2):hover .quick-arrow{border-color:#c6b5de;background:#e9e0f4;color:#654f83}
+    .quick-link:nth-child(5n+3):hover .quick-arrow{border-color:#d9c59e;background:#f3e7ce;color:#785e36}
+    .quick-link:nth-child(5n+4):hover .quick-arrow{border-color:#dbbbb5;background:#f3e2de;color:#805650}
+    .quick-link:nth-child(5n):hover .quick-arrow{border-color:#b5cecf;background:#dfedeb;color:#42696b}
+    .strategic-places .strategic-place:nth-child(odd),
+    .strategic-places .strategic-place:nth-child(even){
+      border-color:#d4ded4;
+      background:linear-gradient(145deg,#f5f8f1,#e8efe4);
+      box-shadow:0 8px 19px #243b2d10;
+    }
+    .strategic-places .strategic-place:nth-child(3n){border-color:#d9d0e5;background:linear-gradient(145deg,#f4f0f9,#e7e0f1)}
+    .strategic-places .strategic-place:nth-child(3n+2){border-color:#e4d6bd;background:linear-gradient(145deg,#f8f3e8,#eee3ce)}
+    .strategic-places .strategic-place strong,
+    .strategic-places .strategic-place:nth-child(odd) strong,
+    .strategic-places .strategic-place:nth-child(even) strong{color:#2c4039}
+    .strategic-places .strategic-place span,
+    .strategic-places .strategic-place:nth-child(odd) span,
+    .strategic-places .strategic-place:nth-child(even) span{color:#697970}
+    .strategic-places .strategic-place .place-icon,
+    .strategic-places .strategic-place:nth-child(odd) .place-icon,
+    .strategic-places .strategic-place:nth-child(even) .place-icon{
+      border-color:#c5d7c6;
+      background:linear-gradient(145deg,#e1eddf,#cadcc9);
+      box-shadow:0 4px 11px #304a3512;
+      color:#4b7353;
+    }
+    .strategic-places .strategic-place:nth-child(3n) .place-icon{border-color:#cfc3e0;background:linear-gradient(145deg,#e9e1f4,#d5c9e8);color:#705b8c}
+    .strategic-places .strategic-place:nth-child(3n+2) .place-icon{border-color:#e1d0ad;background:linear-gradient(145deg,#f1e7d1,#e3d0ac);color:#826b43}
+    .strategic-places .strategic-place:hover{border-color:#afc0b1;box-shadow:0 14px 25px #243b2d18}
+    .strategic-places .strategic-place:nth-child(3n):hover{border-color:#c4b3dc;background:linear-gradient(145deg,#faf8fd,#e8e0f2)}
+    .strategic-places .strategic-place:nth-child(3n+2):hover{border-color:#dbc69e;background:linear-gradient(145deg,#fdfaf3,#eee1c9)}
+    .strategic-places .strategic-place:hover .place-icon{transform:translateY(-2px) scale(1.04);border-color:#b5cdb8;background:linear-gradient(145deg,#d9e9d8,#bdd2bf);box-shadow:0 5px 13px #304a3519;color:#42694c}
+    .strategic-places .strategic-place:nth-child(3n):hover .place-icon{border-color:#c4b3dc;background:linear-gradient(145deg,#e5dcf1,#d0c2e5);color:#604b80}
+    .strategic-places .strategic-place:nth-child(3n+2):hover .place-icon{border-color:#dbc69e;background:linear-gradient(145deg,#f0e3c6,#e1c99f);color:#755b35}
+    .service,.service:nth-child(2),.service:nth-child(3){
+      min-height:108px;
+      border-color:#ccdaca;
+      background:linear-gradient(145deg,#f4f8ef,#e5eedf);
+      box-shadow:0 9px 21px #243b2d12;
+      color:#2f4639;
+    }
+    .service:nth-child(2){border-color:#d8cde5;background:linear-gradient(145deg,#f5f1fa,#e7e0f1);color:#463b58}
+    .service:nth-child(3){border-color:#e5d4b6;background:linear-gradient(145deg,#faf5e9,#efe2ca);color:#59492f}
+    .service:before,.service:nth-child(3):before{
+      border-color:#c4d8c5;
+      background:linear-gradient(145deg,#e0eddf,#c7ddc8);
+      box-shadow:0 4px 11px #304a3515;
+      color:#47714f;
+    }
+    .service:nth-child(2):before{border-color:#d0c3e2;background:linear-gradient(145deg,#e9e2f4,#d2c5e8);color:#715b91}
+    .service:nth-child(3):before{border-color:#e0cfad;background:linear-gradient(145deg,#f1e6cf,#e1cba5);color:#826a40}
+    .service:hover,.service:nth-child(2):hover,.service:nth-child(3):hover{
+      transform:translateY(-3px);
+      border-color:#afc4b0;
+      background:linear-gradient(145deg,#fbfdf8,#e0ebdc);
+      box-shadow:0 14px 26px #243b2d19;
+      color:#2f4639;
+    }
+    .service:nth-child(2):hover{border-color:#c6b6dc;background:linear-gradient(145deg,#fcfaff,#e4dcf0);color:#463b58}
+    .service:nth-child(3):hover{border-color:#d7c298;background:linear-gradient(145deg,#fdfaf2,#ecdec3);color:#59492f}
+    .service:hover:before,.service:nth-child(2):hover:before,.service:nth-child(3):hover:before{transform:translateY(-1px);box-shadow:0 6px 13px #304a3519}
+    .quick-link,
+    .quick-link:nth-child(3n+2),
+    .quick-link:nth-child(3n),
+    .quick-link:nth-child(5n+2),
+    .quick-link:nth-child(5n+3),
+    .quick-link:nth-child(5n+4),
+    .quick-link:nth-child(5n){
+      border-color:#d8e0d7;
+      background:linear-gradient(145deg,#fbfaf6,#f0f2eb);
+      box-shadow:0 8px 22px #26372d12;
+    }
+    .quick-link:nth-child(3n+2){background:linear-gradient(145deg,#f8f4ec,#eee8dc)}
+    .quick-link:nth-child(3n){background:linear-gradient(145deg,#f2f6f0,#e5ede3)}
+    .quick-link:before,.strategic-place:before{
+      height:3px;
+      border-radius:0 0 3px 3px;
+      background:linear-gradient(90deg,transparent,#788f76 28%,#bd8767 70%,transparent);
+      box-shadow:none;
+      opacity:.4;
+      transform:scaleX(.3);
+      transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .25s;
+    }
+    .quick-link:hover:before,.strategic-place:hover:before{opacity:.9;transform:scaleX(1)}
+    .quick-link:after{border-color:#31483b15;box-shadow:0 0 0 10px #31483b06,0 0 0 21px #31483b04}
+    .quick-link strong,.quick-link:nth-child(3n) strong{color:#263b33}
+    .quick-link>span:not(.quick-icon):not(.quick-arrow),
+    .quick-link:nth-child(3n)>span:not(.quick-icon):not(.quick-arrow){color:#6a776f}
+    .quick-link:hover,
+    .quick-link:nth-child(3n+2):hover,
+    .quick-link:nth-child(3n):hover,
+    .quick-link:nth-child(5n+2):hover,
+    .quick-link:nth-child(5n+3):hover,
+    .quick-link:nth-child(5n+4):hover,
+    .quick-link:nth-child(5n):hover{
+      border-color:#aebcaf;
+      background:linear-gradient(145deg,#fffefa,#e9eee6);
+      box-shadow:0 15px 28px #26372d1a;
+    }
+    .quick-icon,
+    .quick-link:nth-child(3n) .quick-icon,
+    .quick-link:nth-child(5n+2) .quick-icon,
+    .quick-link:nth-child(5n+3) .quick-icon,
+    .quick-link:nth-child(5n+4) .quick-icon,
+    .quick-link:nth-child(5n) .quick-icon{
+      border-color:#d0dace;
+      background:linear-gradient(145deg,#e9eee4,#dce5d8);
+      box-shadow:0 4px 10px #26372d10;
+      color:#536e58;
+    }
+    .quick-link:nth-child(3n+2) .quick-icon{border-color:#dfd3bd;background:linear-gradient(145deg,#f0e8d8,#e6dbc6);color:#8a704b}
+    .quick-link:nth-child(5n+4) .quick-icon{border-color:#e4d1c8;background:linear-gradient(145deg,#f2e5df,#ead8d0);color:#956e61}
+    .quick-link:hover .quick-icon,
+    .quick-link:nth-child(3n):hover .quick-icon,
+    .quick-link:nth-child(5n+2):hover .quick-icon,
+    .quick-link:nth-child(5n+3):hover .quick-icon,
+    .quick-link:nth-child(5n+4):hover .quick-icon,
+    .quick-link:nth-child(5n):hover .quick-icon{
+      border-color:#bbcbb8;
+      background:linear-gradient(145deg,#dfe9dc,#ccdcca);
+      color:#405f47;
+    }
+    .quick-link .quick-arrow,
+    .quick-link:nth-child(5n+2) .quick-arrow,
+    .quick-link:nth-child(5n+3) .quick-arrow,
+    .quick-link:nth-child(5n+4) .quick-arrow,
+    .quick-link:nth-child(5n) .quick-arrow{
+      border-color:#cbd6ca;
+      background:#ffffffa6;
+      color:#617b65;
+    }
+    .quick-link:hover .quick-arrow,
+    .quick-link:nth-child(3n):hover .quick-arrow,
+    .quick-link:nth-child(5n+2):hover .quick-arrow,
+    .quick-link:nth-child(5n+3):hover .quick-arrow,
+    .quick-link:nth-child(5n+4):hover .quick-arrow,
+    .quick-link:nth-child(5n):hover .quick-arrow{
+      border-color:#b6c9b4;
+      background:#e7eee3;
+      color:#4a694f;
+    }
+    .strategic-places .strategic-place:nth-child(odd),
+    .strategic-places .strategic-place:nth-child(even),
+    .strategic-places .strategic-place:nth-child(3n),
+    .strategic-places .strategic-place:nth-child(3n+2){
+      border-color:#d5ded4;
+      background:linear-gradient(145deg,#f8f8f1,#e9eee5);
+      box-shadow:0 7px 18px #26372d10;
+    }
+    .strategic-places .strategic-place:nth-child(3n+2){border-color:#dfd5c2;background:linear-gradient(145deg,#f8f4eb,#eee6d8)}
+    .strategic-places .strategic-place:nth-child(3n){border-color:#d1ded1;background:linear-gradient(145deg,#f2f6ef,#e4ece2)}
+    .strategic-places .strategic-place strong,
+    .strategic-places .strategic-place:nth-child(odd) strong,
+    .strategic-places .strategic-place:nth-child(even) strong,
+    .strategic-places .strategic-place:nth-child(3n) strong,
+    .strategic-places .strategic-place:nth-child(3n+2) strong{color:#2a4036}
+    .strategic-places .strategic-place span,
+    .strategic-places .strategic-place:nth-child(odd) span,
+    .strategic-places .strategic-place:nth-child(even) span,
+    .strategic-places .strategic-place:nth-child(3n) span,
+    .strategic-places .strategic-place:nth-child(3n+2) span{color:#68776d}
+    .strategic-places .strategic-place .place-icon,
+    .strategic-places .strategic-place:nth-child(odd) .place-icon,
+    .strategic-places .strategic-place:nth-child(even) .place-icon,
+    .strategic-places .strategic-place:nth-child(3n) .place-icon,
+    .strategic-places .strategic-place:nth-child(3n+2) .place-icon{
+      border-color:#c7d6c5;
+      background:linear-gradient(145deg,#e6eee1,#cfdecd);
+      box-shadow:0 4px 10px #26372d12;
+      color:#55765a;
+    }
+    .strategic-places .strategic-place:nth-child(3n+2) .place-icon{border-color:#dfd2b7;background:linear-gradient(145deg,#f0e7d5,#e2d3b7);color:#8b7149}
+    .strategic-places .strategic-place:hover,
+    .strategic-places .strategic-place:nth-child(3n):hover,
+    .strategic-places .strategic-place:nth-child(3n+2):hover{border-color:#adbdad;box-shadow:0 13px 24px #26372d18}
+    .strategic-places .strategic-place:hover .place-icon,
+    .strategic-places .strategic-place:nth-child(3n):hover .place-icon,
+    .strategic-places .strategic-place:nth-child(3n+2):hover .place-icon{
+      transform:translateY(-2px);
+      border-color:#b6cbb4;
+      background:linear-gradient(145deg,#dfe9dc,#c9dac8);
+      box-shadow:0 5px 12px #26372d16;
+      color:#426249;
+    }
+    .service,.service:nth-child(2),.service:nth-child(3){
+      min-height:108px;
+      border-color:#d3ddd1;
+      background:linear-gradient(145deg,#f5f7f0,#e8eee3);
+      box-shadow:0 8px 20px #26372d10;
+      color:#30453a;
+    }
+    .service:nth-child(2){border-color:#ded4c2;background:linear-gradient(145deg,#f8f4ec,#eee5d6);color:#554737}
+    .service:nth-child(3){border-color:#d2dedb;background:linear-gradient(145deg,#f0f6f3,#e1ece7);color:#304944}
+    .service:before,.service:nth-child(2):before,.service:nth-child(3):before{
+      border-color:#c6d7c4;
+      background:linear-gradient(145deg,#e4eee0,#ccddca);
+      box-shadow:0 4px 10px #26372d12;
+      color:#507455;
+    }
+    .service:nth-child(2):before{border-color:#ddcfb1;background:linear-gradient(145deg,#f0e6d1,#e0cfac);color:#896e41}
+    .service:nth-child(3):before{border-color:#c9dad5;background:linear-gradient(145deg,#e0ece7,#cbded7);color:#4b7066}
+    .service:hover,.service:nth-child(2):hover,.service:nth-child(3):hover{
+      transform:translateY(-3px);
+      border-color:#afbfad;
+      background:linear-gradient(145deg,#fbfcf8,#e3ecdf);
+      box-shadow:0 14px 25px #26372d18;
+      color:#30453a;
+    }
+    .service:nth-child(2):hover{border-color:#d2c3a5;background:linear-gradient(145deg,#fcfaf4,#ece0ca);color:#554737}
+    .service:nth-child(3):hover{border-color:#bfcfca;background:linear-gradient(145deg,#f8fbf9,#dce9e3);color:#304944}
+    .service:hover:before,.service:nth-child(2):hover:before,.service:nth-child(3):hover:before{transform:translateY(-1px);box-shadow:0 6px 12px #26372d18}
+    .quick-link:before,.strategic-place:before,.service:after{box-shadow:none}
+    @media(max-width:760px){
+      .quick-link{min-height:92px;padding:10px}
+      .quick-icon{width:36px;height:36px}
+      .strategic-place{min-height:76px;padding:10px;gap:10px}
+      .strategic-place .place-icon{flex-basis:38px;width:38px;height:38px}
+      .service,.service:nth-child(2),.service:nth-child(3){min-height:98px;padding:15px 11px}
+    }
+    .quick-link:before,.strategic-place:before{
+      height:3px;
+      border-radius:0;
+      background:#00f5ff;
+      box-shadow:0 0 2px #00f5ff,0 0 7px #00eaff;
+      opacity:.82;
+      transform:scaleX(.2);
+      transform-origin:left;
+      transition:transform .24s steps(6,end),opacity .12s linear;
+    }
+    .quick-link:hover:before,.strategic-place:hover:before{opacity:1;transform:scaleX(1)}
+    .service{position:relative;overflow:hidden}
+    .service:after{
+      position:absolute;
+      top:0;
+      left:10%;
+      width:80%;
+      height:3px;
+      background:#00f5ff;
+      box-shadow:0 0 2px #00f5ff,0 0 7px #00eaff;
+      content:"";
+      opacity:.82;
+      transform:scaleX(.2);
+      transform-origin:left;
+      transition:transform .24s steps(6,end),opacity .12s linear;
+    }
+    .service:hover:after{opacity:1;transform:scaleX(1)}
+    .quick-link:before,.strategic-place:before,.service:after{
+      background:linear-gradient(90deg,transparent,#789477 22%,#bd8968 76%,transparent);
+      box-shadow:none;
+      opacity:.46;
+      transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .25s;
+    }
+    .quick-link:hover:before,.strategic-place:hover:before,.service:hover:after{opacity:.92}
+    body{font-family:"Manrope",Arial,sans-serif;font-size:16px;line-height:1.65;letter-spacing:.005em}
+    h1,.section-title,.cta h2{text-wrap:balance}
+    .section-title,.cta h2{letter-spacing:-.035em;line-height:1.08}
+    .description{font-size:clamp(15px,1.15vw,17px);line-height:1.8}
+    .quick-link strong,.strategic-place strong{font-size:14px}
+    .quick-link>span:not(.quick-icon):not(.quick-arrow),.strategic-place span{font-size:11px}
+    .motion-ready [data-reveal]{
+      opacity:0;
+      transform:translate3d(0,32px,0) scale(.985);
+      transition:opacity .8s cubic-bezier(.2,.75,.25,1),transform .85s cubic-bezier(.2,.75,.25,1);
+    }
+    .motion-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0) scale(1)}
+    .motion-ready [data-reveal-stagger]>*{transition-delay:calc(var(--reveal-index,0)*85ms)}
+    @media(prefers-reduced-motion:reduce){
+      .motion-ready [data-reveal]{opacity:1;transform:none;transition:none}
+    }
+    @media(max-width:600px){
+      .quick-link strong{font-size:11px}
+      .quick-link>span:not(.quick-icon):not(.quick-arrow){font-size:9px}
+      .strategic-place strong{font-size:11px}
+      .strategic-place span{font-size:10px}
+    }
   </style>
 </head>
 
@@ -819,11 +1718,11 @@
        HERO
   ====================================== -->
 
-  <header class="hero">
+  <header class="hero" id="inicio">
 
     <nav class="nav container">
 
-      <a href="index.html" class="logo-box">
+      <a href="index.html" class="logo-box" aria-label="Terranova Inmobiliaria, página principal">
         <img src="assets/logo-terranova.png"
              alt="Terranova Inmobiliaria">
       </a>
@@ -839,7 +1738,9 @@
         <a href="#galeria">
           Galería
         </a>
-        <div class="wa-selector"><button type="button" class="contact wa-trigger" onclick="toggleSalinasWhatsapp(this)">Consultar⌄</button><div class="wa-menu"><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
+        <a href="#lotes">Lotes</a>
+        <a href="#recorrido">Recorrido</a>
+        <div class="wa-selector"><button type="button" class="contact wa-trigger" onclick="toggleSalinasWhatsapp(this)" aria-expanded="false" aria-controls="wa-nav">Contactar <span aria-hidden="true">⌄</span></button><div class="wa-menu" id="wa-nav"><p class="wa-menu-heading">Elige un asesor</p><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
 
       </div>
 
@@ -850,40 +1751,45 @@
 
       <div class="hero-copy">
 
-        <a href="index.html#proyectos" class="back">
+        <a href="index.html#proyectos" class="back" data-entrance>
           ← Volver a proyectos
         </a>
 
-        <br>
-
-        <div class="badge">
+        <div class="badge" data-entrance>
           ANDAHUAYLAS · APURÍMAC
         </div>
 
-        <h1>
+        <h1 data-entrance>
           Proyecto<br>
           <span>Salinas.</span>
         </h1>
 
-        <p class="hero-text">
+        <p class="hero-text" data-entrance>
           Un espacio propio para construir tu hogar,
           crear recuerdos y darle seguridad a tu familia.
           Terrenos en una zona tranquila y con excelente
           proyección de inversión.
         </p>
 
-        <div class="hero-buttons">
+        <div class="hero-buttons" data-entrance>
 
           <a href="#galeria" class="btn btn-primary">
-            Ver el proyecto →
+            Explorar proyecto <span aria-hidden="true">↗</span>
           </a>
-          <div class="wa-selector availability-selector"><button type="button" class="btn btn-outline wa-trigger" onclick="toggleSalinasWhatsapp(this)" style="background:transparent;cursor:pointer;font-family:inherit;font-size:inherit;">Consultar disponibilidad⌄</button><div class="wa-menu"><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
+          <div class="wa-selector availability-selector"><button type="button" class="btn btn-outline wa-trigger" onclick="toggleSalinasWhatsapp(this)" aria-expanded="false">Consultar disponibilidad <span aria-hidden="true">⌄</span></button><div class="wa-menu"><p class="wa-menu-heading">Elige un asesor</p><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
+          <a href="#galeria" class="btn btn-outline hero-gallery">Ver galería <span aria-hidden="true">↓</span></a>
 
         </div>
 
       </div>
+      <aside class="hero-feature" aria-label="Características principales">
+        <span class="hero-feature-label">PROYECTO SALINAS · ANDAHUAYLAS</span>
+        <div class="hero-feature-item"><strong>94.12 m²</strong><span>Área por lote</span></div>
+        <div class="hero-feature-item"><strong>6 disponibles</strong><span>de 10 lotes</span></div>
+      </aside>
 
     </div>
+    <a class="scroll-cue" href="#accesos">Descubre Proyecto Salinas</a>
 
   </header>
 
@@ -892,30 +1798,37 @@
        DATOS PRINCIPALES
   ====================================== -->
 
-  <div class="container stats">
+  <div class="container stats" data-reveal-stagger>
 
-    <div class="stat">
+    <div class="stat" data-reveal>
       <small>Área por lote</small>
       <strong>94.12 m²</strong>
     </div>
 
-    <div class="stat">
+    <div class="stat" data-reveal>
       <small>Disponibilidad</small>
-      <strong>10 lotes</strong>
+      <strong>6 de 10 lotes</strong>
     </div>
 
-    <div class="stat">
+    <div class="stat" data-reveal>
       <small>Servicios</small>
       <strong>Completos</strong>
     </div>
 
-    <div class="stat">
+    <div class="stat" data-reveal>
       <small>Ubicación</small>
       <strong>Andahuaylas</strong>
     </div>
 
   </div>
 
+  <nav class="quick-access container" id="accesos" aria-label="Accesos rápidos del proyecto" data-reveal-stagger>
+    <a class="quick-link" href="#lotes"><span class="quick-icon" aria-hidden="true">⌂</span><strong>Lotes</strong><span>6 espacios disponibles</span><span class="quick-arrow" aria-hidden="true">↗</span></a>
+    <a class="quick-link" href="#ubicacion"><span class="quick-icon" aria-hidden="true">⌖</span><strong>Ubicación</strong><span>Andahuaylas</span><span class="quick-arrow" aria-hidden="true">↗</span></a>
+    <a class="quick-link" href="#galeria"><span class="quick-icon" aria-hidden="true">▧</span><strong>Galería</strong><span>Fotos del terreno</span><span class="quick-arrow" aria-hidden="true">↗</span></a>
+    <a class="quick-link" href="#plano"><span class="quick-icon" aria-hidden="true">▤</span><strong>Plano</strong><span>Plano del proyecto</span><span class="quick-arrow" aria-hidden="true">↗</span></a>
+    <a class="quick-link" href="#recorrido"><span class="quick-icon" aria-hidden="true">▷</span><strong>Recorrido</strong><span>Video del proyecto</span><span class="quick-arrow" aria-hidden="true">↗</span></a>
+  </nav>
 
   <!-- =====================================
        UBICACIÓN
@@ -923,9 +1836,9 @@
 
   <section id="ubicacion">
 
-    <div class="container location-grid">
+    <div class="container location-grid" data-reveal-stagger>
 
-      <div>
+      <div data-reveal>
 
         <div class="eyebrow">
           PROYECTO SALINAS
@@ -943,7 +1856,7 @@
         </p>
 
         <div class="strategic-title">Ubicaciones estratégicas</div>
-        <div class="strategic-places">
+        <div class="strategic-places" data-reveal-stagger>
           <div class="strategic-place featured"><div class="place-icon">✚</div><div><strong>Centro de Salud Villa Salinas</strong><span>A pocos metros</span></div></div>
           <div class="strategic-place featured"><div class="place-icon">✚</div><div><strong>EsSalud</strong><span>A 3 cuadras</span></div></div>
           <div class="strategic-place featured"><div class="place-icon">⌂</div><div><strong>UGEL Andahuaylas</strong><span>A 1 cuadra</span></div></div>
@@ -952,7 +1865,7 @@
           <div class="strategic-place"><div class="place-icon">↗</div><div><strong>Av. Industrial</strong><span>Conexión cercana</span></div></div>
         </div>
 
-        <div class="services">
+        <div class="services" data-reveal-stagger>
 
           <div class="service">
             Agua potable
@@ -971,7 +1884,7 @@
       </div>
 
 
-      <div class="promo-image">
+      <div class="promo-image" data-reveal>
 
         <img
           src="assets/salinas/lotes-promocional.png"
@@ -984,17 +1897,17 @@
   </section>
 
 
-  <section class="salinas-map-section">
+  <section class="salinas-map-section" id="mapa">
     <div class="container">
-      <div class="eyebrow">UBICACIÓN DEL PROYECTO</div>
-      <h2 class="section-title">Encuéntranos en <span>Andahuaylas.</span></h2>
-      <p class="description" style="max-width:700px;margin-bottom:35px;">Consulta la ubicación de Proyecto Salinas y planifica tu visita directamente desde Google Maps.</p>
-      <div class="salinas-map-card">
-        <iframe src="https://www.google.com/maps?q=Villa%20Salinas%2C%20Andahuaylas%2C%20Apur%C3%ADmac&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Proyecto Salinas"></iframe>
+      <div class="eyebrow" data-reveal>UBICACIÓN DEL PROYECTO</div>
+      <h2 class="section-title" data-reveal>Encuéntranos en <span>Andahuaylas.</span></h2>
+      <p class="description map-description" data-reveal>Consulta la ubicación de Proyecto Salinas y planifica tu visita directamente desde Google Maps.</p>
+      <div class="salinas-map-card" data-reveal>
+        <iframe src="https://www.google.com/maps?q=-13.654025%2C-73.409568&amp;t=k&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa satelital de Proyecto Salinas en Andahuaylas"></iframe>
         <div class="map-information">
           <small>PROYECTO SALINAS</small><h3>Andahuaylas · Apurímac</h3>
           <p>Visualiza la zona y abre Google Maps para consultar la ruta hasta el proyecto.</p>
-          <a href="https://maps.app.goo.gl/wWjEKTWkRnEYSYcE9" target="_blank" rel="noopener" class="map-button">Ver ubicación en Google Maps →</a>
+          <a href="https://maps.app.goo.gl/UQGYLEhe6zVpPzVY6" target="_blank" rel="noopener" class="map-button">Ver ubicación en Google Maps →</a>
         </div>
       </div>
     </div>
@@ -1004,11 +1917,11 @@
        LOTES
   ====================================== -->
 
-  <section class="lots">
+  <section class="lots" id="lotes">
 
     <div class="container">
 
-      <div class="lots-header">
+      <div class="lots-header" data-reveal>
 
         <div class="eyebrow">
           LOTES DISPONIBLES
@@ -1020,71 +1933,74 @@
         </h2>
 
         <p class="description">
-          Diez lotes de 94.12 m² con diferentes perímetros,
-          en un entorno natural, tranquilo y con
-          excelente ubicación.
+          El proyecto cuenta con diez lotes de 94.12 m² con diferentes perímetros;
+          seis están disponibles para consulta.
         </p>
 
       </div>
 
 
-      <div class="lots-grid">
+      <div class="lots-grid" data-reveal-stagger>
 
-        <div class="lot">
+        <div class="lot" data-reveal>
           <span>LOTE 01</span>
           <h3>94.12 m²</h3>
           <p>Perímetro: 42.42 m</p>
         </div>
 
-        <div class="lot">
+        <div class="lot lot-unavailable" data-reveal>
           <span>LOTE 02</span>
+          <span class="lot-status">NO DISPONIBLE</span>
           <h3>94.12 m²</h3>
           <p>Perímetro: 41.47 m</p>
         </div>
 
-        <div class="lot">
+        <div class="lot lot-unavailable" data-reveal>
           <span>LOTE 03</span>
+          <span class="lot-status">NO DISPONIBLE</span>
           <h3>94.12 m²</h3>
           <p>Perímetro: 42.97 m</p>
         </div>
 
-        <div class="lot">
+        <div class="lot lot-unavailable" data-reveal>
           <span>LOTE 04</span>
+          <span class="lot-status">NO DISPONIBLE</span>
           <h3>94.12 m²</h3>
           <p>Perímetro: 41.95 m</p>
         </div>
 
-        <div class="lot">
+        <div class="lot" data-reveal>
           <span>LOTE 05</span>
           <h3>94.12 m²</h3>
           <p>Perímetro: 40.71 m</p>
         </div>
 
-        <div class="lot">
+        <div class="lot" data-reveal>
           <span>LOTE 06</span>
           <h3>94.12 m²</h3>
           <p>Perímetro: 40.03 m</p>
         </div>
 
-        <div class="lot">
+        <div class="lot" data-reveal>
           <span>LOTE 07</span>
           <h3>94.12 m²</h3>
           <p>Perímetro: 40.28 m</p>
         </div>
 
-        <div class="lot">
+        <div class="lot lot-unavailable" data-reveal>
           <span>LOTE 08</span>
+          <span class="lot-status">NO DISPONIBLE</span>
           <h3>94.12 m²</h3>
           <p>Perímetro: 39.93 m</p>
         </div>
 
-        <div class="lot">
+        <div class="lot" data-reveal>
           <span>LOTE 09</span>
           <h3>94.12 m²</h3>
           <p>Perímetro: 40.13 m</p>
         </div>
 
-        <div class="lot">
+        <div class="lot" data-reveal>
           <span>LOTE 10</span>
           <h3>94.12 m²</h3>
           <p>Perímetro: 40.06 m</p>
@@ -1105,7 +2021,7 @@
 
     <div class="container">
 
-      <div class="gallery-heading-row">
+      <div class="gallery-heading-row" data-reveal>
 
         <div class="gallery-header">
 
@@ -1126,7 +2042,7 @@
 
         </div>
 
-        <a href="assets/salinas/plano-salinas.pdf"
+        <a href="assets/salinas/plano-salinas.pdf" id="plano"
            target="_blank"
            rel="noopener"
            class="plan-button">
@@ -1136,37 +2052,16 @@
       </div>
 
 
-      <div class="gallery">
-
-        <img
-          src="assets/salinas/terreno-01.jpg"
-          alt="Proyecto Salinas">
-
-        <img
-          src="assets/salinas/terreno-02.jpg"
-          alt="Proyecto Salinas">
-
-        <img
-          src="assets/salinas/terreno-03.jpg"
-          alt="Proyecto Salinas">
-
-        <img
-          src="assets/salinas/terreno-04.jpg"
-          alt="Proyecto Salinas">
-
-        <img
-          src="assets/salinas/terreno-05.jpg"
-          alt="Proyecto Salinas">
-
-        <img
-          src="assets/salinas/terreno-06.jpg"
-          alt="Proyecto Salinas">
-
-        <img
-          src="assets/salinas/terreno-07.jpg"
-          alt="Proyecto Salinas">
-
+      <div class="gallery" data-reveal-stagger aria-label="Galería de fotografías del Proyecto Salinas">
+        <button class="gallery-item" type="button" data-lightbox="assets/salinas/terreno-01.jpg" data-caption="Terreno del Proyecto Salinas" aria-label="Ampliar fotografía 1 del terreno"><img src="assets/salinas/terreno-01.jpg" alt="Terreno del Proyecto Salinas" loading="lazy"><span class="gallery-caption"><strong>Terreno del proyecto</strong><small>Andahuaylas · Apurímac</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/salinas/terreno-02.jpg" data-caption="Vista del Proyecto Salinas y su entorno" aria-label="Ampliar fotografía 2 del terreno"><img src="assets/salinas/terreno-02.jpg" alt="Vista del Proyecto Salinas y su entorno" loading="lazy"><span class="gallery-caption"><strong>Entorno del proyecto</strong><small>Terreno real</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/salinas/terreno-03.jpg" data-caption="Terreno del Proyecto Salinas" aria-label="Ampliar fotografía 3 del terreno"><img src="assets/salinas/terreno-03.jpg" alt="Terreno del Proyecto Salinas" loading="lazy"><span class="gallery-caption"><strong>Vista del terreno</strong><small>Proyecto Salinas</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/salinas/terreno-04.jpg" data-caption="Vista del entorno del Proyecto Salinas" aria-label="Ampliar fotografía 4 del terreno"><img src="assets/salinas/terreno-04.jpg" alt="Vista del entorno del Proyecto Salinas" loading="lazy"><span class="gallery-caption"><strong>Entorno del proyecto</strong><small>Andahuaylas</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/salinas/terreno-05.jpg" data-caption="Terreno del Proyecto Salinas" aria-label="Ampliar fotografía 5 del terreno"><img src="assets/salinas/terreno-05.jpg" alt="Terreno del Proyecto Salinas" loading="lazy"><span class="gallery-caption"><strong>Terreno Salinas</strong><small>Andahuaylas · Apurímac</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/salinas/terreno-06.jpg" data-caption="Vista del Proyecto Salinas" aria-label="Ampliar fotografía 6 del terreno"><img src="assets/salinas/terreno-06.jpg" alt="Vista del Proyecto Salinas" loading="lazy"><span class="gallery-caption"><strong>Vista del terreno</strong><small>Proyecto Salinas</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+        <button class="gallery-item" type="button" data-lightbox="assets/salinas/terreno-07.jpg" data-caption="Terreno del Proyecto Salinas" aria-label="Ampliar fotografía 7 del terreno"><img src="assets/salinas/terreno-07.jpg" alt="Terreno del Proyecto Salinas" loading="lazy"><span class="gallery-caption"><strong>Terreno del proyecto</strong><small>Andahuaylas</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
       </div>
+      <p class="gallery-note">Fotografías del terreno y del entorno actual del Proyecto Salinas. Selecciona una imagen para ampliarla.</p>
 
     </div>
 
@@ -1177,25 +2072,37 @@
        RECORRIDO
   ====================================== -->
 
-  <section class="visual">
+  <section class="visual" id="recorrido">
 
     <div class="container">
 
-      <div class="eyebrow">
-        RECORRIDO VISUAL
+      <div class="visual-copy">
+        <div class="eyebrow" data-reveal>
+          RECORRIDO VISUAL
+        </div>
+
+        <h2 class="section-title" data-reveal>
+          Míralo más
+          <span>de cerca.</span>
+        </h2>
+
+        <p class="description" data-reveal>
+          Conoce el Proyecto Salinas a través de nuestro
+          recorrido y descubre el entorno del proyecto.
+        </p>
+
+        <div class="visual-facts" data-reveal>
+          <div class="visual-fact"><strong>6 disponibles</strong><span>de 10 lotes del proyecto</span></div>
+          <div class="visual-fact"><strong>94.12 m²</strong><span>Área por lote</span></div>
+        </div>
+
+        <div class="visual-details" data-reveal>
+          <span class="visual-location">Andahuaylas · Apurímac</span>
+          <a class="visual-map-link" href="#mapa">Ver ubicación <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
 
-      <h2 class="section-title">
-        Míralo más
-        <span>de cerca.</span>
-      </h2>
-
-      <p class="description">
-        Conoce el Proyecto Salinas a través de nuestro
-        recorrido y descubre el entorno del proyecto.
-      </p>
-
-      <div class="video-box">
+      <div class="video-box" data-reveal>
 
         <video
           controls
@@ -1237,7 +2144,7 @@
         </p>
 
       </div>
-      <div class="wa-selector"><button type="button" class="btn wa-trigger" onclick="toggleSalinasWhatsapp(this)" style="border:0;background:#05363e;color:white;cursor:pointer;font-family:inherit;font-size:inherit;">Consultar por WhatsApp⌄</button><div class="wa-menu"><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
+      <div class="wa-selector"><button type="button" class="btn wa-trigger" onclick="toggleSalinasWhatsapp(this)" aria-expanded="false" aria-controls="wa-closing">Consultar por WhatsApp <span aria-hidden="true">⌄</span></button><div class="wa-menu" id="wa-closing"><p class="wa-menu-heading">Elige un asesor</p><a class="wa-option main-number" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a><a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Proyecto%20Salinas%20de%20Terranova%20Inmobiliaria.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a></div></div>
 
     </div>
 
@@ -1264,16 +2171,76 @@
 
   </footer>
 
+<dialog class="lightbox" aria-label="Fotografía ampliada">
+  <button class="lightbox-close" type="button" aria-label="Cerrar imagen">×</button>
+  <img src="" alt="">
+  <p class="lightbox-caption"></p>
+</dialog>
 
 <script>
 function toggleSalinasWhatsapp(button){
   const selector=button.closest('.wa-selector');
-  document.querySelectorAll('.wa-selector.open').forEach(item=>{if(item!==selector)item.classList.remove('open')});
-  selector.classList.toggle('open');
+  const willOpen=!selector.classList.contains('open');
+  document.querySelectorAll('.wa-selector.open').forEach(item=>{
+    item.classList.remove('open');
+    item.querySelector('.wa-trigger').setAttribute('aria-expanded','false');
+  });
+  if(willOpen){
+    selector.classList.add('open');
+    button.setAttribute('aria-expanded','true');
+  }
 }
 document.addEventListener('click',function(event){
-  if(!event.target.closest('.wa-selector')) document.querySelectorAll('.wa-selector.open').forEach(item=>item.classList.remove('open'));
+  if(!event.target.closest('.wa-selector')){
+    document.querySelectorAll('.wa-selector.open').forEach(item=>{
+      item.classList.remove('open');
+      item.querySelector('.wa-trigger').setAttribute('aria-expanded','false');
+    });
+  }
 });
+
+const lightbox=document.querySelector('.lightbox');
+const lightboxImage=lightbox.querySelector('img');
+const lightboxCaption=lightbox.querySelector('.lightbox-caption');
+document.querySelectorAll('[data-lightbox]').forEach(function(button){
+  button.addEventListener('click',function(){
+    lightboxImage.src=button.dataset.lightbox;
+    lightboxImage.alt=button.querySelector('img').alt;
+    lightboxCaption.textContent=button.dataset.caption;
+    lightbox.showModal();
+  });
+});
+lightbox.querySelector('.lightbox-close').addEventListener('click',function(){lightbox.close()});
+lightbox.addEventListener('click',function(event){if(event.target===lightbox)lightbox.close()});
+document.addEventListener('keydown',function(event){
+  if(event.key==='Escape'){
+    document.querySelectorAll('.wa-selector.open').forEach(item=>{
+      item.classList.remove('open');
+      item.querySelector('.wa-trigger').setAttribute('aria-expanded','false');
+    });
+  }
+});
+
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
+  const revealElements=new Set(document.querySelectorAll('[data-reveal]'));
+  document.querySelectorAll('[data-reveal-stagger]').forEach(function(group){
+    Array.from(group.children).forEach(function(item,index){
+      item.setAttribute('data-reveal','');
+      item.style.setProperty('--reveal-index',Math.min(index,5));
+      revealElements.add(item);
+    });
+  });
+  document.documentElement.classList.add('motion-ready');
+  const revealObserver=new IntersectionObserver(function(entries,observer){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  revealElements.forEach(function(element){revealObserver.observe(element)});
+}
 </script>
 
 </body>
