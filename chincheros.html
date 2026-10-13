@@ -2,398 +2,555 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183b32">
   <title>Condominio Terranova | Chincheros</title>
-  <meta name="description" content="Condominio Terranova. Lotes campestres desde 400 m² en Chincheros, Apurímac.">
+  <meta name="description" content="Condominio Terranova: lotes campestres desde 400 m² para proyectar tu casa de campo en Chincheros, Apurímac.">
   <link rel="icon" type="image/png" href="assets/logo-terranova.png">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:Arial,Helvetica,sans-serif;background:#fbf7ee;color:#24342d;overflow-x:hidden}
-    a{text-decoration:none;color:inherit}
+    :root{--forest:#183b32;--deep:#102b25;--moss:#65714c;--copper:#b8734c;--sand:#f5f1e8;--paper:#fcfbf7;--sage:#eaf0e7;--sage-light:#f0f4ed;--warm-card:#f3ece1;--ink:#20342d;--muted:#6c786f;--line:#e8e5db;--white:#fff;--shadow:0 24px 70px rgba(29,48,39,.12)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:50px}
+    body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font-family:"Outfit",Arial,sans-serif;font-size:16px;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%}
     button{font:inherit}
-    .container{width:min(1180px,calc(100% - 40px));margin:auto}
+    a:focus-visible,button:focus-visible{outline:3px solid #d7a176;outline-offset:4px}
+    .container{width:min(1200px,calc(100% - 48px));margin-inline:auto}
 
-    :root{
-      --terracota:#a94f2d;--terracota-dark:#70351f;--olive:#465237;--olive-dark:#27372d;
-      --cream:#f2e6d0;--cream-light:#fbf7ee;--aqua:#16cfc6;--terranova-dark:#063d45;--white:#fff
-    }
+    .hero{position:relative;display:flex;min-height:max(730px,min(900px,100svh));flex-direction:column;overflow:hidden;isolation:isolate;background-color:var(--deep);background-image:linear-gradient(90deg,rgba(12,32,26,.86),rgba(16,39,31,.73) 34%,rgba(23,47,37,.31) 66%,rgba(17,35,28,.08)),linear-gradient(0deg,rgba(13,32,26,.62),transparent 48%),url("assets/chincheros/condominio-terranova.jpeg");background-position:center,center,center 42%;background-size:cover;color:var(--white);animation:hero-background-drift 18s ease-in-out infinite alternate}
+    @keyframes hero-background-drift{from{background-position:center,center,center 42%;}to{background-position:center,center,center 47%;}}
+    .hero:before{position:absolute;z-index:-1;inset:0;background:linear-gradient(118deg,transparent 49%,#fff1 49.1%,transparent 49.25%),radial-gradient(ellipse at 78% 38%,transparent 8%,rgba(9,24,19,.16) 80%);content:"";pointer-events:none}
+    .hero:after{position:absolute;right:5%;bottom:9%;width:120px;height:120px;border:1px solid #ffffff4d;border-radius:50%;box-shadow:0 0 0 13px #ffffff0c,0 0 0 26px #ffffff09;content:"";pointer-events:none}
+    .nav{position:relative;z-index:5;display:flex;min-height:104px;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:inline-flex;flex:0 0 auto;align-items:center;padding:8px 14px;border:1px solid rgba(255,255,255,.82);border-radius:15px;background:rgba(255,255,255,.97);box-shadow:0 10px 32px #0002;transition:transform .25s,box-shadow .25s}
+    .brand:hover{transform:translateY(-2px);box-shadow:0 15px 36px #0004}
+    .brand img{width:177px;height:55px;object-fit:contain}
+    .nav-links{display:flex;align-items:center;justify-content:flex-end;gap:4px;padding:7px;border:1px solid #ffffff45;border-radius:999px;background:linear-gradient(120deg,#102b257a,#102b2552);box-shadow:0 12px 35px #071a1633,inset 0 1px #ffffff18;color:#fffffff0;font-size:13px;font-weight:700;backdrop-filter:blur(18px) saturate(140%)}
+    .nav-links>a{position:relative;display:inline-flex;min-height:40px;align-items:center;justify-content:center;padding:0 13px;border:1px solid transparent;border-radius:999px;color:#ffffffd9;white-space:nowrap;transition:transform .22s,border-color .22s,background .22s,color .22s,box-shadow .22s}
+    .nav-links>a:hover{transform:translateY(-1px);border-color:#ffffff36;background:#ffffff18;color:#fff}
+    .nav-links .nav-home{border-color:#ffffff44;background:#ffffff17;color:#fff}
+    .nav-links .nav-home:before{width:5px;height:5px;margin-right:7px;border-radius:50%;background:#e4bd96;box-shadow:0 0 10px #e4bd96;content:""}
+    .contact-button{display:inline-flex;min-height:42px;align-items:center;justify-content:center;gap:9px;margin-left:3px;padding:0 14px;border:1px solid #efc9a5;border-radius:999px;background:linear-gradient(120deg,#ca885e,#a96340);box-shadow:0 8px 20px #071a164d,inset 0 1px #ffffff49;color:#fff;font-size:12px;font-weight:800;cursor:pointer;transition:transform .22s,box-shadow .22s,background .22s}
+    .contact-button:hover{transform:translateY(-2px);background:linear-gradient(120deg,#d39469,#b8734c);box-shadow:0 12px 25px #071a165c,inset 0 1px #ffffff6b}
+    .contact-button .contact-icon{display:grid;width:24px;height:24px;place-items:center;border-radius:50%;background:#ffffff22}
+    .contact-button .contact-icon svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.8}
+    .contact-chevron{margin-left:1px;color:#fff9;font-size:13px;transition:transform .2s}
+    .contact-button[aria-expanded="true"] .contact-chevron{transform:rotate(180deg)}
+    .hero-content{position:relative;display:flex;flex:1;align-items:center;padding:32px 0 155px}
+    .hero-copy{max-width:730px}
+    .back-link{position:relative;display:inline-flex;align-items:center;gap:10px;margin-bottom:31px;padding:10px 15px;border:1px solid #ffffff69;border-radius:999px;background:linear-gradient(110deg,#ffffff25,#ffffff0c);box-shadow:0 8px 22px #071a163d;color:#fff;font-size:12px;font-weight:800;letter-spacing:.015em;backdrop-filter:blur(12px);transition:transform .25s,border-color .25s,background .25s,box-shadow .25s}
+    .back-link:hover{transform:translateX(-3px);border-color:#e6c49f;background:#ffffff30;box-shadow:0 12px 28px #071a1655}
+    .back-link span{display:grid;width:25px;height:25px;place-items:center;border-radius:50%;background:#e2bd95;color:var(--deep);font-size:15px;transition:transform .25s}
+    .back-link:hover span{transform:translateX(-3px)}
+    .eyebrow{display:flex;align-items:center;gap:11px;margin-bottom:18px;color:var(--copper);font-family:"Outfit",sans-serif;font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+    .eyebrow:before{width:28px;height:1px;background:currentColor;content:""}
+    .hero-eyebrow{color:#e9c39e}
+    .hero h1{max-width:740px;margin:0;font-family:"Playfair Display",Georgia,serif;font-size:clamp(64px,8vw,108px);font-weight:600;letter-spacing:-.055em;line-height:.97}
+    .hero h1 span{color:#e3b88e}
+    .hero-subtitle{max-width:585px;margin:25px 0 0;color:#ffffffdf;font-size:clamp(16px,1.55vw,19px);line-height:1.75}
+    .hero-actions{position:relative;z-index:20;display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+    .btn{position:relative;display:inline-flex;min-height:58px;align-items:center;justify-content:center;gap:11px;overflow:hidden;padding:0 24px;border:1px solid transparent;border-radius:11px;font-size:14px;font-weight:800;transition:transform .28s cubic-bezier(.2,.7,.2,1),background .25s,border-color .25s,box-shadow .28s;cursor:pointer}
+    .btn:before{position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,#ffffff42 48%,transparent 68%);content:"";transform:translateX(-125%);transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+    .btn:hover:before{transform:translateX(125%)}
+    .btn:hover{transform:translateY(-4px)}
+    .btn-primary{border-color:#edc9a5;background:linear-gradient(115deg,#c78359,#ad6845);box-shadow:0 13px 30px #06181255,0 0 0 1px #ffffff26 inset;color:#fff}
+    .btn-primary:hover{background:linear-gradient(115deg,#d18e64,#b8734c);box-shadow:0 19px 38px #0618126b,0 0 0 1px #ffffff47 inset}
+    .btn-outline{border-color:#ffffffbb;background:linear-gradient(120deg,#ffffff25,#ffffff0d);box-shadow:0 11px 26px #06181236,inset 0 1px #ffffff26;color:#fff;backdrop-filter:blur(13px)}
+    .btn-outline:hover{transform:translateY(-4px);border-color:#f2d2b0;background:#ffffff2c;box-shadow:0 17px 32px #06181255,inset 0 1px #ffffff4d}
+    .btn-arrow{font-size:17px;transition:transform .25s}
+    .btn:hover .btn-arrow{transform:translate(3px,-2px)}
+    .whatsapp-icon{position:relative;z-index:1;display:grid;width:24px;height:24px;place-items:center;border:1px solid #ffffff55;border-radius:50%;background:#ffffff1a}
+    .whatsapp-icon svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.8}
+    .hero-feature{position:absolute;right:0;bottom:48px;display:grid;width:min(405px,39%);grid-template-columns:1fr 1fr;gap:19px 25px;padding:26px 29px;border:1px solid #ffffff78;border-radius:20px;background:linear-gradient(135deg,#ffffff38,#143027c9 78%);box-shadow:0 22px 58px #091a1455,inset 0 1px #ffffff48;backdrop-filter:blur(22px) saturate(150%)}
+    .hero-feature:after{position:absolute;top:0;left:24px;width:68px;height:2px;border-radius:2px;background:linear-gradient(90deg,#e9c39e,transparent);content:""}
+    .hero-feature-label{grid-column:1/-1;color:#f3d1ae;font-family:"Outfit",sans-serif;font-size:11px;font-weight:800;letter-spacing:.15em}
+    .feature{display:flex;flex-direction:column;gap:4px}
+    .feature strong{font-size:17px}
+    .feature span{color:#ffffffc7;font-size:12px;line-height:1.5}
 
-    .hero{min-height:100vh;position:relative;display:flex;flex-direction:column;color:#fff;
-      background:linear-gradient(90deg,rgba(24,42,34,.95) 0%,rgba(35,55,42,.83) 42%,rgba(66,53,36,.30) 100%),
-      url("assets/chincheros/condominio-terranova.jpeg");background-size:cover;background-position:center 40%}
-    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.03) 55%,rgba(21,39,32,.55));pointer-events:none}
-    .hero::after{content:"";position:absolute;width:700px;height:700px;left:-350px;top:160px;border:1px solid rgba(22,207,198,.15);border-radius:50%;
-      box-shadow:0 0 0 90px rgba(22,207,198,.035),0 0 0 180px rgba(22,207,198,.025);pointer-events:none}
+    .wa-selector{position:relative;z-index:8}
+    .wa-menu{position:absolute;top:calc(100% + 10px);right:0;z-index:20;width:275px;padding:9px;border:1px solid #e2dccde6;border-radius:15px;background:#fff;box-shadow:0 18px 46px #0003;opacity:0;pointer-events:none;transform:translateY(-5px);transition:opacity .18s,transform .18s,visibility .18s;visibility:hidden}
+    .wa-selector.open .wa-menu{opacity:1;pointer-events:auto;transform:none;visibility:visible}
+    .hero-actions .wa-selector{z-index:35}
+    .hero-actions .wa-menu{top:auto;right:auto;bottom:calc(100% + 14px);left:0;z-index:50;width:min(300px,calc(100vw - 40px));padding:12px;border-color:#ffffff9c;background:linear-gradient(145deg,#fbfaf5f7,#e9efe7f7);box-shadow:0 20px 54px #071a1666;backdrop-filter:blur(20px) saturate(145%)}
+    .wa-menu-heading{margin:3px 8px 8px;color:var(--forest);font-family:"Playfair Display",Georgia,serif;font-size:18px;font-weight:600}
+    .hero-actions .wa-option{padding:12px 13px;border:1px solid #dce4d8;background:#ffffffb8;transition:transform .2s,border-color .2s,background .2s,box-shadow .2s}
+    .hero-actions .wa-option:hover{transform:translateX(3px);border-color:#c2d0bc;background:#f1f5ed;box-shadow:0 6px 15px #183b3210}
+    .wa-option{display:block;padding:13px 14px;border-radius:10px;color:var(--ink)}
+    .wa-option+.wa-option{margin-top:4px}
+    .wa-option:hover,.wa-option.primary{background:#e8eee8}
+    .wa-option strong{display:block;margin-bottom:3px;font-size:13px}
+    .wa-option span{color:var(--muted);font-size:12px}
 
-    .nav{position:relative;z-index:100;height:125px;display:flex;align-items:center;justify-content:space-between;overflow:visible}
-    .logo-box{display:flex;align-items:center;justify-content:center;padding:8px 15px;background:rgba(255,255,255,.93);border:1px solid rgba(255,255,255,.75);border-radius:17px;box-shadow:0 10px 35px rgba(0,0,0,.18);backdrop-filter:blur(10px)}
-    .logo-box img{width:205px;height:68px;object-fit:contain}
-    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:700}
-    .nav-links>a{color:#fff;transition:.25s}
-    .nav-links>a:hover{color:var(--aqua)}
-    .contact-button{padding:14px 22px;border:1px solid var(--aqua);border-radius:50px;background:rgba(6,61,69,.25);color:#fff;font-weight:800;cursor:pointer}
+    .scroll-cue{position:absolute;bottom:48px;left:max(24px,calc((100% - 1200px)/2));display:flex;align-items:center;gap:12px;color:#ffffffbd;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;transition:color .2s}
+    .scroll-cue:hover{color:#fff}
+    .scroll-cue:before{width:38px;height:1px;background:#ffffff91;content:""}
+    .hero-copy [data-entrance]{opacity:0;animation:hero-arrive .8s cubic-bezier(.2,.75,.25,1) forwards}
+    .hero-copy .back-link{animation-delay:.06s}
+    .hero-copy .hero-eyebrow{animation-delay:.2s}
+    .hero-copy h1{animation-delay:.34s}
+    .hero-copy .hero-subtitle{animation-delay:.49s}
+    .hero-copy .hero-actions{animation-delay:.64s}
+    .hero-feature{opacity:0;animation:hero-arrive .9s .72s cubic-bezier(.2,.75,.25,1) forwards}
+    @keyframes hero-arrive{from{opacity:0;transform:translate3d(0,24px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+    .quick-access{position:relative;z-index:4;margin-top:-37px}
+    .quick-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+    .quick-link{position:relative;isolation:isolate;display:flex;min-height:112px;flex-direction:column;align-items:flex-start;justify-content:center;gap:7px;overflow:hidden;padding:15px 17px;border:1px solid #dce5d9;border-radius:16px;background:linear-gradient(145deg,#f1f5ee,#e8efe5);box-shadow:0 8px 22px #22372d0a;transition:transform .45s cubic-bezier(.16,1,.3,1),border-color .35s,background .35s,box-shadow .45s}
+    .quick-link:before{position:absolute;top:0;left:12%;z-index:-1;width:76%;height:3px;border-radius:0 0 5px 5px;background:linear-gradient(90deg,transparent,#b8734c 35%,#65714c 70%,transparent);content:"";opacity:.55;transform:scaleX(.22);transition:transform .4s cubic-bezier(.16,1,.3,1),opacity .3s}
+    .quick-link:after{position:absolute;right:-31px;bottom:-42px;z-index:-1;width:104px;height:104px;border:1px solid #65714c19;border-radius:50%;box-shadow:0 0 0 10px #65714c08,0 0 0 21px #65714c06;content:"";opacity:.45;transform:scale(.72);transition:transform .5s cubic-bezier(.16,1,.3,1),opacity .4s}
+    .quick-link:nth-child(3n+2){background:linear-gradient(145deg,#f6f1e8,#efe8db)}
+    .quick-link:hover{z-index:1;transform:translateY(-7px) scale(1.018);border-color:#aabda8;background:linear-gradient(145deg,#faf8f0,#e2ebde);box-shadow:0 22px 38px #22372d20,0 0 0 4px #fff9}
+    .quick-link:hover:before{opacity:1;transform:scaleX(1)}
+    .quick-link:hover:after{opacity:.9;transform:scale(1.22)}
+    .quick-icon{display:grid;width:34px;height:34px;place-items:center;border:1px solid #d6e0d2;border-radius:11px;background:#f8faf5;color:var(--forest);box-shadow:0 4px 12px #183b3210;transition:transform .4s cubic-bezier(.16,1,.3,1),background .3s,color .3s,box-shadow .3s}
+    .quick-link:hover .quick-icon{transform:translateY(-2px) rotate(-7deg) scale(1.12);border-color:var(--forest);background:var(--forest);box-shadow:0 8px 17px #183b3230;color:#fff}
+    .quick-icon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+    .quick-link strong{color:var(--forest);font-size:14px;font-weight:800}
+    .quick-link span:not(.quick-icon){color:var(--muted);font-size:11px;line-height:1.4}
+    .quick-arrow{position:absolute;top:14px;right:14px;color:#9b7962;font-size:15px;transition:transform .25s,color .25s}
+    .quick-link:hover .quick-arrow{transform:translate(2px,-2px);color:var(--copper)}
+    .motion-ready [data-reveal-stagger]>.quick-link:hover{transform:translateY(-7px) scale(1.018)}
+    section{position:relative;padding:108px 0}
+    .section-heading{max-width:740px;margin-bottom:40px}
+    .section-heading h2,.section-title{margin:0;color:var(--forest);font-family:"Playfair Display",Georgia,serif;font-size:clamp(36px,4.5vw,62px);font-weight:600;letter-spacing:-.045em;line-height:1.06}
+    .section-heading h2 span,.section-title span{color:var(--copper)}
+    .section-heading p,.section-description{margin:17px 0 0;color:var(--muted);font-size:16px;line-height:1.8}
 
-    .hero-content{position:relative;z-index:5;flex:1;display:flex;align-items:center;padding:65px 0 140px;overflow:visible}
-    .hero-copy{max-width:760px;overflow:visible}
-    .back{display:inline-flex;align-items:center;gap:10px;color:#e8eee8;font-size:14px;font-weight:700;margin-bottom:28px}
-    .badge{display:inline-flex;align-items:center;gap:10px;padding:10px 17px;border:1px solid rgba(22,207,198,.9);border-radius:50px;color:#eafffd;font-size:12px;font-weight:900;letter-spacing:1.7px;margin-bottom:25px;background:rgba(6,61,69,.35);backdrop-filter:blur(7px)}
-    .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--aqua);box-shadow:0 0 15px var(--aqua)}
-    .hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(60px,7vw,105px);line-height:.89;letter-spacing:-4px;margin-bottom:28px}
-    .hero h1 span{color:#e2a47c}
-    .hero-subtitle{max-width:650px;color:#e7eee8;font-size:19px;line-height:1.7}
-    .hero-buttons{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;overflow:visible}
+    .overview{padding-top:100px;background:var(--paper)}
+    .overview-grid{display:grid;grid-template-columns:.86fr 1.14fr;align-items:center;gap:clamp(38px,7vw,92px)}
+    .overview-copy .section-description{max-width:490px}
+    .overview-image{position:relative}
+    .overview-image{overflow:hidden;border-radius:28px;box-shadow:var(--shadow)}
+    .overview-image img{width:100%;min-height:340px;max-height:510px;aspect-ratio:1.38;transition:transform .8s cubic-bezier(.2,.7,.2,1);object-fit:cover}
+    .overview-image:hover img{transform:scale(1.025)}
+    .image-note{position:absolute;right:17px;bottom:17px;padding:10px 13px;border:1px solid #ffffff70;border-radius:999px;background:#183b32dc;color:#fff;font-size:10px;font-weight:800;letter-spacing:.08em;backdrop-filter:blur(10px)}
 
-    .btn{min-height:56px;padding:0 27px;display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:10px;font-size:14px;font-weight:900;transition:.25s;cursor:pointer}
-    .btn-primary{background:var(--terracota);color:#fff;box-shadow:0 12px 30px rgba(169,79,45,.25)}
-    .btn-primary:hover{transform:translateY(-3px);background:#bd5a34}
-    .btn-outline{color:#fff;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.05);backdrop-filter:blur(8px)}
-    .btn-outline:hover{background:#fff;color:var(--olive-dark)}
+    .gallery-section{background:var(--sand)}
+    .gallery{display:grid;grid-auto-flow:dense;grid-auto-rows:174px;grid-template-columns:repeat(12,minmax(0,1fr));gap:13px}
+    .gallery-item{position:relative;min-width:0;overflow:hidden;padding:0;border:0;border-radius:16px;background:#e5e2d8;cursor:zoom-in;isolation:isolate}
+    .gallery-item:after{position:absolute;z-index:1;inset:38% 0 0;background:linear-gradient(transparent,#0f1f1873);content:"";pointer-events:none}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+    .gallery-item:hover img{transform:scale(1.045)}
+    .gallery-item:first-child{grid-column:span 7;grid-row:span 2}
+    .gallery-item:nth-child(2),.gallery-item:nth-child(3){grid-column:span 5}
+    .gallery-item:nth-child(n+4){grid-column:span 3}
+    .gallery-item img{transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .4s}
+    .gallery-item:hover img{transform:scale(1.035);filter:saturate(1.06)}
+    .gallery-caption{position:absolute;bottom:13px;left:15px;z-index:2;color:#fff;text-align:left;text-shadow:0 2px 15px #0008}
+    .gallery-caption strong{display:block;font-size:13px}
+    .gallery-caption small{display:block;margin-top:3px;color:#ffffffc9;font-size:10px}
+    .gallery-zoom{position:absolute;right:12px;bottom:12px;z-index:2;display:grid;width:31px;height:31px;place-items:center;border:1px solid #ffffff79;border-radius:50%;background:#14271f5c;color:#fff;font-size:15px;transition:transform .2s,background .2s}
+    .gallery-item:hover .gallery-zoom{transform:scale(1.08);background:#14271fbc}
+    .gallery-note,.services-disclaimer{margin:18px 0 0;color:var(--muted);font-size:12px;line-height:1.7}
 
-    /* WhatsApp */
-    .wa-selector{position:relative;display:inline-block;z-index:80}
-    .wa-selector.open{z-index:9999}
-    .wa-menu{position:absolute;top:calc(100% + 12px);right:0;width:285px;padding:10px;background:#17362f;border:1px solid rgba(22,207,198,.35);border-radius:16px;
-      box-shadow:0 20px 50px rgba(0,0,0,.30);opacity:0;visibility:hidden;transform:translateY(-6px);transition:.2s;z-index:10000}
-    .wa-selector.open .wa-menu{opacity:1;visibility:visible;transform:none}
-    .wa-option{display:block;padding:14px 15px;border-radius:11px;color:#fff!important}
-    .wa-option+.wa-option{margin-top:5px}
-    .wa-option:hover{background:rgba(255,255,255,.08)}
-    .wa-option strong{display:block;font-size:13px;margin-bottom:4px}
-    .wa-option span{color:#bcd4cc;font-size:13px}
-    .wa-option.primary{background:rgba(22,207,198,.12);border:1px solid rgba(22,207,198,.25)}
-    .wa-option.primary strong{color:#29ddd5}
-    .hero-wa .wa-menu{top:auto;bottom:calc(100% + 12px);left:0;right:auto}
-
-    .info-bar{position:relative;z-index:10;margin-top:-62px;display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;background:var(--olive-dark);border:1px solid rgba(22,207,198,.25);border-radius:22px;box-shadow:0 22px 60px rgba(38,55,45,.22)}
-    .info{position:relative;padding:30px 27px;color:#fff}
-    .info:not(:last-child)::after{content:"";position:absolute;right:0;top:25%;width:1px;height:50%;background:rgba(255,255,255,.16)}
-    .info small{display:block;margin-bottom:8px;color:#c8d4c9;font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
-    .info strong{font-size:20px} .info strong.aqua{color:var(--aqua)}
-
-    section{padding:115px 0;position:relative}
-    .eyebrow{display:flex;align-items:center;gap:12px;color:var(--terracota);font-size:12px;font-weight:900;letter-spacing:2px;margin-bottom:20px}
-    .eyebrow::before{content:"";width:40px;height:2px;background:var(--aqua)}
-    .section-title{max-width:850px;font-family:Georgia,"Times New Roman",serif;color:var(--olive-dark);font-size:clamp(42px,5vw,70px);line-height:1;letter-spacing:-2.5px;margin-bottom:25px}
-    .section-title span{color:var(--terracota)}
-    .description{max-width:720px;color:#69766d;font-size:17px;line-height:1.8}
-
-    .concept{background:var(--cream-light);overflow:hidden}
-    .concept::after,.real::after{content:"";position:absolute;pointer-events:none;width:520px;height:230px;background:url("assets/montanas-decoracion.png") center bottom/contain no-repeat;opacity:.10;right:-100px;bottom:0}
-    .concept-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
-    .concept-image{position:relative}
-    .concept-image img{width:100%;border-radius:28px;box-shadow:0 30px 70px rgba(60,49,33,.20)}
-    .reference{position:absolute;right:18px;bottom:18px;padding:10px 14px;background:rgba(38,55,45,.90);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:50px;font-size:11px;font-weight:800;letter-spacing:1px;backdrop-filter:blur(8px)}
-
-    .benefits{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:45px}
-    .benefit{min-height:170px;padding:25px 18px;display:flex;flex-direction:column;justify-content:space-between;background:#fff;border:1px solid #e8decb;border-radius:18px;box-shadow:0 8px 25px rgba(60,50,35,.045);transition:.3s}
-    .benefit:hover{transform:translateY(-6px);border-color:rgba(169,79,45,.45);box-shadow:0 20px 40px rgba(60,50,35,.09)}
-    .benefit-icon{width:47px;height:47px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#eef3e9;color:var(--olive);font-size:22px}
-    .benefit strong{color:var(--olive-dark);font-family:Georgia,serif;font-size:17px;line-height:1.2}
-
-    /* Recreation */
-    .recreation{background:#eef2e8;overflow:hidden}
-    .recreation-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:70px;align-items:center}
-    .recreation-copy .description{margin-bottom:28px}
-    .recreation-points{display:grid;gap:12px}
-    .recreation-point{padding:16px 18px;background:rgba(255,255,255,.72);border:1px solid #d9e1d2;border-radius:14px;font-weight:800;color:var(--olive-dark)}
-    .recreation-visuals{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .recreation-photo{position:relative;overflow:hidden;border-radius:22px;box-shadow:0 20px 45px rgba(38,55,45,.13)}
-    .recreation-photo img{width:100%;height:390px;object-fit:cover}
-    .recreation-photo:nth-child(2){margin-top:45px}
-    .recreation-photo .reference{right:12px;bottom:12px}
-
-    /* Plan */
     .plan-section{background:#fff}
-    .plan-grid{display:grid;grid-template-columns:1fr .8fr;gap:70px;align-items:center}
-    .plan-card{padding:42px;border-radius:25px;background:linear-gradient(145deg,#334737,#203128);color:#fff;border:1px solid rgba(22,207,198,.22);box-shadow:0 25px 60px rgba(0,0,0,.13)}
-    .plan-card small{display:block;color:var(--aqua);font-size:11px;font-weight:900;letter-spacing:1.7px;margin-bottom:12px}
-    .plan-card strong{display:block;font-family:Georgia,serif;font-size:34px;line-height:1.15;margin-bottom:16px}
-    .plan-card p{color:#c6d2ca;line-height:1.7;margin-bottom:25px}
+    .plan-section{background:linear-gradient(145deg,#f6f7f1,#eaf0e7)}
+    .plan-location-grid{display:grid;grid-template-columns:.92fr 1.08fr;align-items:start;gap:22px;margin-top:40px}
+    .plan-column{display:grid;grid-template-rows:260px auto;gap:14px}
+    .plan-visual,.plan-detail{position:relative;min-height:240px;overflow:hidden;border-radius:22px}
+    .plan-visual{box-shadow:0 17px 45px #1d302719}
+    .plan-visual img{width:100%;height:100%;min-height:240px;transition:transform .7s cubic-bezier(.2,.7,.2,1);object-fit:cover}
+    .plan-visual:hover img{transform:scale(1.035)}
+    .plan-detail{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:27px 30px;background:var(--forest);color:#fff}
+    .plan-detail .eyebrow{color:#dfb88f}
+    .plan-detail h3{max-width:400px;margin:0;font-family:"Playfair Display",Georgia,serif;font-size:clamp(29px,3vw,40px);font-weight:600;letter-spacing:-.035em;line-height:1.12}
+    .plan-detail p{max-width:400px;margin:14px 0 23px;color:#ffffffc2;font-size:15px;line-height:1.75}
+    .plan-detail .btn{background:#e0b78e;color:var(--deep)}
+    .plan-detail .btn:hover{background:#edcba9}
 
-    .investment{background:var(--terracota);color:#fff;position:relative;overflow:hidden}
-    .investment::after{content:"";position:absolute;width:500px;height:500px;right:-220px;top:-250px;border:1px solid rgba(255,255,255,.18);border-radius:50%;box-shadow:0 0 0 80px rgba(255,255,255,.025),0 0 0 160px rgba(255,255,255,.02)}
-    .investment-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr .7fr;gap:70px;align-items:center}
-    .investment h2{color:#fff} .investment h2 span{color:#ffe0bd} .investment .description{color:#f7ded1}
-    .investment-card{padding:40px;background:rgba(74,40,26,.26);border:1px solid rgba(255,255,255,.23);border-radius:24px;backdrop-filter:blur(10px)}
-    .investment-card small{display:block;color:#ffd9bf;font-size:11px;font-weight:900;letter-spacing:1.6px;margin-bottom:12px}
-    .investment-card strong{display:block;font-family:Georgia,serif;font-size:35px;line-height:1.15;margin-bottom:25px}
+    .services-section{background:linear-gradient(145deg,#e9efe5,#f3eee4 68%,#e5ede4)}
+    .service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+    .service-card{position:relative;isolation:isolate;display:flex;min-height:226px;flex-direction:column;align-items:flex-start;overflow:hidden;padding:25px 22px;border:1px solid #d8e2d4;border-radius:17px;background:linear-gradient(145deg,#f3f6ef,#e8efe5);box-shadow:0 8px 26px #1f322d0b;transition:transform .32s cubic-bezier(.2,.7,.2,1),border-color .28s,background .28s,box-shadow .32s}
+    .service-card:nth-child(3n+2){border-color:#e6ddcd;background:linear-gradient(145deg,#f7f2e9,#f0e9dc)}
+    .service-card:before{position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--copper),#d9bd92,var(--forest));content:"";transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+    .service-card:hover{transform:translateY(-7px);border-color:#a9bca6;background:linear-gradient(145deg,#f6f8f2,#e0eadc);box-shadow:0 21px 40px #1f322622}
+    .service-card:hover:before{transform:scaleX(1)}
+    .service-icon{display:grid;width:43px;height:43px;place-items:center;margin-bottom:22px;border:1px solid #d8e2d4;border-radius:13px;background:#f8faf5;color:var(--forest);font-size:20px;transition:transform .3s cubic-bezier(.2,.7,.2,1),background .3s,color .3s,box-shadow .3s}
+    .service-card:hover .service-icon{transform:rotate(-6deg) scale(1.08);background:var(--forest);box-shadow:0 7px 16px #183b3222;color:#fff}
+    .service-card h3{margin:0 0 7px;color:var(--forest);font-size:16px}
+    .service-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}
+    .service-status{display:inline-flex;align-items:center;gap:6px;margin-top:13px;padding:6px 9px;border:1px solid #cbbfac66;border-radius:999px;background:#ffffff69;color:#75604b;font-size:10px;font-weight:800;letter-spacing:.045em;text-transform:uppercase}
+    .service-status:before{width:6px;height:6px;border-radius:50%;background:var(--copper);content:""}
 
-    .real{background:#f4ecdc;overflow:hidden}
-    .gallery-header{max-width:800px;margin-bottom:50px}
-    .gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:215px;gap:15px;position:relative;z-index:2}
-    .gallery img{width:100%;height:100%;object-fit:cover;border-radius:18px;transition:.35s;box-shadow:0 8px 25px rgba(49,57,42,.08)}
-    .gallery img:hover{transform:scale(1.015);filter:brightness(.90)}
-    .gallery img:nth-child(1){grid-column:span 7;grid-row:span 2}
-    .gallery img:nth-child(2),.gallery img:nth-child(3){grid-column:span 5}
-    .gallery img:nth-child(n+4){grid-column:span 4}
+    .recreation-section{overflow:hidden;background:var(--forest);color:#fff}
+    .recreation-grid{display:grid;grid-template-columns:.78fr 1.22fr;align-items:center;gap:clamp(38px,6vw,78px)}
+    .recreation-section .eyebrow{color:#e3bd95}
+    .recreation-section .section-title{color:#fff}
+    .recreation-section .section-title span{color:#e3bd95}
+    .recreation-section .section-description{color:#ffffffbf}
+    .recreation-tag{display:inline-flex;margin-top:21px;padding:9px 12px;border:1px solid #ffffff3b;border-radius:999px;color:#f0d4b5;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+    .recreation-photos{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:14px}
+    .recreation-photo{position:relative;overflow:hidden;border-radius:19px}
+    .recreation-photo:nth-child(2){margin-top:54px}
+    .recreation-photo img{width:100%;height:clamp(250px,31vw,390px);object-fit:cover}
 
-    .location{background:var(--olive-dark);color:#fff;padding-bottom:120px}
-    .location-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:end;margin-bottom:38px}
-    .location .section-title{color:#fff} .location .section-title span{color:var(--aqua)} .location .description{color:#bdcabe}
-    .map-card{position:relative;overflow:hidden;min-height:470px;border-radius:26px;border:1px solid rgba(22,207,198,.25);box-shadow:0 25px 60px rgba(0,0,0,.20);background:#172b24}
-    .map-card iframe{display:block;width:100%;height:470px;border:0}
-    .map-info{position:absolute;left:24px;bottom:24px;width:min(365px,calc(100% - 48px));padding:22px;background:rgba(25,48,40,.94);border:1px solid rgba(22,207,198,.32);border-radius:18px;backdrop-filter:blur(12px);box-shadow:0 18px 45px rgba(0,0,0,.22)}
-    .map-info small{display:block;color:var(--aqua);font-size:11px;font-weight:900;letter-spacing:1.5px;margin-bottom:7px}
-    .map-info strong{display:block;font-family:Georgia,serif;font-size:25px;margin-bottom:8px}
-    .map-info p{font-size:13px;color:#c4d1c9;line-height:1.5;margin-bottom:16px}
+    .location-panel{display:flex;min-height:0;flex-direction:column;padding:21px;border:1px solid #dce4d8;border-radius:22px;background:linear-gradient(145deg,#f0f4ec,#e8efe5);box-shadow:0 18px 55px #1d302710}
+    .location-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:17px}
+    .location-head .section-heading{max-width:540px;margin:0}
+    .location-head .eyebrow{margin-bottom:9px;font-size:9px}
+    .location-head .section-heading h2{font-size:clamp(26px,2.7vw,37px)}
+    .location-head .section-heading h2 span{color:var(--copper)}
+    .location-head .section-description{max-width:245px;margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+    .map-card{position:relative;flex:none;overflow:hidden;height:465px;min-height:465px;border:1px solid #183b3223;border-radius:16px;background:#dbe2dd;box-shadow:0 12px 32px #1d30271c}
+    .map-card iframe{display:block;width:100%;height:100%;min-height:465px;border:0}
+    .map-info{position:absolute;bottom:16px;left:16px;width:min(310px,calc(100% - 32px));padding:17px;border:1px solid #ffffffb3;border-radius:15px;background:#fcfbf7f2;box-shadow:0 12px 35px #0002;backdrop-filter:blur(12px)}
+    .map-info small{display:block;margin-bottom:7px;color:var(--copper);font-size:10px;font-weight:800;letter-spacing:.13em}
+    .map-info strong{display:block;color:var(--forest);font-family:"Playfair Display",Georgia,serif;font-size:22px}
+    .map-info p{margin:8px 0 14px;color:var(--muted);font-size:13px;line-height:1.6}
+    .map-link{color:var(--forest);font-size:12px;font-weight:800}
+    .map-link:hover{color:var(--copper)}
+    .closing{padding:79px 0;background:#eee4d4}
+    .closing-inner{display:flex;align-items:center;justify-content:space-between;gap:35px}
+    .closing h2{max-width:720px;margin:0;color:var(--forest);font-family:"Playfair Display",Georgia,serif;font-size:clamp(34px,4vw,52px);font-weight:600;letter-spacing:-.045em;line-height:1.07}
+    .closing p{max-width:560px;margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.75}
+    .closing .btn{flex:0 0 auto;background:var(--forest);color:#fff}
+    footer{padding:30px 0;background:var(--deep);color:#ffffffb3;font-size:12px}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .footer-brand{color:#fff;font-family:"Outfit",sans-serif;font-size:13px;font-weight:800;letter-spacing:.07em}
+    .footer-brand span{color:#dfb88f}
+    .footer-inner>a:hover{color:#fff}
 
-    .cta{padding:100px 0;background:linear-gradient(110deg,#f2e5ce,#fbf7ee)}
-    .cta-inner{display:flex;align-items:center;justify-content:space-between;gap:60px}
-    .cta h2{max-width:720px;color:var(--olive-dark);font-family:Georgia,serif;font-size:clamp(45px,5vw,70px);line-height:.98;letter-spacing:-2px}
-    .cta h2 span{color:var(--terracota)} .cta p{margin-top:20px;color:#6d756c;font-size:17px}
-    .cta .btn{color:#fff;background:var(--terranova-dark);white-space:nowrap}
+    .lightbox{width:min(1000px,calc(100% - 32px));max-width:none;max-height:calc(100% - 32px);padding:0;overflow:visible;border:0;border-radius:17px;background:transparent;color:#fff}
+    .lightbox::backdrop{background:#09130fe0;backdrop-filter:blur(7px)}
+    .lightbox img{max-width:100%;max-height:calc(100svh - 100px);margin-inline:auto;border-radius:13px;object-fit:contain}
+    .lightbox figcaption{padding-top:12px;color:#ffffffdf;font-size:13px;text-align:center}
+    .lightbox figure{margin:0}
+    .lightbox-close{position:absolute;top:-15px;right:-15px;display:grid;width:40px;height:40px;place-items:center;border:1px solid #ffffff70;border-radius:50%;background:var(--forest);color:#fff;font-size:22px;cursor:pointer}
+    .motion-ready [data-reveal]{opacity:0;transform:translate3d(0,24px,0);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+    .motion-ready [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0)}
+    .motion-ready [data-reveal-stagger]>*{transition-delay:calc(var(--reveal-index,0)*85ms)}
+    .motion-ready [data-reveal-stagger]>.service-card:hover{transform:translateY(-7px)}
+    .motion-ready [data-reveal-stagger]>*:nth-child(1){--reveal-index:0}
+    .motion-ready [data-reveal-stagger]>*:nth-child(2){--reveal-index:1}
+    .motion-ready [data-reveal-stagger]>*:nth-child(3){--reveal-index:2}
+    .motion-ready [data-reveal-stagger]>*:nth-child(4){--reveal-index:3}
+    .motion-ready [data-reveal-stagger]>*:nth-child(5){--reveal-index:4}
+    .motion-ready [data-reveal-stagger]>*:nth-child(6){--reveal-index:5}
 
-    footer{padding:45px 0;background:#192920;color:#aab9ae}
-    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;font-size:14px}
-    .footer-brand{color:#fff;font-weight:800} .footer-brand span{color:var(--aqua)}
-
-    @media(max-width:950px){
-      .nav-links>a:not(.contact-button){display:none}
-      .info-bar{grid-template-columns:repeat(2,1fr)} .info:nth-child(2)::after{display:none}
-      .concept-grid,.investment-grid,.recreation-grid,.plan-grid,.location-head{grid-template-columns:1fr}
-      .benefits{grid-template-columns:repeat(2,1fr)}
-      .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:220px}
-      .gallery img,.gallery img:nth-child(1),.gallery img:nth-child(2),.gallery img:nth-child(3),.gallery img:nth-child(n+4){grid-column:auto;grid-row:auto}
-      .cta-inner{flex-direction:column;align-items:flex-start}
+    @media(max-width:1000px){
+      .nav{gap:15px}.nav-links{gap:3px;padding:6px;font-size:12px}.nav-links>a{min-height:38px;padding-inline:10px}.brand img{width:153px}
+      .quick-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.quick-link{padding-inline:14px}
+      .quick-link:nth-child(4){border-left:0}.quick-link:nth-child(n+4){border-top:0}
+      .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .overview-grid,.recreation-grid{grid-template-columns:1fr 1fr;gap:35px}
+      .plan-location-grid{grid-template-columns:1fr}.plan-column{grid-template-columns:1fr 1fr;grid-template-rows:300px}
+      .location-panel{min-height:550px}
     }
-
-    @media(max-width:600px){
-      .container{width:min(calc(100% - 28px),1180px)}
-      .hero{min-height:850px;background-position:center}
-      .nav{height:100px} .logo-box{padding:6px 10px} .logo-box img{width:135px;height:52px}
-      .hero h1{letter-spacing:-2.5px} .hero-subtitle{font-size:16px}
-      .info-bar{margin-top:-45px} .info{padding:22px 17px} .info strong{font-size:16px}
-      section{padding:80px 0} .concept-grid{gap:45px} .benefits{grid-template-columns:1fr}
-      .recreation-visuals{grid-template-columns:1fr} .recreation-photo:nth-child(2){margin-top:0} .recreation-photo img{height:300px}
-      .gallery{grid-template-columns:1fr}
-      .plan-card,.investment-card{padding:30px}
-      .map-card{min-height:550px} .map-card iframe{height:550px} .map-info{left:14px;bottom:14px;width:calc(100% - 28px);padding:18px}
-      .footer-inner{flex-direction:column;text-align:center}
-      .wa-menu,.hero-wa .wa-menu{position:fixed;left:14px;right:14px;top:auto;bottom:18px;width:auto}
-      .concept::after,.real::after{width:330px;opacity:.07}
+    @media(max-width:760px){
+      html{scroll-padding-top:30px}.container{width:min(100% - 34px,600px)}
+      .hero{min-height:max(825px,100svh);background-position:center,center,59% center}
+      .nav{min-height:90px;align-items:flex-start;padding-top:17px}
+      .brand{padding:5px 9px;border-radius:12px}.brand img{width:131px;height:46px}
+      .nav-links{max-width:none;flex:0 0 auto;gap:0;overflow:visible;padding:0;border:0;border-radius:0;background:none;box-shadow:none;backdrop-filter:none}
+      .nav-links>a{display:none}
+      .contact-button{min-height:42px;padding-inline:13px;white-space:nowrap}
+      .hero-content{align-items:center;padding:12px 0 85px}
+      .back-link{margin-bottom:22px}.hero h1{font-size:clamp(48px,12vw,74px)}
+      .hero-subtitle{max-width:470px;font-size:16px}.hero-feature{right:0;bottom:26px;width:min(370px,58%)}
+      .scroll-cue{display:none}
+      .quick-access{margin-top:-1px}.quick-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .quick-link{min-height:106px;padding:12px}
+      section{padding:83px 0}.overview{padding-top:83px}
+      .overview-grid,.recreation-grid{grid-template-columns:1fr;gap:30px}.overview-image{order:-1}
+      .overview-image img{min-height:260px}
+      .gallery{grid-auto-rows:145px;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+      .gallery-item:first-child{grid-column:span 2;grid-row:span 2}.gallery-item:nth-child(2){grid-column:span 1}
+      .plan-location-grid{grid-template-columns:1fr;gap:16px}.plan-column{grid-template-columns:1fr;grid-template-rows:265px auto}
+      .plan-visual,.plan-detail,.plan-visual img{min-height:250px}
+      .service-card{min-height:210px;padding:21px 18px}.recreation-photos{gap:10px}
+      .recreation-photo:nth-child(2){margin-top:32px}.recreation-photo img{height:300px}
+      .location-panel{min-height:520px;padding:13px}.location-head{display:block}
+      .location-head .section-description{max-width:none;margin-top:10px;font-size:14px}
+      .map-card,.map-card iframe{min-height:430px;height:430px}
+      .closing-inner{align-items:flex-start;flex-direction:column}.footer-inner{flex-wrap:wrap}
     }
+    @media(max-width:480px){
+      .container{width:calc(100% - 28px)}.hero{min-height:max(890px,100svh);background-position:center,center,62% center}
+      .nav{gap:11px}.brand img{width:116px}.contact-button{min-height:40px;gap:7px;padding-inline:10px;font-size:11px}
+      .contact-button .contact-icon{width:22px;height:22px}
+      .contact-button .contact-chevron{font-size:12px}
+      .hero-content{align-items:flex-start;padding-top:72px}.hero-copy{width:100%}
+      .back-link{margin-bottom:20px;font-size:12px}.hero h1{font-size:clamp(45px,13vw,61px)}
+      .hero-subtitle{margin-top:18px;font-size:15px;line-height:1.65}
+      .back-link{margin-bottom:22px;padding:8px 12px;font-size:11px}
+      .hero h1{font-size:clamp(51px,13vw,66px)}
+      .hero-actions{gap:10px;margin-top:24px}.hero-actions .btn{min-height:52px;padding-inline:14px;font-size:12px}
+      .hero-feature{right:0;bottom:24px;width:100%;gap:15px 18px;padding:18px 19px}
+      .feature strong{font-size:15px}.quick-link{min-height:78px;padding:12px 10px}
+      .quick-link strong{font-size:13px}.quick-link span{font-size:11px}.quick-link:first-child strong{font-size:16px}
+      section{padding:70px 0}.section-heading{margin-bottom:31px}
+      .section-heading h2,.section-title{font-size:clamp(33px,10vw,43px)}
+      .section-heading p,.section-description{font-size:15px}
+      .overview-image img{min-height:225px;border-radius:20px}.gallery{grid-auto-rows:124px}
+      .service-grid{gap:10px}.service-card{min-height:203px;padding:17px 14px}
+      .service-card h3{margin-top:19px;font-size:15px}.service-card p{font-size:12px}
+      .service-status{align-items:flex-start;font-size:10px;line-height:1.4}
+      .recreation-photos{grid-template-columns:1fr 1fr}.recreation-photo img{height:235px}
+      .recreation-photo:nth-child(2){margin-top:24px}
+      .map-card,.map-card iframe{min-height:400px;height:400px}
+      .map-info{bottom:12px;left:12px;width:calc(100% - 24px);padding:16px}
+      .closing{padding:65px 0}.footer-inner{align-items:flex-start;flex-direction:column}
+      .lightbox-close{top:-12px;right:-5px}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}.hero{animation:none!important}.hero-copy [data-entrance],.hero-feature{opacity:1;animation:none!important}.motion-ready [data-reveal]{opacity:1;transform:none;transition:none}.quick-link:hover,.quick-link:hover .quick-icon,.quick-link:hover:after,.quick-link:hover:before,.quick-link:hover .quick-arrow,.hero-actions .wa-option:hover,.btn:hover,.back-link:hover{transform:none!important}}
   </style>
 </head>
 <body>
-
-<header class="hero">
-  <nav class="nav container">
-    <a href="index.html" class="logo-box"><img src="assets/logo-terranova.png" alt="Terranova Inmobiliaria"></a>
-    <div class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="#concepto">Concepto</a>
-      <a href="#recreacion">Recreación</a>
-      <a href="#entorno">Entorno</a>
-      <a href="#ubicacion">Ubicación</a>
-      <div class="wa-selector">
-        <button type="button" class="contact-button" onclick="toggleWa(this)">Consultar⌄</button>
-        <div class="wa-menu">
-          <a class="wa-option primary" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a>
-          <a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <div class="hero-content container">
-    <div class="hero-copy">
-      <a href="index.html#proyectos" class="back">← Volver a proyectos</a><br>
-      <div class="badge">FUTURO CONDOMINIO · CHINCHEROS</div>
-      <h1>Condominio<br><span>Terranova.</span></h1>
-      <p class="hero-subtitle">Lotes campestres desde 400 m² para proyectar tu casa de campo en un entorno de naturaleza, amplitud y tranquilidad en Chincheros.</p>
-      <div class="hero-buttons">
-        <a href="#concepto" class="btn btn-primary">Conocer el proyecto →</a>
-        <div class="wa-selector hero-wa">
-          <button type="button" class="btn btn-outline" onclick="toggleWa(this)">Agenda tu visita⌄</button>
-          <div class="wa-menu">
-            <a class="wa-option primary" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a>
-            <a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a>
+  <header class="hero" id="inicio">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="index.html" aria-label="Terranova Inmobiliaria, página principal"><img src="assets/logo-terranova.png" alt="Terranova Inmobiliaria"></a>
+      <div class="nav-links">
+        <a class="nav-home" href="index.html">Inicio</a>
+        <a href="#concepto">Proyecto</a>
+        <a href="#entorno">Galería</a>
+        <a href="#plano">Plano</a>
+        <a href="#recreacion">Recreación</a>
+        <a href="#ubicacion">Ubicación</a>
+        <div class="wa-selector">
+          <button class="contact-button" type="button" data-wa-toggle aria-expanded="false" aria-controls="wa-nav"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-11.1 6.6L4 19l.9-4.5A7.5 7.5 0 1 1 20 11.5Z"/><path d="M9 9.2c.5 2 1.7 3.3 3.8 4"/></svg></span>Contactar <span class="contact-chevron" aria-hidden="true">⌄</span></button>
+          <div class="wa-menu" id="wa-nav">
+            <a class="wa-option primary" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a>
+            <a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-<div class="container info-bar">
-  <div class="info"><small>Proyecto</small><strong>Lotes campestres</strong></div>
-  <div class="info"><small>Lotes desde</small><strong class="aqua">400 m²</strong></div>
-  <div class="info"><small>Concepto</small><strong>Vida campestre</strong></div>
-  <div class="info"><small>Ubicación</small><strong>Chincheros</strong></div>
-</div>
-
-<section class="concept" id="concepto">
-  <div class="container concept-grid">
-    <div>
-      <div class="eyebrow">CONDOMINIO TERRANOVA</div>
-      <h2 class="section-title">Naturaleza, privacidad y <span>estilo de vida campestre.</span></h2>
-      <p class="description">Una propuesta pensada para quienes buscan amplitud, tranquilidad y contacto con la naturaleza. Condominio Terranova proyecta un espacio campestre donde puedas construir tu casa, disfrutar del entorno y crear un lugar propio para el descanso.</p>
-    </div>
-    <div class="concept-image">
-      <img src="assets/chincheros/condominio-terranova.jpeg" alt="Propuesta referencial Condominio Terranova">
-      <div class="reference">IMAGEN REFERENCIAL</div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="benefits">
-      <div class="benefit"><div class="benefit-icon">⌂</div><strong>Ingreso principal</strong></div>
-      <div class="benefit"><div class="benefit-icon">↗</div><strong>Vías internas</strong></div>
-      <div class="benefit"><div class="benefit-icon">♧</div><strong>Áreas verdes</strong></div>
-      <div class="benefit"><div class="benefit-icon">△</div><strong>Entorno natural</strong></div>
-      <div class="benefit"><div class="benefit-icon">⌂</div><strong>Ideal para casa de campo</strong></div>
-      <div class="benefit"><div class="benefit-icon">✦</div><strong>Centro de recreación</strong></div>
-    </div>
-  </div>
-</section>
-
-<section class="recreation" id="recreacion">
-  <div class="container recreation-grid">
-    <div class="recreation-copy">
-      <div class="eyebrow">CENTRO DE RECREACIÓN</div>
-      <h2 class="section-title">Un espacio pensado para <span>disfrutar.</span></h2>
-      <p class="description">Como parte del concepto de Condominio Terranova, se ha destinado un terreno independiente para el futuro centro de recreación: un espacio complementario pensado para el descanso, la convivencia y el contacto con el entorno natural.</p>
-      <div class="recreation-points">
-        <div class="recreation-point">Terreno destinado al área recreativa</div>
-        <div class="recreation-point">Espacio complementario al proyecto de lotes</div>
-        <div class="recreation-point">Propuesta orientada al descanso y la convivencia</div>
-      </div>
-    </div>
-    <div class="recreation-visuals">
-      <div class="recreation-photo">
-        <img src="assets/chincheros/recreacion-01.png" alt="Propuesta del centro de recreación">
-        <div class="reference">IMAGEN REFERENCIAL</div>
-      </div>
-      <div class="recreation-photo">
-        <img src="assets/chincheros/recreacion-02.png" alt="Propuesta del centro de recreación">
-        <div class="reference">IMAGEN REFERENCIAL</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="plan-section" id="plano">
-  <div class="container plan-grid">
-    <div>
-      <div class="eyebrow">LOTIZACIÓN</div>
-      <h2 class="section-title">Conoce la distribución del <span>proyecto.</span></h2>
-      <p class="description">Consulta el plano de lotización para revisar la distribución planteada de los lotes campestres y conocer mejor la organización del proyecto.</p>
-    </div>
-    <div class="plan-card">
-      <small>PLANO DEL PROYECTO</small>
-      <strong>Lotizaciones de 400 m²</strong>
-      <p>Abre el documento completo para visualizar el plano con mayor detalle.</p>
-      <a href="assets/chincheros/LOTIZACIONES%20DE%20400%20M2%20PAMPAS.pdf" target="_blank" rel="noopener" class="btn btn-primary">Ver plano del proyecto →</a>
-    </div>
-  </div>
-</section>
-
-<section class="investment">
-  <div class="container investment-grid">
-    <div>
-      <div class="eyebrow" style="color:#ffe0bd">INVERSIÓN Y DESCANSO</div>
-      <h2 class="section-title">Un lugar para construir tus <span>próximos planes.</span></h2>
-      <p class="description">Un concepto pensado para combinar naturaleza, privacidad y amplitud en un entorno campestre, ya sea para proyectar una casa de campo, un espacio de descanso o una propiedad para el futuro.</p>
-    </div>
-    <div class="investment-card">
-      <small>CONDOMINIO TERRANOVA</small>
-      <strong>Conoce disponibilidad y detalles del proyecto.</strong>
-      <div class="wa-selector">
-        <button type="button" class="btn btn-outline" onclick="toggleWa(this)">Solicitar información⌄</button>
-        <div class="wa-menu">
-          <a class="wa-option primary" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a>
-          <a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a>
+    </nav>
+    <div class="hero-content container">
+      <div class="hero-copy">
+        <a href="index.html#proyectos" class="back-link" data-entrance><span aria-hidden="true">←</span> Volver a proyectos</a>
+        <div class="eyebrow hero-eyebrow" data-entrance>Futuro condominio · Chincheros</div>
+        <h1 data-entrance>Condominio<br><span>Terranova.</span></h1>
+        <p class="hero-subtitle" data-entrance>Lotes para proyectar tu futura casa de campo, en un entorno de naturaleza, amplitud y tranquilidad en Chincheros, Apurímac.</p>
+        <div class="hero-actions" data-entrance>
+          <div class="wa-selector">
+            <button class="btn btn-primary hero-whatsapp" type="button" data-wa-toggle aria-expanded="false" aria-controls="wa-hero"><span class="whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-11.1 6.6L4 19l.9-4.5A7.5 7.5 0 1 1 20 11.5Z"/><path d="M9 9.2c.5 2 1.7 3.3 3.8 4"/></svg></span>WhatsApp <span class="btn-arrow" aria-hidden="true">⌄</span></button>
+            <div class="wa-menu" id="wa-hero">
+              <p class="wa-menu-heading">Elige un asesor</p>
+              <a class="wa-option primary" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a>
+              <a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a>
+            </div>
+          </div>
+          <a class="btn btn-outline" href="#entorno">Ver galería <span class="btn-arrow" aria-hidden="true">↓</span></a>
         </div>
       </div>
+      <aside class="hero-feature" aria-label="Características principales">
+        <span class="hero-feature-label">UN PROYECTO PARA DISFRUTAR AL AIRE LIBRE</span>
+        <div class="feature"><strong>400 m²</strong><span>Lotes desde</span></div>
+        <div class="feature"><strong>Chincheros</strong><span>Apurímac, Perú</span></div>
+      </aside>
     </div>
-  </div>
-</section>
+    <a class="scroll-cue" href="#accesos">Explorar proyecto</a>
+  </header>
 
-<section class="real" id="entorno">
-  <div class="container">
-    <div class="gallery-header">
-      <div class="eyebrow">ENTORNO REAL</div>
-      <h2 class="section-title">Conoce dónde nace <span>Condominio Terranova.</span></h2>
-      <p class="description">Estas fotografías muestran el terreno y su entorno real en Chincheros. La galería permite conocer mejor el paisaje, los accesos y las características actuales de la zona.</p>
+  <nav class="quick-access container" id="accesos" aria-label="Accesos rápidos del proyecto">
+    <div class="quick-grid" data-reveal-stagger>
+      <a class="quick-link" href="#servicios"><span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5"/><path d="M6.5 10.5V20h11v-9.5M10 20v-5h4v5"/></svg></span><strong>Desde 400 m²</strong><span>Lotes campestres</span><span class="quick-arrow" aria-hidden="true">↗</span></a>
+      <a class="quick-link" href="#plano"><span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5 10 3l5 2 5-2v15.5l-5 2-5-2-6 2z"/><path d="M10 3v15.5M15 5v15.5"/></svg></span><strong>Plano</strong><span>Lotización del proyecto</span><span class="quick-arrow" aria-hidden="true">↗</span></a>
+      <a class="quick-link" href="#entorno"><span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.5"/><path d="m4 17 5-4 3 2 3-4 5 5"/></svg></span><strong>Galería</strong><span>Conoce el terreno</span><span class="quick-arrow" aria-hidden="true">↗</span></a>
+      <a class="quick-link" href="#recreacion"><span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21V11"/><path d="M12 14c-4 0-7-2.5-7-6 4.5 0 7 2 7 6ZM12 11c0-4 2.5-7 6-7 0 4.5-2 7-6 7Z"/><path d="M7 21h10"/></svg></span><strong>Área recreativa</strong><span>Propuesta referencial</span><span class="quick-arrow" aria-hidden="true">↗</span></a>
+      <a class="quick-link" href="#servicios"><span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V8l8-4 8 4v12"/><path d="M8 20v-6h8v6M4 11h16"/></svg></span><strong>Servicios</strong><span>Detalles del proyecto</span><span class="quick-arrow" aria-hidden="true">↗</span></a>
+      <a class="quick-link" href="#ubicacion"><span class="quick-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><strong>Ubicación</strong><span>Chincheros, Apurímac</span><span class="quick-arrow" aria-hidden="true">↗</span></a>
     </div>
-    <div class="gallery">
-      <img src="assets/chincheros/terreno-01.jpg" alt="Terreno Condominio Terranova">
-      <img src="assets/chincheros/terreno-02.jpg" alt="Terreno Condominio Terranova">
-      <img src="assets/chincheros/terreno-03.jpg" alt="Terreno Condominio Terranova">
-      <img src="assets/chincheros/terreno-04.jpg" alt="Terreno Condominio Terranova">
-      <img src="assets/chincheros/terreno-05.jpg" alt="Terreno Condominio Terranova">
-      <img src="assets/chincheros/terreno-06.jpg" alt="Terreno Condominio Terranova">
-      <img src="assets/chincheros/terreno-07.jpg" alt="Terreno Condominio Terranova">
-      <img src="assets/chincheros/terreno-08.jpg" alt="Terreno Condominio Terranova">
-      <img src="assets/chincheros/terreno-09.jpg" alt="Terreno Condominio Terranova">
-      <img src="assets/chincheros/terreno-10.jpg" alt="Terreno Condominio Terranova">
-      <img src="assets/chincheros/terreno-11.jpg" alt="Terreno Condominio Terranova">
-    </div>
-  </div>
-</section>
+  </nav>
 
-<section class="location" id="ubicacion">
-  <div class="container">
-    <div class="location-head">
-      <div>
-        <div class="eyebrow" style="color:#dca17b">UBICACIÓN</div>
-        <h2 class="section-title">Chincheros, <span>Apurímac.</span></h2>
+  <main>
+    <section class="overview" id="concepto">
+      <div class="container overview-grid">
+        <div class="overview-copy" data-reveal>
+          <div class="eyebrow">Condominio Terranova</div>
+          <h2 class="section-title">Naturaleza y espacio para <span>tu casa de campo.</span></h2>
+          <p class="section-description">Una propuesta campestre para quienes buscan amplitud, tranquilidad y contacto con la naturaleza. Proyecta un lugar propio para el descanso en Chincheros.</p>
+        </div>
+        <div class="overview-image" data-reveal>
+          <img src="assets/chincheros/condominio-terranova.jpeg" alt="Visualización referencial del futuro Condominio Terranova con casas, jardines y vías">
+          <span class="image-note">VISUALIZACIÓN REFERENCIAL</span>
+        </div>
       </div>
-      <p class="description">Explora la ubicación del proyecto en vista satelital y utiliza Google Maps para planificar tu visita a Condominio Terranova.</p>
-    </div>
+    </section>
 
-    <div class="map-card">
-      <iframe src="https://www.google.com/maps?q=-13.5111819,-73.8091986&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Condominio Terranova"></iframe>
-      <div class="map-info">
-        <small>CONDOMINIO TERRANOVA</small>
-        <strong>Visita el proyecto.</strong>
-        <p>Chincheros · Apurímac. Abre Google Maps para consultar la ruta y explorar el entorno.</p>
-        <a href="https://www.google.com/maps/@-13.5111819,-73.8091986,860m/data=!3m1!1e3?entry=ttu" target="_blank" rel="noopener" class="btn btn-primary">Ver en Google Maps →</a>
+    <section class="recreation-section" id="recreacion">
+      <div class="container recreation-grid">
+        <div data-reveal>
+          <div class="eyebrow">Área recreativa</div>
+          <h2 class="section-title">Un espacio proyectado para <span>disfrutar.</span></h2>
+          <p class="section-description">Se ha destinado un terreno independiente para el futuro centro de recreación, como espacio complementario pensado para el descanso, la convivencia y el contacto con el entorno natural.</p>
+          <span class="recreation-tag">Proyecto futuro · imágenes referenciales</span>
+        </div>
+        <div class="recreation-photos" data-reveal-stagger>
+          <div class="recreation-photo"><img src="assets/chincheros/recreacion-01.png" alt="Imagen referencial de la propuesta para el centro de recreación" loading="lazy"><span class="image-note">REFERENCIAL</span></div>
+          <div class="recreation-photo"><img src="assets/chincheros/recreacion-02.png" alt="Imagen referencial del futuro centro de recreación" loading="lazy"><span class="image-note">REFERENCIAL</span></div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="cta">
-  <div class="container cta-inner">
-    <div>
-      <h2>Naturaleza para vivir. <span>Espacio para crecer.</span></h2>
-      <p>Consulta disponibilidad, agenda una visita y conoce más detalles de Condominio Terranova.</p>
-    </div>
-    <div class="wa-selector">
-      <button type="button" class="btn" onclick="toggleWa(this)">Consultar por WhatsApp⌄</button>
-      <div class="wa-menu">
-        <a class="wa-option primary" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a>
-        <a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a>
+    <section class="gallery-section" id="entorno">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div class="eyebrow">Entorno real</div>
+          <h2>Conoce el terreno y su <span>paisaje.</span></h2>
+          <p>Fotografías del terreno y su entorno actual en Chincheros. Selecciona una imagen para ampliarla.</p>
+        </div>
+        <div class="gallery" aria-label="Galería de fotografías del terreno" data-reveal-stagger>
+          <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-01.jpg" data-caption="Terreno del proyecto en Chincheros" aria-label="Ampliar fotografía 1 del terreno"><img src="assets/chincheros/terreno-01.jpg" alt="Terreno del proyecto en Chincheros" loading="lazy"><span class="gallery-caption"><strong>Terreno del proyecto</strong><small>Chincheros · Apurímac</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+          <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-02.jpg" data-caption="Vista del terreno y su entorno" aria-label="Ampliar fotografía 2 del terreno"><img src="assets/chincheros/terreno-02.jpg" alt="Vista del terreno y su entorno" loading="lazy"><span class="gallery-caption"><strong>Entorno del proyecto</strong><small>Terreno real</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+          <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-03.jpg" data-caption="Paisaje del terreno en Chincheros" aria-label="Ampliar fotografía 3 del terreno"><img src="assets/chincheros/terreno-03.jpg" alt="Paisaje del terreno en Chincheros" loading="lazy"><span class="gallery-caption"><strong>Paisaje de Chincheros</strong><small>Terreno real</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+          <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-04.jpg" data-caption="Vista del entorno del proyecto" aria-label="Ampliar fotografía 4 del terreno"><img src="assets/chincheros/terreno-04.jpg" alt="Vista del entorno del proyecto" loading="lazy"><span class="gallery-caption"><strong>Entorno del proyecto</strong><small>Terreno real</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+          <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-05.jpg" data-caption="Terreno del proyecto" aria-label="Ampliar fotografía 5 del terreno"><img src="assets/chincheros/terreno-05.jpg" alt="Terreno del proyecto" loading="lazy"><span class="gallery-caption"><strong>Terreno del proyecto</strong><small>Chincheros</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+          <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-06.jpg" data-caption="Vista panorámica del terreno" aria-label="Ampliar fotografía 6 del terreno"><img src="assets/chincheros/terreno-06.jpg" alt="Vista panorámica del terreno" loading="lazy"><span class="gallery-caption"><strong>Vista del terreno</strong><small>Chincheros · Apurímac</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+          <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-07.jpg" data-caption="Terreno y paisaje de Chincheros" aria-label="Ampliar fotografía 7 del terreno"><img src="assets/chincheros/terreno-07.jpg" alt="Terreno y paisaje de Chincheros" loading="lazy"><span class="gallery-caption"><strong>Terreno y paisaje</strong><small>Chincheros</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+          <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-08.jpg" data-caption="Entorno del futuro condominio" aria-label="Ampliar fotografía 8 del terreno"><img src="assets/chincheros/terreno-08.jpg" alt="Entorno del futuro condominio" loading="lazy"><span class="gallery-caption"><strong>Entorno del terreno</strong><small>Chincheros</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+          <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-09.jpg" data-caption="Paisaje de la zona del proyecto" aria-label="Ampliar fotografía 9 del terreno"><img src="assets/chincheros/terreno-09.jpg" alt="Paisaje de la zona del proyecto" loading="lazy"><span class="gallery-caption"><strong>Paisaje del proyecto</strong><small>Terreno real</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+          <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-10.jpg" data-caption="Vista del entorno del terreno" aria-label="Ampliar fotografía 10 del terreno"><img src="assets/chincheros/terreno-10.jpg" alt="Vista del entorno del terreno" loading="lazy"><span class="gallery-caption"><strong>Vista del entorno</strong><small>Chincheros</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+          <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-11.jpg" data-caption="Terreno en Chincheros, Apurímac" aria-label="Ampliar fotografía 11 del terreno"><img src="assets/chincheros/terreno-11.jpg" alt="Terreno en Chincheros, Apurímac" loading="lazy"><span class="gallery-caption"><strong>Terreno en Chincheros</strong><small>Apurímac</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
+        </div>
+        <p class="gallery-note">Esta galería muestra el terreno y el entorno real; las imágenes del condominio son referenciales.</p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<footer>
-  <div class="container footer-inner">
-    <div class="footer-brand">TERRANOVA <span>INMOBILIARIA</span></div>
-    <div>Condominio Terranova · Chincheros, Apurímac</div>
-    <a href="index.html">Volver al inicio ↑</a>
-  </div>
-</footer>
+    <section class="plan-section" id="plano">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div class="eyebrow">Visualización y lotización</div>
+          <h2>Imagina el proyecto. <span>Consulta el plano.</span></h2>
+          <p>La visualización es referencial. El documento técnico de lotización se mantiene disponible en su formato original para consulta.</p>
+        </div>
+        <div class="plan-location-grid">
+          <div class="plan-column" data-reveal>
+            <div class="plan-visual">
+              <img src="assets/chincheros/condominio-terranova.jpeg" alt="Visualización referencial del futuro condominio con casas, jardines y vías" loading="lazy">
+              <span class="image-note">IMAGEN REFERENCIAL</span>
+            </div>
+            <div class="plan-detail">
+              <div class="eyebrow">Documento del proyecto</div>
+              <h3>Plano de lotización desde 400 m²</h3>
+              <p>Abre el plano técnico real para consultar la distribución de los lotes, con áreas desde 400 m². Las divisiones y medidas del documento se mantienen sin alteraciones.</p>
+              <a class="btn" href="assets/chincheros/LOTIZACIONES%20DE%20400%20M2%20PAMPAS.pdf" target="_blank" rel="noopener noreferrer">Abrir plano técnico <span class="btn-arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="location-panel" id="ubicacion" data-reveal>
+            <div class="location-head">
+              <div class="section-heading"><div class="eyebrow">Ubicación</div><h2>Chincheros, <span>Apurímac.</span></h2></div>
+              <p class="section-description">Explora el punto del proyecto, acerca el mapa o abre Google Maps para consultar la ruta.</p>
+            </div>
+            <div class="map-card">
+              <iframe src="https://www.google.com/maps?q=-13.5111819%2C-73.8091986&amp;t=k&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa satelital de Condominio Terranova en Chincheros"></iframe>
+              <div class="map-info"><small>CONDOMINIO TERRANOVA</small><strong>Encuéntranos en Chincheros.</strong><p>Consulta la ruta y explora el entorno en Google Maps.</p><a class="map-link" href="https://www.google.com/maps/@-13.5111819,-73.8091986,860m/data=!3m1!1e3?entry=ttu" target="_blank" rel="noopener noreferrer">Abrir Google Maps <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script>
-  function toggleWa(button){
-    const selector=button.closest(".wa-selector");
-    document.querySelectorAll(".wa-selector.open").forEach(item=>{
-      if(item!==selector) item.classList.remove("open");
-    });
-    selector.classList.toggle("open");
-  }
-  document.addEventListener("click",function(event){
-    if(!event.target.closest(".wa-selector")){
-      document.querySelectorAll(".wa-selector.open").forEach(item=>item.classList.remove("open"));
+    <section class="services-section" id="servicios">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div class="eyebrow">Vida campestre</div>
+          <h2>Un espacio para imaginar <span>tu casa de campo.</span></h2>
+          <p>Conoce el entorno, el concepto del proyecto y los elementos representados en su visualización, diferenciando lo real de lo proyectado.</p>
+        </div>
+        <div class="service-grid" data-reveal-stagger>
+          <article class="service-card"><span class="service-icon" aria-hidden="true">⌂</span><h3>Lotes campestres</h3><p>Espacios desde 400 m² para proyectar tu futura casa de campo.</p><span class="service-status">Lotes desde 400 m²</span></article>
+          <article class="service-card"><span class="service-icon" aria-hidden="true">⌁</span><h3>Vistas al paisaje</h3><p>El entorno de Chincheros y sus vistas naturales se aprecian en las fotografías del terreno.</p><span class="service-status">Entorno real</span></article>
+          <article class="service-card"><span class="service-icon" aria-hidden="true">⌂</span><h3>Tu casa de campo</h3><p>Un lote para proyectar una casa de campo a tu manera, en un concepto campestre.</p><span class="service-status">Tu proyecto futuro</span></article>
+          <article class="service-card"><span class="service-icon" aria-hidden="true">♧</span><h3>Naturaleza y amplitud</h3><p>El paisaje abierto y el entorno natural forman parte del carácter del lugar.</p><span class="service-status">Entorno del terreno</span></article>
+          <article class="service-card"><span class="service-icon" aria-hidden="true">☼</span><h3>Tranquilidad campestre</h3><p>Un espacio para imaginar momentos de descanso y conexión con la naturaleza.</p><span class="service-status">Concepto campestre</span></article>
+          <article class="service-card"><span class="service-icon" aria-hidden="true">↗</span><h3>Vías internas</h3><p>Representadas en la visualización del futuro condominio.</p><span class="service-status">Propuesta referencial</span></article>
+          <article class="service-card"><span class="service-icon" aria-hidden="true">✦</span><h3>Áreas verdes</h3><p>Elementos incluidos en la visualización conceptual del proyecto.</p><span class="service-status">Propuesta referencial</span></article>
+          <article class="service-card"><span class="service-icon" aria-hidden="true">❋</span><h3>Centro recreativo</h3><p>Área independiente destinada al futuro centro de recreación del proyecto.</p><span class="service-status">Proyecto futuro</span></article>
+        </div>
+        <p class="services-disclaimer">Las vías y áreas verdes mostradas en la visualización son referenciales. El centro recreativo es futuro; para detalles de servicios y condiciones del proyecto, consulta al equipo Terranova.</p>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="container closing-inner">
+        <div><h2>Naturaleza para vivir. Espacio para crecer.</h2><p>Consulta disponibilidad, agenda una visita y conoce más detalles de Condominio Terranova.</p></div>
+        <div class="wa-selector">
+          <button class="btn" type="button" data-wa-toggle aria-expanded="false" aria-controls="wa-closing">Consultar por WhatsApp <span aria-hidden="true">↗</span></button>
+          <div class="wa-menu" id="wa-closing">
+            <a class="wa-option primary" href="https://wa.me/51922836427?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer"><strong>WhatsApp 1</strong><span>+51 922 836 427</span></a>
+            <a class="wa-option" href="https://wa.me/51941201577?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Condominio%20Terranova%20en%20Chincheros.%20Quisiera%20consultar%20la%20disponibilidad%20de%20lotes%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto." target="_blank" rel="noopener noreferrer"><strong>WhatsApp 2</strong><span>+51 941 201 577</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><div class="footer-brand">TERRANOVA <span>INMOBILIARIA</span></div><div>Condominio Terranova · Chincheros, Apurímac</div><a href="index.html">Volver al inicio ↑</a></div></footer>
+
+  <dialog class="lightbox" aria-label="Fotografía ampliada">
+    <button class="lightbox-close" type="button" aria-label="Cerrar imagen ampliada">×</button>
+    <figure><img src="" alt=""><figcaption></figcaption></figure>
+  </dialog>
+
+  <script>
+    const waSelectors = document.querySelectorAll(".wa-selector");
+
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const revealElements = Array.from(document.querySelectorAll("[data-reveal]"));
+      document.querySelectorAll("[data-reveal-stagger]").forEach(function (group) {
+        Array.from(group.children).forEach(function (item, index) {
+          item.setAttribute("data-reveal", "");
+          item.style.setProperty("--reveal-index", Math.min(index, 5));
+          revealElements.push(item);
+        });
+      });
+      document.documentElement.classList.add("motion-ready");
+      const revealObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+      revealElements.forEach(function (element) { revealObserver.observe(element); });
     }
-  });
-</script>
+
+    document.querySelectorAll("[data-wa-toggle]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const selector = button.closest(".wa-selector");
+        const willOpen = !selector.classList.contains("open");
+        waSelectors.forEach(function (item) {
+          item.classList.remove("open");
+          item.querySelector("[data-wa-toggle]").setAttribute("aria-expanded", "false");
+        });
+        if (willOpen) {
+          selector.classList.add("open");
+          button.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!event.target.closest(".wa-selector")) {
+        waSelectors.forEach(function (item) {
+          item.classList.remove("open");
+          item.querySelector("[data-wa-toggle]").setAttribute("aria-expanded", "false");
+        });
+      }
+    });
+
+    const lightbox = document.querySelector(".lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+    const lightboxCaption = lightbox.querySelector("figcaption");
+    document.querySelectorAll("[data-lightbox]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const image = button.querySelector("img");
+        lightboxImage.src = button.dataset.lightbox;
+        lightboxImage.alt = image.alt;
+        lightboxCaption.textContent = button.dataset.caption;
+        lightbox.showModal();
+      });
+    });
+    lightbox.querySelector(".lightbox-close").addEventListener("click", function () { lightbox.close(); });
+    lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox) lightbox.close();
+    });
+  </script>
 </body>
 </html>
