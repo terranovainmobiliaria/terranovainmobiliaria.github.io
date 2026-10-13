@@ -5,48 +5,50 @@ document.addEventListener("DOMContentLoaded", function () {
   // ==========================================
 
   const elements = document.querySelectorAll(".reveal");
+  const heroElements = document.querySelectorAll(".hero .reveal");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Si el navegador soporta IntersectionObserver
-  if ("IntersectionObserver" in window) {
-
-    const observer = new IntersectionObserver((entries) => {
-
-      entries.forEach((entry) => {
-
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-
-          // Una vez mostrado, dejamos de observarlo
-          observer.unobserve(entry.target);
-        }
-
-      });
-
-    }, {
-      threshold: 0.1,
-      rootMargin: "0px 0px -40px 0px"
+  document.querySelectorAll(".project-stack, .projects-large-grid").forEach((group) => {
+    Array.from(group.children).forEach((element, index) => {
+      if (element.classList.contains("reveal")) {
+        element.style.setProperty("--reveal-index", Math.min(index, 4));
+      }
     });
+  });
 
-    elements.forEach((element) => {
-      observer.observe(element);
-    });
-
-  } else {
-
-    // Respaldo para navegadores antiguos
+  if (reducedMotion || !("IntersectionObserver" in window)) {
     elements.forEach((element) => {
       element.classList.add("visible");
     });
-
+    return;
   }
 
+  document.documentElement.classList.add("reveal-ready");
 
-  // ==========================================
-  // MOSTRAR PORTADA INMEDIATAMENTE
-  // ==========================================
+  const observer = new IntersectionObserver((entries, currentObserver) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        currentObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: "0px 0px -48px 0px"
+  });
 
-  document.querySelectorAll(".hero .reveal").forEach((element) => {
-    element.classList.add("visible");
+  elements.forEach((element) => {
+    if (!element.closest(".hero")) {
+      observer.observe(element);
+    }
+  });
+
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
+      heroElements.forEach((element) => {
+        element.classList.add("visible");
+      });
+    });
   });
 
 });
