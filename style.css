@@ -1854,6 +1854,38 @@ img{
   font-size:11px;
 }
 
+/* Condominio Terranova Ecolodge: proyecto abierto al público */
+.project-card-ecolodge{
+  cursor:pointer;
+  color:#fff;
+  text-decoration:none;
+  border:1px solid rgba(25,221,210,.68);
+  box-shadow:0 16px 38px rgba(0,0,0,.28),0 0 24px rgba(25,221,210,.13);
+  animation:projectLaunchGlow 4.5s ease-in-out infinite;
+}
+
+.project-card-ecolodge img{
+  filter:none;
+  transform:scale(1.04);
+  transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .4s ease;
+}
+
+.project-card-ecolodge .project-shade{
+  background:linear-gradient(180deg,rgba(0,18,25,.12),rgba(0,23,31,.32) 32%,rgba(0,18,25,.96));
+}
+
+.project-card-ecolodge:hover{
+  transform:translateY(-5px);
+  border-color:#6ff9ec;
+  box-shadow:0 22px 48px rgba(0,0,0,.34),0 0 32px rgba(25,221,210,.3);
+}
+
+.project-card-ecolodge:hover img{transform:scale(1.12)}
+
+.project-card-ecolodge .project-info h3{max-width:calc(100% - 8px);font-size:17px}
+.project-card-ecolodge .project-info p{max-width:calc(100% - 8px);font-size:11px}
+.project-card-ecolodge .project-launch-cta{min-height:32px;margin-top:8px;padding:0 12px;border-radius:10px;font-size:11px}
+
 .project-card-launch{
   position:relative;
   height:178px;
@@ -2021,6 +2053,14 @@ img{
   margin:0;
   color:rgba(255,255,255,.88);
 }
+
+.large-project-ecolodge{cursor:pointer;color:#fff;text-decoration:none}
+.large-project-ecolodge .large-project-image{border:1px solid rgba(25,221,210,.64);box-shadow:0 22px 55px rgba(0,0,0,.3),0 0 28px rgba(25,221,210,.15);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.large-project-ecolodge .large-project-image img{filter:none;transform:scale(1.02);transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.large-project-ecolodge .large-project-overlay{background:linear-gradient(180deg,rgba(0,20,27,.08),rgba(0,22,30,.28) 35%,rgba(0,18,26,.96) 100%)}
+.large-project-ecolodge:hover .large-project-image{transform:translateY(-5px);border-color:#6ff9ec;box-shadow:0 30px 65px rgba(0,0,0,.38),0 0 38px rgba(25,221,210,.28)}
+.large-project-ecolodge:hover .large-project-image img{transform:scale(1.09)}
+.large-project-ecolodge .large-project-content .project-launch-cta{margin-top:15px}
 
 .large-project-status{
   top:22px;
@@ -4543,4 +4583,54 @@ html.reveal-ready .projects-large-grid > .reveal{
     transform:none;
     transition:none;
   }
+}
+
+/* Ecolodge launch card: give the title, location and CTA room to breathe. */
+.project-stack > .project-card-ecolodge{
+  height:174px;
+  overflow:hidden;
+  border-color:rgba(117,255,236,.78);
+  animation:ecolodge-card-glow 1.5s ease-in-out infinite;
+}
+
+.project-card-ecolodge:after{
+  position:absolute;
+  inset:-65% -100%;
+  z-index:2;
+  background:linear-gradient(112deg,transparent 34%,rgba(255,255,255,.15) 41%,rgba(255,255,255,.46) 47%,rgba(119,255,239,.4) 52%,rgba(59,255,232,.19) 58%,transparent 66%);
+  content:"";
+  pointer-events:none;
+  transform:translateX(-52%) rotate(8deg);
+  animation:ecolodge-card-sheen 1.9s linear infinite;
+}
+
+.project-card-ecolodge .project-badge{z-index:3;max-width:calc(100% - 36px);}
+.project-card-ecolodge .project-info{z-index:3;right:18px;bottom:15px;left:20px;}
+.project-card-ecolodge .project-info h3{max-width:100%;margin-bottom:4px;font-size:clamp(16px,1.25vw,19px);line-height:1.2;}
+.project-card-ecolodge .project-info p{max-width:100%;font-size:12px;line-height:1.35;}
+.project-card-ecolodge .project-launch-cta{min-height:36px;margin-top:9px;padding:0 14px;font-size:12px;}
+.project-card-ecolodge:hover{transform:translateY(-4px);}
+
+@keyframes ecolodge-card-glow{
+  0%,100%{box-shadow:0 18px 42px rgba(0,0,0,.34),0 0 14px rgba(25,221,210,.15),inset 0 0 22px rgba(25,221,210,.06);}
+  50%{box-shadow:0 23px 50px rgba(0,0,0,.4),0 0 30px rgba(172,105,255,.3),0 0 48px rgba(25,221,210,.25),inset 0 0 30px rgba(255,180,111,.12);}
+}
+
+@keyframes ecolodge-card-sheen{
+  0%{transform:translateX(-58%) rotate(8deg);opacity:.15;}
+  12%{opacity:1;}
+  82%{opacity:.9;}
+  100%{transform:translateX(58%) rotate(8deg);opacity:.15;}
+}
+
+@media(max-width:768px){
+  .project-stack > .project-card-ecolodge{height:198px;}
+  .project-card-ecolodge .project-info{bottom:17px;}
+  .project-card-ecolodge .project-info h3{font-size:clamp(18px,4.8vw,22px);}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .project-stack > .project-card-ecolodge,
+  .project-card-ecolodge:after{animation:none;}
+  .project-card-ecolodge:hover{transform:none;}
 }
