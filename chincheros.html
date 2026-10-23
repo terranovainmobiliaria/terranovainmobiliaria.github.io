@@ -139,6 +139,11 @@
     .overview>.container,.gallery-section>.container,.plan-section>.container,.services-section>.container{position:relative;z-index:1}
     .overview-grid{display:grid;grid-template-columns:.86fr 1.14fr;align-items:center;gap:clamp(38px,7vw,92px)}
     .overview-copy .section-description{max-width:490px}
+    .area-highlights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:25px;max-width:500px}
+    .area-highlight{position:relative;overflow:hidden;padding:17px 18px;border:1px solid #dce4d8;border-radius:16px;background:linear-gradient(145deg,#fff,#edf3e9);box-shadow:0 10px 24px #1d302710}
+    .area-highlight:after{position:absolute;right:-14px;bottom:-27px;width:78px;height:78px;border:1px solid #315d481c;border-radius:50%;content:""}
+    .area-highlight strong{display:block;color:var(--forest);font-family:"Playfair Display",Georgia,serif;font-size:clamp(24px,3vw,34px);line-height:1.05;letter-spacing:-.04em}
+    .area-highlight span{display:block;margin-top:7px;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
     .overview-image{position:relative;overflow:hidden;border-radius:28px;box-shadow:var(--shadow)}
     .overview-image img{width:100%;min-height:340px;max-height:510px;aspect-ratio:1.38;transition:transform .8s cubic-bezier(.2,.7,.2,1);object-fit:cover}
     .overview-image:hover img{transform:scale(1.025)}
@@ -226,6 +231,9 @@
     .club-membership p{margin:15px 0 0;color:#ffffffc7;font-size:14px;line-height:1.75}
     .club-member-pill{display:inline-flex;align-items:center;gap:9px;margin-top:23px;padding:11px 14px;border:1px solid rgba(232,194,141,.5);border-radius:999px;background:rgba(255,255,255,.08);color:#f6dfc3;font-size:11px;font-weight:800;letter-spacing:.04em}
     .club-member-pill:before{width:7px;height:7px;border-radius:50%;background:#e3bd95;box-shadow:0 0 11px #e3bd95b3;content:""}
+    .club-area{display:flex;align-items:center;gap:13px;margin:0 0 20px;padding:16px 19px;border:1px solid rgba(232,194,141,.32);border-radius:17px;background:linear-gradient(110deg,rgba(232,194,141,.16),rgba(255,255,255,.07));color:#f6dfc3}
+    .club-area strong{font-family:"Playfair Display",Georgia,serif;font-size:clamp(27px,3vw,38px);line-height:1;letter-spacing:-.04em}
+    .club-area span{max-width:170px;font-size:10px;font-weight:800;line-height:1.45;letter-spacing:.08em;text-transform:uppercase}
     .club-amenities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
     .club-amenity{position:relative;display:grid;grid-template-columns:42px 1fr;align-content:center;align-items:center;gap:0 13px;min-height:112px;padding:17px;border:1px solid #ffffff1f;border-radius:17px;background:linear-gradient(145deg,#ffffff12,#ffffff08);transition:transform .3s,border-color .3s,background .3s,box-shadow .3s}
     .club-amenity:hover{transform:translateY(-5px);border-color:#e3bd9578;background:linear-gradient(145deg,#ffffff1c,#ffffff0c);box-shadow:0 16px 30px #071b1738}
@@ -327,6 +335,7 @@
       .club-showcase{grid-template-columns:1fr}
       .club-main-visual,.club-main-visual img{height:clamp(290px,58vw,430px);min-height:290px}
       .club-membership{padding:27px}
+      .area-highlights{max-width:100%}.area-highlight{padding:15px 13px}
       .club-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:26px}
       .club-gallery figure:last-child{grid-column:1/-1}
       .club-contact-cta{align-items:flex-start;flex-direction:column}
@@ -369,6 +378,8 @@
       .club-visual-caption strong{font-size:27px}
       .club-visual-caption span{text-align:left}
       .club-membership{padding:23px}
+      .area-highlights{gap:9px;margin-top:20px}.area-highlight{padding:13px 11px;border-radius:13px}.area-highlight span{font-size:9px}
+      .club-area{align-items:flex-start;flex-direction:column;gap:7px;padding:15px}.club-area span{max-width:none}
       .club-member-pill{align-items:flex-start;border-radius:14px;line-height:1.45}
       .club-amenities{grid-template-columns:1fr;gap:9px;margin-top:12px}
       .club-amenity{min-height:96px}
@@ -501,10 +512,12 @@
           <div class="eyebrow">Condominio Terranova Ecolodge</div>
           <h2 class="section-title">Naturaleza y espacio para <span>tu casa de campo.</span></h2>
           <p class="section-description">Un proyecto campestre pensado para vivir con amplitud, tranquilidad y conexión con la naturaleza. En Generosa, Valle Pampas, cada lote se integra a un concepto más amplio de bienestar y estilo de vida ecológico.</p>
+          <div class="area-highlights" aria-label="Áreas del proyecto">
+            <div class="area-highlight"><strong>1,200 m²</strong><span>Área del condominio</span></div>
+          </div>
         </div>
         <div class="overview-image" data-reveal>
-          <img src="assets/chincheros/condominio-terranova.jpeg" alt="Visualización referencial del futuro Condominio Terranova con casas, jardines y vías">
-          <span class="image-note">VISUALIZACIÓN REFERENCIAL</span>
+          <img src="assets/chincheros/condominio-terranova.jpeg" alt="Vista conceptual del Condominio Terranova con casas, jardines y vías">
         </div>
       </div>
     </section>
@@ -526,6 +539,7 @@
             </figcaption>
           </figure>
           <aside class="club-membership" data-reveal>
+            <div class="club-area"><strong>10,000 m²</strong><span>Área de Club Terranova</span></div>
             <span class="club-membership-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 10V7a6 6 0 0 1 12 0v3"/><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M12 14v3"/></svg></span>
             <span class="club-membership-label">Una comunidad, un espacio propio</span>
             <h3>Un lugar para volver a encontrarse.</h3>
@@ -615,7 +629,7 @@
           <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-10.jpg" data-caption="Vista del entorno del terreno" aria-label="Ampliar fotografía 10 del terreno"><img src="assets/chincheros/terreno-10.jpg" alt="Vista del entorno del terreno" loading="lazy"><span class="gallery-caption"><strong>Vista del entorno</strong><small>Generosa, Valle Pampas</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
           <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-11.jpg" data-caption="Terreno en Generosa, Valle Pampas, Apurímac" aria-label="Ampliar fotografía 11 del terreno"><img src="assets/chincheros/terreno-11.jpg" alt="Terreno en Generosa, Valle Pampas, Apurímac" loading="lazy"><span class="gallery-caption"><strong>Terreno en Generosa, Valle Pampas</strong><small>Apurímac</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
         </div>
-        <p class="gallery-note">Esta galería muestra el terreno y el entorno real; las imágenes del condominio son referenciales.</p>
+        <p class="gallery-note">Esta galería muestra el terreno y el entorno real del proyecto.</p>
       </div>
     </section>
 
@@ -625,7 +639,7 @@
           <div class="plan-copy" data-reveal>
             <div class="eyebrow">Visualización y lotización</div>
             <h2>Imagina el proyecto. <span>Consulta el plano.</span></h2>
-            <p>La visualización es referencial. El documento técnico de lotización se mantiene disponible en su formato original para consulta.</p>
+            <p>El documento técnico de lotización se mantiene disponible en su formato original para consulta.</p>
             <div class="plan-badges">
               <span>Desde 400 m²</span>
               <span>Condominio</span>
@@ -636,8 +650,7 @@
         <div class="plan-location-grid">
           <div class="plan-column" data-reveal>
             <div class="plan-visual">
-              <img src="assets/chincheros/condominio-terranova.jpeg" alt="Visualización referencial del futuro condominio con casas, jardines y vías" loading="lazy">
-              <span class="image-note">IMAGEN REFERENCIAL</span>
+              <img src="assets/chincheros/condominio-terranova.jpeg" alt="Vista conceptual del futuro condominio con casas, jardines y vías" loading="lazy">
             </div>
             <div class="plan-detail">
               <div class="eyebrow">Documento del proyecto</div>
