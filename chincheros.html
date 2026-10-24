@@ -156,6 +156,21 @@
     .gallery-header .section-heading{margin:0;flex:1}
     .gallery-header .gallery-kicker{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid rgba(24,59,50,.16);border-radius:999px;background:rgba(255,255,255,.32);color:var(--forest);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
     .gallery-header .gallery-kicker:before{width:8px;height:8px;border-radius:50%;background:var(--copper);box-shadow:0 0 0 6px rgba(196,130,86,.15);content:""}
+    .project-video-wrap{position:relative;isolation:isolate;max-width:1060px;margin:0 auto 34px;padding:clamp(20px,4vw,38px);overflow:hidden;border:1px solid #f4d8b04a;border-radius:30px;background:radial-gradient(ellipse at 100% 0%,rgba(204,157,112,.2),transparent 34%),linear-gradient(135deg,#173f34 0%,#102a24 62%,#0d211d 100%);box-shadow:0 28px 70px #14372c2b,inset 0 1px #ffffff20}
+    .project-video-wrap:before,.project-video-wrap:after{position:absolute;z-index:0;border:1px solid #ffffff0d;border-radius:50%;content:"";pointer-events:none}
+    .project-video-wrap:before{top:-170px;right:-120px;width:410px;height:410px}
+    .project-video-wrap:after{top:-115px;right:-65px;width:300px;height:300px}
+    .project-video-wrap>*{position:relative;z-index:1}
+    .project-video-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:23px}
+    .project-video-identity{display:flex;align-items:center;gap:15px;min-width:0}
+    .project-video-mark{display:grid;flex:0 0 50px;width:50px;height:50px;place-items:center;border:1px solid #f0cfaa70;border-radius:16px;background:linear-gradient(145deg,#f0cfaa2e,#ffffff0b);color:#f2d2b1;box-shadow:inset 0 1px #ffffff25}
+    .project-video-mark svg{width:23px;height:23px;fill:currentColor}
+    .project-video-copy .eyebrow{margin-bottom:6px;color:#e9bd91;font-size:10px;letter-spacing:.16em}
+    .project-video-copy h3{margin:0;color:#fffaf2;font-family:"Playfair Display",Georgia,serif;font-size:clamp(26px,3vw,38px);font-weight:600;letter-spacing:-.035em;line-height:1.12}
+    .project-video-copy p{margin:8px 0 0;color:#ffffffb8;font-size:13px;line-height:1.6}
+    .project-video-badge{display:inline-flex;flex:0 0 auto;align-items:center;gap:8px;padding:10px 13px;border:1px solid #ffffff2c;border-radius:999px;background:#ffffff0d;color:#fff3e6;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .project-video-badge:before{width:7px;height:7px;border-radius:50%;background:#e8bc91;box-shadow:0 0 12px #e8bc91b3;content:""}
+    .project-video{display:block;width:100%;max-height:660px;border:1px solid #ffffff35;border-radius:20px;background:#071510;box-shadow:0 20px 48px #0005,0 0 0 5px #ffffff08}
     .gallery{display:grid;grid-auto-flow:dense;grid-auto-rows:164px;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin-top:8px}
     .gallery-item{position:relative;min-width:0;overflow:hidden;padding:0;border:0;border-radius:20px;background:#e5e2d8;cursor:zoom-in;isolation:isolate;box-shadow:0 12px 28px rgba(17,41,34,.09);transition:transform .32s ease,box-shadow .32s ease}
     .gallery-item:hover{transform:translateY(-5px);box-shadow:0 22px 35px rgba(17,41,34,.12)}
@@ -340,6 +355,9 @@
       .club-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:26px}
       .club-gallery figure:last-child{grid-column:1/-1}
       .club-contact-cta{align-items:flex-start;flex-direction:column}
+      .project-video-wrap{padding:24px;border-radius:24px}
+      .project-video-head{align-items:flex-start;flex-direction:column;gap:14px}
+      .project-video-badge{margin-left:65px}
       .gallery{grid-auto-rows:145px;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
       .gallery-item:first-child{grid-column:span 2;grid-row:span 2}.gallery-item:nth-child(2){grid-column:span 1}
       .plan-location-grid{grid-template-columns:1fr;gap:16px}.plan-column{grid-template-columns:1fr;grid-template-rows:265px auto}
@@ -368,6 +386,13 @@
       .section-heading h2,.section-title{font-size:clamp(33px,10vw,43px)}
       .section-heading p,.section-description{font-size:15px}
       .overview-image img{min-height:225px;border-radius:20px}.gallery{grid-auto-rows:124px}
+      .project-video-wrap{margin-bottom:25px;padding:18px;border-radius:20px}
+      .project-video-identity{align-items:flex-start;gap:11px}
+      .project-video-mark{flex-basis:42px;width:42px;height:42px;border-radius:13px}
+      .project-video-copy h3{font-size:26px}
+      .project-video-copy p{font-size:12px}
+      .project-video-badge{margin-left:53px;font-size:8px}
+      .project-video{border-radius:14px}
       .service-grid{gap:10px}.service-card{min-height:203px;padding:17px 14px}
       .service-card h3{margin-top:19px;font-size:15px}.service-card p{font-size:12px}
       .service-status{align-items:flex-start;font-size:10px;line-height:1.4}
@@ -616,6 +641,23 @@
             <p>Fotografías del terreno y su entorno actual en Generosa, Valle Pampas. Selecciona una imagen para ampliarla.</p>
           </div>
           <span class="gallery-kicker">Paisaje auténtico</span>
+        </div>
+        <div class="project-video-wrap" id="video-proyecto" data-reveal>
+          <div class="project-video-head">
+            <div class="project-video-identity">
+              <span class="project-video-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5a1 1 0 0 1 1.5-.86l10.2 5.9a1.68 1.68 0 0 1 0 2.92l-10.2 5.9A1 1 0 0 1 8 18.5z"/></svg></span>
+              <div class="project-video-copy">
+                <div class="eyebrow">Experiencia Terranova</div>
+                <h3>Conoce Condominio Terranova</h3>
+                <p>Descubre el proyecto y su entorno en Generosa, Valle Pampas.</p>
+              </div>
+            </div>
+            <span class="project-video-badge">Video del proyecto</span>
+          </div>
+          <video class="project-video" controls playsinline preload="metadata" aria-label="Video de Condominio Terranova">
+            <source src="assets/chincheros/condominio-terranova-video-mejorado.mp4" type="video/mp4">
+            Tu navegador no puede reproducir este video. Puedes abrirlo en otro navegador actualizado.
+          </video>
         </div>
         <div class="gallery" aria-label="Galería de fotografías del terreno" data-reveal-stagger>
           <button class="gallery-item" type="button" data-lightbox="assets/chincheros/terreno-01.jpg" data-caption="Terreno del proyecto en Generosa, Valle Pampas" aria-label="Ampliar fotografía 1 del terreno"><img src="assets/chincheros/terreno-01.jpg" alt="Terreno del proyecto en Generosa, Valle Pampas" loading="lazy"><span class="gallery-caption"><strong>Terreno del proyecto</strong><small>Generosa · Valle Pampas · Apurímac</small></span><span class="gallery-zoom" aria-hidden="true">↗</span></button>
