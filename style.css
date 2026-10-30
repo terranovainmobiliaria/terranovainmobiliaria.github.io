@@ -4634,3 +4634,59 @@ html.reveal-ready .projects-large-grid > .reveal{
   .project-card-ecolodge:after{animation:none;}
   .project-card-ecolodge:hover{transform:none;}
 }
+
+/* Proyecto Salinas: vendido, en escala de grises y enlazado al aviso. */
+.project-card-sold img,
+.large-project-sold img{
+  filter:grayscale(1) brightness(.72);
+}
+.project-card-sold .project-shade{
+  background:linear-gradient(180deg,rgba(25,31,30,.12),rgba(18,27,25,.88));
+}
+.project-card-sold .project-badge{
+  border:1px solid rgba(255,255,255,.5);
+  background:#d9dedb;
+  color:#26312d;
+}
+.project-card-sold:hover img,
+.large-project-sold:hover img{
+  filter:grayscale(1) brightness(.8);
+}
+.project-card-sold:hover{
+  transform:translateY(-4px);
+}
+.project-card-sold .project-arrow{
+  background:rgba(35,46,42,.7);
+  color:#fff;
+}
+.project-card-sold:hover .project-arrow{
+  background:#d9dedb;
+  color:#26312d;
+  border-color:#d9dedb;
+}
+.large-project-sold .large-project-image{
+  filter:grayscale(1);
+}
+.large-project-sold .large-project-overlay{
+  background:linear-gradient(180deg,rgba(20,29,26,.22),rgba(16,26,23,.94));
+}
+.large-project-sold .large-project-status-sold{
+  position:absolute;
+  z-index:2;
+  top:20px;
+  left:22px;
+  padding:8px 13px;
+  border:1px solid rgba(255,255,255,.6);
+  border-radius:999px;
+  background:rgba(45,55,51,.86);
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.large-project-sold .large-project-content > span:first-child{
+  color:#d1d8d4;
+}
+.large-project-sold .discover{
+  color:#eef1ef;
+}
