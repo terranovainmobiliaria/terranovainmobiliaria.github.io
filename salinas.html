@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#123c32">
   <title>Proyecto Salinas | Lotes en Andahuaylas – Terranova</title>
-  <meta name="description" content="Conoce Proyecto Salinas en Andahuaylas: lotes de 94.12 m², servicios, ubicación, plano y disponibilidad. Consulta con Terranova Inmobiliaria.">
+  <meta name="description" content="Proyecto Salinas en Andahuaylas: proyecto completamente vendido. Gracias por confiar en Terranova Inmobiliaria.">
   <link rel="icon" type="image/png" href="assets/logo-terranova.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,18 +98,25 @@
     .contact-section{background:radial-gradient(ellipse at 12% 15%,rgba(189,161,111,.17),transparent 35%),linear-gradient(135deg,#12372f,#18463b)}
     .contact-form{background:#f8f6ef}
     .hero-card{background:rgba(249,246,237,.97)}
+    .sold-out-screen{position:fixed;z-index:1000;inset:0;display:grid;place-items:center;overflow-y:auto;padding:24px;background:rgba(9,30,25,.48);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .sold-out-card{width:min(760px,100%);padding:clamp(28px,6vw,64px);border:1px solid rgba(255,255,255,.55);border-radius:24px;background:linear-gradient(145deg,rgba(250,248,239,.96),rgba(239,239,226,.94));box-shadow:0 30px 100px rgba(0,0,0,.3);text-align:center;color:#173d32}
+    .sold-out-kicker{margin:0 0 12px;color:#638172;font-size:12px;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
+    .sold-out-card h1{margin:0;font-family:"Playfair Display",Georgia,serif;font-size:clamp(52px,11vw,108px);line-height:.95;letter-spacing:-.06em;color:#123c32}
+    .sold-out-card h2{margin:16px 0 10px;font-size:clamp(19px,3vw,25px);color:#9a7041}
+    .sold-out-card p{max-width:510px;margin:0 auto 25px;color:#52665c;font-size:15px}
+    @media(max-width:600px){.sold-out-screen{padding:16px}.sold-out-card{padding:36px 22px;border-radius:18px}}
   </style>
 </head>
 <body>
-  <div class="topbar"><div class="container topbar-inner"><span>Terranova Inmobiliaria · Proyectos en Apurímac</span><a href="https://maps.app.goo.gl/UQGYLEhe6zVpPzVY6" target="_blank" rel="noopener noreferrer">Andahuaylas, Apurímac　↗</a></div></div>
-  <header class="site-header">
+  <div class="topbar" inert aria-hidden="true"><div class="container topbar-inner"><span>Terranova Inmobiliaria · Proyectos en Apurímac</span><a href="https://maps.app.goo.gl/UQGYLEhe6zVpPzVY6" target="_blank" rel="noopener noreferrer">Andahuaylas, Apurímac　↗</a></div></div>
+  <header class="site-header" inert aria-hidden="true">
     <nav class="container nav" aria-label="Navegación principal">
       <a class="brand" href="index.html" aria-label="Terranova Inmobiliaria, inicio"><img src="assets/logo-terranova.png" alt="Terranova Inmobiliaria"></a>
       <div class="nav-links"><a href="#proyecto">Proyecto</a><a href="#lotes">Lotes</a><a href="#galeria">Galería</a><a href="#ubicacion">Ubicación</a><a href="index.html">Inicio Terranova</a></div>
       <div class="nav-actions"><div class="phone-list" aria-label="Contactos de Terranova"><a class="phone" href="https://wa.me/51922836427" target="_blank" rel="noopener noreferrer">+51 922 836 427</a><a class="phone" href="https://wa.me/51941201577" target="_blank" rel="noopener noreferrer">+51 941 201 577</a></div><a class="button button-dark" href="#contacto">Solicitar información</a></div>
     </nav>
   </header>
-  <main>
+  <main inert aria-hidden="true">
     <section class="hero" id="proyecto" aria-labelledby="page-title">
       <div class="container hero-inner">
         <div class="hero-copy">
@@ -120,7 +127,7 @@
         </div>
         <aside class="hero-card" aria-label="Resumen del proyecto">
           <small>PROYECTO SALINAS</small><h2>Una buena ubicación para empezar.</h2>
-          <div class="hero-facts"><div class="hero-fact"><strong>94.12 m²</strong><span>Área por lote</span></div><div class="hero-fact"><strong>2 de 10</strong><span>Disponibles para consulta</span></div></div>
+          <div class="hero-facts"><div class="hero-fact"><strong>94.12 m²</strong><span>Área por lote</span></div><div class="hero-fact"><strong>10 de 10</strong><span>Lotes vendidos</span></div></div>
           <a class="button button-dark" href="#contacto">Consultar por un lote　→</a>
         </aside>
       </div>
@@ -150,20 +157,20 @@
     </section>
     <section class="inventory" id="lotes" aria-labelledby="lots-title">
       <div class="container">
-        <div class="section-heading-row"><div class="section-heading"><p class="eyebrow">DISPONIBILIDAD</p><h2 id="lots-title">Encuentra tu espacio.</h2><p>Consulta con nuestro equipo la disponibilidad vigente y las condiciones de compra.</p></div><span class="availability-note">2 lotes disponibles para consulta</span></div>
+        <div class="section-heading-row"><div class="section-heading"><p class="eyebrow">DISPONIBILIDAD</p><h2 id="lots-title">Todos los lotes fueron vendidos.</h2><p>Los 10 lotes de Proyecto Salinas ya fueron vendidos.</p></div><span class="availability-note">Proyecto completamente vendido</span></div>
         <div class="lot-grid" aria-label="Estado de los lotes">
           <article class="lot-card unavailable"><span class="lot-number">LOTE 01</span><h3>94.12 m²</h3><p>Perímetro: 42.42 m</p><span class="lot-status">VENDIDO</span></article>
           <article class="lot-card unavailable"><span class="lot-number">LOTE 02</span><h3>94.12 m²</h3><p>Perímetro: 41.47 m</p><span class="lot-status">VENDIDO</span></article>
           <article class="lot-card unavailable"><span class="lot-number">LOTE 03</span><h3>94.12 m²</h3><p>Perímetro: 42.97 m</p><span class="lot-status">VENDIDO</span></article>
           <article class="lot-card unavailable"><span class="lot-number">LOTE 04</span><h3>94.12 m²</h3><p>Perímetro: 41.95 m</p><span class="lot-status">VENDIDO</span></article>
-          <article class="lot-card"><span class="lot-number">LOTE 05</span><h3>94.12 m²</h3><p>Perímetro: 40.71 m</p><span class="lot-status">CONSULTAR</span></article>
-          <article class="lot-card"><span class="lot-number">LOTE 06</span><h3>94.12 m²</h3><p>Perímetro: 40.03 m</p><span class="lot-status">CONSULTAR</span></article>
+          <article class="lot-card unavailable"><span class="lot-number">LOTE 05</span><h3>94.12 m²</h3><p>Perímetro: 40.71 m</p><span class="lot-status">VENDIDO</span></article>
+          <article class="lot-card unavailable"><span class="lot-number">LOTE 06</span><h3>94.12 m²</h3><p>Perímetro: 40.03 m</p><span class="lot-status">VENDIDO</span></article>
           <article class="lot-card unavailable"><span class="lot-number">LOTE 07</span><h3>94.12 m²</h3><p>Perímetro: 40.28 m</p><span class="lot-status">VENDIDO</span></article>
           <article class="lot-card unavailable"><span class="lot-number">LOTE 08</span><h3>94.12 m²</h3><p>Perímetro: 39.93 m</p><span class="lot-status">VENDIDO</span></article>
           <article class="lot-card unavailable"><span class="lot-number">LOTE 09</span><h3>94.12 m²</h3><p>Perímetro: 40.13 m</p><span class="lot-status">VENDIDO</span></article>
           <article class="lot-card unavailable"><span class="lot-number">LOTE 10</span><h3>94.12 m²</h3><p>Perímetro: 40.06 m</p><span class="lot-status">VENDIDO</span></article>
         </div>
-        <div class="inventory-footer"><p><strong>¿Te interesa un lote?</strong> Escríbenos y te compartimos disponibilidad y detalles.</p><a class="button button-light" href="#contacto">Consultar ahora　→</a></div>
+        <div class="inventory-footer"><p><strong>¡Gracias por tu interés!</strong> Proyecto Salinas está completamente vendido.</p><a class="button button-light" href="index.html">Ver otros proyectos　→</a></div>
       </div>
     </section>
     <section class="gallery-section" id="galeria" aria-labelledby="gallery-title">
@@ -209,8 +216,9 @@
       </div>
     </section>
   </main>
-  <footer><div class="container footer-main"><span>© Terranova Inmobiliaria · Proyecto Salinas · Andahuaylas, Apurímac</span><div class="footer-links"><a href="index.html">Inicio</a><a href="#proyecto">Volver arriba ↑</a><a href="assets/salinas/plano-salinas.pdf" target="_blank" rel="noopener">Plano</a></div></div></footer>
+  <footer inert aria-hidden="true"><div class="container footer-main"><span>© Terranova Inmobiliaria · Proyecto Salinas · Andahuaylas, Apurímac</span><div class="footer-links"><a href="index.html">Inicio</a><a href="#proyecto">Volver arriba ↑</a><a href="assets/salinas/plano-salinas.pdf" target="_blank" rel="noopener">Plano</a></div></div></footer>
   <dialog class="lightbox" aria-label="Fotografía ampliada"><button class="lightbox-close" type="button" aria-label="Cerrar fotografía">×</button><img src="" alt=""><figcaption></figcaption></dialog>
+  <section class="sold-out-screen" role="dialog" aria-modal="true" aria-labelledby="sold-out-title" aria-describedby="sold-out-description"><div class="sold-out-card"><p class="sold-out-kicker">Proyecto Salinas · Andahuaylas</p><h1 id="sold-out-title">¡Se vendió<br>todo!</h1><h2>Proyecto completamente vendido</h2><p id="sold-out-description">Gracias por confiar en Terranova Inmobiliaria y ser parte de este proyecto. Actualmente ya no contamos con lotes disponibles.</p><a class="button button-dark" href="index.html">Conocer otros proyectos　→</a></div></section>
   <script>
     const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const revealTargets=document.querySelectorAll('.hero-copy > *, .hero-card, .summary-item, .overview .section-heading, .nearby-item, .service-pills > *, .overview-image, .inventory .section-heading, .lot-card, .inventory-footer, .gallery-section .section-heading, .gallery-item, .gallery-foot, .location .section-heading, .map-card, .video-section .section-heading, .video-box, .contact-copy, .contact-form');
@@ -240,7 +248,8 @@
     document.getElementById('inquiry-form').addEventListener('submit',event=>{
       event.preventDefault();
       const data=new FormData(event.currentTarget);
-      const message=['Hola, vengo desde la página de Proyecto Salinas de Terranova.','', 'Nombre: '+data.get('name'),'Teléfono: '+data.get('phone'),'Consulta: '+data.get('interest'),'Lote de interés: '+data.get('lot'),'Mensaje: '+(data.get('message')||'Sin mensaje adicional')].join('\n');
+      const message=['Hola, vengo desde la página de Proyecto Salinas de Terranova.','', 'Nombre: '+data.get('name'),'Teléfono: '+data.get('phone'),'Consulta: '+data.get('interest'),'Lote de interés: '+data.get('lot'),'Mensaje: '+(data.get('message')||'Sin mensaje adicional')].join('
+');
       const advisor=data.get('advisor');
       window.open('https://wa.me/'+advisor+'?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
     });
