@@ -4690,3 +4690,15 @@ html.reveal-ready .projects-large-grid > .reveal{
 .large-project-sold .discover{
   color:#eef1ef;
 }
+
+/* Keep the Ecolodge label clear of its title and action. */
+@media(min-width:769px){
+  .project-stack > .project-card-ecolodge{
+    height:205px;
+  }
+}
+@media(max-width:430px){
+  .project-stack > .project-card-ecolodge{
+    height:188px;
+  }
+}
